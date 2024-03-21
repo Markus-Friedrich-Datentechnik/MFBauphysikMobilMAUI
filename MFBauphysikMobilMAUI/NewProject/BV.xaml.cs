@@ -1,0 +1,73 @@
+﻿using MFBauphysikMobilMAUI.Data;
+using MFBauphysikMobilMAUI.Helpers;
+using MFBauphysikMobilMAUI.Models;
+using MFBauphysikMobilMAUI.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Maui.Controls.Xaml;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using MFBauphysikMobilMAUI;
+
+namespace MFBauphysikMobilMAUI.NewProject
+{
+    public partial class BV : ContentPage
+    {
+        public MainModel main_model { get; set; }
+       
+        public BV(MainModel project)
+        {            
+            InitializeComponent();
+            //var vm = new MainVM();
+            //this.BindingContext = vm;
+            main_model = new MainModel
+            {
+                Selected = project.Selected,
+                ID = project.ID,
+                MusterName = project.MusterName,
+                ProjectName = project.ProjectName,
+                Date = project.Date,
+                BV_Ersatz = project.BV_Ersatz,
+                Befestiger_Basis = project.Befestiger_Basis,
+                Befestiger_Sparren = project.Befestiger_Sparren,
+                Befestiger_Gefach = project.Befestiger_Gefach,
+                Befestiger_Ständer = project.Befestiger_Ständer,
+                Bauteil_Basis = project.Bauteil_Basis,
+                Bauteil_Sparren = project.Bauteil_Sparren,
+                Bauteil_Gefach = project.Bauteil_Gefach,
+                Bauteil_Ständer = project.Bauteil_Ständer,                
+            };
+            bv_label.FontSize = Setting.Size_Default;
+            projekt_label.FontSize = Setting.Size_Default;
+            BV_Ersatz.FontSize = Setting.Size_Default;
+            entry_label.FontSize = Setting.Size_Default;
+            ProjektName.FontSize = Setting.Size_Default;
+        }
+        public async void Back_Clicked (object sender, EventArgs e)
+        {            
+            await Navigation.PopAsync(); 
+        }
+        public async void Next_Clicked(object sender, EventArgs e)
+        {
+            var test = (MainModel)BindingContext;
+            test.Date = DateTime.Now;
+            await App.Database.UpdateItemAsync(test);
+            if (test.MusterName == "Sparrendach")
+            {
+                await Navigation.PushAsync(new CalculationSparren(test));
+            }
+            else if (test.MusterName == "Ständerwand")
+            {
+                await Navigation.PushAsync(new CalculationStänder(test));
+            }
+            else
+            {
+                await Navigation.PushAsync(new CalculationPage(test));
+            }
+        }
+    }
+}

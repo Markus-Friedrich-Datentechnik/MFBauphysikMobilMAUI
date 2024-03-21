@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MFBauphysikMobilMAUI.MenuPage"
+             xmlns:models="clr-namespace:MFBauphysikMobilMAUI.Models" 
+x:DataType="models:EinstellungModel"
+             NavigationPage.HasBackButton="False">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <ImageButton Source="back.png" Clicked="Back_Clicked" 
+                         BackgroundColor="{StaticResource TransparentBackground}" 
+                         HorizontalOptions="Start"/>
+
+            <Label Text="Menü" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"
+                   TextColor="{StaticResource TitleTextColor}" 
+                   FontSize="Title" FontAttributes="Bold"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"
+                 BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+        <Grid  HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Text="Sortieren" FontSize="{Binding DefaultSize}" Grid.Row="0"
+                    Style="{StaticResource ButtonStyle}" 
+                    Clicked="Sortieren_Clicked"/>
+            <Button Text="Konfiguration" Style="{StaticResource ButtonStyle}" Grid.Row="1"
+                    FontSize="{Binding DefaultSize}"
+                    Clicked="Konfiguration_Clicked"/> 
+            <Button Text="Info" Style="{StaticResource ButtonStyle}" Grid.Row="2"
+                    FontSize="{Binding DefaultSize}"
+                    Clicked="Info_Clicked"/>
+            <!--Button Text="TestPage" Style="{StaticResource ButtonStyle}" 
+                    Clicked="Button_Clicked" IsVisible="true"/-->
+        </Grid>                
+    </StackLayout>          
+</ContentPage>

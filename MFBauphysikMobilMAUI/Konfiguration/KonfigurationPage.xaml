@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MFBauphysikMobilMAUI.Konfiguration.KonfigurationPage"
+             NavigationPage.HasBackButton="False">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <ImageButton Source="back.png" 
+                         BackgroundColor="{StaticResource TransparentBackground}" 
+                         HorizontalOptions="Start" Clicked="Back_Clicked"/>
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >
+                <Label Text="MF Bauphysik mobil" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                       TextColor="{StaticResource TitleTextColor}" 
+                       FontSize="20"  FontAttributes="Bold"/>
+                <Label Text="Konfiguration" HorizontalOptions="Center"     VerticalOptions="Start"                   
+                       TextColor="{StaticResource TitleTextColor}" FontSize="10"/>
+            </StackLayout>
+            <ImageButton Source ="check.png" 
+                         BackgroundColor="{StaticResource TransparentBackground}"
+                         HorizontalOptions="End" Clicked="Checked_Clicked" 
+                         IsVisible="false" x:Name="CheckButton"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <StackLayout Orientation="Vertical" BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+        <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark= {StaticResource FrameStyleDark}}"
+               BorderColor="{StaticResource TitleBackgroundColor}">
+            <StackLayout Orientation="Vertical" Spacing="5">
+                <Label Text="Textdarstellung"  FontAttributes="Bold" x:Name="darstellung_label"
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--Slider-->
+                    <Slider x:Name="slider"  
+                            Maximum="200" 
+                            MaximumTrackColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                            Minimum="50"
+                            MinimumTrackColor="DodgerBlue"
+                            ValueChanged="slider_ValueChanged" Grid.Column="0" Grid.Row="0">                       
+                    </Slider>
+                    <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:N0} %'} "                           
+                           Grid.Column="1" Grid.Row="0" x:Name="slider_label"
+                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                </Grid>
+                <Label Text="Textbeispiel" HorizontalOptions="Center" x:Name="Textbeispiel" 
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                <!--Auswahl Textgröße-->
+
+                <!--50-->
+                <Frame Style="{AppThemeBinding Light={StaticResource miniFrameLight}, Dark={StaticResource miniFrameDark}}"
+                       BorderColor="{StaticResource TitleBackgroundColor}">
+                    <Label Text="50% klein" x:Name ="S50" FontSize="Micro" FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           TextColor="{StaticResource TextColor Blue}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="S50_Selected"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Frame>
+
+                <!--75-->
+                <Frame Style="{AppThemeBinding Light={StaticResource miniFrameLight}, Dark={StaticResource miniFrameDark}}"
+                       BorderColor="{StaticResource TitleBackgroundColor}">
+                    <Label Text="75% kleiner" x:Name="S75" FontSize="Caption" FontAttributes="Bold" 
+                           HorizontalTextAlignment="Center"
+                           TextColor="{StaticResource TextColor Blue}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="S75_Selected"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Frame>
+
+                <!--100-->
+                <Frame Style="{AppThemeBinding Light={StaticResource miniFrameLight}, Dark={StaticResource miniFrameDark}}"
+                       BorderColor="{StaticResource TitleBackgroundColor}">
+                    <Label Text="100% normal" x:Name="S100" FontSize="Small" FontAttributes="Bold"
+                           HorizontalTextAlignment="Center" 
+                           TextColor="{StaticResource TextColor Blue}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="S100_Selected"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Frame>
+
+                <!--125-->
+                <Frame Style="{AppThemeBinding Light={StaticResource miniFrameLight}, Dark={StaticResource miniFrameDark}}"
+                       BorderColor="{StaticResource TitleBackgroundColor}" >
+                    <Label Text="125% größer" x:Name="S125" FontSize="Subtitle" FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           TextColor="{StaticResource TextColor Blue}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="S125_Selected"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Frame>
+
+                <!--150-->
+                <Frame Style="{AppThemeBinding Light={StaticResource miniFrameLight}, Dark={StaticResource miniFrameDark}}"
+                       BorderColor="{StaticResource TitleBackgroundColor}">
+                    <Label Text="150% groß" x:Name="S150" FontSize="Large" FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           TextColor="{StaticResource TextColor Blue}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="S150_Selected"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Frame>
+
+
+            </StackLayout>
+        </Frame >
+
+        <!--Auswahl Dark/Light Mode-->        
+        <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark= {StaticResource FrameStyleDark}}">
+            <StackLayout>
+                <Label Text="Design" FontAttributes="Bold" x:Name="design_label"
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <StackLayout x:Name="modus" RadioButtonGroup.GroupName="Modus">
+                    <!--Button1-->
+                    <RadioButton Value ="system" CheckedChanged="Modus_CheckedChanged" 
+             x:Name ="gerätModus">
+                        <RadioButton.Content>
+                            <Grid>
+                                <Label Text="wie gerät einstellung" Padding="30,0,0,0"
+                                       x:Name="gerät_label"
+                   TextColor ="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark = {StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+                        </RadioButton.Content>
+                        <RadioButton.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </RadioButton.GestureRecognizers>
+                    </RadioButton>
+                    <!--Button2-->
+                    <RadioButton Value="hell" x:Name="lightmodus"  CheckedChanged="Modus_CheckedChanged">
+                        <RadioButton.Content>
+                            <Grid>
+                                <Label Text="immer &quot;Hell&quot;" Padding="30,0,0,0" 
+                                       x:Name="hell_label"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+                        </RadioButton.Content>
+                        <RadioButton.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </RadioButton.GestureRecognizers>
+                    </RadioButton>
+                    <!--Button3-->
+                    <RadioButton Value="dunkel" x:Name="darkmodus" CheckedChanged="Modus_CheckedChanged">
+                        <RadioButton.Content>
+                            <Grid>
+                                <Label Text="immer &quot;Dunkel&quot;" Padding="30,0,0,0"
+                                       x:Name="dark_label"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+                        </RadioButton.Content>
+                        <RadioButton.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </RadioButton.GestureRecognizers>
+                    </RadioButton>
+                    
+                </StackLayout>
+                
+            </StackLayout>
+        </Frame>
+            
+    </StackLayout>
+
+</ContentPage>

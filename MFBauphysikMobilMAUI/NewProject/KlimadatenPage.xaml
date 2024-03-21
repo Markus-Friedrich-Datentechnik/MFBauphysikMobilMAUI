@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MFBauphysikMobilMAUI.NewProject.KlimadatenPage"
+             NavigationPage.HasBackButton="False"
+             xmlns:controls="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer">
+
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}" HorizontalOptions="Start" Clicked="Back_Clicked"/>
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Label Text="Klimadaten" HorizontalOptions="Center" TextColor="{StaticResource TitleTextColor}" 
+                           FontSize="20" FontAttributes="Bold"/>
+            </StackLayout>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{Binding SizeDefault}"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentView>
+            <Grid BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!--Tauperiode-->
+                <Label Text="Tauperiode" FontAttributes="Bold" Grid.Row="0" Padding="10,10,0,0"
+                   FontSize="{Binding SizeDefault}"
+                    TextColor="{StaticResource TextColor Blue}"/>
+
+                <Frame Grid.Row="1" 
+               Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+                <ScrollView Orientation="Vertical">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <StackLayout Grid.Row="1" Padding="10,0,0,0" Orientation="Vertical">
+                            <!--Dauer-->
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Dauer [h]" Grid.Row="0" Grid.Column="0"
+                                   FontSize="{Binding SizeDefault}"
+                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="{Binding TauDauer}" Grid.Row="0" Grid.Column="1" 
+                                   FontSize="{Binding SizeDefault}"
+                                   TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+                            <!--Menüpunkt Innenklima-->
+                            <Label Text="Innenklima" FontAttributes="Bold" FontSize="{Binding SizeDefault}"
+                            TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Text="Temperatur [°C]" Padding="20,0,0,0" 
+                                   FontSize="{Binding SizeDefault}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="{Binding InnenTemp}" Grid.Row="0" Grid.Column="1" 
+                                   FontSize="{Binding SizeDefault}"
+                                          TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Text="rel. Luftfeuchte [%]" Padding="20,0,0,0"
+                                   FontSize="{Binding SizeDefault}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="{Binding InnenFeuchte}" Grid.Row="1" Grid.Column="1" 
+                                   FontSize="{Binding SizeDefault}"
+                                          TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+
+                            <!--Menüpunkt Außenklima-->
+                            <Label Text="Außenklima" FontAttributes="Bold" FontSize="{Binding SizeDefault}"
+                            TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Text="Temperatur [°C]" Padding="20,0,0,0"
+                                   FontSize="{Binding SizeDefault}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="{Binding AußenTemp}" Grid.Row="0" Grid.Column="1" 
+                                   FontSize="{Binding SizeDefault}"
+                                          TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="rel. Luftfeuchte [%]" Padding="20,0,0,0"
+                                   FontSize="{Binding SizeDefault}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="{Binding AußenFeuchte}" Grid.Row="1" Grid.Column="1" 
+                                   FontSize="{Binding SizeDefault}"
+                                          TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                            </Grid>
+                        </StackLayout>
+                    </Grid>
+                </ScrollView>
+            </Frame>
+
+                <!--Verdunstungsperiode-->
+                <Label Text="Verdunstungsperiode" FontAttributes="Bold" 
+                   Grid.Row="2" Padding="10,10,0,0" IsVisible="true" FontSize="{Binding SizeDefault}"
+                    TextColor="{StaticResource TextColor Blue}"/>
+                <Frame Grid.Row="3" IsVisible="true"
+               Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+                <ScrollView Orientation="Vertical">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <StackLayout Grid.Row="1" Padding="10,0,0,0" Orientation="Vertical">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Dauer [h]" Grid.Row="0" Grid.Column="0" FontSize="{Binding SizeDefault}"
+                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="{Binding VerdunstungsDauer}" Grid.Row="0" Grid.Column="1" 
+                                   FontSize="{Binding SizeDefault}"
+                                          TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Wasserdampfteildruck Innenklima [Pa]"   Grid.Row="0" Grid.Column="0"
+                                   FontSize="{Binding SizeDefault}"
+                            TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="{Binding InnenDruckVerdunstung}" Grid.Row="0" Grid.Column="1" 
+                                   FontSize="{Binding SizeDefault}"
+                                          TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Wasserdampfteildruck Außenklima [Pa]"  Grid.Row="0" Grid.Column="0" 
+                                   FontSize="{Binding SizeDefault}"
+                            TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="{Binding AußenDruckVerdunstung}" Grid.Row="0" Grid.Column="1" 
+                                   FontSize="{Binding SizeDefault}"
+                                          TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+                            <Label Text="Sättigungsdruck im Tauwasserbereich" Grid.Row="3" Grid.Column="0" 
+                               FontAttributes="Bold" FontSize="{Binding SizeDefault}"
+                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                            <!--Sättigungsdruck-->
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Text="Wände, Decken unter nicht ausgebauten Dachräumen [Pa]" 
+                                   Padding="20,0,0,0"
+                               FontSize="{Binding SizeDefault}"
+                                   TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="{Binding Wände}" Grid.Row="0" Grid.Column="1" 
+                                   FontSize="{Binding SizeDefault}"
+                                          TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Text="Dächer [Pa]" Padding="20,0,0,0"
+                                   FontSize="{Binding SizeDefault}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="{Binding Dächer}" Grid.Row="1" Grid.Column="1" 
+                                   FontSize="{Binding SizeDefault}"
+                                          TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                            </Grid>
+                        </StackLayout>
+                    </Grid>
+                </ScrollView>
+            </Frame>
+
+
+
+            </Grid>
+    </ContentView>
+</ContentPage>

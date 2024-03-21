@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MFBauphysikMobilMAUI.Einstellungen.EinstellungPage"
+             NavigationPage.HasBackButton="False"
+             xmlns:pc="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer"
+             ControlTemplate="{DynamicResource Zeit}">
+    
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" x:Name="NavPageTitleView" >
+            <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}"
+                         HorizontalOptions="Start" Clicked="Back_Clicked"/>
+            <Label Text="MF Bauphysik mobil" HorizontalOptions="CenterAndExpand" 
+                   TextColor="{StaticResource TitleTextColor}" FontSize="20" FontAttributes="Bold"/>
+            <ImageButton Source="check.png" Clicked="Check_Clicked" BackgroundColor="{StaticResource TransparentBackground}" 
+                         HorizontalOptions="End" Padding="0,0,10,0" 
+                         IsVisible="false" x:Name="checkButton"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+
+    <Grid  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+                 BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark= {StaticResource DarkPrimaryColor}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <!--TabView-->
+        <Grid HorizontalOptions="Start"  VerticalOptions="Start" Margin="10" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <!--Label Text="Zeit" x:Name="ZeitButton" TextColor="{StaticResource LabelButton}" FontSize="Medium" 
+                   TextDecorations="Underline" FontAttributes="Bold" Grid.Column="0" Padding="5">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Zeit_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Dokumente" x:Name="DokumentButton" Grid.Column="1" Padding="5"
+                   TextColor="{StaticResource LabelButton}" FontSize="Medium">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Dokumente_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Stammdaten" x:Name="StammdatenButton" Grid.Column="2" Padding="5"
+                   TextColor="{StaticResource LabelButton}" FontSize="Medium">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Stammdaten_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label-->
+        </Grid>
+        
+
+        <!--Picker-->
+        <Frame x:Name="FrameZeit" Grid.Row="1" 
+               Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark= {StaticResource FrameStyleDark}}">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="Aktualisierung im Hintergrund" FontAttributes="Bold" Grid.Row="0"
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark= {StaticResource DarkSecondaryColor}}"/>
+                <!--ListView x:Name="ListTakt" SeparatorVisibility="Default" Grid.Row="1"
+                          SeparatorColor="{StaticResource TextColor Blue}"
+                          SelectionMode="None" 
+                          VerticalScrollBarVisibility="Never"
+                          RowHeight="30">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding takte}" HorizontalOptions="Center" 
+                                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView-->
+
+                <!--Boxview mit swipe gesture-->
+                <BoxView Grid.Row="1" Grid.RowSpan="5" >
+                    <BoxView.GestureRecognizers>
+                        <SwipeGestureRecognizer Direction="Down" Swiped="Swiped_Down"/>
+                        <SwipeGestureRecognizer Direction="Up" Swiped="Swiped_Up"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                
+                <Label Text="alle 10 min" Grid.Row="1" HorizontalOptions="Center" x:Name="text1"
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <BoxView Color="{StaticResource TitleBackgroundColor}" Grid.Row="2"/>
+
+                <Label Text="alle 15 min" Grid.Row="3" HorizontalOptions="Center" x:Name="text2" 
+                       TextColor="{StaticResource TextColor Blue}" FontAttributes="Bold"/>
+                <BoxView Color="{StaticResource TitleBackgroundColor}" Grid.Row="4"  Margin="0,0,0,0"/>
+                
+                <Label Text="alle 30 min" Grid.Row="5" HorizontalOptions="Center" x:Name="text3"
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <!--pc:MyPicker ItemsSource="{Binding Takte}" Grid.Row="2"/-->
+                <!--pc:MyPicker x:Name="picker" HorizontalOptions="Fill"
+                              SelectedIndex="0" SelectedIndexChanged="Selected_IndexChanged"                        
+                              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark= {StaticResource DarkSecondaryColor}}" >
+                <pc:MyPicker.Items>
+                         <x:String>ausgeschaltet</x:String>
+                         <x:String>alle 10 min</x:String>
+                         <x:String>alle 15 min</x:String>
+                         <x:String>alle 30 min</x:String>
+                         <x:String>alle 60 min</x:String>
+                         <x:String>alle 120 min</x:String>
+                         <x:String>alle 180 min</x:String>
+                         <x:String>alle 240 min</x:String>
+                     </pc:MyPicker.Items>
+                 </pc:MyPicker-->
+            </Grid>
+        </Frame>
+
+     
+        <!--Dokumente--> 
+        <!--Vom PC-->
+        <!--Frame Grid.Row="1" x:Name="DokumentvomPC" IsVisible="False"
+                Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark= {StaticResource FrameStyleDark}}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Text="meine Aufträge vom PC" FontAttributes="Bold" Grid.Row="0"
+                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark= {StaticResource DarkSecondaryColor}}" />
+                <StackLayout x:Name="auftragVomPC" RadioButtonGroup.GroupName="vomPC" Grid.Row="1">
+                    <RadioButton x:Name="immervomPC" Value="immer"   IsChecked="{Binding VomPC_immer}"      
+                                  CheckedChanged="VomPC_CheckedChanged">
+                        <RadioButton.Content>
+                            <Grid>
+                                <Label Text="synchronisiere immer"  Padding="30,0,0,0"
+                                   TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+                        </RadioButton.Content>
+                    </RadioButton>
+                    <RadioButton x:Name="wifivomPC" Value="wifi" IsChecked="{Binding VomPC_wifi}"
+                                       CheckedChanged="VomPC_CheckedChanged" >
+                        <RadioButton.Content>
+                            <Grid>
+                                <Label Text="synch. nur wenn nicht gebührenpflichtig (WiFi, ...)" Padding="30,0,0,0"
+                                   TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+                        </RadioButton.Content>
+                    </RadioButton>
+                    <RadioButton x:Name="nichtvomPC" Value="nichtSyn" IsChecked="{Binding VomPC_not}"
+                                 CheckedChanged="VomPC_CheckedChanged">
+                        <RadioButton.Content>
+                            <Grid>
+                                <Label Text="synchronisiere nicht" Padding="30,0,0,0"
+                                   TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+                        </RadioButton.Content>
+                        
+                    </RadioButton>
+                </StackLayout>
+            </Grid>
+        </Frame-->
+        <!--Zum PC-->
+        <!--Frame Grid.Row="2" x:Name="DokumentzumPC" IsVisible="False"
+                Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark= {StaticResource FrameStyleDark}}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Text="meine bearbeiteten mobilen Aufträge zum PC" FontAttributes="Bold" Grid.Row="0"
+                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark= {StaticResource DarkSecondaryColor}}"/>
+                <StackLayout x:Name="auftragZumPC" Grid.Row="1" RadioButtonGroup.GroupName="zumPC">
+                    <RadioButton Value="immer" CheckedChanged="ZumPC_CheckedChanged" IsChecked="{Binding ZumPC_immer}">
+                        <RadioButton.Content>
+                            <Grid>
+                                <Label Text="synchronisiere immer" Padding="30,0,0,0"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+                        </RadioButton.Content>
+                    </RadioButton>
+                    <RadioButton Value="wifizumPC" CheckedChanged="ZumPC_CheckedChanged" IsChecked="{Binding ZumPC_wifi}">
+                        <RadioButton.Content>
+                            <Grid>
+                                <Label Text="synch. nur wenn nicht gebührenpflichtig (WiFi, ...)" Padding="30,0,0,0"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+                        </RadioButton.Content>
+                    </RadioButton>
+                    <RadioButton Value="nichtzumPC" CheckedChanged="ZumPC_CheckedChanged" IsChecked="{Binding ZumPC_not}">
+                        <RadioButton.Content>
+                            <Grid>
+                                <Label Text="synchronisiere nicht" Padding="30,0,0,0"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+                        </RadioButton.Content>
+                    </RadioButton>
+                </StackLayout>
+            </Grid>
+        </Frame-->    
+        
+        <!--Stammdaten-->        
+        <!--Frame x:Name="FrameStammdaten" IsVisible="False" Grid.Row="1"
+               Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark= {StaticResource FrameStyleDark}}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Text="Elemente" FontAttributes="Bold" Grid.Row="0"
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark= {StaticResource DarkSecondaryColor}}"/>
+                <StackLayout x:Name="Elemente" RadioButtonGroup.GroupName="Element" Grid.Row="1">
+                    <RadioButton Value="immerElement" CheckedChanged="Element_CheckedChanged" IsChecked="{Binding Element_immer}">
+                        <RadioButton.Content>
+                            <Grid>
+                                <Label Text="synchronisiere immer" Padding="30,0,0,0"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+                        </RadioButton.Content>
+                        
+                    </RadioButton>
+                    <RadioButton Value="wifiElement" CheckedChanged="Element_CheckedChanged" IsChecked="{Binding Element_wifi}">
+                        <RadioButton.Content>
+                            <Grid>
+                                <Label Text="synch. nur wenn nicht gebührenpflichtig (WiFi, ...)" Padding="30,0,0,0"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+                        </RadioButton.Content>
+                    </RadioButton>
+                    <RadioButton Value="nichtElement" CheckedChanged="Element_CheckedChanged" IsChecked="{Binding Element_not}">
+                        <RadioButton.Content>
+                            <Grid>
+                                <Label Text="synchronisiere nicht" Padding="30,0,0,0"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+                        </RadioButton.Content>
+                    </RadioButton>
+                </StackLayout>
+            </Grid>
+        </Frame-->
+
+
+
+    </Grid>
+</ContentPage>

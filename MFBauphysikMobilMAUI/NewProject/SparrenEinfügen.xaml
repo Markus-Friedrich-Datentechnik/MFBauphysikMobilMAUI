@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:effects="clr-namespace:MFBauphysikMobilMAUI.Effects"
+             NavigationPage.HasBackButton="False"
+             xmlns:custom="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer"
+             x:Class="MFBauphysikMobilMAUI.NewProject.SparrenEinfügen">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <ImageButton Source="back.png" Clicked="Back_Clicked" 
+                         BackgroundColor="{StaticResource TransparentBackground}" HorizontalOptions="Start"/>
+
+            <Label Text="Befestiger" HorizontalOptions="CenterAndExpand" 
+                   TextColor="{StaticResource TitleTextColor}" FontSize="Title" FontAttributes="Bold"/>
+
+            <ImageButton Source="check.png" Clicked="Check_Clicked" BackgroundColor="{StaticResource TransparentBackground}" 
+                         HorizontalOptions="End" Padding="0,0,10,0" x:Name="checkButton"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <Grid RowSpacing="0" BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+
+        <!--Befestiger-->
+        <Frame Grid.Row="0" Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}" 
+               Padding="10" x:Name="BefestigerView" IsVisible="true">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--Anzahl-->
+                <Label Text="Anzahl Befestiger je m&#178; " 
+                       Grid.Row="0" Grid.Column="0" FontSize="{Binding SizeClass}"
+                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <custom:MyEntry Text="{Binding Anzahl}" FontSize="{Binding SizeClass}"
+                                Grid.Row="0" Grid.Column="1" x:Name="Anzahl_entry" 
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
+                    <custom:MyEntry.Effects>
+                        <effects:ReturnKeyEffect ReturnText="Next"/>
+                    </custom:MyEntry.Effects>
+                </custom:MyEntry>
+
+                <!--Lamba-->
+                <Label Text="Wärmeleitfähigkeit [W/(m*K)]" 
+                       Grid.Row="1" Grid.Column="0" FontSize="{Binding SizeClass}"
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <custom:MyEntry Text="{Binding Wärmeleitfähigkeit_f}" FontSize="{Binding SizeClass}"
+                                Grid.Row="1" Grid.Column="1" x:Name="Lambda_entry" 
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
+                    <custom:MyEntry.Effects>
+                        <effects:ReturnKeyEffect  ReturnText="Next"/>
+                    </custom:MyEntry.Effects>
+                </custom:MyEntry>
+
+                <!--D-->
+                <Label Text="Durchmesser (mm)" Grid.Row="2" Grid.Column="0" FontSize="{Binding SizeClass}"
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <custom:MyEntry Text="{Binding Durchmesser}" Grid.Row="2" Grid.Column="1" 
+                                x:Name="Durchmesser_entry"  FontSize="{Binding SizeClass}"
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
+                    <custom:MyEntry.Effects>
+                        <effects:ReturnKeyEffect  ReturnText="Next"/>
+                    </custom:MyEntry.Effects>
+                </custom:MyEntry>
+            </Grid>
+        </Frame>
+
+        <Frame Grid.Row="1" Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}"
+               Padding="10" IsVisible="true" x:Name="FrameLöschen">
+            <Button Text="Löschen"  Style="{StaticResource ButtonStyle}" FontSize="{Binding SizeClass}"                      
+                        Clicked="BefestigerLöschen_Clicked" TextColor="Red"/>
+        </Frame>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MFBauphysikMobilMAUI.NewProject.CalculationStänder"
+             xmlns:customview="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer"
+             xmlns:effects="clr-namespace:MFBauphysikMobilMAUI.Effects"
+             NavigationPage.HasBackButton="False">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}"
+  Clicked="Back_Clicked"/>
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+
+                <Label Text="Bauphysikalische Berechnung" HorizontalOptions="Center" 
+                       TextColor="{StaticResource TitleTextColor}" VerticalOptions="CenterAndExpand"
+                           FontSize="Medium" FontAttributes="Bold"/>
+            </StackLayout>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem 
+            IconImageSource="menu.png"
+            Clicked="ToolbarItem_Clicked"            
+            Order="Primary"
+            Priority="0"/>
+    </ContentPage.ToolbarItems>
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
+        </Grid.RowDefinitions>
+
+        <!--TabView-->
+        <Grid Padding="5" Grid.Row="0" 
+    BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Deckblatt-->
+            <Label Text="Deckblatt" TextColor="{StaticResource LabelButton}"  Grid.Column="0" 
+              FontSize="{Binding SizeDefault}"
+x:Name="DeckblattButton" TextDecorations="Underline" FontAttributes="Bold" Padding="5">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Deckblatt_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!--U-Wert Gefach-->
+            <Label Text="Gefach" TextColor="{StaticResource LabelButton}" Grid.Column="1"
+x:Name="UwertGefachButton" Padding="5" FontSize="{Binding SizeDefault}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Gefach_Tapped"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!--U-Wert Ständer-->
+            <Label Text="Ständer" TextColor="{StaticResource LabelButton}" Grid.Column="2"
+x:Name="UwertStänderButton" Padding="5" FontSize="{Binding SizeDefault}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Ständer_Tapped"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!--U-Wert Gesamt-->
+            <Label Text="U Gesamt" TextColor="{StaticResource LabelButton}" Grid.Column="3"
+ x:Name="UgesButton" Padding="5" FontSize="{Binding SizeDefault}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Uges_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!--Befestiger-->
+            <Label Text="Befestiger" TextColor="{StaticResource LabelButton}" Grid.Column="4"
+x:Name="BefestigerButton" Padding="5" FontSize="{Binding SizeDefault}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Befestiger_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+        </Grid>
+
+        <!--Anzeige Deckblatt-->
+        <Grid Grid.Row="1" x:Name="DeckblattTab" IsVisible="True"
+            BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark= {StaticResource DarkPrimaryColor}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <!--Klimadaten und Feuchtenachweis-->
+            <Grid Grid.Row="0" Padding="10,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding Aufbau}"
+                       FontAttributes="Italic" FontSize="{Binding SizeDefault}"
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                
+                <Label Text="Klimadaten:" FontAttributes="Bold"  
+                       Grid.Row="1" Grid.Column="0" FontSize="{Binding SizeDefault}"
+              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <Label Text="DIN 4108 normal" Grid.Row="1" Grid.Column="1" FontSize="{Binding SizeDefault}"
+              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                <Label Text="U-Wert: " FontAttributes="Bold" Grid.Row="2" Grid.Column="0" FontSize="{Binding SizeDefault}"
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <Label Text="{Binding Delta_U, StringFormat='{0:N2} W/(m&#178;* K)'}" 
+                       Grid.Row="2" Grid.Column="1" FontSize="{Binding SizeDefault}"
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Konstruktionstyp:" 
+                       FontAttributes="Bold" FontSize="{Binding SizeDefault}"
+                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <Label Grid.Row="3" Grid.Column="1" Text="{Binding Konstruktionstyp}"
+                       FontSize="{Binding SizeDefault}"
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <Label Text="Feuchtenachweis: "  FontAttributes="Bold" 
+                       Grid.Row="4" Grid.Column="0" FontSize="{Binding SizeDefault}"
+              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <Label Grid.Row="4" Grid.Column="1" x:Name="Feuchtenachweis" 
+                       FontAttributes="Bold" FontSize="{Binding SizeDefault}"
+              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                <!--Meldung bei unterschiedliche Dicke -->
+                <Label Grid.Row="5" Grid.ColumnSpan="2" FontAttributes="Bold" 
+                       IsVisible="false" x:Name="MeldungDicke" FontSize="{Binding SizeDefault}"
+              Text="Nebenkonstruktion mit unterschiedlichen Gesamtdicken können nicht berechnet werden. Bitte passen Sie die Schichten an, indem Sie z.B. Luftschichten einbauen."
+               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                <!--Meldung bei mehr als 2 Tauwasserebene-->
+                <Label Grid.Row="5" Grid.ColumnSpan="2" FontAttributes="Bold" 
+                       x:Name="Meldung3Ebene" IsVisible="false" FontSize="{Binding SizeDefault}"
+              Text="Es kann nur mit max. 2 Tauwasserebenen gerechnet werden!" 
+              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                <!--Grid Tauwassermasse und Verdunstungsmasse-->
+                <Grid Grid.Row="5" Grid.ColumnSpan="2" IsVisible="false" x:Name="NachweisGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Tauwassermasse: " Grid.Row="0" Grid.Column="0" FontAttributes="Bold"
+              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <Label Text="{Binding Tauwassermasse, StringFormat='{0:N0} g/m&#178;'}" Grid.Row="0" Grid.Column="1"
+              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <!--, StringFormat='{0:N0} g/m&#178;'-->
+
+                    <Label Text="Verdunstungsmasse" Grid.Row="1" Grid.Column="0" FontAttributes="Bold"
+           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <Label Text="{Binding Verdunstungsmasse, StringFormat='{0:N0} g/m&#178;'}" Grid.Row="1" Grid.Column="1"
+              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                    <Label Text="max. zul. Tauwassermenge:" Grid.Row="2" Grid.Column="0" FontAttributes="Bold"
+              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <Label Text="{Binding ZulTauwasser, StringFormat='{0:N0} g/m&#178;'}" Grid.Row="2" Grid.Column="1"
+              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                </Grid>
+                
+                <!--Gefach-->
+                <Frame x:Name="FrameGefach" Grid.Row="6" Grid.ColumnSpan="2"
+           Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <!--Überschrift-->
+                        <Label Text="Gefach" FontAttributes="Bold" Grid.Row="0" FontSize="{Binding SizeDefault}"
+TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        <Label Text="Dampfteildruck [Pa]" Grid.Row="0" Grid.Column="1" FontSize="{Binding SizeDefault}"
+                               FontAttributes="Bold" HorizontalOptions="CenterAndExpand"
+    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        <!--ListView-->
+                        <ListView x:Name="listGefach" SelectionMode="None" Grid.Row="1" Grid.ColumnSpan="2"
+       SeparatorVisibility="Default" HasUnevenRows="True"
+       SeparatorColor="{StaticResource TextColor Blue}">
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <customview:MyViewCell SelectedBackGroundColor="{StaticResource TitleBackgroundColor}">
+                                        <Grid Padding="5,0,0,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="3*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="{Binding Bezeichnung}" Grid.Row="0" Grid.Column="0"
+                                                   FontSize="{Binding SizeClass}"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                            <!--Label Text="{Binding Dicke, StringFormat='{0:N4} m'}" Grid.Row="1" Grid.Column="0"
+                        TextColor="{StaticResource TextColor Grey}"/-->
+
+                                            <Grid Grid.Row="0" Grid.Column="1">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="0.5*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Text="{Binding Dampfteildruck, StringFormat='{0:N0}'}" 
+                                                       Grid.Column="0" FontAttributes="{Binding FontBold}" FontSize="{Binding SizeClass}"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                                <Label Text="TW" Grid.Column="1" IsVisible="{Binding TW}" FontSize="{Binding SizeClass}"
+                                                       TextColor="{StaticResource TextColor Blue}"/>
+                                            </Grid>
+
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                            </Grid.GestureRecognizers>
+                                        </Grid>
+                                    </customview:MyViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+
+                        </ListView>
+                    </Grid>
+                </Frame>
+
+                <!--Ständer-->
+                <Frame x:Name="FrameStänder" Grid.Row="7" Grid.ColumnSpan="2"
+           Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <!--Überschrift-->
+                        <Label Text="Ständer" FontAttributes="Bold" Grid.Row="0" FontSize="{Binding SizeDefault}"
+TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        <Label Text="Dampfteildruck [Pa]" Grid.Row="0" Grid.Column="1" FontSize="{Binding SizeDefault}"
+                               FontAttributes="Bold" HorizontalOptions="CenterAndExpand"
+    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        <!--ListView-->
+                        <ListView x:Name="listStänder" SelectionMode="None" Grid.Row="1" Grid.ColumnSpan="2"
+       SeparatorVisibility="Default" HasUnevenRows="True"
+       SeparatorColor="{StaticResource TextColor Blue}">
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <customview:MyViewCell SelectedBackGroundColor="{StaticResource TitleBackgroundColor}">
+                                        <Grid Padding="5,0,0,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="3*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="{Binding Bezeichnung}" Grid.Row="0" Grid.Column="0" FontSize="{Binding SizeClass}"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                            <!--Label Text="{Binding Dicke, StringFormat='{0:N4} m'}" Grid.Row="1" Grid.Column="0"
+                        TextColor="{StaticResource TextColor Grey}"/-->
+
+                                            <Grid Grid.Row="0" Grid.Column="1">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="0.5*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Text="{Binding Dampfteildruck, StringFormat='{0:N0}'}" 
+                                                       Grid.Column="0" FontAttributes="{Binding FontBold}" FontSize="{Binding SizeClass}"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                                <Label Text="TW" Grid.Column="1" IsVisible="{Binding TW}"  FontSize="{Binding SizeClass}"
+                                                       TextColor="{StaticResource TextColor Blue}"/>
+                                            </Grid>
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                            </Grid.GestureRecognizers>
+                                        </Grid>
+                                    </customview:MyViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+
+                        </ListView>
+                    </Grid>
+                </Frame>
+
+
+            </Grid>
+
+            <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="1" />
+            <Grid Grid.Row="1" Padding="20,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <ImageButton BackgroundColor="{StaticResource TransparentBackground}" Grid.Column="1"
+                    Source="tools.png" Clicked="Konstruktion_Clicked"
+                    HorizontalOptions="Start"/>
+
+            </Grid>
+        </Grid>
+
+        <!--Anzeige UwertGefach-->
+        <Grid x:Name="GefachUwert" Grid.Row="1" IsVisible="False"
+           BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+                <ListView x:Name="listGefachUwert" Grid.Row="0" Grid.Column="0" 
+                Header="{Binding .}"  HasUnevenRows="True"
+                Footer="{Binding .}"
+                ItemSelected="OnSelected_ItemSelected_Gefach"
+                SeparatorVisibility="Default"
+                SeparatorColor="{StaticResource TextColor Blue}">
+
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <!--Überschrift Zeile-->
+                                <Label Text="U-Wert Gefach" Grid.Column="0" Grid.Row="0" FontAttributes="Bold"
+                             HorizontalOptions="Start"  FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="Dicke" Grid.Column="1" Grid.Row="0" FontAttributes="Bold"
+                             HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="R" Grid.Column="2" Grid.Row="0" FontAttributes="Bold"
+                             HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="[m]" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" 
+                                       FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="[m&#178; * K/W]" Grid.Row="1" Grid.Column="2" 
+                                       HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                <Label Text="Luft innen" Grid.Row="2" Grid.Column="0" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="0.1300" Grid.Column="2" Grid.Row="2" HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+
+                    <ListView.FooterTemplate>
+                        <DataTemplate>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Text="Luft außen" Grid.Row="0" Grid.Column="0"  FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="0.0400" Grid.Column="2" Grid.Row="0" HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                <Label Text="Rges [m&#178; * K/W]" FontAttributes="Bold" Grid.Column="0" Grid.Row="1" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="{Binding Rgefach, StringFormat='{0:N3}'}" Grid.Column="2" Grid.Row="1" 
+                                       HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                <Label Text="U-Wert [W / (m&#178;* K)]" FontAttributes="Bold" 
+                                       Grid.Row="2" Grid.Column="0" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="{Binding Ugefach, StringFormat='{0:N2}'}" FontSize="{Binding SizeDefault}"
+                                       Grid.Row="2" Grid.Column="2" HorizontalOptions="Center" FontAttributes="Bold"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.FooterTemplate>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <customview:MyViewCell SelectedBackGroundColor="{StaticResource TitleBackgroundColor}">
+                                <Grid Padding="5,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Label Text="{Binding Bezeichnung}" Grid.Row="0" Grid.Column="0"  FontSize="{Binding SizeClass}"
+                                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                    <Label Text="{Binding Dicke, StringFormat='{0:N4}'}" FontSize="{Binding SizeClass}"
+                                 Grid.Row="0" Grid.Column="1" HorizontalOptions="Center"
+                                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                    <Label Text="{Binding Wärmeleitfähigkeit, StringFormat='{0:N3} W/(m*K)' }" 
+                                 Grid.Row="1" Grid.Column="0" FontSize="{Binding SizeClass}"
+                                 TextColor="{StaticResource TextColor Grey}"/>
+
+                                    <Label Text="{Binding R, StringFormat='{0:N4}'}" FontSize="{Binding SizeClass}"
+                                 Grid.Row="0" Grid.Column="2" HorizontalOptions="Center"
+                                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                    
+                                </Grid>
+                            </customview:MyViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </Frame>
+            <!--Flächenanteil-->
+            <Grid Grid.Row="1" Padding="10" x:Name="AnteilGefach">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Flächenanteil"   FontAttributes="Bold" VerticalOptions="Center"
+                       HorizontalOptions="Start" Grid.Column="0" FontSize="{Binding SizeDefault}"
+         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <Entry  x:Name="EntryGefachAnteil" Text="{Binding EntryGefach}"  VerticalOptions="Center"
+                        Grid.Column="1" HorizontalTextAlignment="Center" FontSize="{Binding SizeDefault}"
+                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark= {StaticResource DarkSecondaryColor}}">
+                    <Entry.Effects>
+                        <effects:ReturnKeyEffect
+                  ReturnText="Next"/>
+                    </Entry.Effects>
+                </Entry>
+                <Label Text="von" HorizontalOptions="Center" Grid.Column="2" 
+                       FontSize="{Binding SizeDefault}" VerticalOptions="Center"
+         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <Label Text="{Binding Gesamtflächen, StringFormat='{0:N2}'}" VerticalOptions="Center"
+                       HorizontalOptions="Center" Grid.Column="3" FontSize="{Binding SizeDefault}"
+         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+            </Grid>
+
+            <!--Footer-->
+            <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" x:Name="BoxPlus"/>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <ImageButton Padding="20,0,0,0" Source="plus.png" BackgroundColor="{StaticResource TitleBackgroundColor}" 
+           Clicked="Bauteil_Einfügen_Clicked" x:Name="ButtonPlus"
+           HorizontalOptions="Start"/>
+
+            </Grid>
+        </Grid>
+
+        <!--Anzeige UwertStänder-->
+        <Grid x:Name="StänderUwert" Grid.Row="1" IsVisible="False"
+           BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+                <ListView x:Name="listStänderUwert" Grid.Row="0" Grid.Column="0" 
+                Header="{Binding .}" HasUnevenRows="True"
+                Footer="{Binding .}"
+                ItemSelected="OnSelected_ItemSelected_Ständer"
+                SeparatorVisibility="Default"
+                SeparatorColor="{StaticResource TextColor Blue}">
+
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <!--Überschrift Zeile-->
+                                <Label Text="U-Wert Ständer" Grid.Column="0" Grid.Row="0" FontAttributes="Bold"
+                             HorizontalOptions="Start"  FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="Dicke" Grid.Column="1" Grid.Row="0" FontAttributes="Bold"
+                             HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="R" Grid.Column="2" Grid.Row="0" FontAttributes="Bold"
+                             HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="[m]" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="[m&#178; * K/W]" Grid.Row="1" Grid.Column="2" 
+                                       HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                <Label Text="Luft innen" Grid.Row="2" Grid.Column="0" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="0.1300" Grid.Column="2" Grid.Row="2" HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+
+                    <ListView.FooterTemplate>
+                        <DataTemplate>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Text="Luft außen" Grid.Row="0" Grid.Column="0"  FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text=" 0.0400" Grid.Column="2" Grid.Row="0" HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                <Label Text="Rges [m&#178; * K/W]" FontAttributes="Bold" Grid.Column="0" Grid.Row="1" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="{Binding Rständer, StringFormat='{0:N3}'}" Grid.Column="2" Grid.Row="1"
+                                       HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                <Label Text="U-Wert [W / (m&#178;* K)]" FontAttributes="Bold" 
+                                       Grid.Row="2" Grid.Column="0" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                <Label Text="{Binding Uständer, StringFormat='{0:N2}'}" Grid.Row="2" Grid.Column="2" 
+                                       HorizontalOptions="Center" FontAttributes="Bold" FontSize="{Binding SizeDefault}"
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.FooterTemplate>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <customview:MyViewCell SelectedBackGroundColor="{StaticResource TitleBackgroundColor}">
+                                <Grid Padding="5,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Label Text="{Binding Bezeichnung}" Grid.Row="0" Grid.Column="0" FontSize="{Binding SizeClass}"
+                                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                    <Label Text="{Binding Dicke, StringFormat='{0:N4}'}" FontSize="{Binding SizeClass}"
+                                 Grid.Row="0" Grid.Column="1" HorizontalOptions="Center"
+                                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                    <Label Text="{Binding Wärmeleitfähigkeit, StringFormat='{0:N3} W/(m*K)' }" 
+                                 Grid.Row="1" Grid.Column="0" FontSize="{Binding SizeClass}"
+                                 TextColor="{StaticResource TextColor Grey}"/>
+
+                                    <Label Text="{Binding R, StringFormat='{0:N4}'}"  FontSize="{Binding SizeClass}"
+                                           Grid.Row="0" Grid.Column="2" HorizontalOptions="Center"
+                                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                </Grid>
+                            </customview:MyViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </Frame>
+            <!--Flächenanteil-->
+            <Grid Grid.Row="1" Padding="10" x:Name="AnteilStänder">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Flächenanteil"   FontAttributes="Bold" HorizontalOptions="Start" 
+                       Grid.Column="0" FontSize="{Binding SizeDefault}" VerticalOptions="Center"
+         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <Entry x:Name="EntryStänderAnteil" Text="{Binding EntryStänder}" VerticalOptions="Center"
+                       Grid.Column="1" HorizontalTextAlignment="Center" FontSize="{Binding SizeDefault}"
+                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark= {StaticResource DarkSecondaryColor}}">
+                    <Entry.Effects>
+                        <effects:ReturnKeyEffect
+                  ReturnText="Next"/>
+                    </Entry.Effects>
+                </Entry>
+                <Label Text="von" HorizontalOptions="Center" Grid.Column="2" 
+                       FontSize="{Binding SizeDefault}" VerticalOptions="Center"
+         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <Label Text="{Binding Gesamtflächen, StringFormat='{0:N2}'}" VerticalOptions="Center"
+                       HorizontalOptions="Center" Grid.Column="3" FontSize="{Binding SizeDefault}"
+         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+            </Grid>
+            <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2"/>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <ImageButton Padding="20,0,0,0" Source="plus.png" BackgroundColor="{StaticResource TitleBackgroundColor}" 
+           Clicked="Bauteil_Einfügen_Clicked"
+           HorizontalOptions="Start"/>
+
+            </Grid>
+        </Grid>
+
+        <!--Anzeige Uges und max. Fehler nach DIN 6946, §6.7.2.5-->
+        <Grid x:Name="GesUwert" Grid.Row="1"  IsVisible="False"
+           BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--Ergebnisse von Ugesamt, Uc, max. Fehlerabschätzung-->
+            <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}" 
+         x:Name="Frame_Ergebnis" IsVisible="true" Grid.Row="1">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Angabe von Fehlerabschätzung-->
+                    <Grid Grid.Row="0" x:Name="Grid_Max_Fehler" IsVisible="true">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="max. Fehler nach DIN 6946, §6.7.2.5:" Grid.Row="0" Grid.Column="0"
+                               FontSize="{Binding SizeDefault}"
+                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        <Label Text="{Binding Abschätzung, StringFormat='{0:N1}%'}" 
+                               Grid.Row="0" Grid.Column="1"  FontSize="{Binding SizeDefault}"
+                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    </Grid>
+
+                    <!--Befestiger existiert-->
+                    <Grid Grid.Row="1" x:Name="Grid_Korrektur" IsVisible="true">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <!--Angabe von gesamten Uwert-->
+                        <Grid Grid.Row="2" x:Name="Grid_Uwert" IsVisible="true">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" TextType="Html" FontSize="{Binding SizeDefault}"
+                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
+                                <![CDATA[
+                  <strong>U Gesamt</strong> [W/(m&#178;* K)]: ]]>
+                            </Label>
+
+                            <Label Text="{Binding Delta_U, StringFormat='{0:N2}'}" 
+                                   Grid.Column="1" FontAttributes="Bold" FontSize="{Binding SizeDefault}"
+                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        </Grid>
+                        <!--Angabe von Uwert ohne Fugen/Befestiger-->
+                        <Grid Grid.Row="0" x:Name="Grid_Uwert_ohne_Fugen" IsVisible="true">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="U-Wert ohne Fugen/Befestiger [W/(m&#178;* K)]" 
+                                   Grid.Column="0" FontSize="{Binding SizeDefault}"
+                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            <Label Text="{Binding Ugesamt, StringFormat='{0:N2}'}" 
+                                   Grid.Column="1" FontSize="{Binding SizeDefault}"
+                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        </Grid>
+                        <!--Angabe von Uf + Ug-->
+                        <Grid Grid.Row="1" x:Name="Grid_dU" IsVisible="true">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding AnteilKorrektur, StringFormat = 'dU(f) + dU(g) = {0:N2} % >= 3%'}" 
+                                   Grid.Column="0" FontSize="{Binding SizeDefault}"
+                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                            <Label Text="{Binding Gesamt_du, StringFormat='{0:N3}'}" 
+                                   Grid.Column="1" FontSize="{Binding SizeDefault}"
+                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        </Grid>
+                    </Grid>
+
+                </Grid>
+
+            </Frame>
+
+            <!--Warnung wenn die Dicke deselben Bauteils unterschiedlich sind-->
+            <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}"
+         x:Name="Frame_Warnung" IsVisible="false" Grid.Row="1">
+                <!--Angabe beim unterschiedliche Dicke-->
+                <Label Text="Nebenkonstruktion mit unterschiedlichen Gesamtdicken können nicht berechnet werden. Bitte passen Sie die Schichten an, indem Sie z.B. Luftschichten einbauen." 
+                 Grid.Row="0" Grid.ColumnSpan="2" x:Name="Warnung" IsVisible="true"  FontSize="{Binding SizeDefault}"
+                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+            </Frame>
+
+            <Frame Grid.Row="0" Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="Flächenlast Gesamt" FontAttributes="Bold" 
+                           Grid.Row="0" Grid.Column="0" FontSize="{Binding SizeDefault}"
+                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <Label Text="Gesamter Aufbau" Grid.Row="1" Grid.Column="0" FontSize="{Binding SizeDefault}"
+                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                    <Label Text="{Binding Gesamt_Gewicht, StringFormat='{0:N2} kg/m&#178;'}" 
+                           Grid.Row="1" Grid.Column="1" FontSize="{Binding SizeDefault}"
+                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                </Grid>
+            </Frame>
+        </Grid>
+
+
+        <!--Anzeige Befestiger-->
+        <Grid x:Name="BefestigerFrame" Grid.Row="1" IsVisible="false" 
+              BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <!--Gefach-->
+            <Grid x:Name="FrameBefestigerGefach" RowSpacing="0" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="Gefach"
+                       FontAttributes="Bold" Padding="10" FontSize="{Binding SizeDefault}"
+                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <ListView x:Name="listBefestigerGefach" Grid.Row="1" RowHeight="150"
+                   SeparatorVisibility="None"
+                ItemSelected="OnSelected_Befestiger_Gefach">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <customview:MyViewCell SelectedBackGroundColor="{StaticResource TitleBackgroundColor}" >
+                                <Grid>
+                                    <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight},Dark={StaticResource FrameStyleDark}}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="4*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Label Text="{Binding Bezeichnung}" Grid.Row="0" Grid.Column="0" 
+                                               FontAttributes="Italic, Bold"  FontSize="{Binding SizeClass}"
+                                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                            <Label Text="Anzahl Befestiger je m&#178;" Grid.Row="1" Grid.Column="0"
+                                               FontSize="{Binding SizeClass}"
+                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor},Dark={StaticResource DarkSecondaryColor}}"/>
+                                            <Label Text="{Binding Anzahl}" Grid.Row="1" Grid.Column="1" FontSize="{Binding SizeClass}"
+                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor},Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                            <Label Text="Wärmeleitfähigkeit [W/(m*K)]" Grid.Row="2" Grid.Column="0" FontSize="{Binding SizeClass}"
+                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor},Dark={StaticResource DarkSecondaryColor}}"/>
+                                            <Label Text="{Binding Wärmeleitfähigkeit_f}" Grid.Row="2" Grid.Column="1" FontSize="{Binding SizeClass}"
+                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor},Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                            <Label Text="Durchmesser (mm)" Grid.Row="3" Grid.Column="0" FontSize="{Binding SizeClass}"
+                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor},Dark={StaticResource DarkSecondaryColor}}"/>
+                                            <Label Text="{Binding Durchmesser}" Grid.Row="3" Grid.Column="1" FontSize="{Binding SizeClass}"
+                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor},Dark={StaticResource DarkSecondaryColor}}"/>
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                            </customview:MyViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <!--Ständer-->
+            <Grid x:Name="FrameBefestigerStänder" RowSpacing="0" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="Ständer" Grid.Row="0" FontAttributes="Bold" Padding="10" FontSize="{Binding SizeDefault}"
+                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor},Dark={StaticResource DarkSecondaryColor}}"/>
+                <ListView x:Name="listBefestigerStänder" Grid.Row="1" RowHeight="150"
+                   SeparatorVisibility="None"
+                ItemSelected="OnSelected_Befestiger_Ständer">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <customview:MyViewCell SelectedBackGroundColor="{StaticResource TitleBackgroundColor}">
+                                <Grid>
+                                    <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight},Dark={StaticResource FrameStyleDark}}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="4*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Label Text="{Binding Bezeichnung}" Grid.Row="0" Grid.Column="0" FontAttributes="Bold,Italic" FontSize="{Binding SizeClass}"
+            TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                            <Label Text="Anzahl Befestiger je m&#178;" Grid.Row="1" Grid.Column="0"
+                                               FontSize="{Binding SizeClass}"
+                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor},Dark={StaticResource DarkSecondaryColor}}"/>
+                                            <Label Text="{Binding Anzahl}" Grid.Row="1" Grid.Column="1" FontSize="{Binding SizeClass}"
+                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor},Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                            <Label Text="Wärmeleitfähigkeit [W/(m*K)]" Grid.Row="2" Grid.Column="0" FontSize="{Binding SizeClass}"
+                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor},Dark={StaticResource DarkSecondaryColor}}"/>
+                                            <Label Text="{Binding Wärmeleitfähigkeit_f}" Grid.Row="2" Grid.Column="1" FontSize="{Binding SizeClass}"
+                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor},Dark={StaticResource DarkSecondaryColor}}"/>
+
+                                            <Label Text="Durchmesser (mm)" Grid.Row="3" Grid.Column="0" FontSize="{Binding SizeClass}"
+                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor},Dark={StaticResource DarkSecondaryColor}}"/>
+                                            <Label Text="{Binding Durchmesser}" Grid.Row="3" Grid.Column="1" FontSize="{Binding SizeClass}"
+                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor},Dark={StaticResource DarkSecondaryColor}}"/>
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                            </customview:MyViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+                <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" />
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Padding="20,0,0,0" Source="material_neu.png" 
+                             BackgroundColor="{StaticResource TransparentBackground}" 
+    Clicked="Befestiger_Einfügen_Clicked" Grid.Column="1"
+HorizontalOptions="Start"/>
+                </Grid>
+
+        </Grid>
+
+
+    </Grid>
+</ContentPage>

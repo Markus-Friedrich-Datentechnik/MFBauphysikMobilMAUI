@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Konstruktion" xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasBackButton="False"
+             xmlns:controls="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer" 
+             x:Class="MFBauphysikMobilMAUI.NewProject.KonstruktionPage">
+
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}" 
+                         HorizontalOptions="Start" Clicked="Back_Clicked"/>
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Label Text="Konstruktion" HorizontalOptions="CenterAndExpand" 
+                       TextColor="{StaticResource TitleTextColor}"
+                       FontSize="Title" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+
+    <StackLayout Padding ="10" BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">      
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Text="Konstruktion" FontAttributes="Bold" x:Name="konstruktion_label"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+            <StackLayout RadioButtonGroup.GroupName="konstruktion" Grid.Row="1">
+                <!--Button1 Kaltdach-->
+                <RadioButton Value="Kaltdach" Padding="10"  CheckedChanged="Konstruktion_CheckedChanged" IsChecked="{Binding Kaltdach}">
+                    <RadioButton.Content>
+                        <Grid>
+                            <Label Text="belüftetes Dach (Kaltdach)" Padding="30,0,0,0" x:Name="kaltdach_label"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        </Grid>
+                    </RadioButton.Content>
+                </RadioButton>
+
+                <!--Button2 Warmdach-->
+                <RadioButton Value="Warmdach" Padding="10" CheckedChanged="Konstruktion_CheckedChanged" IsChecked="{Binding Warmdach}">
+                    <RadioButton.Content>
+                        <Grid>
+                            <Label Text="unbelüftetes Dach (Warmdach) &#10;(unverschattet mit dunkler Deckung/Abdichtung)" 
+                                   Padding="30,0,0,0" 
+                                  x:Name="warmdach_label"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        </Grid>
+                    </RadioButton.Content>
+                </RadioButton>
+                
+                <!--Button3 Warmdach verschattet-->
+                <RadioButton Value="verschattet" Padding="10" CheckedChanged="Konstruktion_CheckedChanged" 
+                             IsChecked="{Binding Verschattet}">
+                    <RadioButton.Content>
+                        <Grid>
+                            <Label Text="unbelüftetes Dach (Warmdach) &#10;(verschattet bzw. helle Deckung/Abdichtung)" Padding="30,0,0,0" 
+                                   x:Name="verschattet_label"
+                                   TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        </Grid>
+                    </RadioButton.Content>
+                </RadioButton>
+
+                <!--Button4 HinterluftWand-->
+                <RadioButton Value="HinterluftWand" Padding="10" CheckedChanged="Konstruktion_CheckedChanged" IsChecked="{Binding HinterluftWand}">
+                    <RadioButton.Content>
+                        <Grid>
+                            <Label Text="hinterlüftete Wand" Padding="30,0,0,0" 
+                                   x:Name="luft_wand_label"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        </Grid>
+                    </RadioButton.Content>
+                </RadioButton>
+
+                <!--Button5 Kein HinterluftWand-->
+                <RadioButton Value="Kein_HinterluftWand" Padding="10"  CheckedChanged="Konstruktion_CheckedChanged" IsChecked="{Binding Kein_HinterluftWand}">
+                    <RadioButton.Content>
+                        <Grid>
+                            <Label Text="nicht hinterlüftete Wand" Padding="30,0,0,0"
+                                   x:Name="kein_luft_wand_label"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        </Grid>
+                    </RadioButton.Content>
+                </RadioButton>
+            </StackLayout >
+
+        </Grid>
+        
+    </StackLayout>
+</ContentPage>

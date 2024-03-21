@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MFBauphysikMobilMAUI.Info.InfoPage"
+             NavigationPage.HasBackButton="False">
+    
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <ImageButton Source="back.png" 
+                         BackgroundColor="{StaticResource TransparentBackground}" 
+                         HorizontalOptions="Start" Clicked="Back_Clicked"/>
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Label Text="MF Bauphysik mobil" HorizontalOptions="CenterAndExpand" 
+                   TextColor="{StaticResource TitleTextColor}" FontSize="20"  VerticalOptions="CenterAndExpand"
+                   FontAttributes="Bold"/>
+                <Label Text="Info" HorizontalOptions="CenterAndExpand" 
+                       TextColor="{StaticResource TitleTextColor}" FontSize="14"/>
+            </StackLayout>
+
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <Grid  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+           BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+<!--TabView-->
+        <Grid HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Margin="10" 
+                     Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Information" TextColor="{StaticResource LabelButton}" 
+                   Grid.Column="0" FontSize="{Binding SizeDefault}"
+                   x:Name="InfoButton" 
+                   TextDecorations="Underline" FontAttributes="Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Info_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Datenschutz" TextColor="{StaticResource LabelButton}"  
+                   Grid.Column="1"
+                   FontSize="{Binding SizeDefault}" x:Name="DatenschutzButton">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Datenschutz_Clicked"/>
+                </Label.GestureRecognizers>
+            </Label>            
+        </Grid>
+
+<!--Anzeige Info-->
+        <ScrollView VerticalOptions="FillAndExpand" x:Name="InfoTab" IsVisible="true" Grid.Row="1">
+
+            <StackLayout  Orientation="Vertical" HorizontalOptions="FillAndExpand"  VerticalOptions="Start" >
+
+                <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark= {StaticResource FrameStyleDark}}">
+                    <StackLayout>
+                        <Label Text="Programminfo" FontSize="{Binding SizeDefault}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                               FontAttributes="Bold"/>
+                        <Label Text="MFBauphysik mobil 1.1.1 &#x0a;Datum: 29.11.2022&#x0a;(C)opyright: 2017 - 2022"                               
+                               FontSize="{Binding SizeDefault}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
+
+                        </Label>
+
+                    </StackLayout>
+                </Frame>
+
+                <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark= {StaticResource FrameStyleDark}}">
+                    <StackLayout>
+                        <Label Text="Firma" FontSize="{Binding SizeDefault}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                               FontAttributes="Bold"/>
+                        <Label Text="Markus Friedrich Datentechnik&#x0a;Inhaberin Lisa Friedrich" 
+                               FontSize="{Binding SizeDefault}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark= {StaticResource FrameStyleDark}}">
+                    <StackLayout>
+                        <Label Text="Besucheradresse" x:Name="BesucherAd" 
+                               FontSize="{Binding SizeDefault}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                               FontAttributes="Bold"/>
+                        <Label Text="Bruno-Taut-Str. 3-5&#x0a;12524 Berlin" 
+                               FontSize="{Binding SizeDefault}"
+                               TextColor="{StaticResource TextColor Blue}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OpenMap_Besucher"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+
+                </Frame>
+
+                <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark= {StaticResource FrameStyleDark}}">
+                    <StackLayout>
+                        <Label Text="Firmenanschrift" FontSize="{Binding SizeDefault}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                               FontAttributes="Bold"/>
+                        <Label Text="Bahnhofstr. 74&#x0a;15732 Eichwalde" x:Name="FirmenAd"
+                               FontSize="{Binding SizeDefault}"
+                               TextColor="{StaticResource TextColor Blue}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OpenMap_Firmen"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark= {StaticResource FrameStyleDark}}">
+                    <StackLayout>
+                        <Label Text="Kommunikation" FontSize="{Binding SizeDefault}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                               FontAttributes="Bold"/>
+
+                        <Label Text="Tel" FontSize="{Binding SizeMicro}"
+                               TextColor="{StaticResource TextColor Grey}"/>
+                        <Label Text="030-667 023 5 - 0" FontSize="{Binding SizeDefault}"
+                               TextColor="{StaticResource TextColor Blue}" x:Name="PhoneNumber">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OpenCall"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Label Text="Fax" FontSize="{Binding SizeMicro}" 
+                               TextColor="{StaticResource TextColor Grey}"/>
+                        <Label Text="030-667 023 5 - 24" 
+                               FontSize="{Binding SizeDefault}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                        <Label Text="Email" 
+                               FontSize="{Binding SizeMicro}" 
+                               TextColor="{StaticResource TextColor Grey}"/>
+                        <Label Text="info@friedrich-datentechnik.de" 
+                               FontSize="{Binding SizeDefault}"
+                               TextColor="{StaticResource TextColor Blue}" >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OpenEmail"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Label Text="Internet" FontSize="{Binding SizeMicro}" 
+                               TextColor="{StaticResource TextColor Grey}"/>
+                        <Label Text="www.friedrich-datentechnik.de"
+                               FontSize="{Binding SizeDefault}"
+                               TextColor="{StaticResource TextColor Blue}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OpenBrowser"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark= {StaticResource FrameStyleDark}}">
+                    <StackLayout>
+                        <Label 
+                            TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                            FontAttributes="Bold" x:Name="Plattform" 
+                            FontSize="{Binding SizeDefault}"/>
+
+                        <Label Text="App-Berechtigungen anzeigen" 
+                               FontSize="{Binding SizeDefault}"
+                               TextColor="{StaticResource TextColor Blue}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Open_AppInfo"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                    </StackLayout>
+                </Frame>
+
+                <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark= {StaticResource FrameStyleDark}}">
+                    <StackLayout>
+                        <Label Text="Hinweis" FontSize="{Binding SizeDefault}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                               FontAttributes="Bold"/>
+                        <Label Text="Dieses Programm hat nur einen eingeschränkten Funktionsumfang. Auf unserer Internetseite erhalten Sie Informationen zu unseren verfügbaren Programmen."                           
+                               FontSize="{Binding SizeDefault}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+<!--Anzeige Datenschutz-->
+        <ScrollView VerticalOptions="FillAndExpand" x:Name="DatenschutzTab" IsVisible="False" Grid.Row="1">
+            <StackLayout Margin="20">
+                <Label Text="Datenschutzerklärung" 
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                       VerticalOptions="Start" FontSize="{Binding SizeTitle}" FontAttributes="Bold"/>
+                <Label Text=""/>
+                <Label Text="Allgemeines" 
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                       VerticalOptions="Start" FontSize="{Binding SizeMedium}" FontAttributes="Bold"/>
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}">
+                    Diese Datenschutzerklärung klärt Nutzer über die Art, den Umfang und Zwecke der Erhebung und Verwendung personenbezogener Daten durch den verantwortlichen Anbieter unserer Apps auf. Die rechtlichen Grundlagen des Datenschutzes finden sich in der Datenschutzgrundverordnung (DSGVO), im Sozialgesetzbuch (SGB) und im Bundesdatenschutzgesetz (BDSG). Markus Friedrich Datentechnik erhebt und verwendet Ihre personenbezogenen Daten ausschließlich im Rahmen dieser Bestimmungen. Damit sind alle Informationen gemeint, die sich auf eine identifizierbare oder identifizierte natürliche Person beziehen.
+                </Label>
+
+                <Label Text="1. Verantwortliche Stelle" 
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                       VerticalOptions="Start" FontSize="{Binding SizeMedium}" FontAttributes="Bold"/>
+                <Label Text=""/>
+                <Label Text="Verantwortliche Stelle für die Erhebung, Verarbeitung und Nutzung von personenbezogenen Daten im Zusammenhang mit unseren Apps ist: 
+                       &#10;Markus Friedrich Datentechnik
+                       &#10;Inh. Lisa Friedrich                     
+                       &#10;Bahnhofstr.74 
+                       &#10;15732 Eichwalde 
+                       &#10;Tel. 030 / 6670 235 0
+                       &#10;E-Mail: info@friedrich-datentechnik.de"
+                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}"/>
+                <Label Text="2. Installation der MF Apps" 
+                       TextColor="Black" VerticalOptions="Start" 
+                       FontSize="{Binding SizeMedium}" FontAttributes="Bold"/>
+                <Label Text=""/>
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}">
+                    Die MF mobil Apps sind über von Dritten betriebene Vertriebsplattformen erhältlich, sogenannte App-Stores (Google Play und Apple iTunes). Ihr Download setzt gegebenenfalls eine vorherige Registrierung beim jeweiligen App-Store und die Installation der App-Store-Software voraus. Markus Friedrich Datentechnik hat keinen Einfluss auf die Erhebung, Verarbeitung und Nutzung von personenbezogenen Daten im Zusammenhang mit Ihrer Registrierung und der Bereitstellung von Downloads in dem jeweiligen App-Store und der App-Store-Software. Verantwortliche Stelle ist insoweit allein der Betreiber des jeweiligen App-Stores. Bitte informieren Sie sich bei Bedarf direkt bei dem jeweiligen App-Store-Anbieter.
+                </Label>
+
+                <Label Text="3. Geltung der Datenschutzbestimmungen" 
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                       VerticalOptions="Start" FontSize="{Binding SizeMedium}" FontAttributes="Bold"/>
+                <Label Text=""/>
+                <Label Text="Durch seine Nutzung stimmt der Nutzer den genannten Datenschutzbestimmungen zu." 
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}"/>
+
+                <Label Text="4. Erforderliche Berechtigungen" 
+                       TextColor="Black" VerticalOptions="Start" 
+                       FontSize="{Binding SizeMedium}" FontAttributes="Bold"/>
+                <Label Text=""/>
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}">
+                    Die Nutzung unserer Apps ist ohne Angabe personenbezogener Daten möglich. Es werden keine personenbezogene Daten erhoben und auch keine Daten an Markus Friedrich Datentechnik oder Dritte weitergegeben.
+                </Label>
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}" TextType="Html">
+                    <![CDATA[
+                    <strong>MF mobil</strong> greift auf Kamera, Mikrofon, Speicher, Standort und Telefon zu. Die Anruflisten nutzt die App um die Nummern mit Ihren angelegten Kunden abzugleichen um Ihnen anzeigen zu können wer gerade anruft oder angerufen hat. Mit Hilfe der Kamera erstellen Sie Fotodokumentationen auf Baustellen und können mit dem Mikrofon Sprachnotizen hinzufügen. Um Daten auf dem Mobilgerät zu speichern (z.B. geschossene Fotos) oder um bereits existierende Daten (z.B. Ihrer Galerie) hinzuzufügen (z.B. in einer internen Mail), benötigt die App Zugriff auf Ihren Speicher. Bei Standortfreigabe kann der GPS-Standort bei der Zeiterfassung erfasst werden. Dies muss jedoch aktiv geschehen! Daten zu Ihrem Standort werden nur für die Bearbeitung Ihrer Anfrage genutzt. Mit Zugriff auf das Telefon können Sie aus der App heraus telefonieren.
+                    ]]>
+                </Label>
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}" TextType="Html">
+                    <![CDATA[
+                    <strong>MF Anrufliste </strong> (nur für Androidgeräte verfügbar) greift auf die Anrufliste des Telefons zu, um die Telefonnumern mit den Kundendaten aus MF mobil abzugleichen und ggf. den passenden Kundennamen darzustellen.
+                    ]]>
+                </Label>
+
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}" TextType="Html">
+                    <![CDATA[
+                    <strong>MF Windsog mobil</strong> greift auf Speicher und Standort zu. Der Speicherzugriff ist notwendig um erzeugte Daten (Projekte) der App auf dem Mobilgerät speichern zu können. Mit Hilfe der Standortfreigabe kann die App erkennen wo Sie sich aufhalten und Orte in der Umgebung vorschlagen, sodass Ihre Arbeitsweise beschleunigt wird. Daten zu Ihrem Standort werden nur für die Bearbeitung Ihrer Anfrage genutzt.
+                    ]]>
+                </Label>
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}" TextType="Html">
+                    <![CDATA[
+                    <strong>MF DachDesigner mobil</strong> greift auf den Speicher zu. Der Speicherzugriff ist notwendig um erzeugte Daten (Projekte) der App auf dem Mobilgerät speichern zu können. Außerdem ermöglicht die Freigabe der Kamera und des Mikrofons die Anlage von Fotodokumentationen mit Sprachnotizen. Wenn die Apps im Modus "Mobilkonverter" oder "Servermodus" genutzt werden, wir auch der Netzwerkzugriff benötigt um die Daten mit Ihrem PC oder Server abzugleichen.
+                    ]]>
+                </Label>
+
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}" TextType="Html">
+                    <![CDATA[
+                    <strong>MF Aufmass mobil</strong> greift auf den Speicher zu. Der Speicherzugriff ist notwendig um erzeugte Daten (Projekte) der App auf dem Mobilgerät speichern zu können. Wenn die App im Modus "Mobilkonverter" oder "Servermodus" genutzt wird, wird auch der Netzwerkzugriff benötigt um die Daten mit Ihrem PC oder Server abzugleichen.
+                    ]]>
+                </Label>
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}">
+                    Sie können jederzeit in den Einstellungen Ihres Mobilgerätes die Berechtigungen der Apps einsehen und bearbeiten.
+                </Label>
+
+
+
+                <Label Text="Auskunft und Widerruf" 
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                       VerticalOptions="Start" FontSize="{Binding SizeMedium}" FontAttributes="Bold"/>
+                <Label Text=""/>
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Der Nutzer hat grundsätzlich ein Auskunftsrecht über die bei Markus Friedrich Datentechnik gespeicherten personenbezogenen Daten. Bei Auskünften und Fragen über die Widerrufserklärungen gemäß §3 dieser Datenschutzbestimmungen kann sich der Nutzer jederzeit über die E-Mail Adresse "/>
+                            <Span Text="info@friedrich-datentechnik.de" 
+                                  TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" >
+                            </Span>
+                            <Span Text=" an uns wenden."/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}">
+                    Diese Datenschutzerklärung ist aktuell gültig und wurde erstellt am 23.11.2018. Die letzte Aktualisierung erfolgte am 13.07.2020 aufgrund der Weiterentwicklung unserer Apps.
+                </Label>
+
+
+            </StackLayout>
+        </ScrollView>
+<!--Anzeige Datenstand-->
+        <!--StackLayout  Orientation="Vertical"  x:Name="DatenstandTab" IsVisible="false" Grid.Row="1">
+            <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Datenserver" 
+                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" FontAttributes="Bold"/>
+                    <Label Text="Programmstand: 29.11.2022&#x0a;Schnittstelle Server: V1.1&#x0a;Schnittstelle Programm: V1.1" 
+                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+                <StackLayout>
+                    <Label Text="Letzte Verbindung" 
+                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                           FontAttributes="Bold"/>
+                    <Label Text="Letzte Verbindung:&#x0a;" 
+                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                    Text="neue Aufträge vom PC, mobile Aufträge zum PC&#x0a;letzte erfolgreiche Aktulaisierung: Datum Uhrzeit&#x0a;letzter Aktualisierungsversuch: Datum Uhrezeit"/>
+            </Frame>
+
+            <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+                <Label Text="Elemente&#x0a;letzte erfolgreiche Aktualisierung: "
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+            </Frame>
+        </StackLayout-->
+<!--Anzeige Rechte-->
+        <!--StackLayout x:Name="RechteTab" Orientation="Vertical" IsVisible="false"                     
+                     Grid.Row="1">
+            <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+                <StackLayout>
+                    <Label Text="Zugangsrechte MF Webserver" 
+                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                </StackLayout>
+            </Frame>
+            <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+                 <StackLayout>
+                    <Label Text="keine weiteren benötigten Rechte" 
+                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                           FontAttributes="Bold"/>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout-->
+
+       
+    </Grid>
+
+</ContentPage>

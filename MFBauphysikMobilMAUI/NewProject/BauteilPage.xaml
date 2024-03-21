@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MFBauphysikMobilMAUI.NewProject.BauteilPage"
+             xmlns:custom="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer"
+             NavigationPage.HasBackButton="False">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}"
+                         HorizontalOptions="StartAndExpand" Clicked="Back_Clicked"/>
+            <Label Text="Bauteil" TextColor="{StaticResource TitleTextColor}" VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" FontSize="Title" FontAttributes="Bold"/>
+            <ImageButton Source="next.png" BackgroundColor="{StaticResource TransparentBackground}" 
+             HorizontalOptions="EndAndExpand" Clicked="Check_Clicked"
+             IsVisible="true" x:Name="checkButton"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <Grid BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--SearchBar-->
+        <Frame Grid.Row="0"
+       Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Entry x:Name="SearchBar" Grid.Column="0" TextChanged="SearchBar_TextChanged"
+                       Placeholder="Suchen" PlaceholderColor="{StaticResource Gray300}"
+                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <Image Source="suchen_2.png" Grid.Column="1" />
+            </Grid>
+        </Frame>
+        
+        <!--List Bauteil-->
+        <ListView x:Name="listView" 
+                  ItemSelected="ListView_ItemSelected" 
+                  Grid.Row="1"
+                  SelectionMode="Single"
+                  HasUnevenRows="True" 
+                  SeparatorColor="{StaticResource TextColor Blue}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Label Text="{Binding B}" Padding="10" FontSize="{Binding SizeClass}"
+                                   TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

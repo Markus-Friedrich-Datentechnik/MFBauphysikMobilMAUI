@@ -1,0 +1,2139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ArrayOfBF>
+	<BF>
+		<B> b/s/t Blechschraube Durocoat </B>
+		<DN> 6,000000 </DN>
+		<ET> 25</ET>
+		<LR> 50,000000 </LR>
+	</BF>
+	<BF>
+		<B> b/s/t Blechschraube Edelstahl</B>
+		<DN> 6,000000</DN>
+		<ET> 25</ET>
+		<LR> 15,000000</LR>
+	</BF>
+
+	<BF>
+		<B> b/s/t\sUniversalschraube BHS in Holz</B>
+		<DN> 6,000000</DN>
+		<ET> 35</ET>
+		<LR> 50,000000</LR>
+	</BF>
+	<BF>
+		<B> ETANCO MULTIFAST TF Edelstahl A2</B>
+		<DN> 5,000000</DN>
+		<ET> 30</ET>
+		<LR> 50,000000</LR>
+	</BF>
+
+	<BF>
+		<B> ETANCO SK-RB Schraubdübel</B>
+		<DN> 28,000000</DN>
+		<ET> 40</ET>
+		<LR> 0,170000</LR>
+	</BF>
+
+	<BF>
+		<B> ETANCO SK-RB Schraubdübel</B>
+		<DN> 28,000000</DN>
+		<ET> 40</ET>
+		<LR> 0,170000</LR>
+
+	</BF>
+	<BF>
+		<B> ETANCO TRP</B>
+		<DN> 6,300000</DN>
+		<ET> 35</ET>
+		<LR> 50,000000</LR>
+	</BF>
+
+	<BF>
+		<B> ETANCO TRP</B>
+		<DN> 6,300000</DN>
+		<ET> 35</ET>
+		<LR> 50,000000</LR>
+	</BF>
+
+	<BF>
+		<B> ETANCO Wingteks 4,8</B>
+		<DN> 4,800000</DN>		
+		<ET> 30</ET>
+		<LR> 50,000000</LR>
+	</BF>
+
+	<BF>
+		<B> ETANCO Wingteks 5,5</B>
+		<DN> 5,500000</DN>
+		<ET> 30</ET>
+		<LR> 50,000000</LR>
+	</BF>
+
+	<BF>
+	<B> ETANCO Wingteks 6,3</B>
+	<DN> 6,300000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO Wingteks A2 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO Wingteks A2 5,5</B>
+	<DN> 5,500000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> b/s/t Universalschraube BHS in Holz</B>
+	<DN> 6,000000</DN>
+	<ET> 35</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCOPLAST-P DN50 + EGB 4,8mm</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCOPLAST-P DN50 + EGB 4,8mm</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCOPLAST-P T80x40</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCOPLAST-P T80x40</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> Eurofast DAMP-50 Holz</B>
+	<DN> 5,000000</DN>
+	<ET> 18</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast DAMP-H Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> Eurofast DCDF-55 Beton</B>
+		<DN>6,300000</DN>
+			<ET> 35</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> Eurofast DFCF-63 Beton</B>
+	<DN> 6,300000</DN>
+	<ET> 35</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast DFDS-60 Gasbeton</B>
+	<DN> 6,000000</DN>
+	<ET> 35</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast DFHD-67 Stahl</B>
+	<DN> 6,700000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> b/s/t Verlängerungselement</B>
+	<DN> 6,000000</DN>
+	<ET> 25</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Eurofast EDS-B 4,8mm Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Eurofast EDS-B 4,8mm Stahlblech</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> Eurofast EDS-B-48 Stahl</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast EDS-B-55 Stahl</B>
+	<DN> 5,500000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast EDS-BZT Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast EDS-BZT Stahl</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast EDS-BZT Stahl</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast EDS-BZTHD-48 Stahl</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Eurofast EDS-BZTR-48 Stahl</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast EDS-H Holz</B>
+		<DN>
+			5,000000</DN>
+			<ET>
+				30</ET>
+				<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+		<B> b/s/t Verlängerungselement</B>
+	<DN> 6,000000</DN>
+	<ET> 25</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Eurofast EDS-H-50 Holz</B>
+	<DN> 5,000000</DN>
+	<ET> 18</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast EDS-S-48 Stahl</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+
+	<BF>
+	<B> Eurofast EDS-SRB Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+
+	<BF>
+	<B> Eurofast EDS-SRB Stahl</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast EDS-SRB-48 Stahl</B>
+		<DN>
+			4,800000</DN>
+			<ET>
+				20</ET>
+				<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+		<B> Eurofast EFHD-63 Beton</B>
+	<DN> 6,300000</DN>
+	<ET> 35</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast EFR-63 Beton</B>
+	<DN> 6,300000</DN>
+	<ET> 35</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast GBS in Gasbeton</B>
+	<DN> 6,000000</DN>
+	<ET> 60</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast GBS in Holz</B>
+	<DN> 6,000000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast GBS-60 Gasbeton</B>
+		<DN>
+			6,000000</DN>
+			<ET>
+				60</ET>
+				<LR> 50,000000</LR>
+</BF>
+
+
+	<BF>
+		<B> BMI Drill-Tec BS 4,8mm Durocoat</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Eurofast GBS-80 Gasbeton</B>
+	<DN> 8,000000</DN>
+	<ET> 60</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast GBSA2-60 Gasbeton</B>
+	<DN> 6,000000</DN>
+	<ET> 60</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast ISPC</B>
+	<DN> 5,000000</DN>
+	<ET> 35</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast TRPB-45 Stahl</B>
+	<DN> 4,500000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Eurofast TWPB-8040 Stahl</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Feldbefestiger selbstdichtend</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Klimas Lino + WBSW</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Klimas Lino + WBSW</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Normbefestiger</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Normbefestiger</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+
+	<BF>
+	<B> BMI Drill-Tec BS 4,8mm Durocoat + RP50</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Normbefestiger Beton</B>
+	<DN> 6,000000</DN>
+	<ET> 50</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Normbefestiger Beton</B>
+	<DN> 6,000000</DN>
+	<ET> </ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Normbefestiger Nahtbefestigung</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Olympic Betonspike CD-10</B>
+	<DN> 5,500000</DN>
+	<ET> 50</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Olympic EHD FMS 6,7mm</B>
+	<DN> 6,700000</DN>
+	<ET> 40</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Olympic Rufnex 6,3mm</B>
+	<DN> 6,300000</DN>
+	<ET> 40</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> OMG Concrete Drive CD-10</B>
+	<DN> 7,030000</DN>
+	<ET> 25</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> OMG Extra Heavy Duty (XHD) Holz</B>
+	<DN> 6,730000</DN>
+	<ET> 25</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> OMG Extra Heavy Duty (XHD) Stahl</B>
+	<DN> 6,730000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> OMG Heavy Duty Beton</B>
+	<DN> 6,22000</DN>
+	<ET> 25</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> BMI Drill-Tec BS S 4,8mm Edelstahl</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> OMG Heavy Duty Holz</B>
+	<DN> 6,220000</DN>
+	<ET> 25</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+
+	<BF>
+	<B> OMG Heavy Duty Stahl</B>
+	<DN> 6,220000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+
+	<BF>
+	<B> Sarnabar SB-6,3 in Beton</B>
+	<DN> 6,300000</DN>
+	<ET> 32</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Sarnabar SB-6,3 in Beton</B>
+	<DN> 6,300000</DN>
+	<ET> 32</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Sarnabar SB-6,3 in Blech</B>
+	<DN> 6,300000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Sarnabar SB-6,3 in Blech</B>
+	<DN> 6,300000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Sarnabar SB-6,3 in Holz</B>
+	<DN> 6,300000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Sarnabar SB-6,3 in Holz</B>
+	<DN> 6,300000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Sarnafast 4,8mm</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Sarnafast 4,8mm</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> BMI Drill-Tec BS S 4,8mm Edelstahl</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Sarnafast SF 4,8 gegurtet in Blech</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Sarnafast SF 4,8 gegurtet in Blech</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Sarnafast SF 4,8 gegurtet in Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Sarnafast SF 4,8 gegurtet in Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Sarnafast SF 4,8 in Blech</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Sarnafast SF 4,8 in Blech</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Sarnafast SF 4,8 in Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Sarnafast SF 4,8 in Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS BS 6.1 Blech</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS IF2-S</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> BMI Drill-Tec BS S 4,8mm Edelstahl + RP50</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> SFS IF2-S</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS isofast IE</B>
+	<DN> 6,300000</DN>
+	<ET> 64</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS isofast IE</B>
+	<DN> 6,300000</DN>
+	<ET> 64</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS isofast IG</B>
+	<DN> 6,000000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS isofast IG</B>
+	<DN> 6,000000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+
+	<BF>
+	<B> SFS isofast IGR-S</B>
+	<DN> 8,000000</DN>
+	<ET> 60</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS isofast IGR-S</B>
+	<DN> 8,000000</DN>
+	<ET> 60</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> SFS isofast IR2 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS isofast IR2 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS isofast IR2 82 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> BMI Drill-Tec BS S 4,8mm Edelstahl + RP50</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> SFS isofast IR2 82 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS isofast IR2 C 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS isofast IR2 C 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS isofast IR2 S 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> SFS isofast IR2 S 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> SFS isofast IR2-S 82 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> SFS isofast IR2-S 82 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> SFS isofast IR3 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> SFS isofast IR3 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS isofast IR3 82 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> b/s/t Gasbetonschraube - Edelstahl</B>
+		<DN> 8,000000</DN>
+		<ET> 60</ET>
+		<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Breitkopfstift</B>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS isofast IR3 82 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS isofast IR3 S 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS isofast IR3 S 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS isofast IR3 S 82 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> SFS isofast IR3 S 82 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS isofast IW S</B>
+		<DN> 5,000000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS isofast IW S</B>
+		<DN> 5,000000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> SFS isofast IW T</B>
+		<DN> 5,000000</DN>
+		<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS isofast IW T</B>
+		<DN> 5,000000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> SFS isofast TC</B>
+		<DN> 6,300000</DN>
+		<ET> 64</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Centrix</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS isofast TC</B>
+		<DN> 6,300000</DN>
+	<ET> 64</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS isofast TI</B>
+		<DN> 6,300000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> SFS isofast TI</B>
+		<DN> 6,300000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS spike D</B>
+	<DN> 4,800000</DN>
+	<ET> 32</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS spike D</B>
+	<DN> 4,800000</DN>
+	<ET> 32</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS spike D-4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 32</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS spike D-4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 32</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> SFS spike D-6,3</B>
+		<DN> 6,300000</DN>
+	<ET> 32</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS spike D-6,3</B>
+		<DN> 6,300000</DN>
+		<ET> 32</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> SFS spike D-S</B>
+	<DN> 4,800000</DN>
+	<ET> 32</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> EJOT Dabo TKE-4,8 Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> SFS spike D-S</B>
+	<DN> 4,800000</DN>
+	<ET> 32</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS Spike twister 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 25</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS Spike twister 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 25</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> SFS Spike twister 6,3</B>
+		<DN> 6,300000</DN>
+		<ET> 32</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS Spike twister 6,3</B>
+		<DN> 6,300000</DN>
+		<ET> 32</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS Spike twister S 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 25</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> SFS Spike twister S 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 25</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS Spike twister S 6,3</B>
+		<DN> 6,300000</DN>
+		<ET> 32</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> SFS Spike twister S 6,3</B>
+		<DN>
+			6,300000
+		</DN>
+			<ET>
+				32</ET>
+				<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+		<B> SFS Spike twister TC 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 25</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> EJOT Dabo TKE-4,8 Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> SFS Spike twister TC 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 25</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> SFS Spike twister TC 6,3</B>
+		<DN> 6,300000</DN>
+		<ET> 32</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS Spike twister TC 6,3</B>
+		<DN> 6,300000</DN>
+	<ET> 32</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS Spike twister TC S 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 25</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> SFS Spike twister TC S 4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 25</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> SFS Spike twister TC S 6,3</B>
+		<DN> 6,300000</DN>
+		<ET> 32</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> SFS Spike twister TC S 6,3</B>
+		<DN> 6,300000</DN>
+		<ET> 32</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> SFS TPR</B>
+		<DN> 6,300000</DN>
+	<ET> 25</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> SFS TPR</B>
+		<DN> 6,300000</DN>
+	<ET> 25</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> Zahn ZBSK-R</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> EJOT Dabo TKE-4,8 Stahlblech</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZBSK-R</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZBST</B>
+		<DN> 6,300000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZBST</B>
+		<DN> 6,300000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZDBK</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZDBK</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZDBK-E</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZDBK-E</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZDBS</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZDBS</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZDBS-E</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> EJOT Dabo TKE-4,8 Stahlblech</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZDBS-E</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZDBS-E/G</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZDBS-E/G</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZDBS-G</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZDBS-G</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZGBK</B>
+		<DN> 6,000000</DN>
+	<ET> 50</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZGBK</B>
+		<DN> 6,000000</DN>
+	<ET> 50</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> Zahn ZGBK-E</B>
+		<DN> 6,000000</DN>
+		<ET> 60</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZGBK-E</B>
+		<DN> 6,000000 </DN>
+	<ET> 60</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZHBK</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> EJOT Dabo TKR-4,8 Blech</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZHBK</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZHBK-E</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZHBK-E</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> Zahn ZHRD</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 0,170000</LR>
+
+</BF>
+	<BF>
+	<B> Zahn ZHRD</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 0,170000</LR>
+
+</BF>
+	<BF>
+	<B> Zahn ZHSK</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZHSK</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZHSK-E</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZHSK-E</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 0,170000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZHSK-Modul</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 0,170000</LR>
+
+</BF>
+	<BF>
+	<B> EJOT Dabo TKR-4,8 Blech</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZHSK-Modul</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 0,170000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZHSK-R</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 0,170000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZHSK-R</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 0,170000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZKGK-E/R</B>
+	<DN> 4,800000</DN>
+	<ET> 60</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZKGK-E/R</B>
+	<DN> 4,800000</DN>
+	<ET> 60</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZKMK-R</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZKMK-R</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZKSK</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZKSK</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZKSK Modul</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+	<BF>
+	<B> EJOT Dabo TKR-4,8 Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZKSK Modul</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZKSK-E</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZKSK-E</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZKSK-E/R</B>
+		<DN>
+			4,800000</DN>
+			<ET>
+				20</ET>
+				<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+		<B> Zahn ZKSK-E/R</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZKSK-G</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZKSK-G</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZKSK-R</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZKSK-R</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZKSK-R/G</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> EJOT Dabo TKR-4,8 Holz</B>
+	<DN> 4,800000</DN>
+		<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZKSK-R/G</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZKSK-VB</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZKSK-VB</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZSDK, Beton</B>
+	<DN> 4,800000</DN>
+	<ET> 40</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZSDK, Beton</B>
+	<DN> 4,800000</DN>
+	<ET> 40</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZSDK, Porenbeton/Bims</B>
+	<DN> 4,800000</DN>
+	<ET> 60</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZSDK, Porenbeton/Bims</B>
+	<DN> 4,800000</DN>
+	<ET> 60</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZSDK-Modul</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZSDK-Modul</B>
+		<DN>
+			4,800000</DN>
+			<ET>
+				20</ET>
+				<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+		<B> Zahn ZSDK-R, Beton</B>
+		<DN>
+			4,800000</DN>
+			<ET>
+				40</ET>
+				<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+		<B> b/s/t Holz-/Betonschraube Durocoat</B>
+		<DN> 6,000000</DN>
+	<ET> 30</ET>
+		<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> EJOT FDD, Beton</B>
+		<DN> 8,000000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZSDK-R, Beton</B>
+	<DN> 4,800000</DN>
+	<ET> 40</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZSDK-R, Porenbeton/Bims</B>
+	<DN> 4,800000</DN>
+	<ET> 60</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZSDK-R, Porenbeton/Bims</B>
+	<DN> 4,800000</DN>
+	<ET> 60</ET>
+	<LR> 0,170000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZTSD - Beton</B>
+	<DN> 4,800000</DN>
+	<ET> 40</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZTSD - Beton</B>
+	<DN> 4,800000</DN>
+	<ET> 40</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZTSK (Beton)</B>
+		<DN> 6,300000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZTSK (Beton)</B>
+		<DN> 6,300000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZTSK (Stahltrapezprofil)</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> Zahn ZTSK (Stahltrapezprofil)</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZTSK Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> EJOT FDD, Beton</B>
+		<DN> 8,000000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZTSK Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZTSK-E</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> Zahn ZTSK-E</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZTSK-E (Holz)</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZTSK-E (Holz)</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> Zahn ZTSK-E (Porenbeton)</B>
+		<DN> 6,000000</DN>
+	<ET> 60</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> Zahn ZTSK-E (Porenbeton)</B>
+		<DN> 6,000000</DN>
+	<ET> 60</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+		<B> EJOT FDD, Porenbeton</B>
+		<DN>
+			8,000000
+		</DN>
+			<ET>
+				65</ET>
+				<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> EJOT FDD, Porenbeton</B>
+		<DN> 8,000000</DN>
+	<ET> 65</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> EJOT HTK-M + TKE</B>
+	<DN> 4,800000</DN>
+	<LR> 10,000000</LR>
+
+</BF>
+	<BF>
+	<B> EJOT SW 8 R-4,8</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> EJOT SW 8 RT</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> EJOT SW-8-RT-4,8 Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> EJOT SW-8-RT-4,8 Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> EJOT SW-8-RT-4,8 Stahlblech</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> b/s/t Porenbetonschraube GB</B>
+		<DN> 6,000000</DN>
+	<ET> 60</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> EJOT SW-8-RT-4,8 Stahlblech</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> EJOT TKE, Blech</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> EJOT TKE, Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> EJOT TKR + HTK 50, Blech</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+	<BF>
+	<B> EJOT TKR + HTK 50, Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 0,170000</LR>
+</BF>
+	<BF>
+	<B> EJOT TKR, Blech</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> EJOT TKR, Holz</B>
+	<DN> 4,800000</DN>
+	<ET> 30</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO BETOFAST DF trittfest 3C</B>
+		<DN> 6,600000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO BETOFAST DF trittfest 3C</B>
+		<DN> 6,600000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO EGB 2 2C</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> b/s/t Porenbetonschraube GB</B>
+		<DN> 6,000000</DN>
+	<ET> 60</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO EHB</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO EHB DF 2,5 trittfest</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO EHB DF 2,5 trittfest</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> ETANCO EHB DF 2,5 trittfest gegurtet</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO EHB DF 2,5 trittfest gegurtet</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> ETANCO EHB DF 2,5 trittfest vormontiert</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO EHB DF 2,5 trittfest vormontiert</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO EHB DF 3 2C trittfest lose</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO EHB DF 3 2C trittfest lose</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+
+</BF>
+	<BF>
+	<B> ETANCO ETANCOPLAST 50 2C trittsicher</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> b/s/t Universalschraube BHS in Beton</B>
+		<DN> 6,000000</DN>
+	<ET> 50</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO ETANCOPLAST 50 2C trittsicher</B>
+		<DN>
+			4,800000</DN>
+			<ET>
+				20</ET>
+				<LR> 0,170000</LR>
+</BF>
+	<BF>
+		<B> ETANCO ETANCOPLAST 50 2C trittsicher gegurtet</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO ETANCOPLAST 50 2C trittsicher gegurtet</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO ETANCOPLAST 50 2C trittsicher lose</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> ETANCO ETANCOPLAST 50 2C trittsicher lose</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO ETANCOPLAST 80 X 40 2C trittsicher</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO ETANCOPLAST 80 X 40 2C trittsicher</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO ETANCOPLAST 80 X 40 2C trittsicher gegurtet</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO ETANCOPLAST 80 X 40 2C trittsicher gegurtet</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO ETANCOPLAST 80 X 40 A4 trittsicher</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> b/s/t Universalschraube BHS in Beton</B>
+		<DN> 6,000000</DN>
+	<ET> 50</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO ETANCOPLAST 80 X 40 A4 trittsicher</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 0,170000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO ETANCOPLAST 80 X 40 A4 trittsicher gegurtet</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO ETANCOPLAST 80 X 40 A4 trittsicher gegurtet</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO ETANCOPLAST 80 X 40 A4 trittsicher lose</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO ETANCOPLAST 80 X 40 A4 trittsicher lose</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO ETANCOPLAST BETON 50 2C trittsicher</B>
+		<DN>
+			4,300000
+		</DN>
+			<ET>
+				20</ET>
+				<LR> 15,000000</LR>
+</BF>
+	<BF>
+		<B> ETANCO ETANCOPLAST BETON 50 2C trittsicher</B>
+		<DN> 4,300000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO FASTOVIS TF 3036 DF 2C trittsicher</B>
+		<DN> 6,500000</DN>
+	<ET> 20</ET>
+</BF>
+	<BF>
+	<B> ETANCO FASTOVIS TF 3036 DF 2C trittsicher</B>
+		<DN> 6,500000</DN>
+	<ET> 20</ET>
+</BF>
+	<BF>
+	<B> ETANCO ISODRILL DF 2 A4 trittfest</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+	<BF>
+	<B> b/s/t Universalschraube BHS in Blech</B>
+		<DN> 6,000000</DN>
+	<ET> 25</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO ISODRILL DF 2 A4 trittfest</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO ISODRILL DF 2 A4 trittfest gegurtet</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO ISODRILL DF 2 A4 trittfest gegurtet</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO ISODRILL DF 2,5 trittfest lose</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO ISODRILL DF 2,5 trittfest lose</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 50,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO ISODRILL TT 2 A4</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> ETANCO ISODRILL TT 2 A4</B>
+	<DN> 4,800000</DN>
+	<ET> 20</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO MULTIFAST DF trittfest in Holz</B>
+		<DN> 6,000000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO MULTIFAST DF trittfest in Holz</B>
+		<DN> 6,000000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO MULTIFAST DF trittfest in Porenbeton</B>
+		<DN> 6,000000</DN>
+	<ET> 55</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> b/s/t Universalschraube BHS in Blech</B>
+		<DN> 6,000000</DN>
+	<ET> 25</ET>
+	<LR> 50,000000</LR>
+</BF>
+	<BF>
+	<B> ETANCO MULTIFAST DF trittfest in Porenbeton</B>
+		<DN> 6,000000</DN>
+	<ET> 55</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> ETANCO MULTIFAST TB/TF Edelstahl A2</B>
+		<DN> 6,000000</DN>
+	<ET> 55</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> ETANCO MULTIFAST TB/TF Edelstahl A2</B>
+		<DN> 6,000000</DN>
+	<ET> 55</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO MULTIFAST TB/TF Edelstahl A2 gegurtet in Holz</B>
+		<DN> 6,000000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO MULTIFAST TB/TF Edelstahl A2 gegurtet in Holz</B>
+		<DN> 6,000000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO MULTIFAST TB/TF Edelstahl A2 gegurtet in Porenbeton</B>
+		<DN> 6,000000</DN>
+	<ET> 55</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO MULTIFAST TB/TF Edelstahl A2 gegurtet in Porenbeton</B>
+		<DN> 6,000000</DN>
+	<ET> 55</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+	<B> ETANCO MULTIFAST TF A2</B>
+		<DN> 5,000000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+
+</BF>
+	<BF>
+	<B> ETANCO MULTIFAST TF A2</B>
+		<DN> 5,000000</DN>
+	<ET> 30</ET>
+	<LR> 15,000000</LR>
+</BF>
+
+	<BF>
+		<B> ETANCO MULTIFAST TF Edelstahl A2</B>
+		<DN> 5,000000</DN>
+		<ET> 30</ET>
+		<LR> 50,000000</LR>
+	</BF>
+</ArrayOfBF>

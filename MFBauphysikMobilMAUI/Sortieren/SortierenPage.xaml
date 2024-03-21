@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:models="clr-namespace:MFBauphysikMobilMAUI.Models" 
+             x:DataType="models:EinstellungModel"
+             x:Class="MFBauphysikMobilMAUI.Sortieren.SortierenPage"
+             NavigationPage.HasBackButton="False">
+    
+    
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}" 
+                         HorizontalOptions="Start" Clicked="Back_Clicked"/>
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Label Text="MF Bauphysik mobil" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                       TextColor="{StaticResource TitleTextColor}" 
+                       FontSize="20" FontAttributes="Bold"/>
+                <Label Text="Sortieren" HorizontalOptions="Center" FontSize="14" VerticalOptions="Center"
+                       TextColor="{StaticResource TitleTextColor}"/>
+            </StackLayout>           
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <Grid BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Frame Grid.Row="0"
+               Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+            <StackLayout x:Name="SortFrame" RadioButtonGroup.GroupName="Sort">
+                <!--Button1-->
+                <RadioButton x:Name="neueste" Value="neueste" VerticalOptions="CenterAndExpand"
+                             CheckedChanged="RadioButton_CheckedChanged" IsChecked="{Binding Alt_Jung}">
+                    <RadioButton.Content>
+                        <Grid>
+                            <Label Text="neueste oben" Padding="30,0,0,0" x:Name="label_neueste" VerticalOptions="CenterAndExpand"
+                                   TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        </Grid>
+                    </RadioButton.Content>
+                </RadioButton>
+                
+                <!--Button2-->
+                <RadioButton x:Name="älteste" Value="älteste" VerticalOptions="CenterAndExpand"
+                             IsChecked="{Binding Jung_Alt}"
+                             CheckedChanged="RadioButton_CheckedChanged" >
+                    <RadioButton.Content>
+                        <Grid>
+                            <Label Text="älteste oben" Padding="30,0,0,0" x:Name="label_älteste" VerticalOptions="CenterAndExpand"
+                                   TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        </Grid>
+                    </RadioButton.Content>
+                </RadioButton>
+                
+                <!--Button3-->
+                <RadioButton x:Name="a_z" Value="a_z"
+                             CheckedChanged="RadioButton_CheckedChanged" IsChecked="{Binding A_Z}">
+                    <RadioButton.Content>
+                        <Grid>
+                            <Label Text="A -> Z" Padding="30,0,0,0" x:Name="label_az"
+                                   TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        </Grid>
+                    </RadioButton.Content>
+                </RadioButton>
+                
+                <!--Button4-->
+                <RadioButton x:Name="z_a" Value="z_a" VerticalOptions="CenterAndExpand"
+                             CheckedChanged="RadioButton_CheckedChanged" IsChecked="{Binding Z_A}">
+                    <RadioButton.Content>
+                        <Grid>
+                            <Label Text="Z -> A" Padding="30,0,0,0" x:Name="label_za" VerticalOptions="CenterAndExpand"
+                                   TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                        </Grid>
+                    </RadioButton.Content>
+                </RadioButton>
+                   
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

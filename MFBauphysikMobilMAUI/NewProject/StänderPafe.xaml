@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MFBauphysikMobilMAUI.NewProject.StänderPafe"
+             xmlns:custom="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer"
+xmlns:models="clr-namespace:MFBauphysikMobilMAUI.Models"
+x:DataType="models:Ständer"
+NavigationPage.HasBackButton="False">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}"
+                      HorizontalOptions="StartAndExpand" Clicked="Back_Clicked"/>
+            <Label Text="Bauteil" TextColor="{StaticResource TitleTextColor}"
+                HorizontalOptions="CenterAndExpand" FontSize="Title" FontAttributes="Bold"/>
+            <ImageButton Source="check.png" BackgroundColor="{StaticResource TransparentBackground}" 
+                      HorizontalOptions="EndAndExpand" Padding="0,0,10,0" Clicked="Check_Clicked"
+                      IsVisible="true" x:Name="checkButton"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <TableView Intent="Form" HasUnevenRows="True"
+            BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+
+        <!--Bezeichnung-->
+        <TableSection>
+            <ViewCell>
+                <StackLayout Orientation="Vertical" Padding="10">
+                    <Label Text="Bezeichnung"  FontAttributes="Bold"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <custom:MyEntry Text="{Binding Bezeichnung}" x:Name="Entry_Bezeichnung"
+                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                </StackLayout>
+            </ViewCell>
+        </TableSection>
+
+        <!--Lambda-->
+        <TableSection>
+            <ViewCell>
+                <StackLayout Orientation="Vertical" Padding="10">
+                    <Label Text="Wärmeleitfähigkeit [W/(m*K)]" FontAttributes="Bold"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <custom:MyEntry Text="{Binding Wärmeleitfähigkeit}" x:Name="Lambda_Entry" 
+                                 TextChanged="Entry_TextChanged"
+                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                </StackLayout>
+            </ViewCell>
+        </TableSection>
+
+        <!--Fester R-->
+        <TableSection>
+            <ViewCell>
+                <Grid Padding="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="fester Wärmedurchlasswiderstand" FontAttributes="Bold" Grid.Row="0" Grid.ColumnSpan="2"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <custom:MyEntry Text="{Binding R}" Grid.Row="1" Grid.Column="1" x:Name="Fester_R_Entry"
+                        TextChanged="Entry_TextChanged" 
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <CheckBox IsChecked="{Binding Fester_R}" CheckedChanged="Fester_R_CheckedChanged" Grid.Row="1" Grid.Column="0"/>
+                </Grid>
+            </ViewCell>
+        </TableSection>
+
+        <!--Dicke-->
+        <TableSection>
+            <ViewCell>
+                <StackLayout Orientation="Vertical" Padding="10">
+                    <Label Text="wirksame Dicke [m]"  FontAttributes="Bold"
+                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <custom:MyEntry Text="{Binding Dicke}" TextChanged="Entry_TextChanged"
+                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                </StackLayout>
+            </ViewCell>
+        </TableSection>
+
+        <!--Diffusion-->
+        <TableSection>
+            <ViewCell>
+                <Grid Padding="10,10,0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Dampfdiffusionswiderstandszahl" Grid.Row="0" Grid.ColumnSpan="3" FontAttributes="Bold"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <Label Text="min" Grid.Row="1" Grid.Column="0"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <Label Text="max" Grid.Row="1" Grid.Column="2"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <custom:MyEntry Text="{Binding Dampfdiffusionswiderstand_Min}" Grid.Row="1" Grid.Column="1"
+                        x:Name="Diff_Widerstand_Min" TextChanged="Entry_TextChanged"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <custom:MyEntry Text="{Binding Dampfdiffusionswiderstand_Max}" Grid.Row="1" Grid.Column="3"
+                        x:Name="Diff_Widerstand_Max" TextChanged="Entry_TextChanged"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                </Grid>
+            </ViewCell>
+        </TableSection>
+
+        <!--Sd-Wert-->
+        <TableSection>
+            <ViewCell>
+                <Grid Padding="10,10,0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="sd-Wert [m]" Grid.Row="0" Grid.ColumnSpan="2" FontAttributes="Bold"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <Label Text="min" Grid.Row="1" Grid.Column="0"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <Label Text="max" Grid.Row="1" Grid.Column="2"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <custom:MyEntry Text="{Binding Sd_Min}" Grid.Row="1"  Grid.Column="1"
+                                 TextChanged="Entry_TextChanged" x:Name="Entry_sd_min"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <custom:MyEntry Text="{Binding Sd_Max}" Grid.Row="1" Grid.Column="3"
+                                 x:Name="Entry_sd_max" TextChanged="Entry_TextChanged"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <CheckBox CheckedChanged="Fester_sd_CheckedChanged" Grid.Row="2" Grid.Column="0" IsChecked="{Binding Fester_sd}"/>
+                    <Label Text="fester sd-Wert" Grid.Row="2" Grid.Column="1" Padding="5"
+    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                </Grid>
+            </ViewCell>
+        </TableSection>
+
+        <!--Dichte-->
+        <TableSection>
+            <ViewCell>
+                <StackLayout Orientation="Vertical" Padding="10">
+                    <Label Text="Rohdichte [kg/m&#179;]" FontAttributes="Bold"
+                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <custom:MyEntry Text="{Binding Rohdichte}"
+                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                </StackLayout>
+            </ViewCell>
+        </TableSection>
+
+        <!--Kapillar-->
+        <TableSection>
+            <ViewCell>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Checkbox kapillar-->
+                    <CheckBox CheckedChanged="CheckBox_CheckedChanged" Grid.Row="0" Grid.Column="0" Margin="3,0,0,0"
+                           IsChecked="{Binding Kapillar}"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="kapillar nicht wasseraufnahmefähig" VerticalOptions="Center"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    <!--Radiobutton holz, ...-->
+                    <StackLayout RadioButtonGroup.GroupName="kapillar" Grid.Row="1" Grid.ColumnSpan="2">
+                        <RadioButton Value="holz" IsChecked="{Binding Holz}" Padding="10"
+                              CheckedChanged="Kapillar_CheckedChanged">
+                            <RadioButton.Content>
+                                <Grid>
+                                    <Label Text="Holz"  Padding="30,0,0,0" x:Name="holz_label"
+                                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
+                                </Grid>
+                            </RadioButton.Content>
+                        </RadioButton>
+                        <RadioButton Value="holzwerkstoff" IsChecked="{Binding Holzwerkstoff}" Padding="10"
+                              CheckedChanged="Kapillar_CheckedChanged">
+                            <RadioButton.Content>
+                                <Grid>
+                                    <Label Text="Holzwerkstoff" Padding="30,0,0,0" x:Name="holzwerkstoff_label"
+                                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
+                                </Grid>
+                            </RadioButton.Content>
+                        </RadioButton>
+                        <RadioButton Value="sonstiges" IsChecked="{Binding sonstiges}" Padding="10"
+                              CheckedChanged="Kapillar_CheckedChanged">
+                            <RadioButton.Content>
+                                <Grid>
+                                    <Label Text="sonstiges" Padding="30,0,0,0" x:Name="sonstiges_label"
+                                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
+                                </Grid>
+                            </RadioButton.Content>
+                        </RadioButton>
+                    </StackLayout>
+                </Grid>
+            </ViewCell>
+        </TableSection>
+
+        <!--Korrektur Luftspalte-->
+        <TableSection>
+            <ViewCell>
+                <StackLayout RadioButtonGroup.GroupName="luftspalte">
+                    <RadioButton Value="test1" IsChecked="{Binding KeineLuft}" Padding="10"
+                              CheckedChanged="LuftSpalte_CheckedChanged">
+                        <RadioButton.Content>
+                            <Grid>
+                                <Label Text="ohne Luftzirkulation, keine durchgehenden Luftspalten"  
+                                    Padding="30,0,0,0" x:Name="ohneluft_label"
+                                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
+                            </Grid>
+                        </RadioButton.Content>
+                    </RadioButton>
+
+                    <RadioButton Value="test2" IsChecked="{Binding EvntlLuft}" Padding="10"
+                              CheckedChanged="LuftSpalte_CheckedChanged">
+                        <RadioButton.Content>
+                            <Grid>
+                                <Label Text="ohne Luftzirkulation, evntl. durchgehende Luftspalten" 
+                                    Padding="30,0,0,0" x:Name="evntlluft_label"
+                                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
+                            </Grid>
+                        </RadioButton.Content>
+                    </RadioButton>
+                    <RadioButton Value="test3" IsChecked="{Binding MitLuft}" 
+                              Padding="10" x:Name="mitluft_label"
+                              CheckedChanged="LuftSpalte_CheckedChanged">
+                        <RadioButton.Content>
+                            <Grid>
+                                <Label Text="mit Luftzitkulation, evntl. durchgehende Luftspalten" Padding="30,0,0,0"
+                                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
+                            </Grid>
+                        </RadioButton.Content>
+                    </RadioButton>
+                </StackLayout>
+            </ViewCell>
+        </TableSection>
+
+        <TableSection>
+            <ViewCell>
+                <Button Text="Löschen" IsVisible="false" x:Name="ButtonLöschen"
+                     Style="{StaticResource ButtonStyle}" 
+                     Clicked="Löschen_Clicked"
+                     TextColor="Red">
+                </Button>
+            </ViewCell>
+        </TableSection>
+    </TableView>
+
+
+</ContentPage>
