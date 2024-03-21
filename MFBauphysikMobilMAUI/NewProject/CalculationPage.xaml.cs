@@ -495,6 +495,19 @@ namespace MFBauphysikMobilMAUI.NewProject
                 OnPropertyChanged(nameof(SizeDefault));
             }
         }
+
+        private bool _reorder;
+        public bool Reorder
+        {
+            get { return _reorder; }
+            set
+            {
+                if (_reorder == value) return;
+                _reorder = value;
+                OnPropertyChanged(nameof(Reorder));
+            }
+        }
+
         private Basis _itemBeingDragged;
 
         //Elemente zur Collection hinzufügen
@@ -7594,9 +7607,5 @@ namespace MFBauphysikMobilMAUI.NewProject
             await DisplayAlert("Achtung!", "Bauteile können nur unter U-Wert bearbeitet werden", "OK");
         }
 
-        private async void TapGestureRecognizer_Tapped_1(object sender, TappedEventArgs e)
-        {
-           
-        }
     }
 }

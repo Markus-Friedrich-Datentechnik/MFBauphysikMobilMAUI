@@ -285,8 +285,8 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
             <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
                 <ListView x:Name="listBasisUwert"  Grid.Row="0" Grid.Column="0"
                           Header="{Binding .}" HasUnevenRows="True"
-                          Footer="{Binding .}"     SelectionMode="Single"
                           ItemSelected="OnSelected_ItemSelected_Basis"
+                          Footer="{Binding .}"     SelectionMode="Single"
                           SeparatorVisibility="Default"
                       SeparatorColor="{StaticResource TextColor Blue}">
                     <ListView.HeaderTemplate>
@@ -407,8 +407,6 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                             </Grid>
                         </DataTemplate>
                     </ListView.FooterTemplate>
-
-
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -439,39 +437,50 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                     <Label Text="{Binding R, StringFormat='{0:N4}'}" FontSize="{Binding SizeClass}"
                                 Grid.Row="0" Grid.Column="2" HorizontalOptions="Center"
                                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                                    <Image Grid.Column="3" Source="move.png">
+                                    <Image Grid.Column="3" Source="move.png" IsVisible="False">
                                         <Image.GestureRecognizers>
-                                            <DragGestureRecognizer CanDrag="True"
-                   DragStartingCommand="{Binding BindingContext.ItemDragged, Source={x:Reference listBasisUwert}}"
-                   DragStartingCommandParameter="{Binding}"/>
-                                            <DropGestureRecognizer AllowDrop="True"
-                   DragLeaveCommand="{Binding BindingContext.ItemDragLeave, Source={x:Reference listBasisUwert}}"
-                   DragLeaveCommandParameter="{Binding}"
-                   DragOverCommand="{Binding BindingContext.ItemDraggedOver, Source={x:Reference listBasisUwert}}"
-                   DragOverCommandParameter="{Binding}"
-                   Drop="DropGestureRecognizer_Drop"
-                   DropCommand="{Binding BindingContext.ItemDropped, Source={x:Reference listBasisUwert}}"
-                   DropCommandParameter="{Binding}"/>
+                                            
                                         </Image.GestureRecognizers>
                                     </Image>
+
+                                    <!--Grid.GestureRecognizers>
+                                        <DragGestureRecognizer CanDrag="True"
+                                                               DragStarting="DragGestureRecognizer_DragStarting"
+                                                               DragStartingCommand="{Binding BindingContext.ItemDragged, Source={x:Reference listBasisUwert}}"
+                                                               DragStartingCommandParameter="{Binding}"/>
+                                        <DropGestureRecognizer AllowDrop="True"
+                                                               DragLeaveCommand="{Binding BindingContext.ItemDragLeave, Source={x:Reference listBasisUwert}}"
+                                                               DragLeaveCommandParameter="{Binding}"
+                                                               DragOverCommand="{Binding BindingContext.ItemDraggedOver, Source={x:Reference listBasisUwert}}"
+                                                               DragOverCommandParameter="{Binding}"
+                                                               Drop="DropGestureRecognizer_Drop"
+                                                               DropCommand="{Binding BindingContext.ItemDropped, Source={x:Reference listBasisUwert}}"
+                                                               DropCommandParameter="{Binding}"/>                                        
+                                    </Grid.GestureRecognizers-->
                                 </Grid>                                
                             </ViewCell>                            
                         </DataTemplate>
-                    </ListView.ItemTemplate>
-
-
-
+                    </ListView.ItemTemplate>                 
                 </ListView>
             </Frame>
             
             <!--Plus - Bauteil einfügen-->
             <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" x:Name="BoxPlus" />
-            <StackLayout Grid.Row="2" Orientation="Horizontal" Spacing="0">
-                <ImageButton Padding="20,0,0,0" Source="plus.png" BackgroundColor="{StaticResource TransparentBackground}" 
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <ImageButton Source="plus.png"  Grid.Column="0"
+                             BackgroundColor="{StaticResource TransparentBackground}" 
                      Clicked="Bauteil_Einfügen_Clicked" x:Name="ButtonPlus"
                      HorizontalOptions="Start"/>
-               
-            </StackLayout>
+                <ImageButton Source="ic_edit.png" BackgroundColor="{StaticResource TransparentBackground}" 
+                             Grid.Column="1" IsVisible="False"
+                             x:Name="ButtonEdit" HorizontalOptions="Start"/>
+
+            </Grid>
             
             
         </Grid>      

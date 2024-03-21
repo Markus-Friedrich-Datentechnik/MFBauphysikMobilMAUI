@@ -8,7 +8,9 @@
         <StackLayout Orientation="Horizontal">
             <ImageButton Source="back.png" Clicked="Back_Clicked" BackgroundColor="{StaticResource TransparentBackground}" HorizontalOptions="Start"/>
 
-            <Label Text="Menü" HorizontalOptions="CenterAndExpand" TextColor="{StaticResource TitleTextColor}" FontSize="Title" FontAttributes="Bold"/>
+            <Label Text="Menü" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                   TextColor="{StaticResource TitleTextColor}" 
+                   FontSize="Title" FontAttributes="Bold"/>
         </StackLayout>
     </NavigationPage.TitleView>
 

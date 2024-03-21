@@ -24,6 +24,8 @@
 
     <StackLayout Orientation="Vertical" Padding="10" 
                  BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+        
+        
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -69,5 +71,7 @@
             <BoxView Grid.Row="3" Color="{AppThemeBinding Light=White, Dark=White}"/>
         </Grid>
     </StackLayout>
+
+        
     
 </ContentPage>

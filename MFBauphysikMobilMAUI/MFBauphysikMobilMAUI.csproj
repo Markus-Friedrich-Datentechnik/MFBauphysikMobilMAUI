@@ -70,6 +70,7 @@
 	  <None Remove="Resources\Images\back.png" />
 	  <None Remove="Resources\Images\check.png" />
 	  <None Remove="Resources\Images\down.png" />
+	  <None Remove="Resources\Images\ic_edit.png" />
 	  <None Remove="Resources\Images\material.png" />
 	  <None Remove="Resources\Images\material_neu.png" />
 	  <None Remove="Resources\Images\menu.png" />

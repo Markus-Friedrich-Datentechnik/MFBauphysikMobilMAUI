@@ -11,7 +11,7 @@
             <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}" HorizontalOptions="Start" Clicked="Back_Clicked"/>
             <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                 <Label Text="Klimadaten" HorizontalOptions="Center" TextColor="{StaticResource TitleTextColor}" 
-                           FontSize="20" FontAttributes="Bold"/>
+                           FontSize="20" FontAttributes="Bold" VerticalOptions="CenterAndExpand" />
             </StackLayout>
         </StackLayout>
     </NavigationPage.TitleView>

@@ -36,29 +36,31 @@
                 <Image Source="suchen_2.png" Grid.Column="1"/>
             </Grid>
         </Frame>
-        
+
         <!--List Befestiger-->
-       
-            <ListView x:Name="listBefestiger" 
+
+        <ListView x:Name="listBefestiger" 
                       SelectionMode="Single" 
                       Grid.Row="1"
                       HasUnevenRows="True"
                       ItemSelected="listBefestiger_ItemSelected" 
                       SeparatorColor="{StaticResource TitleBackgroundColor}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
                     <ViewCell>
-                            <Grid Padding="10">
-                                <Label Text="{Binding B}" FontSize="{Binding SizeClass}"
+                        <Grid Padding="10">
+                            <Label Text="{Binding B}" FontSize="{Binding SizeClass}"
                                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                           
-                            </Grid>
-                        
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
 
+                        </Grid>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
+
+
+
 
 </ContentPage>

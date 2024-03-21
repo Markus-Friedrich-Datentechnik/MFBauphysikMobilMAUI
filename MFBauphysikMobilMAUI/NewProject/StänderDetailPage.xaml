@@ -11,10 +11,10 @@
         <StackLayout Orientation="Horizontal">
             <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}"
                          HorizontalOptions="StartAndExpand" Clicked="Back_Clicked"/>
-            <Label Text="Bauteil" TextColor="{StaticResource TitleTextColor}"
+            <Label Text="Bauteil" TextColor="{StaticResource TitleTextColor}" VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand" FontSize="Title" FontAttributes="Bold"/>
             <ImageButton Source="check.png" BackgroundColor="{StaticResource TransparentBackground}" 
-                         HorizontalOptions="EndAndExpand" Padding="0,0,10,0" Clicked="Check_Clicked"
+                         HorizontalOptions="EndAndExpand" Clicked="Check_Clicked"
                          IsVisible="true" x:Name="checkButton"/>
         </StackLayout>
     </NavigationPage.TitleView>
