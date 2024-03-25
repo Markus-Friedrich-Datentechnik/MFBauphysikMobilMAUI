@@ -13,7 +13,7 @@
             <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                 <Label Text="Konstruktion" HorizontalOptions="CenterAndExpand" 
                        TextColor="{StaticResource TitleTextColor}"
-                       FontSize="Title" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                       FontSize="{Binding SizeTitle}" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
             </StackLayout>
         </StackLayout>
     </NavigationPage.TitleView>

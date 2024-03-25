@@ -22,6 +22,18 @@ namespace MFBauphysikMobilMAUI.NewProject
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BefestigerPage : ContentPage
     {
+        private double _size_title;
+        public double SizeTitle
+        {
+            get { return _size_title; }
+            set
+            {
+                if (_size_title == value)
+                    return;
+                _size_title = value;
+                OnPropertyChanged(nameof(SizeTitle));
+            }
+        }
         public Befestiger? NewItem { get; set; }
         public EventHandler<Befestiger>? BefestigerAdded;
         List<BF>? _befestiger;
@@ -41,6 +53,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             {
                 i.SizeClass = Setting.Size_Default;
             }
+            SizeTitle = Setting.Size_Title;
            
         }
         public async void Back_Clicked (object sender, EventArgs e)

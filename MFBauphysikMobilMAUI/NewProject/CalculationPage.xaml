@@ -16,7 +16,7 @@
                 <Label Text="Bauphysikalische Berechnung" 
                        HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"
                        TextColor="{StaticResource TitleTextColor}" 
-                           FontSize="Medium" FontAttributes="Bold"/>
+                           FontSize="{Binding SizeMedium}" FontAttributes="Bold"/>
             </StackLayout>
         </StackLayout>
     </NavigationPage.TitleView>
@@ -38,18 +38,18 @@
 
     <Grid RowSpacing="0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="70"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--Tabview-->
-        <Grid Padding="5" Grid.Row="0" 
+        <Grid Padding="5" Grid.Row="0"
               BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <!--Deckblatt-->
             <Label Text="Deckblatt" TextColor="{StaticResource LabelButton}"  Grid.Column="0"
@@ -420,7 +420,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                         <ColumnDefinition Width="3*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="30"/>
                                     </Grid.ColumnDefinitions>
 
                                     <Label Text="{Binding Bezeichnung}" Grid.Row="0" Grid.Column="0" FontSize="{Binding SizeClass}"
@@ -437,26 +437,14 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                     <Label Text="{Binding R, StringFormat='{0:N4}'}" FontSize="{Binding SizeClass}"
                                 Grid.Row="0" Grid.Column="2" HorizontalOptions="Center"
                                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                                    <Image Grid.Column="3" Source="move.png" IsVisible="False">
-                                        <Image.GestureRecognizers>
-                                            
-                                        </Image.GestureRecognizers>
-                                    </Image>
 
-                                    <!--Grid.GestureRecognizers>
-                                        <DragGestureRecognizer CanDrag="True"
-                                                               DragStarting="DragGestureRecognizer_DragStarting"
-                                                               DragStartingCommand="{Binding BindingContext.ItemDragged, Source={x:Reference listBasisUwert}}"
-                                                               DragStartingCommandParameter="{Binding}"/>
-                                        <DropGestureRecognizer AllowDrop="True"
-                                                               DragLeaveCommand="{Binding BindingContext.ItemDragLeave, Source={x:Reference listBasisUwert}}"
-                                                               DragLeaveCommandParameter="{Binding}"
-                                                               DragOverCommand="{Binding BindingContext.ItemDraggedOver, Source={x:Reference listBasisUwert}}"
-                                                               DragOverCommandParameter="{Binding}"
-                                                               Drop="DropGestureRecognizer_Drop"
-                                                               DropCommand="{Binding BindingContext.ItemDropped, Source={x:Reference listBasisUwert}}"
-                                                               DropCommandParameter="{Binding}"/>                                        
-                                    </Grid.GestureRecognizers-->
+                                    <ImageButton Grid.Column="3" Grid.Row="0" Clicked="Up_Clicked"
+                                                 Source="up.png" HeightRequest="15"
+                                                 BackgroundColor="{StaticResource TextColor Blue}"/>
+                                    <ImageButton Grid.Column="3" Grid.Row="1" Clicked="Down_Clicked"
+                                                 Source="down.png" HeightRequest="15"
+                                                 BackgroundColor="{StaticResource TextColor Blue}"/>
+
                                 </Grid>                                
                             </ViewCell>                            
                         </DataTemplate>

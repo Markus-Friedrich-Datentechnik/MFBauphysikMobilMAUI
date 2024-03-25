@@ -8,12 +8,25 @@ using System.Threading.Tasks;
 using Microsoft.Maui.Controls.Xaml;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui;
+using MFBauphysikMobilMAUI.Helpers;
 
 namespace MFBauphysikMobilMAUI.Sortieren
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SortierenPage : ContentPage
     {
+        private double _size_title;
+        public double SizeTitle
+        {
+            get { return _size_title; }
+            set
+            {
+                if (_size_title == value)
+                    return;
+                _size_title = value;
+                OnPropertyChanged(nameof(SizeTitle));
+            }
+        }
         public event EventHandler<EinstellungModel> SortiertUpdated;
         public SortierenPage(EinstellungModel sortieren)
         {
@@ -41,6 +54,7 @@ namespace MFBauphysikMobilMAUI.Sortieren
             älteste.FontSize = sortieren.DefaultSize;
             a_z.FontSize = sortieren.DefaultSize;
             z_a.FontSize = sortieren.DefaultSize;
+            SizeTitle = Setting.Size_Title;
 
         }
 

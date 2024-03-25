@@ -352,6 +352,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                     <ColumnDefinition Width="3*"/>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="15"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
@@ -391,6 +392,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                     <ColumnDefinition Width="3*"/>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="15"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
@@ -428,6 +430,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                         <ColumnDefinition Width="3*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="30"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
@@ -448,7 +451,12 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                  Grid.Row="0" Grid.Column="2" HorizontalOptions="Center"
                                  TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
-                                    
+                                    <ImageButton Grid.Column="3" Grid.Row="0" Clicked="Up_Clicked"
+       VerticalOptions="Center" Source="up.png" 
+       BackgroundColor="{StaticResource TextColor Blue}"/>
+                                    <ImageButton Grid.Column="3" Grid.Row="1" Clicked="Down_Clicked"
+             VerticalOptions="CenterAndExpand" Source="down.png"
+       BackgroundColor="{StaticResource TextColor Blue}"/>
                                 </Grid>
                             </customview:MyViewCell>
                         </DataTemplate>
@@ -520,6 +528,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                     <ColumnDefinition Width="3*"/>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="15"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
@@ -560,6 +569,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                     <ColumnDefinition Width="3*"/>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="15"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
@@ -597,6 +607,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                         <ColumnDefinition Width="3*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="30"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
@@ -617,7 +628,12 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                     <Label Text="{Binding R, StringFormat='{0:N4}'}"  FontSize="{Binding SizeClass}"
                                            Grid.Row="0" Grid.Column="2" HorizontalOptions="Center"
                                  TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-
+                                    <ImageButton Grid.Column="3" Grid.Row="0" Clicked="Up_Clicked"
+       VerticalOptions="Center" Source="up.png" 
+       BackgroundColor="{StaticResource TextColor Blue}"/>
+                                    <ImageButton Grid.Column="3" Grid.Row="1" Clicked="Down_Clicked"
+             VerticalOptions="CenterAndExpand" Source="down.png"
+       BackgroundColor="{StaticResource TextColor Blue}"/>
                                 </Grid>
                             </customview:MyViewCell>
                         </DataTemplate>
@@ -762,7 +778,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
             <Frame Grid.Row="0" Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="4*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>

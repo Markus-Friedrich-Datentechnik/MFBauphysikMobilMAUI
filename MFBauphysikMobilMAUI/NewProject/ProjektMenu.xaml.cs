@@ -30,7 +30,18 @@ namespace MFBauphysikMobilMAUI.NewProject
         
     {
         public MainModel main_model { get;set; }
-
+        private double _size_title;
+        public double SizeTitle
+        {
+            get { return _size_title; }
+            set
+            {
+                if (_size_title == value)
+                    return;
+                _size_title = value;
+                OnPropertyChanged(nameof(SizeTitle));
+            }
+        }
 
         public ProjektMenu(MainModel project)
         {
@@ -47,6 +58,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             bv_label.FontSize = Setting.Size_Default;
             info_label.FontSize = Setting.Size_Default;
             klima_label.FontSize = Setting.Size_Default;
+            SizeTitle = Setting.Size_Title;
 
         }
 

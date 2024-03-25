@@ -10,12 +10,9 @@
                          BackgroundColor="{StaticResource TransparentBackground}" 
                          HorizontalOptions="Start" Clicked="Back_Clicked"/>
 
-            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >
-                <Label Text="MF Bauphysik mobil" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
-                       TextColor="{StaticResource TitleTextColor}" 
-                       FontSize="20"  FontAttributes="Bold"/>
-                <Label Text="Konfiguration" HorizontalOptions="Center"     VerticalOptions="Start"                   
-                       TextColor="{StaticResource TitleTextColor}" FontSize="10"/>
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >               
+                <Label Text="Konfiguration" HorizontalOptions="Center"     VerticalOptions="CenterAndExpand"                   
+                       TextColor="{StaticResource TitleTextColor}" FontSize="{Binding SizeTitle}"/>
             </StackLayout>
             <ImageButton Source ="check.png" 
                          BackgroundColor="{StaticResource TransparentBackground}"

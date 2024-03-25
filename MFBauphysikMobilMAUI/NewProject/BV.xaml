@@ -14,7 +14,7 @@
             <ImageButton Source="back.png" BackgroundColor="Transparent" HorizontalOptions="Start" Clicked= "Back_Clicked" />
             <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                 <Label Text="BV" HorizontalOptions="Center" TextColor="White" 
-                       FontSize="20" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                       x:Name="Title_BV" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
             </StackLayout>
             <ImageButton Source="next.png" BackgroundColor="{StaticResource TransparentBackground}" 
                          HorizontalOptions="End"  Clicked="Next_Clicked"/>

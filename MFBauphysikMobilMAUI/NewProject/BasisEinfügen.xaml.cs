@@ -18,6 +18,18 @@ namespace MFBauphysikMobilMAUI.NewProject
     public partial class BasisEinfügen : ContentPage
     {
         public MainModel main_model { get; set; }
+        private double _size_title;
+        public double SizeTitle
+        {
+            get { return _size_title; }
+            set
+            {
+                if (_size_title == value)
+                    return;
+                _size_title = value;
+                OnPropertyChanged(nameof(SizeTitle));
+            }
+        }
 
         public event EventHandler<BefestigerBasis> BefestigerUpdated;
         public event EventHandler<BefestigerBasis> BefestigerAdded;
@@ -40,6 +52,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 ModelID = befestiger.ModelID,
                 SizeClass = Setting.Size_Default,
             };
+            SizeTitle = Setting.Size_Title;
 
         }
 

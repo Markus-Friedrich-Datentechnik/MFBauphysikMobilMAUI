@@ -14,7 +14,7 @@ namespace MFBauphysikMobilMAUI.NewProject
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class KlimadatenPage : ContentPage
     {
-
+       
         public KlimadatenPage()
         {
             InitializeComponent();
@@ -41,6 +41,8 @@ namespace MFBauphysikMobilMAUI.NewProject
                 AußenWasserdampfdruck = 321,
 
                 SizeDefault = Setting.Size_Default,
+                SizeTitle = Setting.Size_Title,
+                
             };
         }
 

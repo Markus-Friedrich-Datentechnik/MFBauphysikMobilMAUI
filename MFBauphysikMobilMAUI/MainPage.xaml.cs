@@ -70,6 +70,31 @@ namespace MFBauphysikMobilMAUI
             }
         }
 
+        private double _size_title;
+        public double SizeTitle
+        {
+            get { return _size_title; }
+            set
+            {
+                if (_size_title == value)
+                    return;
+                _size_title = value;
+                OnPropertyChanged(nameof(SizeTitle));
+            }
+        }
+
+        private double _size_large;
+        public double SizeLarge
+        {
+            get { return _size_large; }
+            set
+            {
+                if (_size_large == value)
+                    return;
+                _size_large = value;
+                OnPropertyChanged(nameof(SizeLarge));
+            }
+        }
         public MainPage()
         {
             InitializeComponent();
@@ -84,6 +109,8 @@ namespace MFBauphysikMobilMAUI
                     },
                 };
             SizeDefault = Setting.Size_Default;
+            SizeTitle = Setting.Size_Title;
+            SizeLarge = Setting.Size_Large;
         }
 
         protected override async void OnAppearing()
@@ -92,7 +119,7 @@ namespace MFBauphysikMobilMAUI
             var itemsource = await App.Database.GetItemAsync();
             foreach (MainModel i in itemsource)
             {
-                i.SizeClass = Setting.Size_Default;
+                i.SizeClass = Setting.Size_Default;                
             }
             var setting = Setting_MainPage[0];
             setting.DefaultSize = Setting.Size_Default;

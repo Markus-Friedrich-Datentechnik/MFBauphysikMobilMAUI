@@ -168,6 +168,18 @@ namespace MFBauphysikMobilMAUI.Models
                 OnPropertyChanged(nameof(SizeDefault));
             }
         }
+        private double _size_title;
+        public double SizeTitle
+        {
+            get { return _size_title; }
+            set
+            {
+                if (_size_title == value)
+                    return;
+                _size_title = value;
+                OnPropertyChanged(nameof(SizeTitle));
+            }
+        }
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             if (PropertyChanged != null)

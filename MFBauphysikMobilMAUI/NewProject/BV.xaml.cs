@@ -17,8 +17,8 @@ namespace MFBauphysikMobilMAUI.NewProject
 {
     public partial class BV : ContentPage
     {
-        public MainModel main_model { get; set; }
-       
+        public MainModel main_model { get; set; }       
+
         public BV(MainModel project)
         {            
             InitializeComponent();
@@ -46,6 +46,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             BV_Ersatz.FontSize = Setting.Size_Default;
             entry_label.FontSize = Setting.Size_Default;
             ProjektName.FontSize = Setting.Size_Default;
+            Title_BV.FontSize = Setting.Size_Large;
         }
         public async void Back_Clicked (object sender, EventArgs e)
         {            

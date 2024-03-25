@@ -62,8 +62,8 @@
             </Grid>
 
             <!--Fester R-->
-            <Grid Padding="10">
-                <Grid.ColumnDefinitions>
+            <StackLayout Orientation="Vertical" Padding="10">
+                <!--Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="10*"/>
                 </Grid.ColumnDefinitions>
@@ -71,17 +71,22 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="1"/>
-                </Grid.RowDefinitions>
-                <Label Text="fester Wärmedurchlasswiderstand" FontAttributes="Bold" 
-                        Grid.Row="0" Grid.ColumnSpan="2" FontSize="{Binding SizeClass}"
+                </Grid.RowDefinitions-->
+                <Label Text="fester Wärmedurchlasswiderstand" FontAttributes="Bold" HorizontalOptions="StartAndExpand"
+                        FontSize="{Binding SizeClass}"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Entry Text="{Binding R}" Grid.Row="1" Grid.Column="1" 
-                                 x:Name="Fester_R_Entry" FontSize="{Binding SizeClass}"
-                                 TextChanged="Entry_TextChanged"
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox CheckedChanged="Fester_R_CheckedChanged" IsChecked="{Binding Fester_R}"
+                              HorizontalOptions="Start"/>
+                    <Entry Text="{Binding R}" 
+                        x:Name="Fester_R_Entry" FontSize="{Binding SizeClass}"
+                        TextChanged="Entry_TextChanged" HorizontalOptions="Start"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <CheckBox CheckedChanged="Fester_R_CheckedChanged" Grid.Row="1" Grid.Column="0" IsChecked="{Binding Fester_R}"/>
+                    
+                </StackLayout>
                 <BoxView Color="{AppThemeBinding Light=White, Dark= White}" Grid.Row="2" Grid.ColumnSpan="2"/>
-            </Grid>
+
+            </StackLayout>
 
             <!--Dicke-->
             <Grid Padding="10">
@@ -110,22 +115,22 @@
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="3*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
                 <Label Text="Dampfdiffusionswiderstandszahl" FontSize="{Binding SizeClass}"
-                        Grid.Row="0" Grid.ColumnSpan="3" FontAttributes="Bold"
+                        Grid.Row="0" Grid.ColumnSpan="4" FontAttributes="Bold"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Label Text="min" Grid.Row="1" Grid.Column="0" 
+                <Label Text="min" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center"
                    FontSize="{Binding SizeClass}" VerticalOptions="CenterAndExpand"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Label Text="max" Grid.Row="1" Grid.Column="2" 
+                <Label Text="max" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center"
                    FontSize="{Binding SizeClass}" VerticalOptions="CenterAndExpand"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
                 <Entry Text="{Binding Dampfdiffusionswiderstand_Min, StringFormat='{0:N2}'}" 
                    Grid.Row="1" Grid.Column="1" FontSize="{Binding SizeClass}"
-                   x:Name="Entry_diff_min" TextChanged="Entry_TextChanged"
+                   x:Name="Entry_diff_min" TextChanged="Entry_TextChanged" 
                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
                 <Entry Text="{Binding Dampfdiffusionswiderstand_Max, StringFormat='{0:N2}'}" 
                    Grid.Row="1" Grid.Column="3" FontSize="{Binding SizeClass}"
@@ -145,17 +150,17 @@
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="3*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
                 <Label Text="sd-Wert [m]" FontSize="{Binding SizeClass}" 
                         Grid.Row="0" Grid.ColumnSpan="2" FontAttributes="Bold"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Label Text="min" Grid.Row="1" Grid.Column="0" 
+                <Label Text="min" Grid.Row="1" Grid.Column="0"  HorizontalOptions="Center"
                            FontSize="{Binding SizeClass}" VerticalOptions="CenterAndExpand"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Label Text="max" Grid.Row="1" Grid.Column="2" 
+                <Label Text="max" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center"
                            FontSize="{Binding SizeClass}" VerticalOptions="CenterAndExpand"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
                 <Entry Text="{Binding Sd_Min, StringFormat='{0:N2}'}" Grid.Row="1" Grid.Column="1" 
@@ -166,11 +171,13 @@
                                  x:Name="Entry_sd_max" FontSize="{Binding SizeClass}"
                                  TextChanged="Entry_TextChanged"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <CheckBox CheckedChanged="Fester_sd_CheckedChanged" Grid.Row="2" Grid.Column="0"
-                           IsChecked="{Binding Fester_sd}"/>
-                <Label Text="fester sd-Wert" Grid.Row="2" Grid.Column="1" 
-                   Padding="5" FontSize="{Binding SizeClass}" VerticalOptions="CenterAndExpand"
-                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                <StackLayout Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal">
+                    <CheckBox CheckedChanged="Fester_sd_CheckedChanged" 
+        IsChecked="{Binding Fester_sd}" HorizontalOptions="Start"/>
+                    <Label Text="fester sd-Wert" 
+Padding="5" FontSize="{Binding SizeClass}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"
+     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                </StackLayout>
                 <BoxView Grid.Row="3" Grid.ColumnSpan="4"
                              Color="{AppThemeBinding Light=Transparent,Dark=White}"/>
             </Grid>
@@ -200,21 +207,19 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="1"/>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="10*"/>
-                </Grid.ColumnDefinitions>
 
                 <!--Checkbox kapillar-->
-                <CheckBox CheckedChanged="CheckBox_CheckedChanged" Grid.Row="0" Grid.Column="0" Margin="3,0,0,0" 
-                           IsChecked="{Binding Kapillar}"/>
-                <Label Grid.Row="0" Grid.Column="1" Text="kapillar nicht wasseraufnahmefähig" 
-                        FontSize="{Binding SizeClass}"
+                <StackLayout Grid.Row="0" Orientation="Horizontal">
+                    <CheckBox CheckedChanged="CheckBox_CheckedChanged" 
+                           IsChecked="{Binding Kapillar}" HorizontalOptions="Start"/>
+                    <Label Text="kapillar nicht wasseraufnahmefähig" 
+                        FontSize="{Binding SizeClass}" 
                         VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                </StackLayout>
 
                 <!--Radiobutton holz, holzwerkstoff, sonstiges-->
-                <StackLayout RadioButtonGroup.GroupName="kapillar" Grid.Row="1" Grid.ColumnSpan="2">
+                <StackLayout RadioButtonGroup.GroupName="kapillar" Grid.Row="1" >
                     <RadioButton Value="holz" IsChecked="{Binding Holz}" Padding="10"
                               CheckedChanged="Kapillar_CheckedChanged">
                         <RadioButton.Content>

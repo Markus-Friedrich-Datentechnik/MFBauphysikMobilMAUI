@@ -4,16 +4,17 @@
              x:Class="MFBauphysikMobilMAUI.NewProject.NewPage"
              xmlns:effects="clr-namespace:MFBauphysikMobilMAUI.Effects" 
              xmlns:custom="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer" 
-             xmlns:models="clr-namespace:MFBauphysikMobilMAUI.Models" x:DataType="models:MainModel"
              NavigationPage.HasBackButton="False">
-
+    <!--             xmlns:models="clr-namespace:MFBauphysikMobilMAUI.Models" x:DataType="models:MainModel"
+-->
     <NavigationPage.TitleView>      
         <StackLayout Orientation="Horizontal">
             <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}" 
                          HorizontalOptions="Start" Clicked="Back_Clicked"/>
             <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                 <Label Text="BV" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" 
-                       TextColor="{StaticResource TitleTextColor}" FontSize="Title" FontAttributes="Bold"/>
+                       FontSize="{Binding SizeTitle}"
+                       TextColor="{StaticResource TitleTextColor}" FontAttributes="Bold"/>
             </StackLayout>            
             <ImageButton Source="next.png" BackgroundColor="{StaticResource TransparentBackground}"
                          HorizontalOptions="End" Clicked="Next_Clicked" WidthRequest="45"/>

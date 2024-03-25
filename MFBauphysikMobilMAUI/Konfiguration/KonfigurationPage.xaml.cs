@@ -20,7 +20,18 @@ namespace MFBauphysikMobilMAUI.Konfiguration
     public partial class KonfigurationPage : ContentPage, INotifyPropertyChanged
     {
         public event EventHandler<EinstellungModel> KonfigUpdated;
-
+        private double _size_title;
+        public double SizeTitle
+        {
+            get { return _size_title; }
+            set
+            {
+                if (_size_title == value)
+                    return;
+                _size_title = value;
+                OnPropertyChanged(nameof(SizeTitle));
+            }
+        }
         public double Default_OldValue {  get; set; }
         public double Large_OldValue { get; set; }
         public double Medium_OldValue { get; set; }
@@ -53,6 +64,7 @@ namespace MFBauphysikMobilMAUI.Konfiguration
             dark_label.FontSize = Setting.Size_Default;
             darstellung_label.FontSize = Setting.Size_Default;
             slider_label.FontSize = Setting.Size_Default;
+            SizeTitle = Setting.Size_Title;
             switch (Setting.Theme)
             {
                 case 0:

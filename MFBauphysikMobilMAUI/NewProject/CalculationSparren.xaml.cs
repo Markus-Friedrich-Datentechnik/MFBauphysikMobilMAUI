@@ -38,9 +38,6 @@ namespace MFBauphysikMobilMAUI.NewProject
         public BefestigerBasis newItem_Basis_Befestiger { get; set; }
         public BefestigerSparren newItem_Sparren_Befestiger { get; set; }
 
-        public int Row0 { get; set; }
-        public int Row1 { get; set; }
-
         ObservableCollection<Basis> _basis = new ObservableCollection<Basis>();
         public ObservableCollection<Basis> BasisList
         {
@@ -631,19 +628,6 @@ namespace MFBauphysikMobilMAUI.NewProject
                 OnPropertyChanged(nameof(Pc));
             }
         }
-
-
-        public ICommand ItemDragged { get; }
-        public ICommand ItemDraggedOver { get; }
-        public ICommand ItemDragLeave { get; }
-        public ICommand ItemDropped { get; }
-
-        public ICommand ItemDragged2 { get; }
-        public ICommand ItemDraggedOver2 { get; }
-        public ICommand ItemDragLeave2 { get; }
-        public ICommand ItemDropped2 { get; }
-
-
         private bool _nachweis_basis;
         public bool NachweisBasis
         {
@@ -979,17 +963,6 @@ namespace MFBauphysikMobilMAUI.NewProject
 
             //Calculate_Ug();
             BindingContext = this;
-
-            ItemDragged = new Command<Basis>(OnItemDraggedBasis);
-            ItemDraggedOver = new Command<Basis>(OnItemDraggedOverBasis);
-            ItemDragLeave = new Command<Basis>(OnItemDragLeaveBasis);
-            ItemDropped = new Command<Basis>(i => OnItemDroppedBasis(i));
-
-            ItemDragged2 = new Command<Sparren>(OnItemDraggedSparren);
-            ItemDraggedOver2 = new Command<Sparren>(OnItemDraggedOverSparren);
-            ItemDragLeave2 = new Command<Sparren>(OnItemDragLeaveSparren);
-            ItemDropped2 = new Command<Sparren>(i => OnItemDroppedSparren(i));
-
         }
 
         protected override void OnAppearing()
@@ -1189,137 +1162,8 @@ namespace MFBauphysikMobilMAUI.NewProject
             Calculate_Uf();
             Calculate_Ug();
             Calculate_DeltaU();
-        }
-
-        //Drag and Drop Basis
-        private void OnItemDraggedBasis(Basis item)
-        {
-            foreach (var i in main_model.Bauteil_Basis)
-            {
-                i.IsBeingDragged = item.IsBeingDragged;
-            }
-            // main_model.Bauteil_Basis.ForEach(i => i.IsBeingDragged = item == i);                     
-        }
-        private void OnItemDraggedOverBasis(Basis item)
-        {
-            var itemBeingDragged = main_model.Bauteil_Basis.FirstOrDefault(i => i.IsBeingDragged);
-            foreach (var i in main_model.Bauteil_Basis)
-            {
-                i.IsBeingDraggedOver = item.IsBeingDraggedOver;
-            }
-            //main_model.Bauteil_Basis.ForEach(i => i.IsBeingDraggedOver = item == i && item != itemBeingDragged);
-        }
-        private void OnItemDragLeaveBasis(Basis item)
-        {
-            foreach (var i in main_model.Bauteil_Basis)
-            {
-                i.IsBeingDraggedOver = false;
-            }
-            // main_model.Bauteil_Basis.ForEach(i => i.IsBeingDraggedOver = false);
-        }
-        private async void OnItemDroppedBasis(Basis item)
-        {
-            var itemToMove = main_model.Bauteil_Basis.First(i => i.IsBeingDragged);
-            var itemToInsertBefore = item;
-            if (itemToMove == null || itemToInsertBefore == null || itemToMove == itemToInsertBefore)
-                return;
-
-            main_model.Bauteil_Basis.Remove(itemToMove);
-            main_model.Bauteil_Basis.Insert(main_model.Bauteil_Basis.IndexOf(item), itemToMove);
-            //main_model.Bauteil_Basis.Insert(main_model.Bauteil_Basis.IndexOf(item)-1, itemToMove);
-
-            itemToMove.IsBeingDragged = false;
-            itemToInsertBefore.IsBeingDraggedOver = false;
-
-            int oldItemID = itemToMove.ID_Bauteil;
-            itemToMove.ID_Bauteil = itemToInsertBefore.ID_Bauteil;
-            int newItemID = itemToMove.ID_Bauteil;
-            await App.Database.UpdateBauteilAsync(itemToMove);
-            int difference = oldItemID - newItemID;
-            //nach oben 
-            if (oldItemID > newItemID)
-            {
-                itemToInsertBefore.ID_Bauteil = oldItemID;
-                await App.Database.UpdateBauteilAsync(itemToInsertBefore);
-
-            }
-            //nach unten
-            else
-            {
-                itemToInsertBefore.ID_Bauteil = oldItemID;
-                await App.Database.UpdateBauteilAsync(itemToInsertBefore);
-            }
-            main_model.Date = DateTime.Now;
-            await App.Database.UpdateItemAsync(main_model);
-            CalculateSum_Basis();
-            GetBasis();
-        }
-
-        //Drag and Drop Sparren
-        private void OnItemDraggedSparren(Sparren item)
-        {
-            foreach (var i in main_model.Bauteil_Sparren)
-            {
-                i.IsBeingDragged = item.IsBeingDragged;
-            }
-            //main_model.Bauteil_Sparren.ForEach(i => i.IsBeingDragged = item == i);
-        }
-        private void OnItemDraggedOverSparren(Sparren item)
-        {
-            var itemBeingDragged = main_model.Bauteil_Sparren.FirstOrDefault(i => i.IsBeingDragged);
-            foreach (var i in main_model.Bauteil_Sparren)
-            {
-                i.IsBeingDraggedOver = item.IsBeingDraggedOver;
-            }
-           //main_model.Bauteil_Sparren.ForEach(i => i.IsBeingDraggedOver = item == i && item != itemBeingDragged);
-        }
-        private void OnItemDragLeaveSparren(Sparren item)
-        {
-
-            foreach (var i in main_model.Bauteil_Sparren)
-            {
-                i.IsBeingDraggedOver = false;
-            }
-            //main_model.Bauteil_Sparren.ForEach(i => i.IsBeingDraggedOver = false);
-        }
-        private async void OnItemDroppedSparren(Sparren item)
-        {
-            var itemToMove = main_model.Bauteil_Sparren.First(i => i.IsBeingDragged);
-            var itemToInsertBefore = item;
-            if (itemToMove == null || itemToInsertBefore == null || itemToMove == itemToInsertBefore)
-                return;
-
-            main_model.Bauteil_Sparren.Remove(itemToMove);
-            main_model.Bauteil_Sparren.Insert(main_model.Bauteil_Sparren.IndexOf(item), itemToMove);
-
-            itemToMove.IsBeingDragged = false;
-            itemToInsertBefore.IsBeingDraggedOver = false;
-
-            int oldItemID = itemToMove.ID_Bauteil;
-            itemToMove.ID_Bauteil = itemToInsertBefore.ID_Bauteil;
-            int newItemID = itemToMove.ID_Bauteil;
-            await App.Database.UpdateBauteilSparrenAsync(itemToMove);
-            int difference = oldItemID - newItemID;
-            //nach oben 
-            if (oldItemID > newItemID)
-            {
-                itemToInsertBefore.ID_Bauteil = oldItemID;
-                await App.Database.UpdateBauteilSparrenAsync(itemToInsertBefore);
-
-            }
-            //nach unten
-            else
-            {
-                itemToInsertBefore.ID_Bauteil = oldItemID;
-                await App.Database.UpdateBauteilSparrenAsync(itemToInsertBefore);
-            }
-            main_model.Date = DateTime.Now;
-            await App.Database.UpdateItemAsync(main_model);
-            CalculateSum_Sparren();
-            GetSparren();
-        }
-
-
+        }  
+       
         public void CalculateSum_Basis()
         {
 
@@ -2824,6 +2668,91 @@ namespace MFBauphysikMobilMAUI.NewProject
         {
             await DisplayAlert("Achtung!", "Bauteile können nur unter U-Wert bearbeitet werden", "OK");
         }
-     
+        private async void Up_Clicked(object sender, EventArgs e)
+        {
+            ImageButton imagebutton = (sender as ImageButton);
+            if (UwertBasisButton.FontAttributes == FontAttributes.Bold)
+            {
+                var item = (imagebutton.BindingContext as Basis);
+                int old_id = item.ID_Bauteil;
+                int itemToInsertBefore_old_ID = old_id - 1;
+                foreach (Basis i in main_model.Bauteil_Basis)
+                {
+                    if (i.ID_Bauteil == itemToInsertBefore_old_ID)
+                    {
+                        i.ID_Bauteil = old_id;
+                        item.ID_Bauteil = itemToInsertBefore_old_ID;
+                        await App.Database.UpdateBauteilAsync(i);
+                        break;
+                    }
+                }
+                await App.Database.UpdateBauteilAsync(item);
+                OnAppearing();
+            }
+            else if (UwertSparrenButton.FontAttributes == FontAttributes.Bold)
+            {
+                var item = (imagebutton.BindingContext as Sparren);
+                int old_id = item.ID_Bauteil;
+                int itemToInsertBefore_old_ID = old_id - 1;
+                foreach (Sparren i in main_model.Bauteil_Sparren)
+                {
+                    if (i.ID_Bauteil == itemToInsertBefore_old_ID)
+                    {
+                        i.ID_Bauteil = old_id;
+                        item.ID_Bauteil = itemToInsertBefore_old_ID;
+                        await App.Database.UpdateBauteilSparrenAsync(i);
+                        break;
+                    }
+                }
+                await App.Database.UpdateBauteilSparrenAsync(item);
+                OnAppearing();
+            }
+            main_model.Date = DateTime.Now;
+            await App.Database.UpdateItemAsync(main_model);
+        }
+
+        private async void Down_Clicked(object sender, EventArgs e)
+        {
+            ImageButton imagebutton = (sender as ImageButton)!;
+            if (UwertBasisButton.FontAttributes == FontAttributes.Bold)
+            {
+                var item = (imagebutton.BindingContext as Basis)!;
+                int old_id = item.ID_Bauteil;
+                int itemToInsertBefore_old_ID = old_id + 1;
+                foreach (Basis i in main_model.Bauteil_Basis)
+                {
+                    if (i.ID_Bauteil == itemToInsertBefore_old_ID)
+                    {
+                        i.ID_Bauteil = old_id;
+                        item.ID_Bauteil = itemToInsertBefore_old_ID;
+                        await App.Database.UpdateBauteilAsync(i);
+                        break;
+                    }
+                }
+                await App.Database.UpdateBauteilAsync(item);
+                OnAppearing();
+            }
+            else if (UwertSparrenButton.FontAttributes == FontAttributes.Bold)
+            {
+                var item = (imagebutton.BindingContext as Sparren)!;
+                int old_id = item.ID_Bauteil;
+                int itemToInsertBefore_old_ID = old_id + 1;
+                foreach (Sparren i in main_model.Bauteil_Sparren)
+                {
+                    if (i.ID_Bauteil == itemToInsertBefore_old_ID)
+                    {
+                        i.ID_Bauteil = old_id;
+                        item.ID_Bauteil = itemToInsertBefore_old_ID;
+                        await App.Database.UpdateBauteilSparrenAsync(i);
+                        break;
+                    }
+                }
+                await App.Database.UpdateBauteilSparrenAsync(item);
+                OnAppearing();
+            }
+            main_model.Date = DateTime.Now;
+            await App.Database.UpdateItemAsync(main_model);
+        }
+
     }
 }

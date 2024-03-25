@@ -12,11 +12,8 @@
             <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}" 
                          HorizontalOptions="Start" Clicked="Back_Clicked"/>
 
-            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                <Label Text="MF Bauphysik mobil" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
-                       TextColor="{StaticResource TitleTextColor}" 
-                       FontSize="20" FontAttributes="Bold"/>
-                <Label Text="Sortieren" HorizontalOptions="Center" FontSize="14" VerticalOptions="Center"
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">               
+                <Label Text="Sortieren" HorizontalOptions="Center" FontSize="{Binding SizeTitle}" VerticalOptions="CenterAndExpand"
                        TextColor="{StaticResource TitleTextColor}"/>
             </StackLayout>           
         </StackLayout>

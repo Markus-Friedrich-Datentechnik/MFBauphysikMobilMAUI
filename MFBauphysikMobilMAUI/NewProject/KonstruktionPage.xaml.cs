@@ -17,6 +17,18 @@ namespace MFBauphysikMobilMAUI.NewProject
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class KonstruktionPage : ContentPage, INotifyPropertyChanged
     {
+        private double _size_title;
+        public double SizeTitle
+        {
+            get { return _size_title; }
+            set
+            {
+                if (_size_title == value)
+                    return;
+                _size_title = value;
+                OnPropertyChanged(nameof(SizeTitle));
+            }
+        }
         public event EventHandler<string> KonstruktionChanged;
 
         private bool _kaltdach;
@@ -139,6 +151,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             luft_wand_label.FontSize = Setting.Size_Default;
             kein_luft_wand_label.FontSize = Setting.Size_Default;
             konstruktion_label.FontSize = Setting.Size_Default;
+            SizeTitle = Setting.Size_Title;
             Name = konstruktionstyp;
         }
 

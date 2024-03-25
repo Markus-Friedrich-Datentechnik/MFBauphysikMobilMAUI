@@ -13,7 +13,7 @@ x:DataType="models:EinstellungModel"
 
             <Label Text="Menü" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"
                    TextColor="{StaticResource TitleTextColor}" 
-                   FontSize="Title" FontAttributes="Bold"/>
+                   FontSize="{Binding SizeTitle}" FontAttributes="Bold"/>
         </StackLayout>
     </NavigationPage.TitleView>
     

@@ -610,18 +610,6 @@ namespace MFBauphysikMobilMAUI.NewProject
                 OnPropertyChanged(nameof(Pc));
             }
         }
-
-
-        public ICommand ItemDragged { get; }
-        public ICommand ItemDraggedOver { get; }
-        public ICommand ItemDragLeave { get; }
-        public ICommand ItemDropped { get; }
-
-        public ICommand ItemDragged2 { get; }
-        public ICommand ItemDraggedOver2 { get; }
-        public ICommand ItemDragLeave2 { get; }
-        public ICommand ItemDropped2 { get; }
-
         private bool _nachweis_gefach;
         public bool NachweisGefach
         {
@@ -987,17 +975,7 @@ namespace MFBauphysikMobilMAUI.NewProject
 
             AnteilGefach.IsVisible = false;
             AnteilStänder.IsVisible = false;
-
-            BindingContext = this;
-            ItemDragged = new Command<Gefach>(OnItemDraggedGefach);
-            ItemDraggedOver = new Command<Gefach>(OnItemDraggedOverGefach);
-            ItemDragLeave = new Command<Gefach>(OnItemDragLeaveGefach);
-            ItemDropped = new Command<Gefach>(i => OnItemDroppedGefach(i));
-
-            ItemDragged2 = new Command<Ständer>(OnItemDraggedStänder);
-            ItemDraggedOver2 = new Command<Ständer>(OnItemDraggedOverStänder);
-            ItemDragLeave2 = new Command<Ständer>(OnItemDragLeaveStänder);
-            ItemDropped2 = new Command<Ständer>(i => OnItemDroppedStänder(i));
+            BindingContext = this;          
         }
         protected override void OnAppearing()
         {
@@ -1105,7 +1083,6 @@ namespace MFBauphysikMobilMAUI.NewProject
             Calculate_Ug();
             Calculate_DeltaU();
         }
-
         private async void GetStänder()
         {
             //Bauteil
@@ -1201,136 +1178,9 @@ namespace MFBauphysikMobilMAUI.NewProject
             Calculate_Uf();
             Calculate_Ug();
             Calculate_DeltaU();
-        }
-
-        //Drag and Drop Gefach
-        private void OnItemDraggedGefach(Gefach item)
-        {
-            foreach (var i in main_model.Bauteil_Gefach)
-            {
-                i.IsBeingDragged = item.IsBeingDragged;
-            }
-           //main_model.Bauteil_Gefach.ForEach(i => i.IsBeingDragged = item == i);
-        }
-        private void OnItemDraggedOverGefach(Gefach item)
-        {
-            var itemBeingDragged = main_model.Bauteil_Gefach.FirstOrDefault(i => i.IsBeingDragged);
-            foreach (var i in main_model.Bauteil_Basis)
-            {
-                i.IsBeingDraggedOver = item.IsBeingDraggedOver;
-            }
-           // main_model.Bauteil_Gefach.ForEach(i => i.IsBeingDraggedOver = item == i && item != itemBeingDragged);
-        }
-        private void OnItemDragLeaveGefach(Gefach item)
-        {
-            foreach (var i in main_model.Bauteil_Basis)
-            {
-                i.IsBeingDraggedOver = false;
-            }
-            //main_model.Bauteil_Gefach.ForEach(i => i.IsBeingDraggedOver = false);
-        }
-        private async void OnItemDroppedGefach(Gefach item)
-        {
-            var itemToMove = main_model.Bauteil_Gefach.First(i => i.IsBeingDragged);
-            var itemToInsertBefore = item;
-            if (itemToMove == null || itemToInsertBefore == null || itemToMove == itemToInsertBefore)
-                return;
-
-            main_model.Bauteil_Gefach.Remove(itemToMove);
-            main_model.Bauteil_Gefach.Insert(main_model.Bauteil_Gefach.IndexOf(item), itemToMove);
-
-            itemToMove.IsBeingDragged = false;
-            itemToInsertBefore.IsBeingDraggedOver = false;
-            int oldItemID = itemToMove.ID_Bauteil;
-            itemToMove.ID_Bauteil = itemToInsertBefore.ID_Bauteil;
-            int newItemID = itemToMove.ID_Bauteil;
-            await App.Database.UpdateBauteilGefachAsync(itemToMove);
-            int difference = oldItemID - newItemID;
-            //nach oben 
-            if (oldItemID > newItemID)
-            {
-                itemToInsertBefore.ID_Bauteil = oldItemID;
-                await App.Database.UpdateBauteilGefachAsync(itemToInsertBefore);
-
-            }
-            //nach unten
-            else
-            {
-                itemToInsertBefore.ID_Bauteil = oldItemID;
-                await App.Database.UpdateBauteilGefachAsync(itemToInsertBefore);
-            }
-            main_model.Date = DateTime.Now;
-            await App.Database.UpdateItemAsync(main_model);
-            CalculateSum_Gefach();
-            GetGefach();
-        }
-
-        //Drag and Drop Ständer
-        private void OnItemDraggedStänder(Ständer item)
-        {
-            foreach (var i in main_model.Bauteil_Ständer)
-            {
-                i.IsBeingDragged = item.IsBeingDragged;
-            }
-            //main_model.Bauteil_Ständer.ForEach(i => i.IsBeingDragged = item == i);
-        }
-        private void OnItemDraggedOverStänder(Ständer item)
-        {
-            var itemBeingDragged = main_model.Bauteil_Ständer.FirstOrDefault(i => i.IsBeingDragged);
-            foreach (var i in main_model.Bauteil_Ständer)
-            {
-                i.IsBeingDraggedOver = item.IsBeingDraggedOver;
-            }
-            //main_model.Bauteil_Ständer.ForEach(i => i.IsBeingDraggedOver = item == i && item != itemBeingDragged);
-        }
-        private void OnItemDragLeaveStänder(Ständer item)
-        {
-            foreach (var i in main_model.Bauteil_Ständer)
-            {
-                i.IsBeingDraggedOver = false;
-            }
-            //main_model.Bauteil_Ständer.ForEach(i => i.IsBeingDraggedOver = false);
-        }
-        private async void OnItemDroppedStänder(Ständer item)
-        {
-            var itemToMove = main_model.Bauteil_Ständer.First(i => i.IsBeingDragged);
-            var itemToInsertBefore = item;
-            if (itemToMove == null || itemToInsertBefore == null || itemToMove == itemToInsertBefore)
-                return;
-
-            main_model.Bauteil_Ständer.Remove(itemToMove);
-            main_model.Bauteil_Ständer.Insert(main_model.Bauteil_Ständer.IndexOf(item), itemToMove);
-
-            itemToMove.IsBeingDragged = false;
-            itemToInsertBefore.IsBeingDraggedOver = false;
-
-            int oldItemID = itemToMove.ID_Bauteil;
-            itemToMove.ID_Bauteil = itemToInsertBefore.ID_Bauteil;
-            int newItemID = itemToMove.ID_Bauteil;
-            await App.Database.UpdateBauteilStänderAsync(itemToMove);
-            int difference = oldItemID - newItemID;
-            //nach oben 
-            if (oldItemID > newItemID)
-            {
-                itemToInsertBefore.ID_Bauteil = oldItemID;
-                await App.Database.UpdateBauteilStänderAsync(itemToInsertBefore);
-
-            }
-            //nach unten
-            else
-            {
-                itemToInsertBefore.ID_Bauteil = oldItemID;
-                await App.Database.UpdateBauteilStänderAsync(itemToInsertBefore);
-            }
-            main_model.Date = DateTime.Now;
-            await App.Database.UpdateItemAsync(main_model);
-            CalculateSum_Ständer();
-            GetStänder();
-        }
-
+        }        
         public void CalculateSum_Gefach()
         {
-
             if (Konstruktionstyp == "Warmdach")
             {
                 Pc = 2000;
@@ -1342,7 +1192,6 @@ namespace MFBauphysikMobilMAUI.NewProject
             Rgefach = main_model.Bauteil_Gefach.Sum(p => p.R) + Horizontal + Außen;
             Summe_Dicke_Gefach = main_model.Bauteil_Gefach.Sum(p => p.Dicke);
             Ugefach = 1 / Rgefach;
-
 
             //Sd-Wert in Tauperiode = sd-Min
             //Bestimmen von Temperatur, Sättigungsdampfdruck
@@ -1645,7 +1494,6 @@ namespace MFBauphysikMobilMAUI.NewProject
         }
         public void CalculateSum_Ständer()
         {
-
             if (Konstruktionstyp == "Warmdach")
             {
                 Pc = 2000;
@@ -1657,7 +1505,6 @@ namespace MFBauphysikMobilMAUI.NewProject
             Rständer = main_model.Bauteil_Ständer.Sum(p => p.R) + Horizontal + Außen;
             Summe_Dicke_Ständer = main_model.Bauteil_Ständer.Sum(p => p.Dicke);
             Uständer = 1 / Rständer;
-
 
             //Sd-Wert in Tauperiode = sd-Min
             //Bestimmen von Temperatur, Sättigungsdampfdruck
@@ -2793,6 +2640,92 @@ namespace MFBauphysikMobilMAUI.NewProject
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             await DisplayAlert("Achtung!", "Bauteile können nur unter U-Wert bearbeitet werden", "OK");
+        }
+
+        private async void Up_Clicked(object sender, EventArgs e)
+        {
+            ImageButton imagebutton = (sender as ImageButton);
+            if (UwertGefachButton.FontAttributes == FontAttributes.Bold)
+            {
+                var item = (imagebutton.BindingContext as Gefach);
+                int old_id = item.ID_Bauteil;
+                int itemToInsertBefore_old_ID = old_id - 1;
+                foreach (Gefach i in main_model.Bauteil_Gefach)
+                {
+                    if (i.ID_Bauteil == itemToInsertBefore_old_ID)
+                    {
+                        i.ID_Bauteil = old_id;
+                        item.ID_Bauteil = itemToInsertBefore_old_ID;
+                        await App.Database.UpdateBauteilGefachAsync(i);
+                        break;
+                    }
+                }
+                await App.Database.UpdateBauteilGefachAsync(item);
+                OnAppearing();
+            }
+            else if (UwertStänderButton.FontAttributes == FontAttributes.Bold)
+            {
+                var item = (imagebutton.BindingContext as Ständer);
+                int old_id = item.ID_Bauteil;
+                int itemToInsertBefore_old_ID = old_id - 1;
+                foreach (Ständer i in main_model.Bauteil_Ständer)
+                {
+                    if (i.ID_Bauteil == itemToInsertBefore_old_ID)
+                    {
+                        i.ID_Bauteil = old_id;
+                        item.ID_Bauteil = itemToInsertBefore_old_ID;
+                        await App.Database.UpdateBauteilStänderAsync(i);
+                        break;
+                    }
+                }
+                await App.Database.UpdateBauteilStänderAsync(item);
+                OnAppearing();
+            }
+            main_model.Date = DateTime.Now;
+            await App.Database.UpdateItemAsync(main_model);
+        }
+
+        private async void Down_Clicked(object sender, EventArgs e)
+        {
+            ImageButton imagebutton = (sender as ImageButton)!;
+            if (UwertGefachButton.FontAttributes == FontAttributes.Bold)
+            {
+                var item = (imagebutton.BindingContext as Gefach)!;
+                int old_id = item.ID_Bauteil;
+                int itemToInsertBefore_old_ID = old_id + 1;
+                foreach (Gefach i in main_model.Bauteil_Gefach)
+                {
+                    if (i.ID_Bauteil == itemToInsertBefore_old_ID)
+                    {
+                        i.ID_Bauteil = old_id;
+                        item.ID_Bauteil = itemToInsertBefore_old_ID;
+                        await App.Database.UpdateBauteilGefachAsync(i);
+                        break;
+                    }
+                }
+                await App.Database.UpdateBauteilGefachAsync(item);
+                OnAppearing();
+            }
+            else if (UwertStänderButton.FontAttributes == FontAttributes.Bold)
+            {
+                var item = (imagebutton.BindingContext as Ständer)!;
+                int old_id = item.ID_Bauteil;
+                int itemToInsertBefore_old_ID = old_id + 1;
+                foreach (Ständer i in main_model.Bauteil_Ständer)
+                {
+                    if (i.ID_Bauteil == itemToInsertBefore_old_ID)
+                    {
+                        i.ID_Bauteil = old_id;
+                        item.ID_Bauteil = itemToInsertBefore_old_ID;
+                        await App.Database.UpdateBauteilStänderAsync(i);
+                        break;
+                    }
+                }
+                await App.Database.UpdateBauteilStänderAsync(item);
+                OnAppearing();
+            }
+            main_model.Date = DateTime.Now;
+            await App.Database.UpdateItemAsync(main_model);
         }
     }
 }

@@ -441,13 +441,6 @@ namespace MFBauphysikMobilMAUI.NewProject
                 OnPropertyChanged(nameof(Pc));
             }
         }
-
-        public ICommand ItemDragged { get; }
-        public ICommand ItemDraggedOver { get; }
-        public ICommand ItemDragLeave { get; }
-        public ICommand ItemDropped { get; }
-
-
         private bool _nachweis_basis;
         public bool NachweisBasis
         {
@@ -496,6 +489,19 @@ namespace MFBauphysikMobilMAUI.NewProject
             }
         }
 
+        private double _size_medium;
+        public double SizeMedium
+        {
+            get { return _size_medium; }
+            set
+            {
+                if (_size_medium == value)
+                    return;
+                _size_medium = value;
+                OnPropertyChanged(nameof(SizeMedium));
+            }
+        }
+
         private bool _reorder;
         public bool Reorder
         {
@@ -508,7 +514,6 @@ namespace MFBauphysikMobilMAUI.NewProject
             }
         }
 
-        private Basis _itemBeingDragged;
 
         //Elemente zur Collection hinzufügen
         //public CalculationPage(Models.Musteraufbau muster)
@@ -677,7 +682,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -693,7 +698,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -760,7 +765,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -776,7 +781,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -843,7 +848,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -859,7 +864,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -942,7 +947,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -958,7 +963,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -1029,7 +1034,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "Beton_KSD_EPS 023_PYE_einlagig")
+            else if (main_model.MusterName == "Beton_KSD_EPS_PYE_einlagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -1040,7 +1045,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -1056,7 +1061,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -1127,7 +1132,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "Beton_KSD_EPS 023_PYE_zweilagig")
+            else if (main_model.MusterName == "Beton_KSD_EPS_PYE_zweilagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -1138,7 +1143,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -1154,7 +1159,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -1240,7 +1245,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -1256,7 +1261,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -1322,7 +1327,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -1338,7 +1343,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -1405,7 +1410,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -1421,7 +1426,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -1488,7 +1493,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -1504,7 +1509,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -1559,7 +1564,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "Beton_KSD_MIFA 023_PYE_einlagig")
+            else if (main_model.MusterName == "Beton_KSD_MIFA_PYE_einlagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -1570,7 +1575,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -1586,7 +1591,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -1657,7 +1662,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "Beton_KSD_MIFA 023_PYE_zweilagig")
+            else if (main_model.MusterName == "Beton_KSD_MIFA_PYE_zweilagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -1668,7 +1673,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -1684,7 +1689,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -1770,7 +1775,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -1786,7 +1791,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -1854,7 +1859,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -1870,7 +1875,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -1938,7 +1943,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -1954,7 +1959,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -2022,7 +2027,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -2038,7 +2043,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -2110,7 +2115,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "Beton_KSD_PUR 023_PYE_einlagig")
+            else if (main_model.MusterName == "Beton_KSD_PUR_PYE_einlagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -2121,7 +2126,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -2137,7 +2142,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -2208,7 +2213,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "Beton_KSD_PUR 023_PYE_zweilagig")
+            else if (main_model.MusterName == "Beton_KSD_PUR_PYE_zweilagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -2219,7 +2224,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -2235,7 +2240,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -2339,7 +2344,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -2422,7 +2427,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -2505,7 +2510,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -2589,7 +2594,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -2660,7 +2665,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "OSB_KSD_EPS 023_PYE_einlagig")
+            else if (main_model.MusterName == "OSB_KSD_EPS_PYE_einlagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -2687,7 +2692,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -2758,7 +2763,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "OSB_KSD_EPS 023_PYE_zweilagig")
+            else if (main_model.MusterName == "OSB_KSD_EPS_PYE_zweilagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -2785,7 +2790,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -2887,7 +2892,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -2969,7 +2974,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -3052,7 +3057,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -3136,7 +3141,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -3192,7 +3197,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "OSB_KSD_MIFA 023_PYE_einlagig")
+            else if (main_model.MusterName == "OSB_KSD_MIFA_PYE_einlagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -3219,7 +3224,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -3290,7 +3295,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "OSB_KSD_MIFA 023_PYE_zweilagig")
+            else if (main_model.MusterName == "OSB_KSD_MIFA_PYE_zweilagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -3317,7 +3322,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -3419,7 +3424,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -3503,7 +3508,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -3587,7 +3592,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -3672,7 +3677,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -3744,7 +3749,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "OSB_KSD_PUR 023_PYE_einlagig")
+            else if (main_model.MusterName == "OSB_KSD_PUR_PYE_einlagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -3771,7 +3776,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -3842,7 +3847,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "OSB_KSD_PUR 023_PYE_zweilagig")
+            else if (main_model.MusterName == "OSB_KSD_PUR_PYE_zweilagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -3869,7 +3874,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -3972,7 +3977,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -4056,7 +4061,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -4139,7 +4144,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -4223,7 +4228,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -4294,7 +4299,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "Trapezblech_KSD_EPS 023_PYE_einlagig")
+            else if (main_model.MusterName == "Trapezblech_KSD_EPS_PYE_einlagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -4322,7 +4327,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -4377,7 +4382,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "Trapezblech_KSD_EPS 023_PYE_zweilagig")
+            else if (main_model.MusterName == "Trapezblech_KSD_EPS_PYE_zweilagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -4405,7 +4410,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -4506,7 +4511,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -4589,7 +4594,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -4672,7 +4677,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -4756,7 +4761,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -4825,7 +4830,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "Trapezblech_KSD_MIFA 023_PYE_einlagig")
+            else if (main_model.MusterName == "Trapezblech_KSD_MIFA_PYE_einlagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -4924,7 +4929,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "Trapezblech_KSD_MIFA 023_PYE_zweilagig")
+            else if (main_model.MusterName == "Trapezblech_KSD_MIFA_PYE_zweilagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -4953,7 +4958,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         R = 0.008824,
                         Fester_R = true,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -5069,7 +5074,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -5153,7 +5158,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -5237,7 +5242,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -5322,7 +5327,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -5378,7 +5383,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "Trapezblech_KSD_PUR 023_PYE_einlagig")
+            else if (main_model.MusterName == "Trapezblech_KSD_PUR_PYE_einlagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -5406,7 +5411,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -5462,7 +5467,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "Trapezblech_KSD_PUR 023_PYE_zweilagig")
+            else if (main_model.MusterName == "Trapezblech_KSD_PUR_PYE_zweilagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -5490,7 +5495,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -5924,7 +5929,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "Trapezblech_PE_MIFA 023_PYE_einlagig")
+            else if (main_model.MusterName == "Trapezblech_PE_MIFA_PYE_einlagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -6023,7 +6028,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
 
             }
-            else if (main_model.MusterName == "Trapezblech_PE_MIFA 023_PYE_zweilagig")
+            else if (main_model.MusterName == "Trapezblech_PE_MIFA_PYE_zweilagig")
             {
                 if (main_model.Selected == 0)
                 {
@@ -6423,7 +6428,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Beton armiert (1% Stahl)",
                         R = 0.078261,
                         Dicke = 0.18,
-                        Wärmeleitfähigkeit = 2.299996,
+                        Wärmeleitfähigkeit = 2.3,
                         Rohdichte = 2300,
                         Kapillar = true,
                         sonstiges = true,
@@ -6439,7 +6444,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -6538,7 +6543,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "KSD",
                         R = 0.008824,
                         Dicke = 0.0015,
-                        Wärmeleitfähigkeit = 0.169991,
+                        Wärmeleitfähigkeit = 0.17,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -6623,12 +6628,8 @@ namespace MFBauphysikMobilMAUI.NewProject
             BindingContext = this;
             BefestigerBoolean = false;
             BefestigerBooleanEmpty = true;
-            ItemDragged = new Command<Basis>(OnItemDraggedBasis);
-            ItemDraggedOver = new Command<Basis>(OnItemDraggedOverBasis);
-            ItemDragLeave = new Command<Basis>(OnItemDragLeaveBasis);
-            ItemDropped = new Command<Basis>(i => OnItemDroppedBasis(i));
-
             SizeDefault = Setting.Size_Default;
+            SizeMedium = Setting.Size_Medium;
         }
         protected override void OnAppearing()
         {
@@ -6733,79 +6734,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             Calculate_Uf();
             Calculate_Ug();
             Calculate_DeltaU();          
-        }
-        //Drag and Drop Basis
-        private void OnItemDraggedBasis(Basis item)
-        {
-           //item.IsBeingDragged = true;
-           // _itemBeingDragged = item;
-           /* item.IsBeingDragged = true;
-            foreach(var i in main_model.Bauteil_Basis)
-            {
-                i.IsBeingDragged = item.IsBeingDragged;
-            }*/
-            main_model.Bauteil_Basis.ToList().ForEach(i => i.IsBeingDragged = item == i);                     
-        }
-        private void OnItemDraggedOverBasis(Basis item)
-        {
-          /* if (item == _itemBeingDragged)
-            {
-                item.IsBeingDragged = false;
-            }
-            item.IsBeingDraggedOver = item != _itemBeingDragged;*/
-
-            var itemBeingDragged = main_model.Bauteil_Basis.FirstOrDefault(i => i.IsBeingDragged);
-             /*foreach(var i in main_model.Bauteil_Basis)
-             {
-                 i.IsBeingDraggedOver = item.IsBeingDraggedOver;
-             }*/
-            main_model.Bauteil_Basis.ToList().ForEach(i => i.IsBeingDraggedOver = item == i && item != itemBeingDragged);
-        }
-        private void OnItemDragLeaveBasis(Basis item)
-        {
-            /*foreach(var i in main_model.Bauteil_Basis)
-            {
-                i.IsBeingDraggedOver = false;
-            }*/
-            main_model.Bauteil_Basis.ToList().ForEach(i => i.IsBeingDraggedOver = false);
-        }
-        private async void OnItemDroppedBasis(Basis item)
-        {
-            var itemToMove = main_model.Bauteil_Basis.First(i => i.IsBeingDragged);
-            var itemToInsertBefore = item;
-            if (itemToMove == null || itemToInsertBefore == null || itemToMove == itemToInsertBefore)
-                return;
-
-            main_model.Bauteil_Basis.Remove(itemToMove);
-            main_model.Bauteil_Basis.Insert(main_model.Bauteil_Basis.IndexOf(item), itemToMove);
-            //main_model.Bauteil_Basis.Insert(main_model.Bauteil_Basis.IndexOf(item)-1, itemToMove);
-
-            itemToMove.IsBeingDragged = false;
-            itemToInsertBefore.IsBeingDraggedOver = false;
-         
-            int oldItemID = itemToMove.ID_Bauteil;
-            itemToMove.ID_Bauteil = itemToInsertBefore.ID_Bauteil;
-            int newItemID = itemToMove.ID_Bauteil;
-            await App.Database.UpdateBauteilAsync(itemToMove);
-            int difference = oldItemID - newItemID;
-            //nach oben 
-            if (oldItemID > newItemID)
-            {
-                itemToInsertBefore.ID_Bauteil = oldItemID;
-                await App.Database.UpdateBauteilAsync(itemToInsertBefore);
-
-            }
-            //nach unten
-            else
-            {
-                itemToInsertBefore.ID_Bauteil = oldItemID;
-                await App.Database.UpdateBauteilAsync(itemToInsertBefore);
-            }
-            main_model.Date = DateTime.Now;
-            await App.Database.UpdateItemAsync(main_model);
-            CalculateSum_Basis();
-            GetBasis();
-        }      
+        }        
 
         //Method zur Berechung von Rges und Uwert in jeder Konstruktion DIN 4108-3:2018-10 Anhang B.3
         public void CalculateSum_Basis()
@@ -7574,14 +7503,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             Navigation.PushAsync(konstruktionsUpdate);
             CalculateSum_Basis();
         }
-        private void DragGestureRecognizer_DragStarting(object sender, DragStartingEventArgs e)
-        {
-        }
-        private void DropGestureRecognizer_Drop(object sender, DropEventArgs e)
-        {
-            e.Handled = true;
-        }
-
+      
         //Öffnen des Menüs
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
@@ -7606,6 +7528,50 @@ namespace MFBauphysikMobilMAUI.NewProject
         {
             await DisplayAlert("Achtung!", "Bauteile können nur unter U-Wert bearbeitet werden", "OK");
         }
+        private async void Up_Clicked(object sender, EventArgs e)
+        {
+            ImageButton imagebutton = (sender as ImageButton)!;
+            var item = (imagebutton.BindingContext as Basis)!;
 
+            int old_id = item.ID_Bauteil;
+            int itemToInsertBefore_old_ID = old_id - 1;
+            foreach (Basis i in main_model.Bauteil_Basis)
+            {
+                if (i.ID_Bauteil == itemToInsertBefore_old_ID)
+                {
+                    i.ID_Bauteil = old_id;
+                    item.ID_Bauteil = itemToInsertBefore_old_ID;
+                    await App.Database.UpdateBauteilAsync(i);
+                    break;
+                }
+            }
+            await App.Database.UpdateBauteilAsync(item);
+            OnAppearing();
+            main_model.Date = DateTime.Now;
+            await App.Database.UpdateItemAsync(main_model);
+        }
+
+        private async void Down_Clicked(object sender, EventArgs e)
+        {
+            ImageButton imageButton = (sender as ImageButton)!;
+            var item = (imageButton.BindingContext as Basis)!;
+
+            int old_id = item.ID_Bauteil;
+            int itemToInsertBefore_old_ID = old_id + 1;
+            foreach (Basis i in main_model.Bauteil_Basis)
+            {
+                if (i.ID_Bauteil == itemToInsertBefore_old_ID)
+                {
+                    i.ID_Bauteil = old_id;
+                    item.ID_Bauteil = itemToInsertBefore_old_ID;
+                    await App.Database.UpdateBauteilAsync(i);
+                    break;
+                }
+            }
+            await App.Database.UpdateBauteilAsync(item);
+            OnAppearing();
+            main_model.Date = DateTime.Now;
+            await App.Database.UpdateItemAsync(main_model);
+        }
     }
 }

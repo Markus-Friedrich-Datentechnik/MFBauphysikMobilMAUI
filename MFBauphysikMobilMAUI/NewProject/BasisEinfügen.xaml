@@ -12,8 +12,8 @@
             <ImageButton Source="back.png" Clicked="Back_Clicked" 
                          BackgroundColor="{StaticResource TransparentBackground}" HorizontalOptions="Start"/>
 
-            <Label Text="Befestiger" HorizontalOptions="CenterAndExpand" 
-                   TextColor="{StaticResource TitleTextColor}" FontSize="Title" FontAttributes="Bold"/>
+            <Label Text="Befestiger" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                   TextColor="{StaticResource TitleTextColor}" FontSize="{Binding SizeTitle}" FontAttributes="Bold"/>
 
             <ImageButton Source="check.png" Clicked="Check_Clicked" WidthRequest="45"
                          BackgroundColor="{StaticResource TransparentBackground}" 

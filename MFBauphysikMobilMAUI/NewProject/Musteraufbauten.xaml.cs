@@ -33,6 +33,18 @@ namespace MFBauphysikMobilMAUI.NewProject
                 OnPropertyChanged(nameof(SizeDefault));
             }
         }
+        private double _size_title;
+        public double SizeTitle
+        {
+            get { return _size_title; }
+            set
+            {
+                if (_size_title == value)
+                    return;
+                _size_title = value;
+                OnPropertyChanged(nameof(SizeTitle));
+            }
+        }
         public  Musteraufbauten(MainModel project)
         {
             BindingContext = this;
@@ -111,7 +123,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "Beton_KSD_EPS 023_PYE_einlagig",
+                    MusterName = "Beton_KSD_EPS_PYE_einlagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -119,7 +131,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "Beton_KSD_EPS 023_PYE_zweilagig",
+                    MusterName = "Beton_KSD_EPS_PYE_zweilagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -159,7 +171,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "Beton_KSD_MIFA 023_PYE_einlagig",
+                    MusterName = "Beton_KSD_MIFA_PYE_einlagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -167,7 +179,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "Beton_KSD_MIFA 023_PYE_zweilagig",
+                    MusterName = "Beton_KSD_MIFA_PYE_zweilagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -207,7 +219,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "Beton_KSD_PUR 023_PYE_einlagig",
+                    MusterName = "Beton_KSD_PUR_PYE_einlagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -215,7 +227,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "Beton_KSD_PUR 023_PYE_zweilagig",
+                    MusterName = "Beton_KSD_PUR_PYE_zweilagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -256,7 +268,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "OSB_KSD_EPS 023_PYE_einlagig",
+                    MusterName = "OSB_KSD_EPS_PYE_einlagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -264,7 +276,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "OSB_KSD_EPS 023_PYE_zweilagig",
+                    MusterName = "OSB_KSD_EPS_PYE_zweilagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -304,7 +316,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "OSB_KSD_MIFA 023_PYE_einlagig",
+                    MusterName = "OSB_KSD_MIFA_PYE_einlagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -312,7 +324,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "OSB_KSD_MIFA 023_PYE_zweilagig",
+                    MusterName = "OSB_KSD_MIFA_PYE_zweilagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -352,7 +364,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "OSB_KSD_PUR 023_PYE_einlagig",
+                    MusterName = "OSB_KSD_PUR_PYE_einlagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -360,7 +372,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "OSB_KSD_PUR 023_PYE_zweilagig",
+                    MusterName = "OSB_KSD_PUR_PYE_zweilagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -402,7 +414,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "Trapezblech_KSD_EPS 023_PYE_einlagig",
+                    MusterName = "Trapezblech_KSD_EPS_PYE_einlagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -410,7 +422,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "Trapezblech_KSD_EPS 023_PYE_zweilagig",
+                    MusterName = "Trapezblech_KSD_EPS_PYE_zweilagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -450,7 +462,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "Trapezblech_KSD_MIFA 023_PYE_einlagig",
+                    MusterName = "Trapezblech_KSD_MIFA_PYE_einlagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -458,7 +470,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "Trapezblech_KSD_MIFA 023_PYE_zweilagig",
+                    MusterName = "Trapezblech_KSD_MIFA_PYE_zweilagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -498,7 +510,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "Trapezblech_KSD_PUR 023_PYE_einlagig",
+                    MusterName = "Trapezblech_KSD_PUR_PYE_einlagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -506,7 +518,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "Trapezblech_KSD_PUR 023_PYE_zweilagig",
+                    MusterName = "Trapezblech_KSD_PUR_PYE_zweilagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -547,7 +559,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "Trapezblech_PE_MIFA 023_PYE_einlagig",
+                    MusterName = "Trapezblech_PE_MIFA_PYE_einlagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -555,7 +567,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 },
                 new MainModel
                 {
-                    MusterName = "Trapezblech_PE_MIFA 023_PYE_zweilagig",
+                    MusterName = "Trapezblech_PE_MIFA_PYE_zweilagig",
                     ProjectName = project.ProjectName,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
@@ -594,6 +606,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             {
                 i.SizeClass = Setting.Size_Default;
             }
+            SizeTitle = Setting.Size_Title;
         }
       
         public void Back_Clicked(object sender, EventArgs e)

@@ -47,7 +47,7 @@
                     <ColumnDefinition Width="30*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Entry  x:Name="SearchBar" Grid.Column="0"  
+                <Entry  x:Name="SearchBar" Grid.Column="0"  FontSize="{Binding SizeClass}"
                         Placeholder="Suchen" PlaceholderColor="{StaticResource Gray300}"
                         TextChanged="SearchBar_TextChanged"
                         ios:Entry.CursorColor="DodgerBlue" 
