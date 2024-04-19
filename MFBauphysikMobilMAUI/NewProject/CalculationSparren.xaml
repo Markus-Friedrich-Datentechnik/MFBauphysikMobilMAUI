@@ -457,11 +457,11 @@ Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticReso
                                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
                                     <ImageButton Grid.Column="3" Grid.Row="0" Clicked="Up_Clicked"
-       VerticalOptions="Center" Source="up.png" 
-       BackgroundColor="{StaticResource TextColor Blue}"/>
+       VerticalOptions="Center" Source="up.png" HeightRequest="30" Margin="0,5,0,5" 
+       BackgroundColor="{StaticResource TransparentBackground}"/>
                                     <ImageButton Grid.Column="3" Grid.Row="1" Clicked="Down_Clicked"
-             VerticalOptions="CenterAndExpand" Source="down.png"
-       BackgroundColor="{StaticResource TextColor Blue}"/>
+             VerticalOptions="CenterAndExpand" Source="down.png" HeightRequest="30" Margin="0,0,0,5"
+       BackgroundColor="{StaticResource TransparentBackground}"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
@@ -634,11 +634,11 @@ Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticReso
                                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
                                     <ImageButton Grid.Column="3" Grid.Row="0" Clicked="Up_Clicked"
-       VerticalOptions="Center" Source="up.png" 
-       BackgroundColor="{StaticResource TextColor Blue}"/>
+       VerticalOptions="Center" Source="up.png" HeightRequest="30"  Margin="0,5,0,5"
+       BackgroundColor="{StaticResource TransparentBackground}"/>
                                     <ImageButton Grid.Column="3" Grid.Row="1" Clicked="Down_Clicked"
-             VerticalOptions="CenterAndExpand" Source="down.png"
-       BackgroundColor="{StaticResource TextColor Blue}"/>
+                                                 VerticalOptions="CenterAndExpand" Source="down.png" HeightRequest="30" Margin="0,0,0,5"
+       BackgroundColor="{StaticResource TransparentBackground}"/>
                                 </Grid>
                             </customview:MyViewCell>
                         </DataTemplate>

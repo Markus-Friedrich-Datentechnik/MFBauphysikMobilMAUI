@@ -81,11 +81,11 @@ namespace MFBauphysikMobilMAUI.Info
                 OnPropertyChanged(nameof(SizeTitle));
             }
         }
+      
         public InfoPage()
         {
             InitializeComponent();
             BindingContext = this;
-
             // TODO Xamarin.Forms.Device.RuntimePlatform is no longer supported. Use Microsoft.Maui.Devices.DeviceInfo.Platform instead. For more details see https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes
             if (DeviceInfo.Platform == DevicePlatform.iOS)
             {
@@ -100,9 +100,12 @@ namespace MFBauphysikMobilMAUI.Info
             SizeMicro = Setting.Size_Micro;
             SizeMedium = Setting.Size_Medium;
             SizeTitle = Setting.Size_Title;
-            
         }
-        
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+        }
         private async void Back_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
@@ -126,26 +129,6 @@ namespace MFBauphysikMobilMAUI.Info
             InfoButton.FontAttributes = FontAttributes.None;
             DatenschutzButton.TextDecorations = TextDecorations.Underline;
             DatenschutzButton.FontAttributes = FontAttributes.Bold;
-        }
-
-        private void Datenstand_Clicked(object sender, EventArgs e)
-        {
-            InfoTab.IsVisible = false;
-            DatenschutzTab.IsVisible= false;
-            InfoButton.TextDecorations = TextDecorations.None;
-            InfoButton.FontAttributes = FontAttributes.None;
-            DatenschutzButton.TextDecorations = TextDecorations.None;
-            DatenschutzButton.FontAttributes = FontAttributes.None;
-        }
-
-        private void Rechte_Clicked(object sender, EventArgs e)
-        {
-            InfoTab.IsVisible= false;
-            DatenschutzTab.IsVisible= false;
-            InfoButton.TextDecorations = TextDecorations.None;
-            InfoButton.FontAttributes = FontAttributes.None;
-            DatenschutzButton.TextDecorations = TextDecorations.None;
-            DatenschutzButton.FontAttributes = FontAttributes.None;
         }
 
         private async void OpenBrowser(object sender, EventArgs e)

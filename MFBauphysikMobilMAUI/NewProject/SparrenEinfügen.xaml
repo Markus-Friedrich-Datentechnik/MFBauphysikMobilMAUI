@@ -15,7 +15,7 @@
                    TextColor="{StaticResource TitleTextColor}" FontSize="Title" FontAttributes="Bold"/>
 
             <ImageButton Source="check.png" Clicked="Check_Clicked" BackgroundColor="{StaticResource TransparentBackground}" 
-                         HorizontalOptions="End" Padding="0,0,10,0" x:Name="checkButton"/>
+                         HorizontalOptions="End" Margin="0,0,10,0" x:Name="checkButton"/>
         </StackLayout>
     </NavigationPage.TitleView>
 

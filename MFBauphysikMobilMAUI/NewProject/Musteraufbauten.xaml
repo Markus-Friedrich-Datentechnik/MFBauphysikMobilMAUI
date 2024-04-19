@@ -13,9 +13,9 @@
             <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                 <Label Text="Musteraufbauten" HorizontalOptions="CenterAndExpand" 
                        VerticalOptions="CenterAndExpand"
-                       TextColor="{StaticResource TitleTextColor}" FontSize="{Binding SizeTitle}" FontAttributes="Bold"/>
+                       TextColor="{StaticResource TitleTextColor}" FontSize="Title" FontAttributes="Bold"/>
             </StackLayout>
-            <ImageButton Source="next.png" BackgroundColor="{StaticResource TransparentBackground}" WidthRequest="45"
+            <ImageButton Source="next.png" BackgroundColor="{StaticResource TransparentBackground}" Margin="0,0,10,0"
                          HorizontalOptions="End" IsVisible="true" Clicked="Next_Clicked" />
         </StackLayout>
     </NavigationPage.TitleView>
@@ -28,13 +28,15 @@
         </Grid.RowDefinitions>
         
         <!--SearchBar-->
-        <Frame Grid.Row="0" Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+        <Frame Grid.Row="0" 
+               Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="30*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Entry x:Name="SearchBar" Grid.Column="0" TextChanged="SearchBar_TextChanged" 
+                       Keyboard="Plain"
                        Placeholder="Suchen" PlaceholderColor="{StaticResource Gray300}"
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
                 <Image Source="suchen_2.png" Grid.Column="1"/>
@@ -45,8 +47,7 @@
         <ListView x:Name="listView" Grid.Row="1"
               SeparatorVisibility="Default"
               SeparatorColor="{StaticResource TextColor Blue}"
-              BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}"
-              SelectionMode="Single"
+              BackgroundColor="{StaticResource TransparentBackground}"
               HasUnevenRows="True"
               ItemSelected="OnItemSelected">
             <ListView.ItemTemplate >

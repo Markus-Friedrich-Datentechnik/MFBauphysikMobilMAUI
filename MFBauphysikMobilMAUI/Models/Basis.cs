@@ -17,20 +17,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 namespace MFBauphysikMobilMAUI.Models
 {
     public class Basis : ObservableObject, INotifyPropertyChanged 
-    {
-        private bool _isBeingDragged;
-        public bool IsBeingDragged
-        {
-            get { return _isBeingDragged; } 
-            set {SetProperty(ref _isBeingDragged, value);}
-        }
-        private bool _isBeingDraggedOver;
-        public bool IsBeingDraggedOver
-        {
-            get { return _isBeingDraggedOver; }
-            set { SetProperty(ref _isBeingDraggedOver, value); }
-        }
-
+    {       
         [PrimaryKey, AutoIncrement]
         public int ID_Bauteil { get; set; }
         public double SizeClass { get; set; }
@@ -59,15 +46,7 @@ namespace MFBauphysikMobilMAUI.Models
                 if (_lambda == value)
                     return;
                 _lambda = value;
-                OnPropertyChanged(nameof(Wärmeleitfähigkeit));
-               /* if (_lambda != 0)
-                {
-                    R = _dicke / _lambda;
-                }
-                else
-                {
-                    R = 0;
-                }*/
+                OnPropertyChanged(nameof(Wärmeleitfähigkeit));              
             }
         }
 
@@ -96,28 +75,7 @@ namespace MFBauphysikMobilMAUI.Models
                     return;
                 _dicke = value;
                 OnPropertyChanged(nameof(Dicke));                
-               /* if (_fester_R == false)
-                {
-                    if (_lambda != 0)
-                    {
-                        R = _dicke / _lambda;
-                    }             
-                    else
-                    {
-                        R = 0;
-                    }
-                }
-                else
-                {
-                    if (_r != 0)
-                    {
-                        Wärmeleitfähigkeit = _dicke / _r;
-                    }
-                }*/
-
-                //Sd_Min = _dicke * _dampfdiffusionswiderstand_min;
-               // Sd_Max = _dicke * _dampfdiffusionswiderstand_max;
-                //Gewicht = _dicke * _dichte;
+              
             }
         }
         //Berechnen R = Dicke/Lambda
@@ -133,12 +91,7 @@ namespace MFBauphysikMobilMAUI.Models
                 if (_r == value)
                     return;
                 _r = value;
-                OnPropertyChanged(nameof(R));
-               /* if (_r != 0)
-                {
-                    Wärmeleitfähigkeit = _dicke / _r;
-                }*/
-                
+                OnPropertyChanged(nameof(R));               
             }
         }
 
@@ -267,7 +220,6 @@ namespace MFBauphysikMobilMAUI.Models
                     return;
                 _dampfdiffusionswiderstand_min = value;
                 OnPropertyChanged(nameof(Dampfdiffusionswiderstand_Min));
-               // Sd_Min = _dicke * _dampfdiffusionswiderstand_min;
             }
         }
         private double? _dampfdiffusionswiderstand_max;
@@ -280,7 +232,6 @@ namespace MFBauphysikMobilMAUI.Models
                     return;
                 _dampfdiffusionswiderstand_max = value;
                 OnPropertyChanged(nameof(Dampfdiffusionswiderstand_Max));
-               // Sd_Max = _dicke * _dampfdiffusionswiderstand_max;
             }
         }
 
@@ -292,11 +243,7 @@ namespace MFBauphysikMobilMAUI.Models
             {
                 if (_sd_min == value) return;
                 _sd_min = value;
-                OnPropertyChanged(nameof(Sd_Min));     
-               /* if (_dicke != 0)
-                {
-                    Dampfdiffusionswiderstand_Min = _sd_min / _dicke;
-                }*/
+                OnPropertyChanged(nameof(Sd_Min));   
             }
         }
 
@@ -308,11 +255,7 @@ namespace MFBauphysikMobilMAUI.Models
             {
                 if (_sd_max == value) return;
                 _sd_max = value;
-                OnPropertyChanged(nameof(Sd_Max));
-                /*if (_dicke != 0)
-                {
-                    Dampfdiffusionswiderstand_Max = _sd_max / _dicke; 
-                }*/
+                OnPropertyChanged(nameof(Sd_Max));               
             }
         }
 
@@ -386,7 +329,6 @@ namespace MFBauphysikMobilMAUI.Models
                 if (_dichte == value) return;
                 _dichte = value;
                 OnPropertyChanged(nameof(Rohdichte));
-                //Gewicht = _dicke * _dichte;
             }
         }
 

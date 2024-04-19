@@ -14,7 +14,7 @@
             <Label Text="Bauteil" TextColor="{StaticResource TitleTextColor}" VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand" FontSize="Title" FontAttributes="Bold"/>
             <ImageButton Source="check.png" BackgroundColor="{StaticResource TransparentBackground}" 
-                         HorizontalOptions="EndAndExpand" Clicked="Check_Clicked"
+                         HorizontalOptions="EndAndExpand" Clicked="Check_Clicked" Margin="0,0,10,0"
                          IsVisible="true" x:Name="checkButton"/>
         </StackLayout>
     </NavigationPage.TitleView>
@@ -53,7 +53,22 @@
                 <Entry Text="{Binding Wärmeleitfähigkeit}" x:Name="Lambda_Entry"
                Grid.Row="1"
                TextChanged="Entry_TextChanged" FontSize="{Binding SizeClass}"
-               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Entry>
                 <BoxView Color="{AppThemeBinding Light=White, Dark= White}" Grid.Row="2"/>
             </Grid>
 
@@ -68,7 +83,22 @@
                     <Entry Text="{Binding R}" 
             x:Name="Fester_R_Entry" FontSize="{Binding SizeClass}"
             TextChanged="Entry_TextChanged" HorizontalOptions="Start"
-            TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+            TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Disabled">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Entry>
 
                 </StackLayout>
                 <BoxView Color="{AppThemeBinding Light=White, Dark= White}" Grid.Row="2" Grid.ColumnSpan="2"/>
@@ -118,11 +148,41 @@
                 <Entry Text="{Binding Dampfdiffusionswiderstand_Min, StringFormat='{0:N2}'}" 
                Grid.Row="1" Grid.Column="1" FontSize="{Binding SizeClass}"
                x:Name="Diff_Widerstand_Min" TextChanged="Entry_TextChanged"
-               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Entry>
                 <Entry Text="{Binding Dampfdiffusionswiderstand_Max, StringFormat='{0:N2}'}" 
                Grid.Row="1" Grid.Column="3" FontSize="{Binding SizeClass}"
                x:Name="Diff_Widerstand_Max" TextChanged="Entry_TextChanged"
-               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Entry>
                 <BoxView Grid.Row="2" Grid.ColumnSpan="4" Color="{AppThemeBinding Light=White, Dark=White}"/>
             </Grid>
 
@@ -153,11 +213,41 @@
                 <Entry Text="{Binding Sd_Min, StringFormat='{0:N2}'}" Grid.Row="1" Grid.Column="1" 
                              x:Name="Entry_sd_min" FontSize="{Binding SizeClass}"
                              TextChanged="Entry_TextChanged"
-                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Entry>
                 <Entry Text="{Binding Sd_Max, StringFormat='{0:N2}'}" Grid.Row="1" Grid.Column="3" 
                              x:Name="Entry_sd_max" FontSize="{Binding SizeClass}"
                              TextChanged="Entry_TextChanged"
-                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Entry>
                 <StackLayout Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal">
                     <CheckBox CheckedChanged="Fester_sd_CheckedChanged" 
         IsChecked="{Binding Fester_sd}" HorizontalOptions="Start"/>

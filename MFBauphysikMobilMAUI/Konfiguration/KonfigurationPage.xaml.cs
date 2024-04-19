@@ -37,6 +37,7 @@ namespace MFBauphysikMobilMAUI.Konfiguration
         public double Medium_OldValue { get; set; }
         public double Micro_OldValue { get; set; }
         public double Title_OldValue { get; set; }
+        public string Mode { get; set; }
         public KonfigurationPage(EinstellungModel konfig)
         {
             if (konfig == null) 
@@ -74,7 +75,7 @@ namespace MFBauphysikMobilMAUI.Konfiguration
                 case 2:
                     darkmodus.IsChecked= true; break;
             }
-           
+            Mode = App.Current.UserAppTheme.ToString();
         }
 
 
@@ -83,7 +84,7 @@ namespace MFBauphysikMobilMAUI.Konfiguration
             var answer = await DisplayAlert("Achtung", "Änderungen wirklich verwerfen?", "Ja", "Nein");
             if(answer == true)
             {
-                var konfig = BindingContext as EinstellungModel;
+                var konfig = (BindingContext as EinstellungModel)!;
                 konfig.DefaultSize = Default_OldValue;
                 konfig.LargeSize = Large_OldValue;
                 konfig.MediumSize = Medium_OldValue;
@@ -95,6 +96,18 @@ namespace MFBauphysikMobilMAUI.Konfiguration
                 Setting.Size_Micro = Micro_OldValue;
                 Setting.Size_Title = Title_OldValue;
                 KonfigUpdated?.Invoke(this, konfig);
+                if (Mode == "Light")
+                {
+                    lightmodus.IsChecked = true;
+                }
+                else if (Mode == "Dark")
+                {
+                    darkmodus.IsChecked = true;
+                }
+                else
+                {
+                    gerätModus.IsChecked = true;
+                }
                 await Navigation.PopAsync();
             }
         }

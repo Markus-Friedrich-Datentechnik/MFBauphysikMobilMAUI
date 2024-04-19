@@ -2145,18 +2145,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 else
                 {
                     CalculateSum_Gefach();
-                    CalculateSum_Ständer();
-                    //Feuchtenachweis
-                    if (NachweisGefach != true || NachweisStänder != true)
-                    {
-                        Feuchtenachweis.Text = "bitte überprüfen";
-                        NachweisGrid.IsVisible = false;
-                    }
-                    else
-                    {
-                        Feuchtenachweis.Text = "ok";
-                        NachweisGrid.IsVisible = false;
-                    }
+                    CalculateSum_Ständer();                   
                 }
             }
             if (MeldungDicke.IsVisible == true)

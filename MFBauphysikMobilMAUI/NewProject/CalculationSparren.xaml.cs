@@ -2114,9 +2114,6 @@ namespace MFBauphysikMobilMAUI.NewProject
             AnteilBasis.IsVisible = false;
             AnteilSparren.IsVisible = false;
 
-            //Anzeige von Analyse Tauperiode
-            //TauTab.IsVisible = false;
-
             //Text Bold wenn Tab ausgewählt wurde
             DeckblattButton.FontAttributes = FontAttributes.Bold;
             UwertBasisButton.FontAttributes = FontAttributes.None;
@@ -2754,5 +2751,9 @@ namespace MFBauphysikMobilMAUI.NewProject
             await App.Database.UpdateItemAsync(main_model);
         }
 
+        private void Edit_Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

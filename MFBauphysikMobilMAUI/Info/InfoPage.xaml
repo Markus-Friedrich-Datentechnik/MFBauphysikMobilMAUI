@@ -10,8 +10,8 @@
                          BackgroundColor="{StaticResource TransparentBackground}" 
                          HorizontalOptions="Start" Clicked="Back_Clicked"/>
             <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">               
-                <Label Text="Info" HorizontalOptions="CenterAndExpand" 
-                       TextColor="{StaticResource TitleTextColor}" FontSize="{Binding SizeTitle}"/>
+                <Label Text="Info" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                       TextColor="{StaticResource TitleTextColor}" FontSize="Title"/>
             </StackLayout>
 
         </StackLayout>
@@ -21,33 +21,31 @@
            BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="12*"/>
         </Grid.RowDefinitions>
 
 <!--TabView-->
-        <Grid HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Margin="10" 
-                     Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="5*"/>
-            </Grid.ColumnDefinitions>
-            <Label Text="Information" TextColor="{StaticResource LabelButton}" 
-                   Grid.Column="0" FontSize="{Binding SizeDefault}"
-                   x:Name="InfoButton" 
-                   TextDecorations="Underline" FontAttributes="Bold">
+        <StackLayout Orientation="Horizontal" Margin="10" 
+                     HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" 
+                     Grid.Row="0">            
+            <Label TextColor="{StaticResource LabelButton}" 
+                   FontSize="{Binding SizeDefault}"
+                   x:Name="InfoButton"
+                   Text="Information"
+                   FontAttributes="Bold">                
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Info_Clicked"/>
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="Datenschutz" TextColor="{StaticResource LabelButton}"  
-                   Grid.Column="1"
-                   FontSize="{Binding SizeDefault}" x:Name="DatenschutzButton">
+            <Label TextColor="{StaticResource LabelButton}"  Padding="10,0,0,0"                
+                   FontSize="{Binding SizeDefault}" 
+                   x:Name="DatenschutzButton"
+                   Text="Datenschutz">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Datenschutz_Clicked"/>
                 </Label.GestureRecognizers>
             </Label>            
-        </Grid>
+        </StackLayout>
 
 <!--Anzeige Info-->
         <ScrollView VerticalOptions="FillAndExpand" x:Name="InfoTab" IsVisible="true" Grid.Row="1">

@@ -19,7 +19,9 @@
     </NavigationPage.TitleView>
     
 
-    <StackLayout Padding ="10" BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">      
+    <StackLayout Padding ="10" 
+                 BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}"
+                 Orientation="Vertical">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -50,7 +52,7 @@
                         </Grid>
                     </RadioButton.Content>
                 </RadioButton>
-                
+
                 <!--Button3 Warmdach verschattet-->
                 <RadioButton Value="verschattet" Padding="10" CheckedChanged="Konstruktion_CheckedChanged" 
                              IsChecked="{Binding Verschattet}">
@@ -87,6 +89,6 @@
             </StackLayout >
 
         </Grid>
-        
+
     </StackLayout>
 </ContentPage>

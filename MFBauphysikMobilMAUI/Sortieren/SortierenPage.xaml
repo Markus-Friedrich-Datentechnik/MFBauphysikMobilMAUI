@@ -13,7 +13,7 @@
                          HorizontalOptions="Start" Clicked="Back_Clicked"/>
 
             <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">               
-                <Label Text="Sortieren" HorizontalOptions="Center" FontSize="{Binding SizeTitle}" VerticalOptions="CenterAndExpand"
+                <Label Text="Sortieren" HorizontalOptions="Center" FontSize="Title" VerticalOptions="CenterAndExpand"
                        TextColor="{StaticResource TitleTextColor}"/>
             </StackLayout>           
         </StackLayout>

@@ -12,7 +12,7 @@
             <Label Text="Bauteil" TextColor="{StaticResource TitleTextColor}" VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand" FontSize="Title" FontAttributes="Bold"/>
             <ImageButton Source="next.png" BackgroundColor="{StaticResource TransparentBackground}" 
-             HorizontalOptions="EndAndExpand" Clicked="Check_Clicked"
+             HorizontalOptions="EndAndExpand" Clicked="Check_Clicked" Margin="0,0,10,0"
              IsVisible="true" x:Name="checkButton"/>
         </StackLayout>
     </NavigationPage.TitleView>

@@ -12,19 +12,7 @@ namespace MFBauphysikMobilMAUI.Models
 {
     public class Gefach : ObservableObject, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        private bool _isBeingDragged;
-        public bool IsBeingDragged
-        {
-            get { return _isBeingDragged; }
-            set { SetProperty(ref _isBeingDragged, value); }
-        }
-        private bool _isBeingDraggedOver;
-        public bool IsBeingDraggedOver
-        {
-            get { return _isBeingDraggedOver; }
-            set { SetProperty(ref _isBeingDraggedOver, value); }
-        }
+        public event PropertyChangedEventHandler PropertyChanged;        
 
         [PrimaryKey, AutoIncrement]
         public int ID_Bauteil { get; set; }
@@ -98,8 +86,7 @@ namespace MFBauphysikMobilMAUI.Models
                 if (_r == value)
                     return;
                 _r = value;
-                OnPropertyChanged(nameof(R));
-               
+                OnPropertyChanged(nameof(R));              
             }
         }
 
@@ -187,7 +174,6 @@ namespace MFBauphysikMobilMAUI.Models
                     return;
                 _keineLuft = value;
                 OnPropertyChanged(nameof(KeineLuft));
-
             }
         }
 
@@ -226,8 +212,7 @@ namespace MFBauphysikMobilMAUI.Models
                 if (_dampfdiffusionswiderstand_min == value)
                     return;
                 _dampfdiffusionswiderstand_min = value;
-                OnPropertyChanged(nameof(Dampfdiffusionswiderstand_Min));
-               
+                OnPropertyChanged(nameof(Dampfdiffusionswiderstand_Min));               
             }
         }
         private double? _dampfdiffusionswiderstand_max;
@@ -240,7 +225,6 @@ namespace MFBauphysikMobilMAUI.Models
                     return;
                 _dampfdiffusionswiderstand_max = value;
                 OnPropertyChanged(nameof(Dampfdiffusionswiderstand_Max));
-
             }
         }
 
@@ -252,8 +236,7 @@ namespace MFBauphysikMobilMAUI.Models
             {
                 if (_sd_min == value) return;
                 _sd_min = value;
-                OnPropertyChanged(nameof(Sd_Min));
-               
+                OnPropertyChanged(nameof(Sd_Min));               
             }
         }
 
@@ -265,8 +248,7 @@ namespace MFBauphysikMobilMAUI.Models
             {
                 if (_sd_max == value) return;
                 _sd_max = value;
-                OnPropertyChanged(nameof(Sd_Max));
-                
+                OnPropertyChanged(nameof(Sd_Max));                
             }
         }
 
@@ -279,7 +261,6 @@ namespace MFBauphysikMobilMAUI.Models
                 if (_sd == value) return;
                 _sd = value;
                 OnPropertyChanged(nameof(Sd));
-
             }
         }
         private double? _tempverlauf;

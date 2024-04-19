@@ -11,7 +11,7 @@
                          BackgroundColor="{StaticResource TransparentBackground}" HorizontalOptions="Start"/>
             <Label Text="Befestiger" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
                    TextColor="{StaticResource TitleTextColor}" FontSize="{Binding SizeTitle}" FontAttributes="Bold"/>
-            <ImageButton Source="next.png" Clicked="Check_Clicked" WidthRequest="45"
+            <ImageButton Source="next.png" Clicked="Check_Clicked" Margin="0,0,10,0"
                          BackgroundColor="{StaticResource TransparentBackground}" HorizontalOptions="End" 
                          IsVisible="true" x:Name="checkButton"/>
         </StackLayout>

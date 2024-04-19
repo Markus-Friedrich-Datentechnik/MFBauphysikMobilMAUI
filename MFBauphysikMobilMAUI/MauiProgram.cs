@@ -16,8 +16,8 @@ namespace MFBauphysikMobilMAUI
         {
             var builder = MauiApp.CreateBuilder();
             builder
-                .UseMauiApp<App>()
-                .ConfigureMauiHandlers(handlers =>
+                .UseMauiApp<App>();
+               /* .ConfigureMauiHandlers(handlers =>
                 {
 #if ANDROID
                     handlers.AddHandler<MyViewCell, CustomViewCellHandler>();
@@ -25,12 +25,12 @@ namespace MFBauphysikMobilMAUI
 #if IOS
                     handlers.Add<MyViewCell, CustomViewCellHandler>();
 #endif
-                })
-                .ConfigureFonts(fonts =>
+                })*/
+              /*  .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+                });*/
             
             builder.ConfigureEffects(effects =>
             {

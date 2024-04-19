@@ -13,19 +13,7 @@ namespace MFBauphysikMobilMAUI.Models
 {
     public class Ständer : ObservableObject, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        private bool _isBeingDragged;
-        public bool IsBeingDragged
-        {
-            get { return _isBeingDragged; }
-            set { SetProperty(ref _isBeingDragged, value); }
-        }
-        private bool _isBeingDraggedOver;
-        public bool IsBeingDraggedOver
-        {
-            get { return _isBeingDraggedOver; }
-            set { SetProperty(ref _isBeingDraggedOver, value); }
-        }
+        public event PropertyChangedEventHandler PropertyChanged;       
 
         [PrimaryKey, AutoIncrement]
         public int ID_Bauteil { get; set; }
@@ -57,8 +45,7 @@ namespace MFBauphysikMobilMAUI.Models
                 if (_lambda == value)
                     return;
                 _lambda = value;
-                OnPropertyChanged(nameof(Wärmeleitfähigkeit));
-               
+                OnPropertyChanged(nameof(Wärmeleitfähigkeit));               
             }
         }
         public double? LR1 { get; set; }
@@ -83,8 +70,7 @@ namespace MFBauphysikMobilMAUI.Models
                 if (_dicke == value)
                     return;
                 _dicke = value;
-                OnPropertyChanged(nameof(Dicke));
-               
+                OnPropertyChanged(nameof(Dicke));               
             }
         }
         //Berechnen R = Dicke/Lambda
@@ -100,8 +86,7 @@ namespace MFBauphysikMobilMAUI.Models
                 if (_r == value)
                     return;
                 _r = value;
-                OnPropertyChanged(nameof(R));
-                
+                OnPropertyChanged(nameof(R));                
             }
         }
 
@@ -200,7 +185,6 @@ namespace MFBauphysikMobilMAUI.Models
                     return;
                 _keineLuft = value;
                 OnPropertyChanged(nameof(KeineLuft));
-
             }
         }
 

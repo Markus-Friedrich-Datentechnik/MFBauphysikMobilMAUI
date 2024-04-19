@@ -4,74 +4,77 @@
              x:Class="MFBauphysikMobilMAUI.NewProject.NewPage"
              xmlns:effects="clr-namespace:MFBauphysikMobilMAUI.Effects" 
              xmlns:custom="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer" 
+             xmlns:models="clr-namespace:MFBauphysikMobilMAUI.Models"
+             x:DataType="models:MainModel"
              NavigationPage.HasBackButton="False">
-    <!--             xmlns:models="clr-namespace:MFBauphysikMobilMAUI.Models" x:DataType="models:MainModel"
--->
+ 
     <NavigationPage.TitleView>      
         <StackLayout Orientation="Horizontal">
             <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}" 
                          HorizontalOptions="Start" Clicked="Back_Clicked"/>
-            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                 <Label Text="BV" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" 
-                       FontSize="{Binding SizeTitle}"
+                       FontSize="Title"  
                        TextColor="{StaticResource TitleTextColor}" FontAttributes="Bold"/>
-            </StackLayout>            
-            <ImageButton Source="next.png" BackgroundColor="{StaticResource TransparentBackground}"
-                         HorizontalOptions="End" Clicked="Next_Clicked" WidthRequest="45"/>
+            <ImageButton Source="next.png" BackgroundColor="{StaticResource TransparentBackground}" Margin="0,0,10,0"
+                         HorizontalOptions="End" Clicked="Next_Clicked" />
         </StackLayout>
     </NavigationPage.TitleView>
 
     <StackLayout Orientation="Vertical"
-        BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}" 
-          HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10">
-        <Grid>
+                 BackgroundColor="{StaticResource TransparentBackground}">
+        <!--Entry Name-->
+        <Grid Padding="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="1"/>
             </Grid.RowDefinitions>
-            <Label Text="Projektname" FontAttributes="Bold" x:Name="projektname_label" Grid.Row="0" 
-               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-
-            <Entry Text="{Binding ProjectName}" x:Name="ProjektName" Grid.Row="1"
-               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
+            <Label Grid.Row="0" TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                   x:Name="projektname_label" Padding="0,0,0,10">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Projektname: " FontAttributes="Bold"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Entry TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                   Grid.Row="1" 
+                   BackgroundColor="{StaticResource TransparentBackground}"
+                   x:Name="projektname_entry">
                 <Entry.Effects>
                     <effects:ReturnKeyEffect ReturnText="Next"/>
                 </Entry.Effects>
-
             </Entry>
             <BoxView Grid.Row="2" Color="{AppThemeBinding Light=White, Dark=White}"/>
         </Grid>
-
-        <Grid>
+        <!--BV und BV Ersatz-->
+        <Grid Padding="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="1"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="1"/>
             </Grid.RowDefinitions>
-            <Label Text="BV:" FontAttributes="Bold" x:Name="bv_label" Grid.Row="0"
-               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-
-            <Entry Text="{Binding ProjectName}" x:Name="bv_entry" Grid.Row="1" 
-               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
-               TextChanged="Entry_TextChanged">
-
+            <Label x:Name="bv_label" Grid.Row="0" Padding="0,0,0,10"
+                   TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="BV:" FontAttributes="Bold"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Entry Grid.Row="1" x:Name="bv_entry" 
+                   TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
                 <Entry.Effects>
                     <effects:ReturnKeyEffect ReturnText="Next"/>
                 </Entry.Effects>
             </Entry>
             <BoxView Grid.Row="2" Color="{AppThemeBinding Light=White, Dark=White}"/>
-
-
-
-            <Entry  Text="{Binding BV_Ersatz}"  x:Name="BV_Ersatz"  Grid.Row="3"
-                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-            </Entry>
-            <BoxView Grid.Row="4" Color="{AppThemeBinding Light=White, Dark=White}"/>
+            <Entry Text="{Binding BV_Ersatz}" x:Name="bv_ersatz" Grid.Row="3"/>
 
         </Grid>
     </StackLayout>
+
+
 
 </ContentPage>

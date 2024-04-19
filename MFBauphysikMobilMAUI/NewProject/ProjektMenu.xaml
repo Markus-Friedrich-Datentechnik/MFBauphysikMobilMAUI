@@ -10,7 +10,7 @@
 
             <Label Text="Menü" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
                    TextColor="{StaticResource TitleTextColor}" 
-                   FontSize="{Binding SizeTitle}" FontAttributes="Bold"/>
+                   FontSize="Title" FontAttributes="Bold"/>
         </StackLayout>
     </NavigationPage.TitleView>
 

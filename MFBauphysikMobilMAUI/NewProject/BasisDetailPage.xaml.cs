@@ -166,17 +166,17 @@ namespace MFBauphysikMobilMAUI.NewProject
 
         private void LuftSpalte_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            RadioButton button = sender as RadioButton;
+            RadioButton button = (sender as RadioButton)!;
         }
 
         private void Kapillar_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            RadioButton button = sender as RadioButton;
+            RadioButton button = (sender as RadioButton)!;
         }
 
         private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            CheckBox box = sender as CheckBox;
+            CheckBox box = (sender as CheckBox)!;
         }
 
         private async void Löschen_Clicked(object sender, EventArgs e)
@@ -193,7 +193,7 @@ namespace MFBauphysikMobilMAUI.NewProject
 
         private void Fester_R_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            CheckBox box = sender as CheckBox;
+            CheckBox box = (sender as CheckBox)!;
             if (box.IsChecked == true) 
             {
                 Lambda_Entry.IsEnabled = false;
@@ -207,7 +207,7 @@ namespace MFBauphysikMobilMAUI.NewProject
         }
         private void Fester_sd_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            CheckBox box = sender as CheckBox;
+            CheckBox box = (sender as CheckBox)!;
             if (box.IsChecked == true)
             {
                 Entry_diff_min.IsEnabled = false;
@@ -226,7 +226,7 @@ namespace MFBauphysikMobilMAUI.NewProject
 
         private void Entry_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var bauteil = BindingContext as Basis;
+            var bauteil = (BindingContext as Basis)!;
             //Lambda, Dicke, R
             if(bauteil.Fester_R == true)
             {

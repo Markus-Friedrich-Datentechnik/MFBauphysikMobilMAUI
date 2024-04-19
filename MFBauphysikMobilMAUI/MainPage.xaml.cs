@@ -149,8 +149,9 @@ namespace MFBauphysikMobilMAUI
         //Neues Projekt erstellen
         private async void PlusClicked(object sender, EventArgs e)
         {
-            var project = new MainModel();
-            await Navigation.PushAsync(new NewPage(project));
+            //var project = new MainModel();
+            //await Navigation.PushAsync(new NewPage(project));
+            await Navigation.PushAsync(new NewPage());
         }
 
         //Projekt auswählen

@@ -18,6 +18,7 @@ namespace MFBauphysikMobilMAUI.NewProject
 
     public partial class NewPage : ContentPage, INotifyPropertyChanged
     {
+        public MainModel _mainmodel { get; set; }
         private double _size_default;
         public double SizeDefault
         {
@@ -78,10 +79,11 @@ namespace MFBauphysikMobilMAUI.NewProject
                 OnPropertyChanged(nameof(SizeTitle));
             }
         }
-        public NewPage(MainModel project)
+       // public NewPage(MainModel project)
+       public NewPage()
         {            
             InitializeComponent();
-            BindingContext = new MainModel
+          /*  _mainmodel = new MainModel
             {
                 ID = project.ID,
                 MusterName = project.MusterName,
@@ -89,17 +91,17 @@ namespace MFBauphysikMobilMAUI.NewProject
                 BV_Ersatz = project.BV_Ersatz,
                 Befestiger_Basis = project.Befestiger_Basis,
                 Date = project.Date,
-            };
+            };*/
             SizeDefault = Setting.Size_Default;
             SizeLarge = Setting.Size_Large;
             SizeMicro = Setting.Size_Micro;
             SizeMedium = Setting.Size_Medium;
             SizeTitle = Setting.Size_Title;
-            projektname_label.FontSize = SizeDefault;
+            projektname_label.FontSize = Setting.Size_Default;
+            projektname_entry.FontSize = Setting.Size_Default;
             bv_label.FontSize = SizeDefault;
             bv_entry.FontSize = SizeDefault;
-            ProjektName.FontSize = SizeDefault;
-            BV_Ersatz.FontSize = SizeDefault;
+            bv_ersatz.FontSize = SizeDefault;
         }
 
         //Back to MainPage
@@ -111,20 +113,28 @@ namespace MFBauphysikMobilMAUI.NewProject
         //Go to next page
         private async void Next_Clicked(object sender, EventArgs e)
         {
-            if ((string.IsNullOrEmpty(ProjektName.Text)) || (string.IsNullOrWhiteSpace(ProjektName.Text)))
+           if ((string.IsNullOrEmpty(projektname_entry.Text)) || (string.IsNullOrWhiteSpace(projektname_entry.Text)))
             {
                 await DisplayAlert("Achtung", "Bitte \"Projektname\" eingeben", "OK");                
             }
             else
             {
-                var project = (MainModel)BindingContext;
-                await Navigation.PushAsync(new Musteraufbauten(project));
+                /* string name = projektname_entry.Text;
+                 var neu = new MainModel()
+                 {
+                     ProjectName = name,
+                 };*/
+                string name = projektname_entry.Text;
+                var neu = new MainModel()
+                {
+                    ProjectName = name,
+                };
+                await Navigation.PushAsync(new Musteraufbauten(neu));
             }
         }
 
-        private void Entry_TextChanged(object sender, TextChangedEventArgs e)
+        private  void Entry_TextChanged(object sender, TextChangedEventArgs e)
         {
-
         }
     }
 }

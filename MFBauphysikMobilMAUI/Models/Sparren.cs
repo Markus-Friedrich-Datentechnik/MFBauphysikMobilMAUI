@@ -13,20 +13,7 @@ namespace MFBauphysikMobilMAUI.Models
 {
     public class Sparren : ObservableObject, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private bool _isBeingDragged;
-        public bool IsBeingDragged
-        {
-            get { return _isBeingDragged; }
-            set { SetProperty(ref _isBeingDragged, value); }
-        }
-        private bool _isBeingDraggedOver;
-        public bool IsBeingDraggedOver
-        {
-            get { return _isBeingDraggedOver; }
-            set { SetProperty(ref _isBeingDraggedOver, value); }
-        }
+        public event PropertyChangedEventHandler PropertyChanged;       
 
         [PrimaryKey, AutoIncrement]
         public int ID_Bauteil { get; set; }
@@ -263,8 +250,7 @@ namespace MFBauphysikMobilMAUI.Models
             {
                 if (_sd_max == value) return;
                 _sd_max = value;
-                OnPropertyChanged(nameof(Sd_Max));
-                
+                OnPropertyChanged(nameof(Sd_Max));                
             }
         }
 

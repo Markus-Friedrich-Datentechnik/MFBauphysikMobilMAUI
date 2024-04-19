@@ -16,6 +16,8 @@ using System.Xml.Serialization;
 using Microsoft.Maui.Controls.Xaml;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui;
+using System.Net.Security;
+using System.Web;
 
 namespace MFBauphysikMobilMAUI.NewProject
 {
@@ -25,20 +27,35 @@ namespace MFBauphysikMobilMAUI.NewProject
         public Bauteile? NewItem { get; set; }
         public EventHandler<Bauteile>? BauteilAdded;
         List<WLG>? _basis;
-        
+        //public class Test { public string name; public string rho;};
         public BauteilPage()
         {
-            InitializeComponent();           
-           var assembly = typeof(App).Assembly;
-            Stream? stream = assembly.GetManifestResourceStream("MFBauphysikMobilMAUI.Resources.Raw.Bauteile.xml");
-            XmlSerializer serializer = new XmlSerializer(typeof(List<WLG>));
-            _basis = (List<WLG>)serializer.Deserialize(stream!)!;
-           
-            listView.ItemsSource = _basis;
-            foreach(WLG i in _basis)
-            {
-                i.SizeClass = Setting.Size_Default;
-            }
+            InitializeComponent();
+             var assembly = typeof(App).Assembly;
+             Stream? stream = assembly.GetManifestResourceStream("MFBauphysikMobilMAUI.Resources.Raw.Bauteile.xml");
+             XmlSerializer serializer = new XmlSerializer(typeof(List<WLG>));
+             _basis = (List<WLG>)serializer.Deserialize(stream!)!;
+
+             listView.ItemsSource = _basis;
+             foreach (WLG i in _basis)
+             {
+                 i.SizeClass = Setting.Size_Default;
+             }
+             listView.ItemsSource = _basis;
+            Console.WriteLine(_basis.Count());
+
+
+           /* string path = "MFBauphysikMobilMAUI.Resources.Raw.Bauteile.xml";
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            Stream stream = assembly.GetManifestResourceStream(path);
+            
+            XDocument doc = XDocument.Load(stream);
+            IEnumerable<XElement> array = doc.Elements();
+            foreach (var item in array)
+           {
+                Console.WriteLine(item);
+
+            }*/
         }
 
         private async void Back_Clicked(object sender, EventArgs e)

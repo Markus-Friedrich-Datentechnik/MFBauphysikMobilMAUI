@@ -43,7 +43,6 @@ namespace MFBauphysikMobilMAUI.NewProject
             this.BindingContext = this;
 
             var assembly = typeof(App).Assembly;
-            //Error stream ist gerade 
             Stream? stream = assembly.GetManifestResourceStream("MFBauphysikMobilMAUI.Resources.Raw.Befestiger_Export.xml");
             XmlSerializer serializer = new XmlSerializer(typeof(List<BF>));
             _befestiger = (List<BF>)serializer.Deserialize(stream!)!;

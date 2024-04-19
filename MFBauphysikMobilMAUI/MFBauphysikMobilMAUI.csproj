@@ -38,11 +38,12 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<!-- App Icon -->
+	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0-ios'">
+	  <CodesignKey>Apple Development: Created via API (T54WK29N6L)</CodesignKey>
+	  <CodesignProvision>VS: WildCard Development</CodesignProvision>
+	</PropertyGroup>
 
-		<!-- Splash Screen -->
-		
+	<ItemGroup>		
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -61,15 +62,21 @@
 
 	<ItemGroup>
 	  <MauiAsset Remove="Resources\Raw\Bauteile.xml" />
-	  <MauiAsset Remove="Resources\Raw\Befestiger_Export.xml" />
 	</ItemGroup>
 
+	<!--ItemGroup>
+	  <MauiAsset Remove="Resources\Raw\Bauteile.xml" />
+	  <MauiAsset Remove="Resources\Raw\Befestiger_Export.xml" />
+	</ItemGroup-->
+
 	<ItemGroup>
-	  <None Remove="Resources\AppIcon\icon.png" />
+	  <None Remove="Resources\AppIcon\appicon.png" />
+	  <None Remove="Resources\AppIcon\iconx.png" />
 	  <None Remove="Resources\AppIcon\launcher_foreground.png" />
 	  <None Remove="Resources\Images\back.png" />
 	  <None Remove="Resources\Images\check.png" />
 	  <None Remove="Resources\Images\down.png" />
+	  <None Remove="Resources\Images\ic_edit.png" />
 	  <None Remove="Resources\Images\material.png" />
 	  <None Remove="Resources\Images\material_neu.png" />
 	  <None Remove="Resources\Images\menu.png" />
@@ -81,23 +88,32 @@
 	  <None Remove="Resources\Images\tools.png" />
 	  <None Remove="Resources\Images\trash.png" />
 	  <None Remove="Resources\Images\up.png" />
-	  <None Remove="Resources\raw\Bauteile.xml" />
 	  <None Remove="Resources\raw\Befestiger_Export.xml" />
 	  <None Remove="Resources\Splash\launcher_foreground.png" />
+	  <None Remove="Resources\Splash\launcher_foreground1.png" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Include="Resources\Raw\Bauteile.xml" />
+	  <EmbeddedResource Include="Resources\Raw\Bauteile.xml">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
 	  <EmbeddedResource Include="Resources\Raw\Befestiger_Export.xml" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiIcon Include="Resources\AppIcon\icon.png" />
-	  <MauiIcon Include="Resources\AppIcon\launcher_foreground.png" />
+		<EmbeddedResource Include="Resources\AppIcon\iconx.png" BaseSize="128, 128" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiSplashScreen Include="Resources\Splash\launcher_foreground.png" Color="#F5F7F8" BaseSize="128,128" />
+	  <MauiIcon Include="Resources\AppIcon\appicon.png" Resize="false" Color="#F5F7F8" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Splash\launcher_foreground1.png" Color="#F5F7F8" BaseSize="360,360" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiSplashScreen Include="Resources\Splash\launcher_foreground.png" Color="#F5F7F8" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -110,6 +126,12 @@
 		<PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
 		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.8" />
 		<PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="NewProject\NewPage.xaml.cs">
+	    <DependentUpon>NewPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>

@@ -25,6 +25,8 @@
     <!--TextColor Grey-->
     <Color x:Key="TextColor Grey">#A4A4A4</Color>
 
+    <Color x:Key="DisabledColor">#9A9A9A</Color>
+
     <!--Hell modus-->
     <!--Primary ist BackgroundColor-->
     <!--Secondary ist TextColor-->

@@ -14,17 +14,17 @@ namespace MFBauphysikMobilMAUI.Helpers
         public static void SetTheme()
         {
             switch (Setting.Theme)
-            {
-                case 0:
-                    App.Current.UserAppTheme = AppTheme.Unspecified;                    
-                    break;
-                case 1:
-                    App.Current.UserAppTheme = AppTheme.Light;
-                    break;
-                case 2:
-                    App.Current.UserAppTheme= AppTheme.Dark;
-                    break;
-            }
+             {
+                 case 0:
+                     App.Current.UserAppTheme = AppTheme.Unspecified;                    
+                     break;
+                 case 1:
+                     App.Current.UserAppTheme = AppTheme.Light;
+                     break;
+                 case 2:
+                     App.Current.UserAppTheme= AppTheme.Dark;
+                     break;
+             }
         }
     }
 }

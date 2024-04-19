@@ -6208,7 +6208,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Rohdichte = 30.0,
                         Kapillar = true,
                         sonstiges = true,
-                        EvntlLuft = true,
+                        KeineLuft = true,
                         Sd_Min = 14.40,
                         Sd_Max = 45.0,
                         Dampfdiffusionswiderstand_Min = 80.00,
@@ -7572,6 +7572,10 @@ namespace MFBauphysikMobilMAUI.NewProject
             OnAppearing();
             main_model.Date = DateTime.Now;
             await App.Database.UpdateItemAsync(main_model);
+        }
+
+        private void Edit_Clicked(object sender, EventArgs e)
+        {
         }
     }
 }
