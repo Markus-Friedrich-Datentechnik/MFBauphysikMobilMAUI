@@ -52,11 +52,12 @@
               ItemSelected="OnItemSelected">
             <ListView.ItemTemplate >
                 <DataTemplate>
-                    <ViewCell>
+                    <custom:MyViewCell SelectedBackGroundColor="{StaticResource TextColor Blue}"
+                                       UnselectedBackgroundColor="{StaticResource TransparentBackground}">
                             <Label Text="{Binding MusterName}"  Padding="10"
                                FontSize="{Binding SizeClass}"
                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                    </ViewCell>
+                    </custom:MyViewCell>
                 </DataTemplate>
 
             </ListView.ItemTemplate>

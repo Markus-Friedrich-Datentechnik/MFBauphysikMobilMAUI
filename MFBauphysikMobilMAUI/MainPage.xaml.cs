@@ -11,7 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 using SQLitePCL;
 using SQLite;
-using System.IO;
 using MFBauphysikMobilMAUI.Interface;
 using MFBauphysikMobilMAUI.Data;
 using static System.Net.Mime.MediaTypeNames;
@@ -209,6 +208,10 @@ namespace MFBauphysikMobilMAUI
             var itemsource = await App.Database.GetItemAsync();
             ListProjekt.ItemsSource = itemsource.Where(p => p.ProjectName.ToLower().Contains(e.NewTextValue)).OrderByDescending(p => p.Date);
 
+        }
+        private  async void Edit_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Test());
         }
         private async void OnItemClicked(object sender, EventArgs e)
         {

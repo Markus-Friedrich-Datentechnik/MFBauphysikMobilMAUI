@@ -4,7 +4,6 @@
              x:Class="MFBauphysikMobilMAUI.NewProject.BauteilPage"
              xmlns:custom="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer"
              NavigationPage.HasBackButton="False">
-
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
             <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}"
@@ -17,43 +16,41 @@
         </StackLayout>
     </NavigationPage.TitleView>
 
-    <Grid BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+    <StackLayout Orientation="Vertical">
         <!--SearchBar-->
-        <Frame Grid.Row="0"
-       Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
+        <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="30*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Entry x:Name="SearchBar" Grid.Column="0" TextChanged="SearchBar_TextChanged"
-                       Placeholder="Suchen" PlaceholderColor="{StaticResource Gray300}"
-                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                Placeholder="Suchen" PlaceholderColor="{StaticResource Gray300}"
+             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
                 <Image Source="suchen_2.png" Grid.Column="1" />
             </Grid>
         </Frame>
-        
         <!--List Bauteil-->
         <ListView x:Name="listView" 
                   ItemSelected="ListView_ItemSelected" 
-                  Grid.Row="1"
                   SelectionMode="Single"
                   HasUnevenRows="True" 
                   SeparatorColor="{StaticResource TextColor Blue}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <custom:MyViewCell SelectedBackGroundColor="{StaticResource TextColor Blue}">
                         <Grid Padding="10">
-                            <Label Text="{Binding B}" Padding="10" FontSize="{Binding SizeClass}"
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding HA}" Padding="10" FontSize="{Binding SizeClass}"
                                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+
+                            </StackLayout>
                         </Grid>
-                    </ViewCell>
+                    </custom:MyViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </Grid>
+       
+
+    </StackLayout>
 </ContentPage>

@@ -7254,20 +7254,10 @@ namespace MFBauphysikMobilMAUI.NewProject
             BasisUwert.IsVisible = false;
             BefestigerFrame.IsVisible = false;
 
-            //Anzeige von Analyse Tauperiode
-            //TestTab.IsVisible = false;
-
             //Text Bold wenn Tab ausgewählt wurde
             DeckblattButton.FontAttributes = FontAttributes.Bold;
             UwertBasisButton.FontAttributes = FontAttributes.None;
             BefestigerButton.FontAttributes = FontAttributes.None;
-            //TestButton.FontAttributes = FontAttributes.None;
-
-            //Text underlined wenn Tab ausgewählt wurde
-            DeckblattButton.TextDecorations = TextDecorations.Underline;
-            UwertBasisButton.TextDecorations = TextDecorations.None;
-            BefestigerButton.TextDecorations = TextDecorations.None;
-            //TestButton.TextDecorations = TextDecorations.None;
 
             //Plusbutton
             BoxPlus.IsVisible = false;
@@ -7288,21 +7278,11 @@ namespace MFBauphysikMobilMAUI.NewProject
             //Anzeige von U-Wert Frame
             BasisUwert.IsVisible = true;
             BefestigerFrame.IsVisible = false;
-
-            //Anzeige von Analyse Tauperiode
-            //TestTab.IsVisible = false;
       
             //Text Bold wenn Tab ausgewählt wurde
             DeckblattButton.FontAttributes = FontAttributes.None;
             UwertBasisButton.FontAttributes = FontAttributes.Bold;
             BefestigerButton.FontAttributes = FontAttributes.None;
-            //TestButton.FontAttributes = FontAttributes.None;
-
-            //Text underlined wenn Tab ausgewählt wurde
-            DeckblattButton.TextDecorations = TextDecorations.None;
-            UwertBasisButton.TextDecorations = TextDecorations.Underline;
-            BefestigerButton.TextDecorations = TextDecorations.None;
-            //TestButton.TextDecorations = TextDecorations.None;
 
             //Plusbutton
             BoxPlus.IsVisible = true;
@@ -7328,21 +7308,11 @@ namespace MFBauphysikMobilMAUI.NewProject
             //Anzeige von U-Wert Frame
             BasisUwert.IsVisible = false;
             BefestigerFrame.IsVisible = true;
-            //Anzeige von Analyse Tauperiode
-            //TestTab.IsVisible = false;
 
             //Text Bold wenn Tab ausgewählt wurde
             DeckblattButton.FontAttributes = FontAttributes.None;
             UwertBasisButton.FontAttributes = FontAttributes.None;
-            BefestigerButton.FontAttributes = FontAttributes.Bold;
-            //TestButton.FontAttributes = FontAttributes.None;
-
-            //Text underlined wenn Tab ausgewählt wurde
-            DeckblattButton.TextDecorations = TextDecorations.None;
-            UwertBasisButton.TextDecorations = TextDecorations.None;
-            BefestigerButton.TextDecorations = TextDecorations.Underline;
-            //TestButton.TextDecorations = TextDecorations.None;
-                        
+            BefestigerButton.FontAttributes = FontAttributes.Bold;                       
 
             //Plusbutton
             BoxPlus.IsVisible = false;

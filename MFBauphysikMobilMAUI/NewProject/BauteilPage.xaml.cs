@@ -31,31 +31,51 @@ namespace MFBauphysikMobilMAUI.NewProject
         public BauteilPage()
         {
             InitializeComponent();
+            this.BindingContext = this;
+            var assembly = typeof(App).Assembly;
+            Stream? stream = (assembly.GetManifestResourceStream("MFBauphysikMobilMAUI.NewProject.Bauteile.xml"))!;
+            XDocument doc = XDocument.Load(stream);
+            _basis = doc.Descendants("WLG").Select(element =>
+            new WLG
+            {
+                B = element.Element("B").Value,
+                //LR = element.Element("LR").Value,
+                WDW = element.Element("WDW").Value,
+                RHO = element.Element("RHO").Value,
+                HA = element.Element("HA").Value,              
+                D = element.Element("D").Value,
+                KF = element.Element("KF").Value,
+                VD = element.Element("VD").Value,
+                MMin = element.Element("MMin").Value,
+                MMax = element.Element("MMax").Value,
+                SDMin = element.Element("SDMin").Value,
+                SDMax = element.Element("SDMax").Value,
+                NK = element.Element("NK").Value,
+                FWDW = element.Element("FWDW").Value,
+                FSD = element.Element("FSD").Value,
+               /* DLR1 = element.Element("DLR1").Value,
+                DLR2 = element.Element("DLR2").Value,
+                DLR3 = element.Element("DLR3").Value,
+                DLR4 = element.Element("DLR4").Value,
+                DLR5 = element.Element("DLR5").Value,
+                LR1 = element.Element("LR1").Value,
+                LR2 = element.Element("LR2").Value,
+                LR3 = element.Element("LR3").Value,
+                LR4 = element.Element("LR4").Value,
+                LR5 = element.Element("LR5").Value,*/
+            }).ToList();
+            listView.ItemsSource = _basis;
+
+            /* this.BindingContext = this;
              var assembly = typeof(App).Assembly;
-             Stream? stream = assembly.GetManifestResourceStream("MFBauphysikMobilMAUI.Resources.Raw.Bauteile.xml");
+             Stream? stream = assembly.GetManifestResourceStream("MFBauphysikMobilMAUI.Resources.Raw.Bauteil.xml");
              XmlSerializer serializer = new XmlSerializer(typeof(List<WLG>));
              _basis = (List<WLG>)serializer.Deserialize(stream!)!;
-
              listView.ItemsSource = _basis;
              foreach (WLG i in _basis)
              {
                  i.SizeClass = Setting.Size_Default;
-             }
-             listView.ItemsSource = _basis;
-            Console.WriteLine(_basis.Count());
-
-
-           /* string path = "MFBauphysikMobilMAUI.Resources.Raw.Bauteile.xml";
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            Stream stream = assembly.GetManifestResourceStream(path);
-            
-            XDocument doc = XDocument.Load(stream);
-            IEnumerable<XElement> array = doc.Elements();
-            foreach (var item in array)
-           {
-                Console.WriteLine(item);
-
-            }*/
+             }*/            
         }
 
         private async void Back_Clicked(object sender, EventArgs e)

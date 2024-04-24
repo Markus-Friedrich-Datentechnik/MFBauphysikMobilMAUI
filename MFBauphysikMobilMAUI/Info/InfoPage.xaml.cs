@@ -86,7 +86,6 @@ namespace MFBauphysikMobilMAUI.Info
         {
             InitializeComponent();
             BindingContext = this;
-            // TODO Xamarin.Forms.Device.RuntimePlatform is no longer supported. Use Microsoft.Maui.Devices.DeviceInfo.Platform instead. For more details see https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes
             if (DeviceInfo.Platform == DevicePlatform.iOS)
             {
                 Plattform.Text = "iOS";
@@ -115,9 +114,7 @@ namespace MFBauphysikMobilMAUI.Info
         {
             InfoTab.IsVisible = true;
             DatenschutzTab.IsVisible = false;
-            InfoButton.TextDecorations = TextDecorations.Underline;
             InfoButton.FontAttributes= FontAttributes.Bold;
-            DatenschutzButton.TextDecorations= TextDecorations.None;
             DatenschutzButton.FontAttributes = FontAttributes.None;
         }
 
@@ -125,9 +122,7 @@ namespace MFBauphysikMobilMAUI.Info
         {
             InfoTab.IsVisible = false;
             DatenschutzTab.IsVisible= true;
-            InfoButton.TextDecorations = TextDecorations.None;
             InfoButton.FontAttributes = FontAttributes.None;
-            DatenschutzButton.TextDecorations = TextDecorations.Underline;
             DatenschutzButton.FontAttributes = FontAttributes.Bold;
         }
 
@@ -173,14 +168,13 @@ namespace MFBauphysikMobilMAUI.Info
         }
         private  async void OpenMap_Besucher(object sender, EventArgs e)
         {
-            // TODO Xamarin.Forms.Device.RuntimePlatform is no longer supported. Use Microsoft.Maui.Devices.DeviceInfo.Platform instead. For more details see https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes
             if (DeviceInfo.Platform == DevicePlatform.Android)
             {
-                await Launcher.OpenAsync("geo:0,0?q=Bruno-Taut-Strasse+3-5+Berlin");
+                await Launcher.OpenAsync("geo:0,0?q=Friesenstrasse+2+Zeuthen");
             }
             else if (DeviceInfo.Platform == DevicePlatform.iOS)
             {
-                await Launcher.OpenAsync("http://maps.apple.com/?q=Bruno-Taut-Strasse+3-5+Berlin");
+                await Launcher.OpenAsync("http://maps.apple.com/?q=Friesenstrasse+2+Zeuthen");
             }
         }
     }

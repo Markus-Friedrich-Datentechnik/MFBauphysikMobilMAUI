@@ -71,7 +71,7 @@
                         <Label Text="Firma" FontSize="{Binding SizeDefault}"
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
                                FontAttributes="Bold"/>
-                        <Label Text="Markus Friedrich Datentechnik&#x0a;Inhaberin Lisa Friedrich" 
+                        <Label Text="Markus Friedrich Datentechnik&#x0a;Inhaberin Lisa Römer" 
                                FontSize="{Binding SizeDefault}"
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
                     </StackLayout>
@@ -83,7 +83,7 @@
                                FontSize="{Binding SizeDefault}"
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
                                FontAttributes="Bold"/>
-                        <Label Text="Bruno-Taut-Str. 3-5&#x0a;12524 Berlin" 
+                        <Label Text="Friesenstr. 2&#x0a;15738 Zeuthen" 
                                FontSize="{Binding SizeDefault}"
                                TextColor="{StaticResource TextColor Blue}">
                             <Label.GestureRecognizers>
@@ -205,7 +205,7 @@
                 <Label Text=""/>
                 <Label Text="Verantwortliche Stelle für die Erhebung, Verarbeitung und Nutzung von personenbezogenen Daten im Zusammenhang mit unseren Apps ist: 
                        &#10;Markus Friedrich Datentechnik
-                       &#10;Inh. Lisa Friedrich                     
+                       &#10;Inh. Lisa Römer                     
                        &#10;Bahnhofstr.74 
                        &#10;15732 Eichwalde 
                        &#10;Tel. 030 / 6670 235 0

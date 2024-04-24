@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MFBauphysikMobilMAUI.NewProject.BefestigerPage"
-             xmlns:customview="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer"
+             xmlns:custom="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer"
              NavigationPage.HasBackButton="False">  
     
     <NavigationPage.TitleView>
@@ -47,14 +47,14 @@
                       SeparatorColor="{StaticResource TitleBackgroundColor}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <custom:MyViewCell SelectedBackGroundColor="{StaticResource TextColor Blue}">
                         <Grid Padding="10">
                             <Label Text="{Binding B}" FontSize="{Binding SizeClass}"
                                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
                         </Grid>
 
-                    </ViewCell>
+                    </custom:MyViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

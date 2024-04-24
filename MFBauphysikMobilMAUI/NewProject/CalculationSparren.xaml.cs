@@ -2120,15 +2120,6 @@ namespace MFBauphysikMobilMAUI.NewProject
             UwertSparrenButton.FontAttributes = FontAttributes.None;
             UgesButton.FontAttributes = FontAttributes.None;
             BefestigerButton.FontAttributes = FontAttributes.None;
-            //Tau_Button.FontAttributes = FontAttributes.None;
-
-            //Text underlined wenn Tab ausgewählt wurde
-            DeckblattButton.TextDecorations = TextDecorations.Underline;
-            UwertBasisButton.TextDecorations = TextDecorations.None;
-            UwertSparrenButton.TextDecorations = TextDecorations.None;
-            UgesButton.TextDecorations = TextDecorations.None;
-            BefestigerButton.TextDecorations = TextDecorations.None;
-            //Tau_Button.TextDecorations = TextDecorations.None;
 
             //Plusbutton
             BoxPlus.IsVisible = false;
@@ -2188,15 +2179,6 @@ namespace MFBauphysikMobilMAUI.NewProject
             UwertSparrenButton.FontAttributes = FontAttributes.None;
             UgesButton.FontAttributes = FontAttributes.None;
             BefestigerButton.FontAttributes = FontAttributes.None;
-            //Tau_Button.FontAttributes = FontAttributes.None;
-
-            //Text underlined wenn Tab ausgewählt wurde
-            DeckblattButton.TextDecorations = TextDecorations.None;
-            UwertBasisButton.TextDecorations = TextDecorations.Underline;
-            UwertSparrenButton.TextDecorations = TextDecorations.None;
-            UgesButton.TextDecorations = TextDecorations.None;
-            BefestigerButton.TextDecorations = TextDecorations.None;
-            //Tau_Button.TextDecorations = TextDecorations.None;
 
             //Plusbutton
             BoxPlus.IsVisible = true;
@@ -2231,15 +2213,6 @@ namespace MFBauphysikMobilMAUI.NewProject
             UwertSparrenButton.FontAttributes = FontAttributes.Bold;
             UgesButton.FontAttributes = FontAttributes.None;
             BefestigerButton.FontAttributes = FontAttributes.None;
-            //Tau_Button.FontAttributes = FontAttributes.None;
-
-            //Text underlined wenn Tab ausgewählt wurde
-            DeckblattButton.TextDecorations = TextDecorations.None;
-            UwertBasisButton.TextDecorations = TextDecorations.None;
-            UwertSparrenButton.TextDecorations = TextDecorations.Underline;
-            UgesButton.TextDecorations = TextDecorations.None;
-            BefestigerButton.TextDecorations = TextDecorations.None;
-            //Tau_Button.TextDecorations = TextDecorations.None;
 
             //Plusbutton
             BoxPlus.IsVisible = true;
@@ -2270,15 +2243,6 @@ namespace MFBauphysikMobilMAUI.NewProject
             UwertSparrenButton.FontAttributes = FontAttributes.None;
             UgesButton.FontAttributes = FontAttributes.Bold;
             BefestigerButton.FontAttributes = FontAttributes.None;
-            //Tau_Button.FontAttributes = FontAttributes.None;
-
-            //Text underlined wenn Tab ausgewählt wurde
-            DeckblattButton.TextDecorations = TextDecorations.None;
-            UwertBasisButton.TextDecorations = TextDecorations.None;
-            UwertSparrenButton.TextDecorations = TextDecorations.None;
-            UgesButton.TextDecorations = TextDecorations.Underline;
-            BefestigerButton.TextDecorations = TextDecorations.None;
-            //Tau_Button.TextDecorations = TextDecorations.None;
 
             //Plusbutton
             BoxPlus.IsVisible = false;
@@ -2326,16 +2290,6 @@ namespace MFBauphysikMobilMAUI.NewProject
             UwertSparrenButton.FontAttributes = FontAttributes.None;
             UgesButton.FontAttributes = FontAttributes.None;
             BefestigerButton.FontAttributes = FontAttributes.Bold;
-            //Tau_Button.FontAttributes = FontAttributes.None;
-
-            //Text underlined wenn Tab ausgewählt wurde
-            DeckblattButton.TextDecorations = TextDecorations.None;
-            UwertBasisButton.TextDecorations = TextDecorations.None;
-            UwertSparrenButton.TextDecorations = TextDecorations.None;
-            UgesButton.TextDecorations = TextDecorations.None;
-            BefestigerButton.TextDecorations = TextDecorations.Underline;
-            //Tau_Button.TextDecorations = TextDecorations.None;
-
 
             //Plusbutton
             BoxPlus.IsVisible = false;

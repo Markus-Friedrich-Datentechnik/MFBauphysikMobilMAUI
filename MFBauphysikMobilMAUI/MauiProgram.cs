@@ -16,16 +16,16 @@ namespace MFBauphysikMobilMAUI
         {
             var builder = MauiApp.CreateBuilder();
             builder
-                .UseMauiApp<App>();
-               /* .ConfigureMauiHandlers(handlers =>
+                .UseMauiApp<App>()
+                .ConfigureMauiHandlers(handlers =>
                 {
 #if ANDROID
                     handlers.AddHandler<MyViewCell, CustomViewCellHandler>();
 #endif
-#if IOS
-                    handlers.Add<MyViewCell, CustomViewCellHandler>();
+#if IOS             
+                    handlers.AddHandler<MyViewCell, CustomViewCellHandler>();
 #endif
-                })*/
+                });
               /*  .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

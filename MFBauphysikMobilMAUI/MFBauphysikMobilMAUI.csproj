@@ -61,15 +61,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiAsset Remove="Resources\Raw\Bauteile.xml" />
-	</ItemGroup>
-
-	<!--ItemGroup>
-	  <MauiAsset Remove="Resources\Raw\Bauteile.xml" />
-	  <MauiAsset Remove="Resources\Raw\Befestiger_Export.xml" />
-	</ItemGroup-->
-
-	<ItemGroup>
+	  <None Remove="Bauteile.xml" />
 	  <None Remove="Resources\AppIcon\appicon.png" />
 	  <None Remove="Resources\AppIcon\iconx.png" />
 	  <None Remove="Resources\AppIcon\launcher_foreground.png" />
@@ -94,8 +86,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Include="Resources\Raw\Bauteile.xml">
-	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  <EmbeddedResource Include="NewProject\Bauteile.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </EmbeddedResource>
 	  <EmbeddedResource Include="Resources\Raw\Befestiger_Export.xml" />
 	</ItemGroup>
@@ -208,6 +200,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Sortieren\SortierenPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Test.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
