@@ -27,7 +27,7 @@ namespace MFBauphysikMobilMAUI.Models
                 if (_projectName == value)
                     return;
                 _projectName = value;
-                Utils.Settings.LastProjekt = value;
+               // Utils.Settings.LastProjekt = value;
                 OnPropertyChanged("ProjectName");
             }
         }
@@ -41,7 +41,7 @@ namespace MFBauphysikMobilMAUI.Models
                 if (_bv_ersatz == value)
                     return;
                 _bv_ersatz = value;
-                Utils.Settings.LastBV = value;
+               // Utils.Settings.LastBV = value;
                 OnPropertyChanged("BV_Ersatz");
             }
         }

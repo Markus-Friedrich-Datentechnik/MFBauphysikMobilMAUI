@@ -25,7 +25,7 @@ namespace MFBauphysikMobilMAUI.Models
             {
                 loginName = value;
                 PropertyChanged(this, new PropertyChangedEventArgs("LoginName"));
-                Settings.LastLogin = value;
+                //Settings.LastLogin = value;
             }
         }
         private string password;
@@ -40,14 +40,14 @@ namespace MFBauphysikMobilMAUI.Models
             {
                 password = value;
                 PropertyChanged(this, new PropertyChangedEventArgs("Password"));
-                Settings.LastLoginPass = value;
+                //Settings.LastLoginPass = value;
             }
         }
 
         public LoginModel()
         {
-            LoginName = Settings.LastLogin;
-            Password = Settings.LastLoginPass;
+           // LoginName = Settings.LastLogin;
+           // Password = Settings.LastLoginPass;
         }
     }
 }

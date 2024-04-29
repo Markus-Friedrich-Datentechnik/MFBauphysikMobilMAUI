@@ -32,6 +32,7 @@
                 </Grid.ColumnDefinitions>
                 <Entry x:Name="SearchBar" Grid.Column="0" TextChanged="SearchBar_TextChanged"
                        Placeholder="Suchen" PlaceholderColor="{StaticResource Gray300}"
+                       Keyboard="Plain"
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
                 <Image Source="suchen_2.png" Grid.Column="1"/>
             </Grid>

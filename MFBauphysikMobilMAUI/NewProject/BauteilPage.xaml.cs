@@ -18,6 +18,7 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui;
 using System.Net.Security;
 using System.Web;
+using System.Runtime.CompilerServices;
 
 namespace MFBauphysikMobilMAUI.NewProject
 {
@@ -26,6 +27,7 @@ namespace MFBauphysikMobilMAUI.NewProject
     {
         public Bauteile? NewItem { get; set; }
         public EventHandler<Bauteile>? BauteilAdded;
+        public string Kapillar;
         List<WLG>? _basis;
         //public class Test { public string name; public string rho;};
         public BauteilPage()
@@ -34,49 +36,122 @@ namespace MFBauphysikMobilMAUI.NewProject
             this.BindingContext = this;
             var assembly = typeof(App).Assembly;
             Stream? stream = (assembly.GetManifestResourceStream("MFBauphysikMobilMAUI.NewProject.Bauteile.xml"))!;
-            XDocument doc = XDocument.Load(stream);
-            _basis = doc.Descendants("WLG").Select(element =>
+            //XDocument doc = XDocument.Load(stream);
+
+            using(var reader = new StreamReader(stream))
+            {
+                var serializer = new XmlSerializer(typeof(List<WLG>));
+                _basis = (List<WLG>)serializer.Deserialize(reader);
+            }
+            /*_basis = doc.Descendants("WLG").
+                Where(x => !x.Elements("NK").Any()
+                        && !x.Elements("KF").Any()
+                        && !x.Elements("VD").Any()
+                        && !x.Elements("LR").Any()
+                        && !x.Elements("HA").Any()
+                        && !x.Elements("FSD").Any()
+                        && !x.Elements("FWDW").Any()
+                        && !x.Elements("LR").Any()
+                        && !x.Elements("LR1").Any()
+                        && !x.Elements("LR2").Any()
+                        && !x.Elements("LR3").Any()
+                        && !x.Elements("LR4").Any()
+                        && !x.Elements("LR5").Any()
+                        && !x.Elements("DLR1").Any()
+                        && !x.Elements("DLR2").Any()
+                        && !x.Elements("DLR3").Any()
+                        && !x.Elements("DLR4").Any()
+                        && !x.Elements("DLR5").Any())
+                .Select(element =>
             new WLG
             {
                 B = element.Element("B").Value,
-                //LR = element.Element("LR").Value,
                 WDW = element.Element("WDW").Value,
                 RHO = element.Element("RHO").Value,
-                HA = element.Element("HA").Value,              
                 D = element.Element("D").Value,
-                KF = element.Element("KF").Value,
-                VD = element.Element("VD").Value,
                 MMin = element.Element("MMin").Value,
                 MMax = element.Element("MMax").Value,
                 SDMin = element.Element("SDMin").Value,
                 SDMax = element.Element("SDMax").Value,
-                NK = element.Element("NK").Value,
-                FWDW = element.Element("FWDW").Value,
-                FSD = element.Element("FSD").Value,
-               /* DLR1 = element.Element("DLR1").Value,
-                DLR2 = element.Element("DLR2").Value,
-                DLR3 = element.Element("DLR3").Value,
-                DLR4 = element.Element("DLR4").Value,
-                DLR5 = element.Element("DLR5").Value,
-                LR1 = element.Element("LR1").Value,
-                LR2 = element.Element("LR2").Value,
-                LR3 = element.Element("LR3").Value,
-                LR4 = element.Element("LR4").Value,
-                LR5 = element.Element("LR5").Value,*/
-            }).ToList();
-            listView.ItemsSource = _basis;
+                NK = "0",
+                KF = "0",
+                VD = "0",
+                //LR = element.Element("LR").Value,
+                HA = "0",
+                FWDW = "0",
+                FSD = "0",
+                DLR1 = "0",
+                DLR2 = "0",
+                DLR3 = "0",
+                DLR4 = "0",
+                DLR5 = "0",
+                LR1 = "0",
+                LR2 = "0",
+                LR3 = "0",
+                LR4 = "0",
+                LR5 = "0",
 
-            /* this.BindingContext = this;
-             var assembly = typeof(App).Assembly;
-             Stream? stream = assembly.GetManifestResourceStream("MFBauphysikMobilMAUI.Resources.Raw.Bauteil.xml");
-             XmlSerializer serializer = new XmlSerializer(typeof(List<WLG>));
-             _basis = (List<WLG>)serializer.Deserialize(stream!)!;
-             listView.ItemsSource = _basis;
-             foreach (WLG i in _basis)
-             {
-                 i.SizeClass = Setting.Size_Default;
-             }*/            
+            }).ToList();
+
+            List<WLG> nonzero_LR = doc.Descendants("WLG")
+                .Where(x => x.Elements("LR").Any())
+                .Select(element =>
+            new WLG
+            {
+                B = element.Element("B").Value,
+                WDW = element.Element("WDW").Value,
+                RHO = element.Element("RHO").Value,
+                D = element.Element("D").Value,
+                MMin = element.Element("MMin").Value,
+                MMax = element.Element("MMax").Value,
+                SDMin = element.Element("SDMin").Value,
+                SDMax = element.Element("SDMax").Value,
+                HA = element.Element("HA").Value,
+                LR = element.Element("LR").Value,
+            }).ToList();
+
+            List<WLG> zero_LR = doc.Descendants("WLG")
+                .Where(x => !x.Elements("LR").Any())
+                .Select(element =>
+            new WLG
+            {
+                B = element.Element("B").Value,
+                WDW = element.Element("WDW").Value,
+                RHO = element.Element("RHO").Value,
+                D = element.Element("D").Value,
+                MMin = element.Element("MMin").Value,
+                MMax = element.Element("MMax").Value,
+                SDMin = element.Element("SDMin").Value,
+                SDMax = element.Element("SDMax").Value,
+                HA = element.Element("HA").Value,
+                LR = "0.000",
+            }).ToList();
+
+            /*List<WLG> zero_LR5 = doc.Descendants("WLG")
+                .Where(x => x.Elements("LR5").Any())
+                .Select(element =>
+                new WLG
+                {
+                    B = element.Element("B").Value,
+                    WDW = element.Element("WDW").Value,
+                    RHO = element.Element("RHO").Value,
+                    D = element.Element("D").Value,
+                    MMin = element.Element("MMin").Value,
+                    MMax = element.Element("MMax").Value,
+                    SDMin = element.Element("SDMin").Value,
+                    SDMax = element.Element("SDMax").Value,
+                    HA = element.Element("HA").Value,
+                    LR = element.Element("LR").Value,
+                }).ToList();
+            _basis.AddRange(nonzero_LR);
+            _basis.AddRange(zero_LR);*/
+            listView.ItemsSource = _basis.OrderBy(p => p.B);  
+            foreach (WLG i in _basis)
+            {
+                i.SizeClass = Setting.Size_Default;
+            }
         }
+
 
         private async void Back_Clicked(object sender, EventArgs e)
         {

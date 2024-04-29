@@ -52,7 +52,7 @@
             <!--Deckblatt-->
             <Label Text="Deckblatt" TextColor="{StaticResource LabelButton}"  Grid.Column="0" 
               FontSize="{Binding SizeDefault}"
-x:Name="DeckblattButton" TextDecorations="Underline" FontAttributes="Bold" Padding="5">
+x:Name="DeckblattButton"  FontAttributes="Bold" Padding="5">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Deckblatt_Tapped"/>
                 </Label.GestureRecognizers>
@@ -479,8 +479,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                         Grid.Column="1" HorizontalTextAlignment="Center" FontSize="{Binding SizeDefault}"
                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark= {StaticResource DarkSecondaryColor}}">
                     <Entry.Effects>
-                        <effects:ReturnKeyEffect
-                  ReturnText="Next"/>
+                        <!--effects:ReturnKeyEffect ReturnText="Next"/-->
                     </Entry.Effects>
                 </Entry>
                 <Label Text="von" HorizontalOptions="Center" Grid.Column="2" 
@@ -493,15 +492,10 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
 
             <!--Footer-->
             <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" x:Name="BoxPlus"/>
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <ImageButton Padding="20,0,0,0" Source="plus.png" BackgroundColor="{StaticResource TitleBackgroundColor}" 
+            <Grid Grid.Row="2" Padding="20,0,0,0">
+                <ImageButton  Source="plus.png" BackgroundColor="{StaticResource TitleBackgroundColor}" 
            Clicked="Bauteil_Einfügen_Clicked" x:Name="ButtonPlus"
            HorizontalOptions="Start"/>
-
             </Grid>
         </Grid>
 
@@ -656,8 +650,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                        Grid.Column="1" HorizontalTextAlignment="Center" FontSize="{Binding SizeDefault}"
                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark= {StaticResource DarkSecondaryColor}}">
                     <Entry.Effects>
-                        <effects:ReturnKeyEffect
-                  ReturnText="Next"/>
+                        <!--effects:ReturnKeyEffect ReturnText="Next"/-->
                     </Entry.Effects>
                 </Entry>
                 <Label Text="von" HorizontalOptions="Center" Grid.Column="2" 
@@ -668,12 +661,8 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
          TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
             </Grid>
             <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2"/>
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <ImageButton Padding="20,0,0,0" Source="plus.png" BackgroundColor="{StaticResource TitleBackgroundColor}" 
+            <Grid Grid.Row="2" Padding="20,0,0,0">
+                <ImageButton  Source="plus.png" BackgroundColor="{StaticResource TitleBackgroundColor}" 
            Clicked="Bauteil_Einfügen_Clicked"
            HorizontalOptions="Start"/>
 
@@ -923,16 +912,12 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
             </Grid>
 
                 <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" />
-                <Grid Grid.Row="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <ImageButton Padding="20,0,0,0" Source="material_neu.png" 
+            <Grid Grid.Row="2" Padding="20,0,0,0">
+                <ImageButton Source="material_neu.png" 
                              BackgroundColor="{StaticResource TransparentBackground}" 
-    Clicked="Befestiger_Einfügen_Clicked" Grid.Column="1"
-HorizontalOptions="Start"/>
-                </Grid>
-
+                             Clicked="Befestiger_Einfügen_Clicked"
+                             HorizontalOptions="Start"/>
+            </Grid>
         </Grid>
 
 

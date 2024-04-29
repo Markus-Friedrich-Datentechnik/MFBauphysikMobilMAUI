@@ -25,6 +25,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Entry x:Name="SearchBar" Grid.Column="0" TextChanged="SearchBar_TextChanged"
+                       Keyboard="Plain"
                 Placeholder="Suchen" PlaceholderColor="{StaticResource Gray300}"
              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
                 <Image Source="suchen_2.png" Grid.Column="1" />
@@ -41,7 +42,7 @@
                     <custom:MyViewCell SelectedBackGroundColor="{StaticResource TextColor Blue}">
                         <Grid Padding="10">
                             <StackLayout Orientation="Vertical">
-                                <Label Text="{Binding HA}" Padding="10" FontSize="{Binding SizeClass}"
+                                <Label Text="{Binding B}" Padding="10" FontSize="{Binding SizeClass}"
                                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
                             </StackLayout>

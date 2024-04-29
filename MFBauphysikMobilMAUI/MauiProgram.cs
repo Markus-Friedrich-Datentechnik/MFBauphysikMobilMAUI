@@ -22,9 +22,9 @@ namespace MFBauphysikMobilMAUI
 #if ANDROID
                     handlers.AddHandler<MyViewCell, CustomViewCellHandler>();
 #endif
-#if IOS             
+/*#if IOS             
                     handlers.AddHandler<MyViewCell, CustomViewCellHandler>();
-#endif
+#endif*/
                 });
               /*  .ConfigureFonts(fonts =>
                 {
@@ -32,10 +32,10 @@ namespace MFBauphysikMobilMAUI
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });*/
             
-            builder.ConfigureEffects(effects =>
+            /*builder.ConfigureEffects(effects =>
             {
                 effects.Add<ReturnKeyEffect, ReturnKeyPlatformEffect>();
-            });
+            });*/
 
 
             Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(Entry), (handler, view) =>

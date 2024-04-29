@@ -8,18 +8,14 @@
              NavigationPage.HasBackButton="False">
 
     <NavigationPage.TitleView>
-        <Grid RowSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Label Text="MF Bauphysik mobil" HorizontalTextAlignment="Center" Grid.Row="0"
+        <StackLayout Orientation="Vertical">
+            <Label Text="MF Bauphysik mobil" HorizontalTextAlignment="Center" 
                TextColor="{StaticResource TitleTextColor}" 
-               FontSize="Title" FontAttributes="Bold"/>
-            <Label Grid.Row="1" Text="Projektliste" VerticalTextAlignment="Center"                   
-               HorizontalTextAlignment="Center" Padding="0,0,0,10"
-               TextColor="{StaticResource TitleTextColor}" FontSize="Subtitle"/>
-        </Grid>
+               FontSize="24" FontAttributes="Bold"/>
+            <Label Text="Projektliste"                 
+               HorizontalTextAlignment="Center"
+               TextColor="{StaticResource TitleTextColor}" FontSize="16"/>
+        </StackLayout>
     </NavigationPage.TitleView>
 
     <!--Menu-->
@@ -94,12 +90,12 @@
 
         <!--Neues Projekt Button-->
         <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2"/>
-        <StackLayout Orientation="Horizontal" Grid.Row="2">
+        <StackLayout Orientation="Horizontal" Grid.Row="2" Padding="10,0,0,0">
             <ImageButton Source="plus.png" BackgroundColor="{StaticResource TitleBackgroundColor}" 
                          WidthRequest="50"
                      Clicked="PlusClicked" HorizontalOptions="Start"/>
-            <ImageButton Source="ic_edit.png" BackgroundColor="{StaticResource TitleBackgroundColor}" 
-                     Clicked="Edit_Clicked" HorizontalOptions="End"/>
+            <!--ImageButton Source="ic_edit.png" BackgroundColor="{StaticResource TitleBackgroundColor}" 
+                     Clicked="Edit_Clicked" HorizontalOptions="End"/-->
         </StackLayout>
 
     </Grid>

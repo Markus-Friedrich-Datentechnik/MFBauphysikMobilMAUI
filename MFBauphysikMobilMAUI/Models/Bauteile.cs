@@ -54,14 +54,6 @@ namespace MFBauphysikMobilMAUI.Models
                     return;
                 _lambda = value;
                 OnPropertyChanged(nameof(Wärmeleitfähigkeit));
-                /*if (_lambda != 0)
-                {
-                    R = _dicke / _lambda;
-                }
-                else
-                {
-                    R = 0;
-                }*/
             }
         }
 

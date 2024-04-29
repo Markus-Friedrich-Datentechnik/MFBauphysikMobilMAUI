@@ -1,6 +1,6 @@
 ﻿// Helpers/Settings.cs
-using Plugin.Settings;
-using Plugin.Settings.Abstractions;
+//using Plugin.Settings;
+//using Plugin.Settings.Abstractions;
 
 namespace MFBauphysikMobilMAUI.Utils
 {
@@ -9,7 +9,7 @@ namespace MFBauphysikMobilMAUI.Utils
     /// </summary>
     public static class Settings
     {
-        private static ISettings AppSettings
+      /*  private static ISettings AppSettings
         {
             get
             {
@@ -81,6 +81,6 @@ namespace MFBauphysikMobilMAUI.Utils
             {
                 AppSettings.AddOrUpdateValue(LastBVErsatz, value);
             }
-        } 
+        } */
     }
 }

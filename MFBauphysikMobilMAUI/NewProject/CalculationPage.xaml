@@ -278,7 +278,6 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
 
             <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="1" />
             <Grid Grid.Row="1" Padding="20,0,0,0">
-
                 <ImageButton BackgroundColor="{StaticResource TransparentBackground}" 
                              Source="tools.png" Clicked="Konstruktion_Clicked" WidthRequest="50"
                              HorizontalOptions="Start"/>
@@ -523,7 +522,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
 
             <!--Plus - Bauteil einfügen-->
             <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" x:Name="BoxPlus" />
-            <Grid Grid.Row="2">
+            <Grid Grid.Row="2" Padding="20,0,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -533,10 +532,6 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                              BackgroundColor="{StaticResource TransparentBackground}" 
                      Clicked="Bauteil_Einfügen_Clicked" x:Name="ButtonPlus"
                      HorizontalOptions="Start"/>
-                <ImageButton Source="ic_edit.png" BackgroundColor="{StaticResource TransparentBackground}" 
-                             Grid.Column="1" IsVisible="false" Clicked="Edit_Clicked"
-                             x:Name="ButtonEdit" HorizontalOptions="Start"/>
-
             </Grid>
 
 
@@ -616,8 +611,9 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
             </Grid>
 
             <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="1" />
-            <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="0">
-                <ImageButton Padding="20,0,0,0" Source="material_neu.png" BackgroundColor="{StaticResource TransparentBackground}" 
+            <StackLayout Grid.Row="1" Orientation="Horizontal"  Padding="20,0,0,0">
+                <ImageButton  Source="material_neu.png"
+                             BackgroundColor="{StaticResource TransparentBackground}" 
                  Clicked="Befestiger_Einfügen_Clicked"
              HorizontalOptions="Start"/>
             </StackLayout>
