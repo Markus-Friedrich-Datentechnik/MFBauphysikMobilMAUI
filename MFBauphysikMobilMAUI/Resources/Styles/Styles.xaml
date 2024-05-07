@@ -257,11 +257,11 @@
         </Setter>
     </Style>
 
-    <!--Style TargetType="RadioButton">
+    <Style TargetType="RadioButton">
         <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
-        <Setter Property="FontSize" Value="14"/>
+        <!--Setter Property="FontSize" Value="14"/-->
         <Setter Property="MinimumHeightRequest" Value="44"/>
         <Setter Property="MinimumWidthRequest" Value="44"/>
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -276,9 +276,9 @@
                 </VisualStateGroup>
             </VisualStateGroupList>
         </Setter>
-    </Style-->
+    </Style>
     <!--RadioButton-->
-    <ControlTemplate x:Key="RadioButtonTemplate">
+    <!--ControlTemplate x:Key="RadioButtonTemplate">
         <StackLayout>
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroupList>
@@ -319,12 +319,12 @@
                 <ContentPresenter />
             </Grid>
         </StackLayout>
-    </ControlTemplate>
+    </ControlTemplate-->
 
-    <Style TargetType="RadioButton">
+    <!--Style TargetType="RadioButton">
         <Setter Property="ControlTemplate"
         Value="{StaticResource RadioButtonTemplate}" />
-    </Style>
+    </Style-->
 
     <Style TargetType="RefreshView">
         <Setter Property="RefreshColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />

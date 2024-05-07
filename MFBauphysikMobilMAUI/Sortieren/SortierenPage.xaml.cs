@@ -27,6 +27,18 @@ namespace MFBauphysikMobilMAUI.Sortieren
                 OnPropertyChanged(nameof(SizeTitle));
             }
         }
+        private double _size_default;
+        public double SizeDefault
+        {
+            get { return _size_default; }
+            set
+            {
+                if (_size_default == value)
+                    return;
+                _size_default = value;
+                OnPropertyChanged(nameof(SizeDefault));
+            }
+        }
         public event EventHandler<EinstellungModel> SortiertUpdated;
         public SortierenPage(EinstellungModel sortieren)
         {
@@ -45,17 +57,16 @@ namespace MFBauphysikMobilMAUI.Sortieren
                 A_Z = sortieren.A_Z,
                 Z_A = sortieren.Z_A,
             };
-            label_neueste.FontSize = sortieren.DefaultSize;
+         /*   label_neueste.FontSize = sortieren.DefaultSize;
             label_älteste.FontSize = sortieren.DefaultSize;
             label_az.FontSize = sortieren.DefaultSize;
-            label_za.FontSize = sortieren.DefaultSize;
+            label_za.FontSize = sortieren.DefaultSize;*/
 
             neueste.FontSize = sortieren.DefaultSize;
             älteste.FontSize = sortieren.DefaultSize;
             a_z.FontSize = sortieren.DefaultSize;
             z_a.FontSize = sortieren.DefaultSize;
             SizeTitle = Setting.Size_Title;
-
         }
 
         public async void Back_Clicked (object sender, EventArgs e)
@@ -65,7 +76,11 @@ namespace MFBauphysikMobilMAUI.Sortieren
             await Navigation.PopAsync();
         }
 
-        private void RadioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+        }
+        void RadioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
             RadioButton button = sender as RadioButton;
         }
@@ -76,7 +91,19 @@ namespace MFBauphysikMobilMAUI.Sortieren
             SortiertUpdated?.Invoke(this, sortieren);
             await Navigation.PopToRootAsync();
         }
+
+        void OnAnimalImageRadioButtonCheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            RadioButton button = sender as RadioButton;
+        }
+
+        void OnAnimalRadioButtonCheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            RadioButton button = sender as RadioButton;
+        }
+
+        private void neueste_SizeChanged(object sender, EventArgs e)
+        {
+        }
     }
-
-
 }

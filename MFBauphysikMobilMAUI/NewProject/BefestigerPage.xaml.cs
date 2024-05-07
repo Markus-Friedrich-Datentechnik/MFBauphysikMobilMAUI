@@ -41,19 +41,20 @@ namespace MFBauphysikMobilMAUI.NewProject
         {
             InitializeComponent();
             this.BindingContext = this;
-
-            var assembly = typeof(App).Assembly;
-            Stream? stream = assembly.GetManifestResourceStream("MFBauphysikMobilMAUI.Resources.Raw.Befestiger_Export.xml");
-            XmlSerializer serializer = new XmlSerializer(typeof(List<BF>));
-            _befestiger = (List<BF>)serializer.Deserialize(stream!)!;
-
+            var assembly = (typeof(App)).Assembly;
+            Stream stream = assembly.GetManifestResourceStream("MFBauphysikMobil.BefestigerExport.xml");
+            using (var reader = new StreamReader(stream))
+            {
+                var serializer = new XmlSerializer(typeof(List<BF>));
+                _befestiger = (List<BF>)serializer.Deserialize(reader);
+            }
             listBefestiger.ItemsSource = _befestiger.OrderBy(p => p.B);
             foreach (BF i in _befestiger)
             {
                 i.SizeClass = Setting.Size_Default;
             }
             SizeTitle = Setting.Size_Title;
-           
+
         }
         public async void Back_Clicked (object sender, EventArgs e)
         {

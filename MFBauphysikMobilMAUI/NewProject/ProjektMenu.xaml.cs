@@ -59,7 +59,6 @@ namespace MFBauphysikMobilMAUI.NewProject
             info_label.FontSize = Setting.Size_Default;
             klima_label.FontSize = Setting.Size_Default;
             SizeTitle = Setting.Size_Title;
-
         }
 
         private void Back_Clicked(object sender, EventArgs e)

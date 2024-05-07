@@ -60,9 +60,9 @@ namespace MFBauphysikMobilMAUI.Konfiguration
             slider.Value = (konfig.DefaultSize / 14) * 100;
 
             design_label.FontSize = Setting.Size_Default;
-            gerät_label.FontSize = Setting.Size_Default;
-            hell_label.FontSize = Setting.Size_Default;
-            dark_label.FontSize = Setting.Size_Default;
+            gerätModus.FontSize = Setting.Size_Default;
+            darkmodus.FontSize = Setting.Size_Default;
+            lightmodus.FontSize = Setting.Size_Default;           
             darstellung_label.FontSize = Setting.Size_Default;
             slider_label.FontSize = Setting.Size_Default;
             SizeTitle = Setting.Size_Title;
@@ -137,6 +137,7 @@ namespace MFBauphysikMobilMAUI.Konfiguration
             if (!e.Value)
                 return;
 
+            RadioButton button = sender as RadioButton;
             var val = (sender as RadioButton)?.Value as string;
             if (string.IsNullOrWhiteSpace(val))
                 return;

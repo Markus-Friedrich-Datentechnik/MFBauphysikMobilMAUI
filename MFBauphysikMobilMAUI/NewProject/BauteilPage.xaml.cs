@@ -33,9 +33,9 @@ namespace MFBauphysikMobilMAUI.NewProject
         public BauteilPage()
         {
             InitializeComponent();
-            this.BindingContext = this;
+            this.BindingContext = this;                                 
             var assembly = typeof(App).Assembly;
-            Stream? stream = (assembly.GetManifestResourceStream("MFBauphysikMobilMAUI.NewProject.Bauteile.xml"))!;
+            Stream? stream = (assembly.GetManifestResourceStream("MFBauphysikMobil.NewProject.Bauteile.xml"))!;
             //XDocument doc = XDocument.Load(stream);
 
             using(var reader = new StreamReader(stream))

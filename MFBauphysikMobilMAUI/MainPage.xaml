@@ -53,7 +53,7 @@
         </Frame>
         
         <!--Liste von Projekten-->
-        <ListView Grid.Row="1" 
+        <ListView Grid.Row="1"  BackgroundColor="Transparent"
               x:Name="ListProjekt" 
               ItemSelected="ListProjekt_ItemSelected"
               HasUnevenRows="True" 

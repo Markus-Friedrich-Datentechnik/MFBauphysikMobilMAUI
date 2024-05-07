@@ -121,7 +121,9 @@
 	  <EmbeddedResource Include="NewProject\Bauteile.xml">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </EmbeddedResource>
-	  <EmbeddedResource Include="Resources\Raw\Befestiger_Export.xml" />
+	  <EmbeddedResource Include="BefestigerExport.xml">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -134,6 +136,10 @@
 
 	<ItemGroup>
 	  <EmbeddedResource Include="Resources\Splash\launcher_foreground1.png" Color="#F5F7F8" BaseSize="360,360" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiAsset Include="BefestigerExport.xml" />
 	</ItemGroup>
 
 	<ItemGroup>

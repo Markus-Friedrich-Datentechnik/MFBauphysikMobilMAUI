@@ -35,7 +35,8 @@
             <converter:BoolToColorConverter x:Key="BoolToColor"/>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid RowSpacing="0">
+    <Grid RowSpacing="0" 
+          BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition Height="*"/>
@@ -226,6 +227,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
                         <ListView x:Name="listBasis" Grid.Row="1" SelectionMode="None" Grid.ColumnSpan="2"
+                                  BackgroundColor="Transparent"
        SeparatorVisibility="Default"  HasUnevenRows="True"
        SeparatorColor="{StaticResource TextColor Blue}">
                             <ListView.ItemTemplate>
@@ -297,6 +299,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
             <!--ListView Bauteile-->
             <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
                 <ListView x:Name="listBasisUwert"  Grid.Row="0" Grid.Column="0"
+                          BackgroundColor="{StaticResource TransparentBackground}"
                           Header="{Binding .}" HasUnevenRows="True"
                           ItemSelected="OnSelected_ItemSelected_Basis"
                           Footer="{Binding .}"     SelectionMode="Single"

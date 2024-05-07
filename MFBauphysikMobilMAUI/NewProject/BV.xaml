@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MFBauphysikMobilMAUI.NewProject.BV"  
-             xmlns:effects="clr-namespace:MFBauphysikMobilMAUI.Effects" 
              xmlns:bauphysik="clr-namespace:MFBauphysikMobilMAUI.Models" 
              xmlns:custom="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer"
              x:DataType="bauphysik:MainModel"
@@ -35,9 +34,6 @@
 
             <Entry Text="{Binding ProjectName}" x:Name="ProjektName" Grid.Row="1"
        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-                <Entry.Effects>
-                    <effects:ReturnKeyEffect ReturnText="Next"/>
-                </Entry.Effects>
             </Entry>            
             <BoxView Grid.Row="2" Color="{AppThemeBinding Light=White, Dark=White}"/>
         </Grid>
@@ -55,17 +51,11 @@
 
             <Entry Text="{Binding ProjectName}" x:Name="entry_label" Grid.Row="1" BackgroundColor="{StaticResource TransparentBackground}"
    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-                <Entry.Effects>
-                    <effects:ReturnKeyEffect ReturnText="Next"/>
-                </Entry.Effects>
             </Entry>
             <BoxView Grid.Row="2" Color="{AppThemeBinding Light=White, Dark=White}"/>
 
             <Entry  Text="{Binding BV_Ersatz}"  x:Name="BV_Ersatz" Grid.Row="3" BackgroundColor="{StaticResource TransparentBackground}"
     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-                <Entry.Effects>
-                    <effects:ReturnKeyEffect ReturnText="Next"/>
-                </Entry.Effects>
             </Entry>
             <BoxView Grid.Row="4" Color="{AppThemeBinding Light=White, Dark=White}"/>
         </Grid>

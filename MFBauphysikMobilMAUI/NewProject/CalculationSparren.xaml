@@ -105,8 +105,8 @@
             <!--Klimadaten und Feuchtenachweis-->
             <Grid Grid.Row="0" Padding="10,10,0,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -646,7 +646,7 @@ Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticReso
             <!--Flächen Anteil-->
             <Grid Grid.Row="1" Padding="10" x:Name="AnteilSparren">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>

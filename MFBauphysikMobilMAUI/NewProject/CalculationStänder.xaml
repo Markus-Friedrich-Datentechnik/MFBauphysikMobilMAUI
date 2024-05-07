@@ -103,8 +103,8 @@ x:Name="BefestigerButton" Padding="5" FontSize="{Binding SizeDefault}">
             <!--Klimadaten und Feuchtenachweis-->
             <Grid Grid.Row="0" Padding="10,10,0,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />

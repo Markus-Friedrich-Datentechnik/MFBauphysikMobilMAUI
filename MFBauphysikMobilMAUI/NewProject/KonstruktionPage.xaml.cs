@@ -145,11 +145,11 @@ namespace MFBauphysikMobilMAUI.NewProject
             {
                 Verschattet = true;
             }
-            kaltdach_label.FontSize = Setting.Size_Default;
-            warmdach_label.FontSize = Setting.Size_Default;
-            verschattet_label.FontSize = Setting.Size_Default;
-            luft_wand_label.FontSize = Setting.Size_Default;
-            kein_luft_wand_label.FontSize = Setting.Size_Default;
+            kaltdach_button.FontSize = Setting.Size_Default;
+            warmdach1_button.FontSize = Setting.Size_Default;
+            warmdach2_button.FontSize = Setting.Size_Default;
+            luftwand_button.FontSize = Setting.Size_Default;
+            keinluftwand_button.FontSize = Setting.Size_Default;
             konstruktion_label.FontSize = Setting.Size_Default;
             SizeTitle = Setting.Size_Title;
             Name = konstruktionstyp;

@@ -7483,8 +7483,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             await Navigation.PushAsync(new ProjektMenu(menu)
             {
                 BindingContext = menu as MainModel
-            });
-        
+            });        
         }
 
         //Zurück zur Vorderseite
