@@ -30,7 +30,7 @@
                 <StackLayout >
                     <!--Button1-->
                     <RadioButton x:Name="neueste" Value="neueste" VerticalOptions="CenterAndExpand" 
-                                Content="neueste oben"
+                                Content="neueste oben" 
                                 CheckedChanged="RadioButton_CheckedChanged" IsChecked="{Binding Alt_Jung}">
                     </RadioButton>
 
@@ -42,8 +42,8 @@
 
                     <!--Button3-->
                     <RadioButton x:Name="a_z" Value="a_z"  
-                  CheckedChanged="RadioButton_CheckedChanged" IsChecked="{Binding A_Z}"
-                          Content="A -> Z">
+                                 CheckedChanged="RadioButton_CheckedChanged" IsChecked="{Binding A_Z}"
+                                 Content="A -> Z">
                     </RadioButton>
 
                     <!--Button4-->
