@@ -98,8 +98,6 @@
 	<ItemGroup>
 	  <None Remove="Bauteile.xml" />
 	  <None Remove="Resources\AppIcon\appicon.svg" />
-	  <None Remove="Resources\AppIcon\appicon_old.png" />
-	  <None Remove="Resources\AppIcon\iconx.png" />
 	  <None Remove="Resources\AppIcon\launcher_foreground.png" />
 	  <None Remove="Resources\Images\back.png" />
 	  <None Remove="Resources\Images\check.png" />
@@ -117,8 +115,7 @@
 	  <None Remove="Resources\Images\trash.png" />
 	  <None Remove="Resources\Images\up.png" />
 	  <None Remove="Resources\raw\Befestiger_Export.xml" />
-	  <None Remove="Resources\Splash\launcher_foreground.png" />
-	  <None Remove="Resources\Splash\launcher_foreground1.png" />
+	  <None Remove="Resources\Splash\splash.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -131,27 +128,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Include="Resources\AppIcon\iconx.png" BaseSize="128, 128" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Include="Resources\AppIcon\appicon_old.png" Color="White" ForegroundScale="0.65" Resize="false" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Include="Resources\Splash\launcher_foreground1.png" Color="#F5F7F8" BaseSize="360,360" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiAsset Include="BefestigerExport.xml" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiIcon Include="Resources\AppIcon\appicon.svg" BaseSize="128,128" Color="White" />
+	   <MauiIcon Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'" Include="Resources\AppIcon\appiconandroid.svg" Color="#ffffff" ForegroundScale ="0.85"/>
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" Color="#ffffff" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiSplashScreen Include="Resources\Splash\launcher_foreground.png" Color="#F5F7F8" />
+	  <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#ffffff"></MauiSplashScreen>
 	</ItemGroup>
 
 	<ItemGroup>
