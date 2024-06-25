@@ -11,14 +11,11 @@
               SeparatorColor="{StaticResource TitleBackgroundColor}">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <custom:MyViewCell SelectedBackGroundColor="{StaticResource TextColor Blue}" >
+                <ViewCell >
                     <Grid Padding="10">
-                        <Label Text="{Binding B}" FontSize="{Binding SizeClass}"
-                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-
+                        <Label Text="{Binding B}" FontSize="{Binding SizeClass}"/>
                     </Grid>
-
-                </custom:MyViewCell>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

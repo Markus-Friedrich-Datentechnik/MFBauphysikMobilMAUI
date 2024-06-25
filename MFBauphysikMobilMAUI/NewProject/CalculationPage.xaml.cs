@@ -663,10 +663,11 @@ namespace MFBauphysikMobilMAUI.NewProject
                     }
                     for (int i = 0; i < BasisList.Count; i++)
                      {
-                         App.Database.SaveBauteilAsync(BasisList[i]);
+                        App.Database.SaveBauteilAsync(BasisList[i]);
                      }
 
-                }
+                }               
+                
                 Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";               
             }         
 
@@ -6630,6 +6631,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             BefestigerBooleanEmpty = true;
             SizeDefault = Setting.Size_Default;
             SizeMedium = Setting.Size_Medium;
+
         }
         protected override void OnAppearing()
         {
@@ -6643,11 +6645,11 @@ namespace MFBauphysikMobilMAUI.NewProject
         private async void GetBasis()
         {
             //Bauteil
-            var item = await App.Database.GetBauteilAsync();
-            
-            foreach (Basis i in item)
-            {                i.SizeClass = Setting.Size_Default;
 
+            var item = await App.Database.GetBauteilAsync();
+            foreach (Basis i in item)
+            {
+                i.SizeClass = Setting.Size_Default;
                 if (i.ModelID == main_model.ID)
                 {
                     main_model.Bauteil_Basis.Add(i);
@@ -6667,6 +6669,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 i.Gewicht = i.Dicke * i.Rohdichte;
             }
 
+            //If neues Projekt
             if (main_model.Selected == 0)
             {
                 for (int i = 0; i < main_model.Bauteil_Basis.Count - 1; i++)
@@ -7230,10 +7233,10 @@ namespace MFBauphysikMobilMAUI.NewProject
                 };
 
                 main_model.Bauteil_Basis.Remove(selectedBauteil);
-                CalculateSum_Basis();
+              /*   CalculateSum_Basis();
                 Calculate_Ug();
                 Calculate_Uf();
-                Calculate_DeltaU();
+                Calculate_DeltaU();*/
                 main_model.Date = DateTime.Now;
                 await App.Database.UpdateItemAsync(main_model);
                 await Navigation.PushAsync(new BasisDetailPage(selectedBauteil)
@@ -7446,15 +7449,15 @@ namespace MFBauphysikMobilMAUI.NewProject
                 selectedBefestiger.Eindringtiefe = befestiger.Eindringtiefe;
                 selectedBefestiger.Länge = befestiger.Länge;
                 selectedBefestiger.ModelID = befestiger.ModelID;
-                Calculate_Uf();
-                Calculate_Ug();
-                Calculate_DeltaU();
+               //Calculate_Uf();
+                //Calculate_Ug();
+                //Calculate_DeltaU();
             };
 
             main_model.Befestiger_Basis.Remove(selectedBefestiger);
-            Calculate_Uf();
-            Calculate_Ug();
-            Calculate_DeltaU();
+            //Calculate_Uf();
+            //Calculate_Ug();
+            //Calculate_DeltaU();
             main_model.Date = DateTime.Now;
             await App.Database.UpdateItemAsync(main_model);
             await Navigation.PushAsync(new BasisEinfügen(selectedBefestiger)
@@ -7515,7 +7518,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 }
             }
             await App.Database.UpdateBauteilAsync(item);
-            OnAppearing();
+            //OnAppearing();
             main_model.Date = DateTime.Now;
             await App.Database.UpdateItemAsync(main_model);
         }

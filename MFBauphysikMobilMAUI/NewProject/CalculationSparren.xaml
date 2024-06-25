@@ -48,7 +48,7 @@
             <!--Deckblatt-->
             <Label Text="Deckblatt" TextColor="{StaticResource LabelButton}"  Grid.Column="0"
                    FontSize="{Binding SizeDefault}"
-                   x:Name="DeckblattButton" FontAttributes="Bold" Padding="4" >
+                   x:Name="DeckblattButton" FontAttributes="Bold" Padding="2" >
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Deckblatt_Tapped"/>
                 </Label.GestureRecognizers>
@@ -57,7 +57,7 @@
             <!--U-Wert Basiskonstruktion-->
             <Label Text="Basiskonstruktion" TextColor="{StaticResource LabelButton}"  
                    Grid.Column="1" FontSize="{Binding SizeDefault}"
-                   x:Name="UwertBasisButton" Padding="4">
+                   x:Name="UwertBasisButton" Padding="2">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Basis_Tapped"/>
                 </Label.GestureRecognizers>
@@ -66,7 +66,7 @@
             <!--U-Wert Sparren-->
             <Label Text="Sparren" TextColor="{StaticResource LabelButton}" 
                    Grid.Column="2" FontSize="{Binding SizeDefault}"
-                   x:Name="UwertSparrenButton" Padding="4">
+                   x:Name="UwertSparrenButton" Padding="2">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Sparren_Tapped"></TapGestureRecognizer>
                 </Label.GestureRecognizers>
@@ -75,7 +75,7 @@
             <!--U-Wert Gesamt-->
             <Label Text="U Gesamt" TextColor="{StaticResource LabelButton}" 
                    Grid.Column="3" FontSize="{Binding SizeDefault}"
-                   x:Name="UgesButton" Padding="4">
+                   x:Name="UgesButton" Padding="2">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Uges_Tapped"/>
                 </Label.GestureRecognizers>
@@ -85,7 +85,7 @@
             <!--Befestiger-->
             <Label Text="Befestiger" TextColor="{StaticResource LabelButton}" 
                    Grid.Column="4" FontSize="{Binding SizeDefault}"
-                   x:Name="BefestigerButton" Padding="4" LineBreakMode="CharacterWrap" >
+                   x:Name="BefestigerButton" Padding="2" LineBreakMode="CharacterWrap" >
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Befestiger_Tapped"/>
                 </Label.GestureRecognizers>

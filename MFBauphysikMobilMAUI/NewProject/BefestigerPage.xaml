@@ -41,6 +41,7 @@
         <!--List Befestiger-->
 
         <ListView x:Name="listBefestiger" 
+                  BackgroundColor="{StaticResource TransparentBackground}"
                       SelectionMode="Single" 
                       Grid.Row="1"
                       HasUnevenRows="True"

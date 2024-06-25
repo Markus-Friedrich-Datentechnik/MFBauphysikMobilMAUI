@@ -30,6 +30,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             BindingContext = new Basis
             {
                 ID_Bauteil = bauteil.ID_Bauteil,
+                R = bauteil.R,
                 ID_Sort = bauteil.ID_Sort,
                 Bezeichnung = bauteil.Bezeichnung,
                 Dicke = bauteil.Dicke,
@@ -247,7 +248,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 }
                 else
                 {
-                    bauteil.R = bauteil.Dicke / bauteil.Wärmeleitfähigkeit;
+                    bauteil.R = bauteil.R;
                 }
             }
 

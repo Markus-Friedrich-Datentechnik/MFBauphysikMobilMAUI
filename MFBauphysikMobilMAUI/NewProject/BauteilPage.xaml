@@ -33,6 +33,7 @@
         </Frame>
         <!--List Bauteil-->
         <ListView x:Name="listView" 
+                  BackgroundColor="{StaticResource TransparentBackground}"
                   ItemSelected="ListView_ItemSelected" 
                   SelectionMode="Single"
                   HasUnevenRows="True" 

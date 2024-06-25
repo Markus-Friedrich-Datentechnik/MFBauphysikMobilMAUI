@@ -24,6 +24,7 @@ x:DataType="models:EinstellungModel"
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Button Text="Sortieren" FontSize="{Binding DefaultSize}" Grid.Row="0"
                     Style="{StaticResource ButtonStyle}" 
@@ -34,7 +35,7 @@ x:DataType="models:EinstellungModel"
             <Button Text="Info" Style="{StaticResource ButtonStyle}" Grid.Row="2"
                     FontSize="{Binding DefaultSize}"
                     Clicked="Info_Clicked"/>
-            <!--Button Text="TestPage" Style="{StaticResource ButtonStyle}" 
+            <!--Button Text="TestPage" Style="{StaticResource ButtonStyle}" Grid.Row="3"
                     Clicked="Button_Clicked" IsVisible="true"/-->
         </Grid>                
     </StackLayout>          
