@@ -104,6 +104,16 @@ namespace MFBauphysikMobilMAUI.NewProject
             ButtonLöschen.FontSize = Setting.Size_Default;
         }
 
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            indicator_view.IsVisible = true;
+            main_view.IsVisible = false;
+            await Task.Delay(1000);
+            indicator_view.IsVisible = false;
+            main_view.IsVisible = true;
+        } 
+
         public async void Back_Clicked(object sender, EventArgs e)
         {            
             await Navigation.PopAsync();

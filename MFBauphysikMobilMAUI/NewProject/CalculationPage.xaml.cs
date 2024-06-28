@@ -569,6 +569,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             };
             Aufbau = main_model.MusterName;
             //Musteraufbauten mit Liste von Bauteilen
+
             if (main_model.MusterName == "Beton_G200_EPS_PYE")
             {
                 // BefestigerList = muster.Befestiger_Basis;
@@ -638,7 +639,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Sd_Max = 120.00,
                         Dampfdiffusionswiderstand_Min = 20000,
                         Dampfdiffusionswiderstand_Max = 30000
-                    }) ;
+                    });
                     BasisList.Add(new Basis()
                     {
                         ID_Sort = 5,
@@ -662,14 +663,14 @@ namespace MFBauphysikMobilMAUI.NewProject
 
                     }
                     for (int i = 0; i < BasisList.Count; i++)
-                     {
+                    {
                         App.Database.SaveBauteilAsync(BasisList[i]);
-                     }
+                    }
 
-                }               
-                
-                Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";               
-            }         
+                }
+
+                Konstruktionstyp = "unbelüftetes Dach (Warmdach) \r\n(unverschattet mit dunkler Deckung/Abdichtung)";
+            }
 
             //Beton EPS
             else if (main_model.MusterName == "Beton_KSD_EPS_EPDM")
@@ -714,7 +715,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     {
                         ID_Sort = 3,
                         Bezeichnung = "EPS 035, mit Stufenfalz",
-                        R = 5.142857 ,
+                        R = 5.142857,
                         Dicke = 0.18,
                         Wärmeleitfähigkeit = 0.03500,
                         Rohdichte = 30.0,
@@ -1077,7 +1078,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     {
                         ID_Sort = 3,
                         Bezeichnung = "EPS 035, mit Stufenfalz",
-                        R =  5.142857,
+                        R = 5.142857,
                         Dicke = 0.18,
                         Wärmeleitfähigkeit = 0.03500,
                         Rohdichte = 30.0,
@@ -1095,7 +1096,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "Glasvlies",
                         R = 0.000100,
                         Dicke = 0.001,
-                        Wärmeleitfähigkeit = 10.000000,                        
+                        Wärmeleitfähigkeit = 10.000000,
                         Rohdichte = 400.0,
                         sonstiges = true,
                         KeineLuft = true,
@@ -1193,7 +1194,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Bezeichnung = "PYE G200 S4",
                         R = 0.00,
                         Dicke = 0.004,
-                        Wärmeleitfähigkeit = 0.00,                        
+                        Wärmeleitfähigkeit = 0.00,
                         Rohdichte = 1000.0,
                         Kapillar = true,
                         sonstiges = true,
@@ -1284,7 +1285,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Kapillar = true,
                         sonstiges = true,
                         EvntlLuft = true,
-                        Sd_Min =0.20,
+                        Sd_Min = 0.20,
                         Sd_Max = 0.20,
                         Dampfdiffusionswiderstand_Min = 1.00,
                         Dampfdiffusionswiderstand_Max = 1.00
@@ -1536,7 +1537,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Sd_Max = 0.20,
                         Dampfdiffusionswiderstand_Min = 1.00,
                         Dampfdiffusionswiderstand_Max = 1.00
-                    });                   
+                    });
                     BasisList.Add(new Basis()
                     {
                         ID_Sort = 4,
@@ -2360,7 +2361,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     {
                         ID_Sort = 3,
                         Bezeichnung = "EPS 035, mit Stufenfalz",
-                        R =   5.142857,
+                        R = 5.142857,
                         Dicke = 0.18,
                         Wärmeleitfähigkeit = 0.03500,
                         Rohdichte = 30.0,
@@ -2526,7 +2527,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     {
                         ID_Sort = 3,
                         Bezeichnung = "EPS 035, mit Stufenfalz",
-                        R =  5.142857,
+                        R = 5.142857,
                         Dicke = 0.18,
                         Wärmeleitfähigkeit = 0.03500,
                         Rohdichte = 30.0,
@@ -2610,7 +2611,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     {
                         ID_Sort = 3,
                         Bezeichnung = "EPS 035, mit Stufenfalz",
-                        R =  5.142857,
+                        R = 5.142857,
                         Dicke = 0.18,
                         Wärmeleitfähigkeit = 0.03500,
                         Rohdichte = 30.0,
@@ -2806,7 +2807,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     {
                         ID_Sort = 3,
                         Bezeichnung = "EPS 035, mit Stufenfalz",
-                        R =  5.142857,
+                        R = 5.142857,
                         Dicke = 0.18,
                         Wärmeleitfähigkeit = 0.03500,
                         Rohdichte = 30.0,
@@ -3906,7 +3907,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     {
                         ID_Sort = 4,
                         Bezeichnung = "PYE G200 S4",
-                        R = 0.00,                        
+                        R = 0.00,
                         Dicke = 0.004,
                         Wärmeleitfähigkeit = 0.00,
                         Rohdichte = 1000.0,
@@ -3993,7 +3994,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     {
                         ID_Sort = 3,
                         Bezeichnung = "EPS 035, mit Stufenfalz",
-                        R =  5.142857,
+                        R = 5.142857,
                         Dicke = 0.18,
                         Wärmeleitfähigkeit = 0.03500,
                         Rohdichte = 30.0,
@@ -4244,7 +4245,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     {
                         ID_Sort = 3,
                         Bezeichnung = "EPS 035, mit Stufenfalz",
-                        R =  5.142857,
+                        R = 5.142857,
                         Dicke = 0.18,
                         Wärmeleitfähigkeit = 0.03500,
                         Rohdichte = 30.0,
@@ -4354,7 +4355,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Sd_Max = 18.00,
                         Dampfdiffusionswiderstand_Min = 20.00,
                         Dampfdiffusionswiderstand_Max = 100.00
-                    });                   
+                    });
                     BasisList.Add(new Basis()
                     {
                         ID_Sort = 4,
@@ -4426,7 +4427,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     {
                         ID_Sort = 3,
                         Bezeichnung = "EPS 035, mit Stufenfalz",
-                        R =  5.142857,
+                        R = 5.142857,
                         Dicke = 0.18,
                         Wärmeleitfähigkeit = 0.035,
                         Rohdichte = 30.0,
@@ -5355,7 +5356,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Sd_Max = 24.00,
                         Dampfdiffusionswiderstand_Min = 40.00,
                         Dampfdiffusionswiderstand_Max = 200.00
-                    });                   
+                    });
                     BasisList.Add(new Basis()
                     {
                         ID_Sort = 4,
@@ -5716,7 +5717,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         R = 0.0001,
                         Rohdichte = 400,
                         Dicke = 0.001,
-                        Dampfdiffusionswiderstand_Min= 1.0,
+                        Dampfdiffusionswiderstand_Min = 1.0,
                         Dampfdiffusionswiderstand_Max = 1.0,
                         Sd_Min = 0.00,
                         Sd_Max = 0.00,
@@ -6246,7 +6247,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         Dampfdiffusionswiderstand_Min = 3.0,
                         Dampfdiffusionswiderstand_Max = 3.0
                     });
-                    
+
                     foreach (Basis i in BasisList)
                     {
                         i.ModelID = main_model.ID;
@@ -6631,29 +6632,39 @@ namespace MFBauphysikMobilMAUI.NewProject
             BefestigerBooleanEmpty = true;
             SizeDefault = Setting.Size_Default;
             SizeMedium = Setting.Size_Medium;
-
+            // GetBasis();
+            indicator_view.IsVisible = true;
+            main_view.IsVisible = false;
         }
-        protected override void OnAppearing()
-        {
+        protected override async void OnAppearing()
+        {            
             base.OnAppearing();
+            indicator_view.IsVisible = true;
+            main_view.IsVisible = false;
             GetBasis();
             if (NachweisGrid.IsVisible == true)
             {
                 MeldungDicke.IsVisible = false;
             }
+            
+            await Task.Delay(1000);
+            indicator_view.IsVisible = false;
+            main_view.IsVisible = true;
+            
         }
         private async void GetBasis()
         {
             //Bauteil
 
             var item = await App.Database.GetBauteilAsync();
+           
             foreach (Basis i in item)
             {
                 i.SizeClass = Setting.Size_Default;
                 if (i.ModelID == main_model.ID)
                 {
                     main_model.Bauteil_Basis.Add(i);
-
+                  Console.WriteLine(main_model.Bauteil_Basis.Count());
                     for (int m = 0; m <= main_model.Bauteil_Basis.Count - 1; m++)
                     {
                         for (int n = m + 1; n <= main_model.Bauteil_Basis.Count - 1; n++)
@@ -7232,11 +7243,11 @@ namespace MFBauphysikMobilMAUI.NewProject
                     Calculate_DeltaU();
                 };
 
-                main_model.Bauteil_Basis.Remove(selectedBauteil);
-              /*   CalculateSum_Basis();
+                //main_model.Bauteil_Basis.Remove(selectedBauteil);
+                CalculateSum_Basis();
                 Calculate_Ug();
                 Calculate_Uf();
-                Calculate_DeltaU();*/
+                Calculate_DeltaU();
                 main_model.Date = DateTime.Now;
                 await App.Database.UpdateItemAsync(main_model);
                 await Navigation.PushAsync(new BasisDetailPage(selectedBauteil)
@@ -7272,7 +7283,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 MeldungDicke.IsVisible = false;
             }
         }
-        public void Basis_Tapped(object sender, EventArgs e)
+        public async void Basis_Tapped(object sender, EventArgs e)
         {
             main_model.Selected = 1;
             //Anzeige von Datentabelle in Deckblatt
@@ -7300,8 +7311,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Calculate_Uf();
                 Calculate_Ug();
                 Calculate_DeltaU();
-            }
-            
+            }           
         }
         private void Befestiger_Tapped(object sender, EventArgs e)
         {
@@ -7449,17 +7459,18 @@ namespace MFBauphysikMobilMAUI.NewProject
                 selectedBefestiger.Eindringtiefe = befestiger.Eindringtiefe;
                 selectedBefestiger.Länge = befestiger.Länge;
                 selectedBefestiger.ModelID = befestiger.ModelID;
-               //Calculate_Uf();
-                //Calculate_Ug();
-                //Calculate_DeltaU();
+                Calculate_Uf();
+                Calculate_Ug();
+                Calculate_DeltaU();
             };
 
-            main_model.Befestiger_Basis.Remove(selectedBefestiger);
-            //Calculate_Uf();
-            //Calculate_Ug();
-            //Calculate_DeltaU();
+            
+            //main_model.Befestiger_Basis.Remove(selectedBefestiger);
+          /*  Calculate_Uf();
+            Calculate_Ug();
+            Calculate_DeltaU();*/
             main_model.Date = DateTime.Now;
-            await App.Database.UpdateItemAsync(main_model);
+            await App.Database.UpdateItemAsync(main_model);            
             await Navigation.PushAsync(new BasisEinfügen(selectedBefestiger)
             {
                 BindingContext = selectedBefestiger
@@ -7518,6 +7529,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 }
             }
             await App.Database.UpdateBauteilAsync(item);
+            GetBasis();
             //OnAppearing();
             main_model.Date = DateTime.Now;
             await App.Database.UpdateItemAsync(main_model);
@@ -7541,7 +7553,8 @@ namespace MFBauphysikMobilMAUI.NewProject
                 }
             }
             await App.Database.UpdateBauteilAsync(item);
-            OnAppearing();
+            GetBasis();
+            //OnAppearing();
             main_model.Date = DateTime.Now;
             await App.Database.UpdateItemAsync(main_model);
         }

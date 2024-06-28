@@ -2581,14 +2581,16 @@ namespace MFBauphysikMobilMAUI.NewProject
         {
             //var type = sender as Konstruktion;
             //var konstruktionsUpdate = new KonstruktionPage(type);
-            var konstruktionsUpdate = new KonstruktionPage(Konstruktionstyp);
+
+
+           /* var konstruktionsUpdate = new KonstruktionPage(Konstruktionstyp);
             konstruktionsUpdate.KonstruktionChanged += (source, konstruktion) =>
             {
                 Konstruktionstyp = konstruktion;
             };
             Navigation.PushAsync(konstruktionsUpdate);
             CalculateSum_Basis();
-            CalculateSum_Sparren();
+            CalculateSum_Sparren();*/
 
         }
         private void DragGestureRecognizer_DragStarting(object sender, DragStartingEventArgs e)

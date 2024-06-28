@@ -69,8 +69,7 @@ namespace MFBauphysikMobilMAUI.Models
                 OnPropertyChanged(nameof(SizeClass));
             }
         }
-
-
+               
         public event PropertyChangedEventHandler PropertyChanged;
 
         //Basis

@@ -2540,7 +2540,9 @@ namespace MFBauphysikMobilMAUI.NewProject
         {
             //var type = sender as Konstruktion;
             //var konstruktionsUpdate = new KonstruktionPage(type);
-            var konstruktionsUpdate = new KonstruktionPage(Konstruktionstyp);
+
+
+           /* var konstruktionsUpdate = new KonstruktionPage(Konstruktionstyp);
             konstruktionsUpdate.KonstruktionChanged += (source, konstruktion) =>
             {
                 Konstruktionstyp = konstruktion;
@@ -2548,7 +2550,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             Navigation.PushAsync(konstruktionsUpdate);
 
             CalculateSum_Gefach();
-            CalculateSum_Ständer();
+            CalculateSum_Ständer();*/
 
         }
         private void DragGestureRecognizer_DragStarting(object sender, DragStartingEventArgs e)

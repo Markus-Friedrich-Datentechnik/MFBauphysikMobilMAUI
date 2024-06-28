@@ -23,384 +23,393 @@
     <ContentPage.Resources>
 
     </ContentPage.Resources>
-    <ScrollView>
-        <StackLayout Orientation="Vertical"
-        BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
-            <!--Bezeichnung-->
-            <Grid Padding="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="1"/>
-                </Grid.RowDefinitions>
 
-                <Label Text="Bezeichnung" FontAttributes="Bold" 
+    <Grid>
+        <ScrollView Grid.Row="0" x:Name="main_view">
+            <StackLayout Orientation="Vertical"
+        BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+                <!--Bezeichnung-->
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="Bezeichnung" FontAttributes="Bold" 
                            FontSize="{Binding SizeClass}" Grid.Row="0"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Entry Text="{Binding Bezeichnung}" FontSize="{Binding SizeClass}"
+                    <Entry Text="{Binding Bezeichnung}" FontSize="{Binding SizeClass}"
                                  x:Name="Entry_Bezeichnung" Grid.Row="1"
                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <BoxView Color="{AppThemeBinding Light=White, Dark= White}" Grid.Row="2"/>
-            </Grid>
+                    <BoxView Color="{AppThemeBinding Light=White, Dark= White}" Grid.Row="2"/>
+                </Grid>
 
-            <!--Lambda-->
-            <Grid Padding="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="1"/>
-                </Grid.RowDefinitions>
+                <!--Lambda-->
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
 
-                <Label Text="Wärmeleitfähigkeit [W/(m*K)]" FontAttributes="Bold" 
+                    <Label Text="Wärmeleitfähigkeit [W/(m*K)]" FontAttributes="Bold" 
                            FontSize="{Binding SizeClass}" Grid.Row="0"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Entry Text="{Binding Wärmeleitfähigkeit}" x:Name="Lambda_Entry" Grid.Row="1"
+                    <Entry Text="{Binding Wärmeleitfähigkeit}" x:Name="Lambda_Entry" Grid.Row="1"
                 TextChanged="Entry_TextChanged" FontSize="{Binding SizeClass}"
                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-                    <VisualStateManager.VisualStateGroups>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Disabled">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Normal">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateManager.VisualStateGroups>
-                </Entry>
-                <BoxView Color="{AppThemeBinding Light=White, Dark= White}" Grid.Row="2"/>
-            </Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Disabled">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Entry>
+                    <BoxView Color="{AppThemeBinding Light=White, Dark= White}" Grid.Row="2"/>
+                </Grid>
 
-            <!--Fester R-->
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="10*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="1"/>
-                </Grid.RowDefinitions>
-                <Label Text="fester Wärmedurchlasswiderstand" FontAttributes="Bold" 
+                <!--Fester R-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="fester Wärmedurchlasswiderstand" FontAttributes="Bold" 
                        Padding="10"
                            Grid.Row="0" Grid.ColumnSpan="2" FontSize="{Binding SizeClass}"
                            TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Entry Text="{Binding R}" Grid.Row="1" Grid.Column="1" 
+                    <Entry Text="{Binding R}" Grid.Row="1" Grid.Column="1" 
                                     x:Name="Fester_R_Entry" FontSize="{Binding SizeClass}"
                            BackgroundColor="{StaticResource TransparentBackground}"
                                     TextChanged="Entry_TextChanged" 
                            TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-                    <VisualStateManager.VisualStateGroups>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Disabled">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Normal">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateManager.VisualStateGroups>
-                </Entry>
-                <CheckBox CheckedChanged="Fester_R_CheckedChanged" Grid.Row="1" 
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Disabled">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Entry>
+                    <CheckBox CheckedChanged="Fester_R_CheckedChanged" Grid.Row="1" 
                           Grid.Column="0" IsChecked="{Binding Fester_R}"/>
-                <BoxView Grid.Row="2" Grid.ColumnSpan="3" Margin="10,0,10,0"
+                    <BoxView Grid.Row="2" Grid.ColumnSpan="3" Margin="10,0,10,0"
                          Color="{AppThemeBinding Light={StaticResource TextColor Grey},Dark=White}" />
-            </Grid>
+                </Grid>
 
-            <!--Dicke-->
-            <Grid Padding="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="1"/>
-                </Grid.RowDefinitions>
-                <Label Text="wirksame Dicke [m]" FontAttributes="Bold" FontSize="{Binding SizeClass}"
+                <!--Dicke-->
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="wirksame Dicke [m]" FontAttributes="Bold" FontSize="{Binding SizeClass}"
                    Grid.Row="0"
                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Entry Text="{Binding Dicke}"  TextChanged="Entry_TextChanged"
+                    <Entry Text="{Binding Dicke}"  TextChanged="Entry_TextChanged"
                                  FontSize="{Binding SizeClass}" Grid.Row="1"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <BoxView Color="{AppThemeBinding Light=White, Dark= White}" Grid.Row="2" Grid.ColumnSpan="2"/>
-            </Grid>
+                    <BoxView Color="{AppThemeBinding Light=White, Dark= White}" Grid.Row="2" Grid.ColumnSpan="2"/>
+                </Grid>
 
-            <!--Dampfdiffusion-->
-            <Grid Padding="10">
+                <!--Dampfdiffusion-->
+                <Grid Padding="10">
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="1"/>
-                </Grid.RowDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="3*"/>
-                </Grid.ColumnDefinitions>
-                <Label Text="Dampfdiffusionswiderstandszahl" FontSize="{Binding SizeClass}"
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Dampfdiffusionswiderstandszahl" FontSize="{Binding SizeClass}"
                         Grid.Row="0" Grid.ColumnSpan="4" FontAttributes="Bold"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Label Text="min" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center"
+                    <Label Text="min" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center"
                    FontSize="{Binding SizeClass}" VerticalOptions="CenterAndExpand"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Label Text="max" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center"
+                    <Label Text="max" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center"
                    FontSize="{Binding SizeClass}" VerticalOptions="CenterAndExpand"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Entry Text="{Binding Dampfdiffusionswiderstand_Min, StringFormat='{0:N2}'}" 
+                    <Entry Text="{Binding Dampfdiffusionswiderstand_Min, StringFormat='{0:N2}'}" 
                    Grid.Row="1" Grid.Column="1" FontSize="{Binding SizeClass}"
                    x:Name="Entry_diff_min" TextChanged="Entry_TextChanged" 
                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-                    <VisualStateManager.VisualStateGroups>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Disabled">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Normal">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateManager.VisualStateGroups>
-                </Entry>
-                <Entry Text="{Binding Dampfdiffusionswiderstand_Max, StringFormat='{0:N2}'}" 
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Disabled">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Entry>
+                    <Entry Text="{Binding Dampfdiffusionswiderstand_Max, StringFormat='{0:N2}'}" 
                    Grid.Row="1" Grid.Column="3" FontSize="{Binding SizeClass}"
                    x:Name="Entry_diff_max" TextChanged="Entry_TextChanged"
                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-                    <VisualStateManager.VisualStateGroups>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Disabled">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Normal">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateManager.VisualStateGroups>
-                </Entry>
-                <BoxView Grid.Row="2" Grid.ColumnSpan="4" Color="{AppThemeBinding Light=White, Dark=White}"/>
-            </Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Disabled">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Entry>
+                    <BoxView Grid.Row="2" Grid.ColumnSpan="4" Color="{AppThemeBinding Light=White, Dark=White}"/>
+                </Grid>
 
-            <!--Sd-Wert-->
-            <Grid Padding="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="1"/>
-                </Grid.RowDefinitions>
+                <!--Sd-Wert-->
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="3*"/>
-                </Grid.ColumnDefinitions>
-                <Label Text="sd-Wert [m]" FontSize="{Binding SizeClass}" 
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="sd-Wert [m]" FontSize="{Binding SizeClass}" 
                         Grid.Row="0" Grid.ColumnSpan="2" FontAttributes="Bold"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Label Text="min" Grid.Row="1" Grid.Column="0"  HorizontalOptions="Center"
+                    <Label Text="min" Grid.Row="1" Grid.Column="0"  HorizontalOptions="Center"
                            FontSize="{Binding SizeClass}" VerticalOptions="CenterAndExpand"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Label Text="max" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center"
+                    <Label Text="max" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center"
                            FontSize="{Binding SizeClass}" VerticalOptions="CenterAndExpand"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Entry Text="{Binding Sd_Min, StringFormat='{0:N2}'}" Grid.Row="1" Grid.Column="1" 
+                    <Entry Text="{Binding Sd_Min, StringFormat='{0:N2}'}" Grid.Row="1" Grid.Column="1" 
                                  x:Name="Entry_sd_min" FontSize="{Binding SizeClass}"
                                  TextChanged="Entry_TextChanged"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-                    <VisualStateManager.VisualStateGroups>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Disabled">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Normal">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateManager.VisualStateGroups>
-                </Entry>
-                <Entry Text="{Binding Sd_Max, StringFormat='{0:N2}'}" Grid.Row="1" Grid.Column="3" 
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Disabled">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Entry>
+                    <Entry Text="{Binding Sd_Max, StringFormat='{0:N2}'}" Grid.Row="1" Grid.Column="3" 
                                  x:Name="Entry_sd_max" FontSize="{Binding SizeClass}"
                                  TextChanged="Entry_TextChanged"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-                    <VisualStateManager.VisualStateGroups>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Disabled">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Normal">
-                                <VisualState.Setters>
-                                    <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateManager.VisualStateGroups>
-                </Entry>
-                <StackLayout Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal">
-                    <CheckBox CheckedChanged="Fester_sd_CheckedChanged" 
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Disabled">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="{StaticResource DisabledColor}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Entry>
+                    <StackLayout Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal">
+                        <CheckBox CheckedChanged="Fester_sd_CheckedChanged" 
         IsChecked="{Binding Fester_sd}" HorizontalOptions="Start"/>
-                    <Label Text="fester sd-Wert" 
+                        <Label Text="fester sd-Wert" 
 Padding="5" FontSize="{Binding SizeClass}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"
      TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                </StackLayout>
-                <BoxView Grid.Row="3" Grid.ColumnSpan="4"
+                    </StackLayout>
+                    <BoxView Grid.Row="3" Grid.ColumnSpan="4"
                              Color="{AppThemeBinding Light=Transparent,Dark=White}"/>
-            </Grid>
+                </Grid>
 
-            <!--Dichte-->
-            <Grid Padding="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="1"/>
-                </Grid.RowDefinitions>
+                <!--Dichte-->
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
 
-                <Label Text="Rohdichte [kg/m&#179;]" FontAttributes="Bold" FontSize="{Binding SizeClass}"
+                    <Label Text="Rohdichte [kg/m&#179;]" FontAttributes="Bold" FontSize="{Binding SizeClass}"
                            Grid.Row="0"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <Entry Text="{Binding Rohdichte}" FontSize="{Binding SizeClass}" Grid.Row="1"
+                    <Entry Text="{Binding Rohdichte}" FontSize="{Binding SizeClass}" Grid.Row="1"
                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                <BoxView Color="{AppThemeBinding Light=White, Dark= White}" Grid.Row="2" Grid.ColumnSpan="2"/>
-            </Grid>
+                    <BoxView Color="{AppThemeBinding Light=White, Dark= White}" Grid.Row="2" Grid.ColumnSpan="2"/>
+                </Grid>
 
 
-            <!--Kapillar-->
-            <!--Holz / Holzwerkstoff / sonstiges-->
-            <Grid Padding="10,0,0,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="1"/>
-                </Grid.RowDefinitions>
+                <!--Kapillar-->
+                <!--Holz / Holzwerkstoff / sonstiges-->
+                <Grid Padding="10,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
 
-                <!--Checkbox kapillar-->
-                <StackLayout Grid.Row="0" Orientation="Horizontal">
-                    <CheckBox CheckedChanged="CheckBox_CheckedChanged" 
+                    <!--Checkbox kapillar-->
+                    <StackLayout Grid.Row="0" Orientation="Horizontal">
+                        <CheckBox CheckedChanged="CheckBox_CheckedChanged" 
                            IsChecked="{Binding Kapillar}" HorizontalOptions="Start"/>
-                    <Label Text="kapillar nicht wasseraufnahmefähig" 
+                        <Label Text="kapillar nicht wasseraufnahmefähig" 
                         FontSize="{Binding SizeClass}" 
                         VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                </StackLayout>
+                    </StackLayout>
 
-                <!--Radiobutton holz, holzwerkstoff, sonstiges-->
-                <StackLayout RadioButtonGroup.GroupName="kapillar" Grid.Row="1" >
-                    <RadioButton Value="holz" IsChecked="{Binding Holz}" x:Name="holz_label"
+                    <!--Radiobutton holz, holzwerkstoff, sonstiges-->
+                    <StackLayout RadioButtonGroup.GroupName="kapillar" Grid.Row="1" >
+                        <RadioButton Value="holz" IsChecked="{Binding Holz}" x:Name="holz_label"
                               CheckedChanged="Kapillar_CheckedChanged" Content="Holz">
-                        <!--RadioButton.Content>
+                            <!--RadioButton.Content>
                             <Grid>
                                 <Label Text="Holz"   x:Name="holz_label"
                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
                             </Grid>
                         </RadioButton.Content-->
-                    </RadioButton>
-                    <RadioButton Value="holzwerkstoff" IsChecked="{Binding Holzwerkstoff}" 
+                        </RadioButton>
+                        <RadioButton Value="holzwerkstoff" IsChecked="{Binding Holzwerkstoff}" 
                                  x:Name="holzwerkstoff_label"
                               CheckedChanged="Kapillar_CheckedChanged" Content="Holzwerkstoff">
-                        <!--RadioButton.Content>
+                            <!--RadioButton.Content>
                             <Grid>
                                 <Label Text="Holzwerkstoff"  x:Name="holzwerkstoff_label"
                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
                             </Grid>
                         </RadioButton.Content-->
-                    </RadioButton>
-                    <RadioButton Value="sonstiges" IsChecked="{Binding sonstiges}" x:Name="sonstiges_label"
+                        </RadioButton>
+                        <RadioButton Value="sonstiges" IsChecked="{Binding sonstiges}" x:Name="sonstiges_label"
                               CheckedChanged="Kapillar_CheckedChanged" Content="sonstiges">
-                        <!--RadioButton.Content>
+                            <!--RadioButton.Content>
                             <Grid>
                                 <Label Text="sonstiges"  x:Name="sonstiges_label"
                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
                             </Grid>
                         </RadioButton.Content-->
-                    </RadioButton>
-                </StackLayout>
-                <BoxView Color="{AppThemeBinding Light=Gray, Dark= White}" Grid.Row="2" Grid.ColumnSpan="2"/>
+                        </RadioButton>
+                    </StackLayout>
+                    <BoxView Color="{AppThemeBinding Light=Gray, Dark= White}" Grid.Row="2" Grid.ColumnSpan="2"/>
 
-            </Grid>
+                </Grid>
 
-            <!--Korrektur Luftspalte-->
-            <Grid Padding="10,0,0,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="1"/>
-                </Grid.RowDefinitions>
-                <StackLayout RadioButtonGroup.GroupName="luftspalte" Grid.Row="0">
-                    <RadioButton Value="test1" IsChecked="{Binding KeineLuft}" 
+                <!--Korrektur Luftspalte-->
+                <Grid Padding="10,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout RadioButtonGroup.GroupName="luftspalte" Grid.Row="0">
+                        <RadioButton Value="test1" IsChecked="{Binding KeineLuft}" 
                               CheckedChanged="LuftSpalte_CheckedChanged" x:Name="ohneluft_label"
                                  Content="ohne Luftzirkulation, keine durchgehenden Luftspalten">
-                        <!--RadioButton.Content>
+                            <!--RadioButton.Content>
                             <Grid>
                                 <Label Text="ohne Luftzirkulation, keine durchgehenden Luftspalten"  
                                      x:Name="ohneluft_label"
                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
                             </Grid>
                         </RadioButton.Content-->
-                    </RadioButton>
+                        </RadioButton>
 
-                    <RadioButton Value="test2" IsChecked="{Binding EvntlLuft}" 
+                        <RadioButton Value="test2" IsChecked="{Binding EvntlLuft}" 
                               CheckedChanged="LuftSpalte_CheckedChanged" x:Name="evntlluft_label"
                                  Content="ohne Luftzirkulation, evntl. durchgehende Luftspalten">
-                        <!--RadioButton.Content>
+                            <!--RadioButton.Content>
                             <Grid>
                                 <Label Text="ohne Luftzirkulation, evntl. durchgehende Luftspalten"
                                      x:Name="evntlluft_label"
                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
                             </Grid>
                         </RadioButton.Content-->
-                    </RadioButton>
-                    <RadioButton Value="test3" IsChecked="{Binding MitLuft}" 
+                        </RadioButton>
+                        <RadioButton Value="test3" IsChecked="{Binding MitLuft}" 
                               CheckedChanged="LuftSpalte_CheckedChanged" x:Name="mitluft_label"
                                  Content="mit Luftzitkulation, evntl. durchgehende Luftspalten">
-                        <!--RadioButton.Content>
+                            <!--RadioButton.Content>
                             <Grid>
                                 <Label Text="mit Luftzitkulation, evntl. durchgehende Luftspalten" 
                                      x:Name="mitluft_label"
                                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
                             </Grid>
                         </RadioButton.Content-->
-                    </RadioButton>
-                </StackLayout>
-                <BoxView Grid.Row="1" Color="{AppThemeBinding Light=Gray,Dark=White}" />
+                        </RadioButton>
+                    </StackLayout>
+                    <BoxView Grid.Row="1" Color="{AppThemeBinding Light=Gray,Dark=White}" />
 
-            </Grid>
+                </Grid>
 
-            <!--Löschen-->
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Button Text="Löschen"  x:Name="ButtonLöschen" Grid.Row="0"
+                <!--Löschen-->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button Text="Löschen"  x:Name="ButtonLöschen" Grid.Row="0"
                      Style="{StaticResource ButtonStyle}" 
                      Clicked="Löschen_Clicked"
                      TextColor="Red">
-                </Button>
-            </Grid>
-        </StackLayout>
-    </ScrollView>
-
-
-
+                    </Button>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+        <Grid Grid.Row="0" x:Name="indicator_view" IsVisible="False" HeightRequest="70" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ActivityIndicator IsRunning="True" Color="{StaticResource TextColor Blue}" Grid.Row="0"/>
+            <Label Grid.Row="1" Text="Bitte warten..." HorizontalTextAlignment="Center" 
+                   TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+        </Grid>
+    </Grid>
 </ContentPage>
