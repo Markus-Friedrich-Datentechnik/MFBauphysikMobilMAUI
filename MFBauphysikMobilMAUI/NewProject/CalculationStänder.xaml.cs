@@ -977,21 +977,27 @@ namespace MFBauphysikMobilMAUI.NewProject
             AnteilStänder.IsVisible = false;
             BindingContext = this;          
         }
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
+            indicator_view.IsVisible = true;
+            main_view.IsVisible = false;
             GetGefach();
             GetStänder();
             if (MeldungDicke.IsVisible == true)
             {
                 Meldung3Ebene.IsVisible = false;
             }
+            await Task.Delay(500);
+            indicator_view.IsVisible = false;
+            main_view.IsVisible = true;
         }
 
         private async void GetGefach()
         {
             //Bauteil
             var itemGefach = await App.Database.GetBauteilGefachAsync();
+            main_model.Bauteil_Gefach.Clear();
             foreach (Gefach i in itemGefach)
             {
                 i.SizeClass = Setting.Size_Default;
@@ -1045,6 +1051,7 @@ namespace MFBauphysikMobilMAUI.NewProject
 
             //Befestiger
             var fixGefach = await App.Database.GetFixGefachAsync();
+            main_model.Befestiger_Gefach.Clear();
             foreach (BefestigerGefach j in fixGefach)
             {
                 j.SizeClass = Setting.Size_Default;
@@ -1087,6 +1094,7 @@ namespace MFBauphysikMobilMAUI.NewProject
         {
             //Bauteil
             var itemStänder = await App.Database.GetBauteilStänderAsync();
+            main_model.Bauteil_Ständer.Clear();
             foreach (Ständer i in itemStänder)
             {
                 i.SizeClass = Setting.Size_Default;
@@ -1141,6 +1149,7 @@ namespace MFBauphysikMobilMAUI.NewProject
 
             //Befestiger
             var fixStänder = await App.Database.GetFixStänderAsync();
+            main_model.Befestiger_Ständer.Clear();
             foreach (BefestigerStänder j in fixStänder)
             {
                 j.SizeClass = Setting.Size_Default;
@@ -1383,6 +1392,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         //Tauwasserausfall in zwei Ebenen A.2.5.5 Din 4108-3 Fall d
                         else if (Ebene == 2)
                         {
+                            NachweisGrid.IsVisible = false;
                             Meldung3Ebene.IsVisible = false;
                             MeldungDicke.IsVisible = false;
                             //Tauperiode
@@ -1447,6 +1457,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                         {
                             NachweisGrid.IsVisible = false;
                             Meldung3Ebene.IsVisible = true;
+                            MeldungDicke.IsVisible = false;
                             Feuchtenachweis.Text = "bitte überprüfen";
                         }
 
@@ -1462,6 +1473,8 @@ namespace MFBauphysikMobilMAUI.NewProject
                 if (Ebene == 0)
                 {
                     NachweisGrid.IsVisible = false;
+                    MeldungDicke.IsVisible = false;
+                    Meldung3Ebene.IsVisible = false;
                     Feuchtenachweis.Text = "ok";
                     NachweisStänder = true;
                 }
@@ -1761,7 +1774,9 @@ namespace MFBauphysikMobilMAUI.NewProject
                         {
                             NachweisGrid.IsVisible = false;
                             Meldung3Ebene.IsVisible = true;
+                            MeldungDicke.IsVisible = false;
                             Feuchtenachweis.Text = "bitte überprüfen";
+                            
                         }
                     }
                     //Kein Tauwasser
@@ -1942,7 +1957,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             {
                 if (listGefachUwert.SelectedItem == null)
                     return;
-                var selectedGefach = e.SelectedItem as Gefach;
+                var selectedGefach = (e.SelectedItem as Gefach)!;
                 listGefachUwert.SelectedItem = null;
                 var Gefach = new GefachDetailPage(selectedGefach);
                 Gefach.GefachUpdated += (source, gefach) =>
@@ -1997,7 +2012,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     Calculate_DeltaU();
                 };
 
-                main_model.Bauteil_Gefach.Remove(selectedGefach);
+                //main_model.Bauteil_Gefach.Remove(selectedGefach);
                 CalculateSum_Gefach();
                 Calculate_Ug();
                 Calculate_Uf();
@@ -2018,7 +2033,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             {
                 if (listStänderUwert.SelectedItem == null)
                     return;
-                var selectedStänder = e.SelectedItem as Ständer;
+                var selectedStänder = (e.SelectedItem as Ständer)!;
                 listStänderUwert.SelectedItem = null;
                 var Ständer = new StänderDetailPage(selectedStänder);
                 Ständer.StänderUpdated += (source, ständer) =>
@@ -2072,7 +2087,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     Calculate_DeltaU();
                 };
 
-                main_model.Bauteil_Ständer.Remove(selectedStänder);
+                //main_model.Bauteil_Ständer.Remove(selectedStänder);
                 CalculateSum_Ständer();
                 Calculate_Ug();
                 Calculate_Uf();
@@ -2118,8 +2133,9 @@ namespace MFBauphysikMobilMAUI.NewProject
             MeldungDicke.IsVisible = false;
             if (main_model.Bauteil_Gefach.Count != main_model.Bauteil_Ständer.Count)
             {
-                NachweisGrid.IsVisible = false;
                 MeldungDicke.IsVisible = true;
+                Meldung3Ebene.IsVisible = false;
+                NachweisGrid.IsVisible = false;                
                 Feuchtenachweis.Text = "bitte überprüfen";
             }
             else
@@ -2137,10 +2153,6 @@ namespace MFBauphysikMobilMAUI.NewProject
                     CalculateSum_Gefach();
                     CalculateSum_Ständer();                   
                 }
-            }
-            if (MeldungDicke.IsVisible == true)
-            {
-                Meldung3Ebene.IsVisible = false;
             }
         }
         private void Gefach_Tapped(object sender, EventArgs e)
@@ -2475,7 +2487,7 @@ namespace MFBauphysikMobilMAUI.NewProject
         {
             if (listBefestigerGefach.SelectedItem == null)
                 return;
-            var selectedBefestiger = e.SelectedItem as BefestigerGefach;
+            var selectedBefestiger = (e.SelectedItem as BefestigerGefach)!;
             listBefestigerGefach.SelectedItem = null;
             var GefachBefestiger = new GefachEinfügen(selectedBefestiger);
             GefachBefestiger.BefestigerGefachUpdated += (source, befestiger) =>
@@ -2492,7 +2504,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Calculate_DeltaU();
             };
 
-            main_model.Befestiger_Gefach.Remove(selectedBefestiger);
+            //main_model.Befestiger_Gefach.Remove(selectedBefestiger);
             Calculate_Uf();
             Calculate_Ug();
             Calculate_DeltaU();
@@ -2507,7 +2519,7 @@ namespace MFBauphysikMobilMAUI.NewProject
         {
             if (listBefestigerStänder.SelectedItem == null)
                 return;
-            var selectedBefestiger = e.SelectedItem as BefestigerStänder;
+            var selectedBefestiger = (e.SelectedItem as BefestigerStänder)!;
             listBefestigerStänder.SelectedItem = null;
             var StänderBefestiger = new StänderEinfügen(selectedBefestiger);
             StänderBefestiger.BefestigerStänderUpdated += (source, befestiger) =>
@@ -2524,7 +2536,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Calculate_DeltaU();
             };
 
-            main_model.Befestiger_Ständer.Remove(selectedBefestiger);
+          //  main_model.Befestiger_Ständer.Remove(selectedBefestiger);
             Calculate_Uf();
             Calculate_Ug();
             Calculate_DeltaU();
@@ -2538,19 +2550,14 @@ namespace MFBauphysikMobilMAUI.NewProject
 
         private void Konstruktion_Clicked(object sender, EventArgs e)
         {
-            //var type = sender as Konstruktion;
-            //var konstruktionsUpdate = new KonstruktionPage(type);
-
-
-           /* var konstruktionsUpdate = new KonstruktionPage(Konstruktionstyp);
+            var konstruktionsUpdate = new KonstruktionPage(Konstruktionstyp);
             konstruktionsUpdate.KonstruktionChanged += (source, konstruktion) =>
             {
                 Konstruktionstyp = konstruktion;
             };
             Navigation.PushAsync(konstruktionsUpdate);
-
             CalculateSum_Gefach();
-            CalculateSum_Ständer();*/
+            CalculateSum_Ständer();
 
         }
         private void DragGestureRecognizer_DragStarting(object sender, DragStartingEventArgs e)
@@ -2584,10 +2591,10 @@ namespace MFBauphysikMobilMAUI.NewProject
 
         private async void Up_Clicked(object sender, EventArgs e)
         {
-            ImageButton imagebutton = (sender as ImageButton);
+            ImageButton imagebutton = (sender as ImageButton)!;
             if (UwertGefachButton.FontAttributes == FontAttributes.Bold)
             {
-                var item = (imagebutton.BindingContext as Gefach);
+                var item = (imagebutton.BindingContext as Gefach)!;
                 int old_id = item.ID_Bauteil;
                 int itemToInsertBefore_old_ID = old_id - 1;
                 foreach (Gefach i in main_model.Bauteil_Gefach)
@@ -2601,7 +2608,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     }
                 }
                 await App.Database.UpdateBauteilGefachAsync(item);
-                OnAppearing();
+                GetGefach();
             }
             else if (UwertStänderButton.FontAttributes == FontAttributes.Bold)
             {
@@ -2619,7 +2626,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     }
                 }
                 await App.Database.UpdateBauteilStänderAsync(item);
-                OnAppearing();
+                GetStänder();
             }
             main_model.Date = DateTime.Now;
             await App.Database.UpdateItemAsync(main_model);
@@ -2644,7 +2651,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     }
                 }
                 await App.Database.UpdateBauteilGefachAsync(item);
-                OnAppearing();
+                GetGefach();
             }
             else if (UwertStänderButton.FontAttributes == FontAttributes.Bold)
             {
@@ -2662,7 +2669,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     }
                 }
                 await App.Database.UpdateBauteilStänderAsync(item);
-                OnAppearing();
+                GetStänder();
             }
             main_model.Date = DateTime.Now;
             await App.Database.UpdateItemAsync(main_model);

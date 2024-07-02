@@ -4,7 +4,6 @@
              x:Class="MFBauphysikMobilMAUI.NewProject.CalculationPage"
              xmlns:customview="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer"
              xmlns:converter="clr-namespace:MFBauphysikMobilMAUI.Converters"
-             xmlns:effects="clr-namespace:MFBauphysikMobilMAUI.Effects"
              NavigationPage.HasBackButton="False">
 
 
@@ -249,11 +248,6 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                                    Grid.Row="0" Grid.Column="0"
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
-                                                <!--Label Text="{Binding Dicke, StringFormat='{0:N4} m'}" FontSize="{Binding SizeClass}"
-                                                   Grid.Row="1" Grid.Column="0"
-                        TextColor="{StaticResource TextColor Grey}"/-->
-
-                                                <!--Label Text="{Binding Dampfsättigungsdruck, StringFormat='{0:N0}'}" Grid.Row="0" Grid.Column="1"/-->
                                                 <Grid Grid.Row="0" Grid.Column="1" ColumnSpacing="0">
                                                     <Grid.ColumnDefinitions>
                                                         <ColumnDefinition Width="*"/>
@@ -311,7 +305,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                             <DataTemplate>
                                 <Grid Padding="5">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
@@ -327,7 +321,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
                                         <Label.FormattedText>
                                             <FormattedString>
-                                                <Span Text="U-Wert Basiskonstruktion" FontAttributes="Bold"/>
+                                                <Span Text="Schicht" FontAttributes="Bold"/>
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
@@ -372,7 +366,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                             <DataTemplate>
                                 <Grid Padding="5" RowSpacing="0" ColumnSpacing="5">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="2*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
@@ -380,8 +374,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="*"/>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="2*"/>
                                     </Grid.RowDefinitions>
 
                                     <Label Text="Luft außen" Grid.Row="0" Grid.Column="0" FontSize="{Binding SizeDefault}"
@@ -399,6 +392,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
+                                    
                                     <Label Text="{Binding Rbasis, StringFormat='{0:N3}'}" 
                                        FontSize="{Binding SizeDefault}" Padding="0,10,0,10"
                             Grid.Column="2" Grid.Row="1" HorizontalOptions="Center" 
@@ -413,7 +407,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="2*"/>
                                             <RowDefinition Height="*"/>
                                         </Grid.RowDefinitions>
                                         <Label Text="{Binding AnteilKorrektur, StringFormat = 'dU(f) + dU(g) = {0:N2} % >= 3%'}"
@@ -499,7 +493,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                            FontSize="{Binding SizeClass}"
                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
-                                        <Label Text="{Binding ID_Bauteil, StringFormat='{0:N4}'}" FontSize="{Binding SizeClass}"
+                                        <Label Text="{Binding Dicke, StringFormat='{0:N4}'}" FontSize="{Binding SizeClass}"
                             Grid.Row="0" Grid.Column="1" HorizontalOptions="Center"
                             TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
@@ -507,7 +501,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                             Grid.Row="1" Grid.Column="0" FontSize="{Binding SizeClass}"
                             TextColor="{StaticResource TextColor Grey}"/>
 
-                                        <Label Text="{Binding ID_Sort, StringFormat='{0:N4}'}" FontSize="{Binding SizeClass}"
+                                        <Label Text="{Binding R, StringFormat='{0:N4}'}" FontSize="{Binding SizeClass}"
                                 Grid.Row="0" Grid.Column="2" HorizontalOptions="Center"
                                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 

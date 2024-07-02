@@ -1,5 +1,4 @@
-﻿using MFBauphysikMobilMAUI.Effects;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using MFBauphysikMobilMAUI.CustomRenderer;
 #if ANDROID
 using MFBauphysikMobilMAUI.Platforms.Android;

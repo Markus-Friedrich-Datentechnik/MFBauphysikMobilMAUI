@@ -6635,9 +6635,12 @@ namespace MFBauphysikMobilMAUI.NewProject
             // GetBasis();
             indicator_view.IsVisible = true;
             main_view.IsVisible = false;
+
+            indicator_view.IsVisible = true;
+            main_view.IsVisible = false;
         }
         protected override async void OnAppearing()
-        {            
+        {
             base.OnAppearing();
             indicator_view.IsVisible = true;
             main_view.IsVisible = false;
@@ -6647,24 +6650,23 @@ namespace MFBauphysikMobilMAUI.NewProject
                 MeldungDicke.IsVisible = false;
             }
             
-            await Task.Delay(1000);
+            await Task.Delay(500);
             indicator_view.IsVisible = false;
-            main_view.IsVisible = true;
-            
+            main_view.IsVisible = true;            
         }
         private async void GetBasis()
         {
             //Bauteil
 
             var item = await App.Database.GetBauteilAsync();
-           
+            main_model.Bauteil_Basis.Clear();
             foreach (Basis i in item)
             {
                 i.SizeClass = Setting.Size_Default;
                 if (i.ModelID == main_model.ID)
                 {
                     main_model.Bauteil_Basis.Add(i);
-                  Console.WriteLine(main_model.Bauteil_Basis.Count());
+                   
                     for (int m = 0; m <= main_model.Bauteil_Basis.Count - 1; m++)
                     {
                         for (int n = m + 1; n <= main_model.Bauteil_Basis.Count - 1; n++)
@@ -6716,6 +6718,7 @@ namespace MFBauphysikMobilMAUI.NewProject
 
             //Befestiger
             var fix = await App.Database.GetFixAsync();
+            main_model.Befestiger_Basis.Clear();
             foreach (BefestigerBasis j in fix)
             {
                 if (j.ModelID == main_model.ID)
@@ -7049,6 +7052,10 @@ namespace MFBauphysikMobilMAUI.NewProject
                     MeldungDicke.IsVisible = true;
                     Meldung3Ebene.IsVisible = false;
                     Feuchtenachweis.Text = "ok";
+                    foreach(Basis m in main_model.Bauteil_Basis)
+                    {
+                        m.TW = false;
+                    }
                     //NachweisBasis = true;
                 }
                 else if (Ebene == 1 || Ebene == 2)
@@ -7466,9 +7473,9 @@ namespace MFBauphysikMobilMAUI.NewProject
 
             
             //main_model.Befestiger_Basis.Remove(selectedBefestiger);
-          /*  Calculate_Uf();
+            Calculate_Uf();
             Calculate_Ug();
-            Calculate_DeltaU();*/
+            Calculate_DeltaU();
             main_model.Date = DateTime.Now;
             await App.Database.UpdateItemAsync(main_model);            
             await Navigation.PushAsync(new BasisEinfügen(selectedBefestiger)

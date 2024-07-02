@@ -8,14 +8,18 @@
              NavigationPage.HasBackButton="False">
 
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Vertical">
-            <Label Text="MF Bauphysik mobil" HorizontalTextAlignment="Center" 
+        <Grid Padding="20,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Text="MF Bauphysik mobil" HorizontalTextAlignment="Center"  Grid.Row="0"
                TextColor="{StaticResource TitleTextColor}" 
                FontSize="24" FontAttributes="Bold"/>
-            <Label Text="Projektliste"                 
-               HorizontalTextAlignment="Center"
+            <Label Text="Projektliste"                 Grid.Row="1"
+               HorizontalTextAlignment="Center" 
                TextColor="{StaticResource TitleTextColor}" FontSize="16"/>
-        </StackLayout>
+        </Grid>
     </NavigationPage.TitleView>
 
     <!--Menu-->

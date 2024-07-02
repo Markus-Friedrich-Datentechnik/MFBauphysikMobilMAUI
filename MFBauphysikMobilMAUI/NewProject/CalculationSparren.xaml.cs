@@ -965,16 +965,20 @@ namespace MFBauphysikMobilMAUI.NewProject
             BindingContext = this;
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
+            indicator_view.IsVisible = true;
+            main_view.IsVisible = false;
             GetBasis();
             GetSparren();
             if (MeldungDicke.IsVisible == true)
             {
                 Meldung3Ebene.IsVisible = false;
             }
-            
+            await Task.Delay(500);
+            indicator_view.IsVisible = false;
+            main_view.IsVisible = true;
         }
 
         private async void GetBasis()
@@ -982,6 +986,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             //base.OnAppearing();
             //Bauteil
             var item = await App.Database.GetBauteilAsync();
+            main_model.Bauteil_Basis.Clear();
             foreach (Basis i in item)
             {
                 i.SizeClass = Setting.Size_Default;
@@ -1037,6 +1042,7 @@ namespace MFBauphysikMobilMAUI.NewProject
 
             //Befestiger
             var fix = await App.Database.GetFixAsync();
+            main_model.Befestiger_Basis.Clear();
             foreach (BefestigerBasis j in fix)
             {
                 j.SizeClass = Setting.Size_Default;
@@ -1076,6 +1082,7 @@ namespace MFBauphysikMobilMAUI.NewProject
         {
             //Bauteil
             var itemSparren = await App.Database.GetBauteilSparrenAsync();
+            main_model.Bauteil_Sparren.Clear();
             foreach (Sparren i in itemSparren)
             {
                 i.SizeClass = Setting.Size_Default;
@@ -1129,6 +1136,7 @@ namespace MFBauphysikMobilMAUI.NewProject
 
             //Befestiger
             var fixSparren = await App.Database.GetFixSparrenAsync();
+            main_model.Befestiger_Sparren.Clear();
             foreach (BefestigerSparren j in fixSparren)
             {
                 j.SizeClass = Setting.Size_Default;
@@ -1949,7 +1957,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             {
                 if (listBasisUwert.SelectedItem == null)
                     return;
-                var selectedBauteil = e.SelectedItem as Basis;
+                var selectedBauteil = (e.SelectedItem as Basis)!;
 
                 //unselected
                 listBasisUwert.SelectedItem = null;
@@ -2007,7 +2015,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     Calculate_DeltaU();
                 };
 
-                main_model.Bauteil_Basis.Remove(selectedBauteil);
+                //main_model.Bauteil_Basis.Remove(selectedBauteil);
                 CalculateSum_Basis();
                 Calculate_Ug();
                 Calculate_Uf();
@@ -2020,6 +2028,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 });
             }
         }
+
         //Sparren item selected
         private async void OnSelected_ItemSelected_Sparren(object sender, SelectedItemChangedEventArgs e)
 
@@ -2084,7 +2093,7 @@ namespace MFBauphysikMobilMAUI.NewProject
 
                 };
 
-                main_model.Bauteil_Sparren.Remove(selectedSparren);
+                //main_model.Bauteil_Sparren.Remove(selectedSparren);
                 CalculateSum_Sparren();
                 Calculate_Ug();
                 Calculate_Uf();
@@ -2134,6 +2143,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             {
                 NachweisGrid.IsVisible = false;
                 MeldungDicke.IsVisible = true;
+                Meldung3Ebene.IsVisible = false;
                 Feuchtenachweis.Text = "bitte überprüfen";
             }
             else
@@ -2512,7 +2522,7 @@ namespace MFBauphysikMobilMAUI.NewProject
         {
             if (listBefestiger.SelectedItem == null)
                 return;
-            var selectedBefestiger = e.SelectedItem as BefestigerBasis;
+            var selectedBefestiger = (e.SelectedItem as BefestigerBasis)!;
             listBefestiger.SelectedItem = null;
             var BasisBefestiger = new BasisEinfügen(selectedBefestiger);
             BasisBefestiger.BefestigerUpdated += (source, befestiger) =>
@@ -2528,7 +2538,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Calculate_Ug();
                 Calculate_DeltaU();
             };
-            main_model.Befestiger_Basis.Remove(selectedBefestiger);
+            //main_model.Befestiger_Basis.Remove(selectedBefestiger);
             Calculate_Uf();
             Calculate_Ug();
             Calculate_DeltaU();
@@ -2544,7 +2554,7 @@ namespace MFBauphysikMobilMAUI.NewProject
         {
             if (listBefestigerSparren.SelectedItem == null)
                 return;
-            var selectedBefestiger = e.SelectedItem as BefestigerSparren;
+            var selectedBefestiger = (e.SelectedItem as BefestigerSparren)!;
             listBefestigerSparren.SelectedItem = null;
             var SparrenBefestiger = new SparrenEinfügen(selectedBefestiger);
             SparrenBefestiger.BefestigerSparrenUpdated += (source, befestiger) =>
@@ -2560,7 +2570,8 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Calculate_Ug();
                 Calculate_DeltaU();
             };
-            main_model.Befestiger_Sparren.Remove(selectedBefestiger);
+
+            //main_model.Befestiger_Sparren.Remove(selectedBefestiger);
             if (main_model.Befestiger_Sparren.Count == 0)
             {
                 BefestigerBoolean = false;
@@ -2583,14 +2594,14 @@ namespace MFBauphysikMobilMAUI.NewProject
             //var konstruktionsUpdate = new KonstruktionPage(type);
 
 
-           /* var konstruktionsUpdate = new KonstruktionPage(Konstruktionstyp);
+            var konstruktionsUpdate = new KonstruktionPage(Konstruktionstyp);
             konstruktionsUpdate.KonstruktionChanged += (source, konstruktion) =>
             {
                 Konstruktionstyp = konstruktion;
             };
             Navigation.PushAsync(konstruktionsUpdate);
             CalculateSum_Basis();
-            CalculateSum_Sparren();*/
+            CalculateSum_Sparren();
 
         }
         private void DragGestureRecognizer_DragStarting(object sender, DragStartingEventArgs e)
@@ -2623,10 +2634,10 @@ namespace MFBauphysikMobilMAUI.NewProject
         }
         private async void Up_Clicked(object sender, EventArgs e)
         {
-            ImageButton imagebutton = (sender as ImageButton);
+            ImageButton imagebutton = (sender as ImageButton)!;
             if (UwertBasisButton.FontAttributes == FontAttributes.Bold)
             {
-                var item = (imagebutton.BindingContext as Basis);
+                var item = (imagebutton.BindingContext as Basis)!;
                 int old_id = item.ID_Bauteil;
                 int itemToInsertBefore_old_ID = old_id - 1;
                 foreach (Basis i in main_model.Bauteil_Basis)
@@ -2640,11 +2651,11 @@ namespace MFBauphysikMobilMAUI.NewProject
                     }
                 }
                 await App.Database.UpdateBauteilAsync(item);
-                OnAppearing();
+                GetBasis();
             }
             else if (UwertSparrenButton.FontAttributes == FontAttributes.Bold)
             {
-                var item = (imagebutton.BindingContext as Sparren);
+                var item = (imagebutton.BindingContext as Sparren)!;
                 int old_id = item.ID_Bauteil;
                 int itemToInsertBefore_old_ID = old_id - 1;
                 foreach (Sparren i in main_model.Bauteil_Sparren)
@@ -2658,7 +2669,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     }
                 }
                 await App.Database.UpdateBauteilSparrenAsync(item);
-                OnAppearing();
+                GetSparren();
             }
             main_model.Date = DateTime.Now;
             await App.Database.UpdateItemAsync(main_model);
@@ -2683,7 +2694,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     }
                 }
                 await App.Database.UpdateBauteilAsync(item);
-                OnAppearing();
+                GetBasis();
             }
             else if (UwertSparrenButton.FontAttributes == FontAttributes.Bold)
             {
@@ -2701,7 +2712,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     }
                 }
                 await App.Database.UpdateBauteilSparrenAsync(item);
-                OnAppearing();
+                GetSparren();
             }
             main_model.Date = DateTime.Now;
             await App.Database.UpdateItemAsync(main_model);

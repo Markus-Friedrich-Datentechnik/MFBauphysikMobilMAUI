@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MFBauphysikMobilMAUI.NewProject.StänderEinfügen"
-             xmlns:effects="clr-namespace:MFBauphysikMobilMAUI.Effects"
              xmlns:custom ="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer"
              NavigationPage.HasBackButton="False">
     
@@ -46,9 +45,7 @@
                 <custom:MyEntry Text="{Binding Anzahl}" Grid.Row="0" Grid.Column="1" 
                                 x:Name="Anzahl_entry"  FontSize="{Binding SizeClass}"
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-                    <custom:MyEntry.Effects>
-                        <effects:ReturnKeyEffect ReturnText="Next"/>
-                    </custom:MyEntry.Effects>
+
                 </custom:MyEntry>
 
                 <!--Lamba-->
@@ -57,9 +54,7 @@
                 <custom:MyEntry Text="{Binding Wärmeleitfähigkeit_f}" Grid.Row="1" Grid.Column="1" 
                                 x:Name="Lambda_entry" FontSize="{Binding SizeClass}"
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-                    <custom:MyEntry.Effects>
-                        <effects:ReturnKeyEffect  ReturnText="Next"/>
-                    </custom:MyEntry.Effects>
+
                 </custom:MyEntry>
 
                 <!--D-->
@@ -68,9 +63,7 @@
                 <custom:MyEntry Text="{Binding Durchmesser}" Grid.Row="2" Grid.Column="1" 
                                 x:Name="Durchmesser_entry" FontSize="{Binding SizeClass}"
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-                    <custom:MyEntry.Effects>
-                        <effects:ReturnKeyEffect  ReturnText="Next"/>
-                    </custom:MyEntry.Effects>
+
                 </custom:MyEntry>
             </Grid>
         </Frame>

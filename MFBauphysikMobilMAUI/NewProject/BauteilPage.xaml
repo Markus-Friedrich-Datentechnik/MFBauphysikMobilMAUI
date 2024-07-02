@@ -8,7 +8,7 @@
         <StackLayout Orientation="Horizontal">
             <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}"
                          HorizontalOptions="StartAndExpand" Clicked="Back_Clicked"/>
-            <Label Text="Bauteil" TextColor="{StaticResource TitleTextColor}" VerticalOptions="CenterAndExpand"
+            <Label Text="Bauteil" TextColor="{StaticResource TitleTextColor}" VerticalTextAlignment="Center"
                    HorizontalOptions="CenterAndExpand" FontSize="Title" FontAttributes="Bold"/>
             <ImageButton Source="next.png" BackgroundColor="{StaticResource TransparentBackground}" 
              HorizontalOptions="EndAndExpand" Clicked="Check_Clicked" Margin="0,0,10,0"
@@ -41,7 +41,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <custom:MyViewCell SelectedBackGroundColor="{StaticResource TextColor Blue}">
-                        <Grid Padding="10">
+                        <Grid Padding="10,0,0,0">
                             <StackLayout Orientation="Vertical">
                                 <Label Text="{Binding B}" Padding="10" FontSize="{Binding SizeClass}"
                                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>

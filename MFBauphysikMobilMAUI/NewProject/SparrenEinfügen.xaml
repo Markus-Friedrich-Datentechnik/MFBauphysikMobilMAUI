@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:effects="clr-namespace:MFBauphysikMobilMAUI.Effects"
              NavigationPage.HasBackButton="False"
              xmlns:custom="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer"
              x:Class="MFBauphysikMobilMAUI.NewProject.SparrenEinfügen">
@@ -49,9 +48,7 @@
                 <custom:MyEntry Text="{Binding Anzahl}" FontSize="{Binding SizeClass}"
                                 Grid.Row="0" Grid.Column="1" x:Name="Anzahl_entry" 
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-                    <custom:MyEntry.Effects>
-                        <effects:ReturnKeyEffect ReturnText="Next"/>
-                    </custom:MyEntry.Effects>
+
                 </custom:MyEntry>
 
                 <!--Lamba-->
@@ -61,9 +58,7 @@
                 <custom:MyEntry Text="{Binding Wärmeleitfähigkeit_f}" FontSize="{Binding SizeClass}"
                                 Grid.Row="1" Grid.Column="1" x:Name="Lambda_entry" 
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-                    <custom:MyEntry.Effects>
-                        <effects:ReturnKeyEffect  ReturnText="Next"/>
-                    </custom:MyEntry.Effects>
+
                 </custom:MyEntry>
 
                 <!--D-->
@@ -72,9 +67,6 @@
                 <custom:MyEntry Text="{Binding Durchmesser}" Grid.Row="2" Grid.Column="1" 
                                 x:Name="Durchmesser_entry"  FontSize="{Binding SizeClass}"
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
-                    <custom:MyEntry.Effects>
-                        <effects:ReturnKeyEffect  ReturnText="Next"/>
-                    </custom:MyEntry.Effects>
                 </custom:MyEntry>
             </Grid>
         </Frame>
