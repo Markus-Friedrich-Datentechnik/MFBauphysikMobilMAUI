@@ -37,6 +37,12 @@
             </Entry>            
             <BoxView Grid.Row="2" Color="{AppThemeBinding Light=White, Dark=White}"/>
         </Grid>
+
+        <Grid RowSpacing="0" ColumnSpacing="0">
+            <Grid>
+                
+            </Grid>
+        </Grid>
         
         <Grid>
             <Grid.RowDefinitions>
@@ -49,7 +55,7 @@
             <Label Text="BV:" FontAttributes="Bold" x:Name="bv_label" Grid.Row="0"
    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
-            <Entry Text="{Binding ProjectName}" x:Name="entry_label" Grid.Row="1" BackgroundColor="{StaticResource TransparentBackground}"
+            <Entry Text="{Binding BV}" x:Name="entry_label" Grid.Row="1" BackgroundColor="{StaticResource TransparentBackground}"
    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
             </Entry>
             <BoxView Grid.Row="2" Color="{AppThemeBinding Light=White, Dark=White}"/>

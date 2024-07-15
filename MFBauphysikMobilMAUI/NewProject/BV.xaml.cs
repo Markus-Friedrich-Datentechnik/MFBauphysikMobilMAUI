@@ -31,6 +31,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 MusterName = project.MusterName,
                 ProjectName = project.ProjectName,
                 Date = project.Date,
+                BV = project.BV,
                 BV_Ersatz = project.BV_Ersatz,
                 Befestiger_Basis = project.Befestiger_Basis,
                 Befestiger_Sparren = project.Befestiger_Sparren,
@@ -54,21 +55,22 @@ namespace MFBauphysikMobilMAUI.NewProject
         }
         public async void Next_Clicked(object sender, EventArgs e)
         {
-            var test = (MainModel)BindingContext;
-            test.Date = DateTime.Now;
-            await App.Database.UpdateItemAsync(test);
-            if (test.MusterName == "Sparrendach")
+            var bv_update = (MainModel)BindingContext;
+            bv_update.Date = DateTime.Now;
+            await App.Database.UpdateItemAsync(bv_update);
+            await Navigation.PopAsync();
+            /*if (bv_update.MusterName == "Sparrendach")
             {
-                await Navigation.PushAsync(new CalculationSparren(test));
+                await Navigation.PushAsync(new CalculationSparren(bv_update));
             }
-            else if (test.MusterName == "Ständerwand")
+            else if (bv_update.MusterName == "Ständerwand")
             {
-                await Navigation.PushAsync(new CalculationStänder(test));
+                await Navigation.PushAsync(new CalculationStänder(bv_update));
             }
             else
             {
-                await Navigation.PushAsync(new CalculationPage(test));
-            }
+                await Navigation.PushAsync(new CalculationPage(bv_update));
+            }*/
         }
     }
 }

@@ -53,16 +53,19 @@ namespace MFBauphysikMobilMAUI.NewProject
             {
                 new MainModel {MusterName= "Beton_G200_EPS_PYE",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz = project.BV_Ersatz,
                     ID = project.ID},
                 new MainModel {MusterName = "Sparrendach",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz = project.BV_Ersatz,
                     ID = project.ID},
                 new MainModel {MusterName = "Ständerwand",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz = project.BV_Ersatz,
                     ID = project.ID,
@@ -73,6 +76,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_EPS035_PVC",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date  = DateTime.Now,
                     BV_Ersatz = project.BV_Ersatz,
                     ID = project.ID,
@@ -83,6 +87,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_EPS035_PVC",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date  = DateTime.Now,
                     BV_Ersatz = project.BV_Ersatz,
                     ID = project.ID,
@@ -93,6 +98,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_EPS_EPDM",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -101,6 +107,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_EPS_Evalon",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -109,6 +116,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_EPS_FPO",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -117,6 +125,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_EPS_PVC",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -125,6 +134,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_EPS_PYE_einlagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -133,6 +143,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_EPS_PYE_zweilagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -141,6 +152,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_MIFA_EPDM",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -149,6 +161,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_MIFA_Evalon",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -157,6 +170,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_MIFA_FPO",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -165,6 +179,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_MIFA_PVC",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -173,6 +188,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_MIFA_PYE_einlagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -181,6 +197,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_MIFA_PYE_zweilagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -189,6 +206,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_PUR_EPDM",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -197,6 +215,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_PUR_Evalon",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -205,6 +224,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_PUR_FPO",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -213,6 +233,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_PUR_PVC",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -221,6 +242,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_PUR_PYE_einlagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -229,6 +251,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Beton_KSD_PUR_PYE_zweilagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -238,6 +261,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_EPS_EPDM",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -246,6 +270,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_EPS_Evalon",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -254,6 +279,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_EPS_FPO",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -262,6 +288,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_EPS_PVC",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -270,6 +297,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_EPS_PYE_einlagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -278,6 +306,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_EPS_PYE_zweilagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -286,6 +315,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_MIFA_EPDM",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -294,6 +324,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_MIFA_Evalon",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -302,6 +333,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_MIFA_FPO",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -310,6 +342,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_MIFA_PVC",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -318,6 +351,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_MIFA_PYE_einlagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -326,6 +360,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_MIFA_PYE_zweilagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -334,6 +369,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_PUR_EPDM",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -342,6 +378,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_PUR_Evalon",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -350,6 +387,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_PUR_FPO",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -358,6 +396,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_PUR_PVC",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -366,6 +405,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_PUR_PYE_einlagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -374,6 +414,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "OSB_KSD_PUR_PYE_zweilagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -384,6 +425,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_EPS_EPDM",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -392,6 +434,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_EPS_Evalon",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -400,6 +443,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_EPS_FPO",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -408,6 +452,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_EPS_PVC",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -416,6 +461,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_EPS_PYE_einlagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -424,6 +470,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_EPS_PYE_zweilagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -432,6 +479,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_MIFA_EPDM",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -440,6 +488,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_MIFA_Evalon",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -448,6 +497,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_MIFA_FPO",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -456,6 +506,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_MIFA_PVC",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -464,6 +515,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_MIFA_PYE_einlagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -472,6 +524,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_MIFA_PYE_zweilagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -480,6 +533,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_PUR_EPDM",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -488,6 +542,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_PUR_Evalon",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -496,6 +551,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_PUR_FPO",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -504,6 +560,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_PUR_PVC",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -512,6 +569,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_PUR_PYE_einlagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -520,6 +578,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_KSD_PUR_PYE_zweilagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -529,6 +588,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_PE_MIFA_EPDM",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -537,6 +597,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_PE_MIFA_Evalon",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -545,6 +606,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_PE_MIFA_FPO",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -553,6 +615,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_PE_MIFA_PVC",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -561,6 +624,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_PE_MIFA_PYE_einlagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -569,6 +633,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Trapezblech_PE_MIFA_PYE_zweilagig",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz=project.BV_Ersatz,
                     ID = project.ID,
@@ -579,6 +644,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "Umkehrdach",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz = project.BV_Ersatz,
                     ID=project.ID,
@@ -588,6 +654,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "WDVS_EPS-032",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz = project.BV_Ersatz,
                     ID = project.ID,
@@ -596,6 +663,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 {
                     MusterName = "WDVS_EPS-035",
                     ProjectName = project.ProjectName,
+                    BV = project.BV,
                     Date = DateTime.Now,
                     BV_Ersatz = project.BV_Ersatz,
                     ID = project.ID,

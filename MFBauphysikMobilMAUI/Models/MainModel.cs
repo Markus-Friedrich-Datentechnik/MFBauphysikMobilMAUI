@@ -46,6 +46,19 @@ namespace MFBauphysikMobilMAUI.Models
             }
         }
 
+        private string _bv;
+        public string BV
+        {
+            get { return _bv; }
+            set
+            {
+                if (_bv == value)
+                    return;
+                _bv = value;
+                OnPropertyChanged("BV");
+            }
+        }
+
         private string _musterName;
         public string MusterName
         {

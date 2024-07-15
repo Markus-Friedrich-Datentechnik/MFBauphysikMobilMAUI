@@ -348,10 +348,10 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                             <DataTemplate>
                                 <Grid Padding="5">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="3*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="30"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
@@ -372,7 +372,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                     <Label Text="[m]" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" 
                                        FontSize="{Binding SizeDefault}"
                              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                                    <Label Text="[m&#178; * K/W]" Grid.Row="1" Grid.Column="2" 
+                                    <Label Text="[m&#178; * K/W]" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="2"
                                        HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
                              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
@@ -391,7 +391,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                         <ColumnDefinition Width="3*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="30"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
@@ -518,10 +518,10 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                             <DataTemplate>
                                 <Grid Padding="5">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="3*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="30"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
@@ -541,7 +541,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
                                     <Label Text="[m]" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
                              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                                    <Label Text="[m&#178; * K/W]" Grid.Row="1" Grid.Column="2" 
+                                    <Label Text="[m&#178; * K/W]" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"
                                        HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
                              TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
@@ -562,7 +562,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                         <ColumnDefinition Width="3*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="50"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>

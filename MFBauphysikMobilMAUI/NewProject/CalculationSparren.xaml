@@ -351,10 +351,10 @@ Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticReso
                             <DataTemplate>
                                 <Grid Padding="5">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="3*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="30"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
@@ -376,7 +376,8 @@ Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticReso
                                     <!--Einheit Zeile-->
                                     <Label Text="[m]" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                                    <Label Text="[m&#178; * K/W]" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                                    <Label Text="[m&#178; * K/W]" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"
+                                           HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
                                     <!--Luft innen-->
@@ -396,10 +397,11 @@ Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticReso
                                         <ColumnDefinition Width="3*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="30"/>
                                     </Grid.ColumnDefinitions>
 
                                     <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
@@ -416,7 +418,12 @@ Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticReso
                                     <Label Text="{Binding Rbasis, StringFormat='{0:N3}'}" FontSize="{Binding SizeDefault}"
                                        Grid.Column="2" Grid.Row="1" HorizontalOptions="Center" 
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-
+                                    <Label Text="U-Wert [W / (m&#178;* K)]" FontAttributes="Bold" 
+        Grid.Row="2" Grid.Column="0" FontSize="{Binding SizeDefault}"
+TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                                    <Label Text="{Binding Ubasis, StringFormat='{0:N2}'}" FontSize="{Binding SizeDefault}"
+        Grid.Row="2" Grid.Column="2" HorizontalOptions="Center" FontAttributes="Bold"
+TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
 
                                 </Grid>
@@ -525,10 +532,10 @@ Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticReso
                             <DataTemplate>
                                 <Grid Padding="5">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="3*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="30"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
@@ -548,12 +555,13 @@ Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticReso
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
                                     <Label Text="[m]" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                                    <Label Text="[m&#178; * K/W]" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                                    <Label Text="[m&#178; * K/W]" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"
+                                           HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
                                     <Label Text="Luft innen" Grid.Row="2" Grid.Column="0" FontSize="{Binding SizeDefault}"
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                                    <Label Text="0.1000" Grid.Column="2" Grid.Row="2" HorizontalOptions="Center"  FontSize="{Binding SizeDefault}"
+                                    <Label Text="0,1000" Grid.Column="2" Grid.Row="2" HorizontalOptions="Center"  FontSize="{Binding SizeDefault}"
                            TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
 
@@ -567,7 +575,7 @@ Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticReso
                                         <ColumnDefinition Width="3*"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="15"/>
+                                        <ColumnDefinition Width="30"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
@@ -577,7 +585,7 @@ Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticReso
 
                                     <Label Text="Luft außen" Grid.Row="0" Grid.Column="0"  FontSize="{Binding SizeDefault}"
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                                    <Label Text=" 0.0400" Grid.Column="2" Grid.Row="0" HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
+                                    <Label Text=" 0,0400" Grid.Column="2" Grid.Row="0" HorizontalOptions="Center" FontSize="{Binding SizeDefault}"
                            TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
                                     <Label Text="Rges [m&#178; * K/W]" FontAttributes="Bold" Grid.Column="0" Grid.Row="1" FontSize="{Binding SizeDefault}"

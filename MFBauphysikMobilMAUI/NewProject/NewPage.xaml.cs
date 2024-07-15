@@ -125,9 +125,20 @@ namespace MFBauphysikMobilMAUI.NewProject
                      ProjectName = name,
                  };*/
                 string name = projektname_entry.Text;
+                string bv = "";
+
+                if (string.IsNullOrEmpty(bv_entry.Text))
+                {
+                    bv = projektname_entry.Text;
+                }
+                else
+                {
+                     bv = bv_entry.Text;
+                }
                 var neu = new MainModel()
                 {
                     ProjectName = name,
+                    BV = bv,
                 };
                 await Navigation.PushAsync(new Musteraufbauten(neu));
             }

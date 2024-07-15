@@ -728,6 +728,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 MusterName = muster.MusterName,
                 ProjectName = muster.ProjectName,
                 Date = muster.Date,
+                BV = muster.BV,
                 BV_Ersatz = muster.BV_Ersatz,
                 Befestiger_Basis = muster.Befestiger_Basis,
                 Bauteil_Basis = muster.Bauteil_Basis,
@@ -2596,8 +2597,16 @@ namespace MFBauphysikMobilMAUI.NewProject
             {
                 var item = (imagebutton.BindingContext as Gefach)!;
                 int old_id = item.ID_Bauteil;
-                int itemToInsertBefore_old_ID = old_id - 1;
-                foreach (Gefach i in main_model.Bauteil_Gefach)
+                int next_id = 0;
+                for (int i = main_model.Bauteil_Gefach.Count() - 1; i >= 0; i--)
+                {
+                    if (main_model.Bauteil_Gefach[i].ID_Bauteil < old_id)
+                    {
+                        next_id = main_model.Bauteil_Gefach[i].ID_Bauteil;
+                        break;
+                    }
+                }
+                int itemToInsertBefore_old_ID = next_id; foreach (Gefach i in main_model.Bauteil_Gefach)
                 {
                     if (i.ID_Bauteil == itemToInsertBefore_old_ID)
                     {
@@ -2612,10 +2621,18 @@ namespace MFBauphysikMobilMAUI.NewProject
             }
             else if (UwertStänderButton.FontAttributes == FontAttributes.Bold)
             {
-                var item = (imagebutton.BindingContext as Ständer);
+                var item = (imagebutton.BindingContext as Ständer)!;
                 int old_id = item.ID_Bauteil;
-                int itemToInsertBefore_old_ID = old_id - 1;
-                foreach (Ständer i in main_model.Bauteil_Ständer)
+                int next_id = 0;
+                for (int i = main_model.Bauteil_Ständer.Count() - 1; i >= 0; i--)
+                {
+                    if (main_model.Bauteil_Ständer[i].ID_Bauteil < old_id)
+                    {
+                        next_id = main_model.Bauteil_Ständer[i].ID_Bauteil;
+                        break;
+                    }
+                }
+                int itemToInsertBefore_old_ID = next_id; foreach (Ständer i in main_model.Bauteil_Ständer)
                 {
                     if (i.ID_Bauteil == itemToInsertBefore_old_ID)
                     {
@@ -2639,7 +2656,16 @@ namespace MFBauphysikMobilMAUI.NewProject
             {
                 var item = (imagebutton.BindingContext as Gefach)!;
                 int old_id = item.ID_Bauteil;
-                int itemToInsertBefore_old_ID = old_id + 1;
+                int next_id = 0;
+                foreach (Gefach i in main_model.Bauteil_Gefach)
+                {
+                    if (i.ID_Bauteil > old_id)
+                    {
+                        next_id = i.ID_Bauteil;
+                        break;
+                    }
+                }
+                int itemToInsertBefore_old_ID = next_id; 
                 foreach (Gefach i in main_model.Bauteil_Gefach)
                 {
                     if (i.ID_Bauteil == itemToInsertBefore_old_ID)
@@ -2657,7 +2683,16 @@ namespace MFBauphysikMobilMAUI.NewProject
             {
                 var item = (imagebutton.BindingContext as Ständer)!;
                 int old_id = item.ID_Bauteil;
-                int itemToInsertBefore_old_ID = old_id + 1;
+                int next_id = 0;
+                foreach (Ständer i in main_model.Bauteil_Ständer)
+                {
+                    if (i.ID_Bauteil > old_id)
+                    {
+                        next_id = i.ID_Bauteil;
+                        break;
+                    }
+                }
+                int itemToInsertBefore_old_ID = next_id; 
                 foreach (Ständer i in main_model.Bauteil_Ständer)
                 {
                     if (i.ID_Bauteil == itemToInsertBefore_old_ID)

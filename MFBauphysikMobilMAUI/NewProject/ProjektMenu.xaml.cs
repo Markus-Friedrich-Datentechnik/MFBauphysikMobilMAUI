@@ -53,6 +53,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 MusterName = project.MusterName,
                 ProjectName = project.ProjectName,
                 Date = project.Date,
+                BV = project.BV,
                 BV_Ersatz = project.BV_Ersatz,               
             };
             bv_label.FontSize = Setting.Size_Default;
