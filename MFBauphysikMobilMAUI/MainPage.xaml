@@ -98,8 +98,6 @@
             <ImageButton Source="plus.png" BackgroundColor="{StaticResource TitleBackgroundColor}" 
                          WidthRequest="50"
                      Clicked="PlusClicked" HorizontalOptions="Start"/>
-            <!--ImageButton Source="ic_edit.png" BackgroundColor="{StaticResource TitleBackgroundColor}" 
-                     Clicked="Edit_Clicked" HorizontalOptions="End"/-->
         </StackLayout>
 
     </Grid>

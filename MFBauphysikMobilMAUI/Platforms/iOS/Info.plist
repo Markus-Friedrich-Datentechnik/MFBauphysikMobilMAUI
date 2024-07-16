@@ -19,12 +19,15 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
+
 	<key>LSApplicationQueriesSchemes</key>
-	<string></string>
+	<array>
+		<string>mailto</string>
+	</array>
+
 	<key>UILaunchStoryboardName</key>
 	<string>MauiSplash</string>
-	
+	<key>UISupportedInterfaceOrientations~ipad</key>	
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
