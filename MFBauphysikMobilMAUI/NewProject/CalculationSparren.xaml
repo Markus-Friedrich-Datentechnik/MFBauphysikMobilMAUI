@@ -41,7 +41,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <!--Deckblatt-->
                 <Label Text="Deckblatt" TextColor="{StaticResource LabelButton}"  Grid.Column="0"
@@ -54,7 +54,7 @@
 
                 <!--U-Wert Basiskonstruktion-->
                 <Label Text="Basiskonstruktion" TextColor="{StaticResource LabelButton}"  
-                   Grid.Column="1" FontSize="{Binding SizeDefault}"
+                   Grid.Column="1" FontSize="{Binding SizeDefault}" HorizontalOptions="Start"
                    x:Name="UwertBasisButton" Padding="2">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Basis_Tapped"/>
@@ -63,7 +63,7 @@
 
                 <!--U-Wert Sparren-->
                 <Label Text="Sparren" TextColor="{StaticResource LabelButton}" 
-                   Grid.Column="2" FontSize="{Binding SizeDefault}"
+                   Grid.Column="2" FontSize="{Binding SizeDefault}" HorizontalOptions="Center"
                    x:Name="UwertSparrenButton" Padding="2">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Sparren_Tapped"></TapGestureRecognizer>
@@ -730,7 +730,8 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                                     <![CDATA[
                     <strong>U Gesamt</strong> [W/(m&#178;* K)]: ]]>
                                 </Label>
-
+                               
+                                
                                 <Label Text="{Binding Delta_U, StringFormat='{0:N2}'}" Grid.Column="1" 
                                    FontAttributes="Bold" FontSize="{Binding SizeDefault}"
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>

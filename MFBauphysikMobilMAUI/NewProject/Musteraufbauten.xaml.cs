@@ -667,6 +667,17 @@ namespace MFBauphysikMobilMAUI.NewProject
                     Date = DateTime.Now,
                     BV_Ersatz = project.BV_Ersatz,
                     ID = project.ID,
+                },
+
+
+                new MainModel
+                {
+                    MusterName = "KSD_EPS035_PVC",
+                    ProjectName = project.ProjectName,
+                    BV = project.BV,
+                    Date = DateTime.Now,
+                    BV_Ersatz = project.BV_Ersatz,
+                    ID = project.ID,
                 }
             };
             listView.ItemsSource = _muster.OrderBy(p => p.MusterName);
