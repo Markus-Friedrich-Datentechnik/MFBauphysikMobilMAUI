@@ -6842,10 +6842,12 @@ namespace MFBauphysikMobilMAUI.NewProject
             listBefestiger.ItemsSource = main_model.Befestiger_Basis;
             if (main_model.Befestiger_Basis.Count != 0)
             {
+                kein_befestiger_label.IsVisible = false;
                 FrameBefestigerBasis.IsVisible = true;
             }
             else
             {
+                kein_befestiger_label.IsVisible = true;
                 FrameBefestigerBasis.IsVisible = false;
             }        
             Calculate_Uf();
@@ -7439,10 +7441,12 @@ namespace MFBauphysikMobilMAUI.NewProject
             ButtonPlus.IsVisible = false;
             if (main_model.Befestiger_Basis.Count != 0)
             {
+                kein_befestiger_label.IsVisible = false;
                 FrameBefestigerBasis.IsVisible = true;
             }
             else
             {
+                kein_befestiger_label.IsVisible = true;
                 FrameBefestigerBasis.IsVisible = false;
             }
         }          

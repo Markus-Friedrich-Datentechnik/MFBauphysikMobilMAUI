@@ -1067,6 +1067,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             listBefestiger.ItemsSource = main_model.Befestiger_Basis;
             if (main_model.Befestiger_Basis.Count != 0)
             {
+                LabelKeinBefestiger.IsVisible = false;
                 FrameBefestigerBasis.IsVisible = true;
             }
             else
@@ -1161,6 +1162,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             listBefestigerSparren.ItemsSource = main_model.Befestiger_Sparren;
             if (main_model.Befestiger_Sparren.Count != 0)
             {
+                LabelKeinBefestiger.IsVisible = false;
                 FrameBefestigerSparren.IsVisible = true;
             }
             else
@@ -2305,17 +2307,27 @@ namespace MFBauphysikMobilMAUI.NewProject
             //Plusbutton
             BoxPlus.IsVisible = false;
             ButtonPlus.IsVisible = false;
-            if (main_model.Befestiger_Basis.Count != 0)
+            if(main_model.Befestiger_Basis.Count == 0 && main_model.Befestiger_Sparren.Count == 0)
             {
-                FrameBefestigerBasis.IsVisible = true;
+                FrameBefestigerBasis.IsVisible = false;
+                FrameBefestigerSparren.IsVisible = false;
+                LabelKeinBefestiger.IsVisible = true;
             }
-            else { FrameBefestigerBasis.IsVisible = false; }
+            else
+            {
+                LabelKeinBefestiger.IsVisible = false;
+                if (main_model.Befestiger_Basis.Count != 0)
+                {
+                    FrameBefestigerBasis.IsVisible = true;
+                }
+                else { FrameBefestigerBasis.IsVisible = false; }
 
-            if (main_model.Befestiger_Sparren.Count != 0)
-            {
-                FrameBefestigerSparren.IsVisible = true;
-            }
-            else { FrameBefestigerSparren.IsVisible = false; }
+                if (main_model.Befestiger_Sparren.Count != 0)
+                {
+                    FrameBefestigerSparren.IsVisible = true;
+                }
+                else { FrameBefestigerSparren.IsVisible = false; }
+            }           
 
         }
 

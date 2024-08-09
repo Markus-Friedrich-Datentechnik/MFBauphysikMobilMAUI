@@ -3,18 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="MFBauphysikMobilMAUI.Info.InfoPage"
              NavigationPage.HasBackButton="False">
-    
+
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
-            <ImageButton Source="back.png" 
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.4*"/>
+            </Grid.ColumnDefinitions>
+            <ImageButton Source="back.png" Grid.Column="0"
                          BackgroundColor="{StaticResource TransparentBackground}" 
                          HorizontalOptions="Start" Clicked="Back_Clicked"/>
-            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">               
-                <Label Text="Info" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                <Label Text="Info" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"
+                       Grid.Column="1" FontAttributes="Bold"
                        TextColor="{StaticResource TitleTextColor}" FontSize="Title"/>
-            </StackLayout>
 
-        </StackLayout>
+        </Grid>
     </NavigationPage.TitleView>
 
     <Grid  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
@@ -24,15 +27,15 @@
             <RowDefinition Height="12*"/>
         </Grid.RowDefinitions>
 
-<!--TabView-->
+        <!--TabView-->
         <StackLayout Orientation="Horizontal" Margin="10" 
                      HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" 
-                     Grid.Row="0">            
+                     Grid.Row="0">
             <Label TextColor="{StaticResource LabelButton}" 
                    FontSize="{Binding SizeDefault}"
                    x:Name="InfoButton"
                    Text="Information"
-                   FontAttributes="Bold">                
+                   FontAttributes="Bold">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Info_Clicked"/>
                 </Label.GestureRecognizers>
@@ -44,10 +47,10 @@
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Datenschutz_Clicked"/>
                 </Label.GestureRecognizers>
-            </Label>            
+            </Label>
         </StackLayout>
 
-<!--Anzeige Info-->
+        <!--Anzeige Info-->
         <ScrollView VerticalOptions="FillAndExpand" x:Name="InfoTab" IsVisible="true" Grid.Row="1">
 
             <StackLayout  Orientation="Vertical" HorizontalOptions="FillAndExpand"  VerticalOptions="Start" >
@@ -57,7 +60,7 @@
                         <Label Text="Programminfo" FontSize="{Binding SizeDefault}"
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
                                FontAttributes="Bold"/>
-                        <Label Text="MFBauphysik mobil 1.1.1 &#x0a;Datum: 29.11.2022&#x0a;(C)opyright: 2017 - 2022"                               
+                        <Label Text="MFBauphysik mobil 1.1.1 &#x0a;Datum: 17.07.2024&#x0a;(C)opyright: 2017 - 2024"                               
                                FontSize="{Binding SizeDefault}"
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
 
@@ -133,7 +136,7 @@
                         <Label Text="Email" 
                                FontSize="{Binding SizeMicro}" 
                                TextColor="{StaticResource TextColor Grey}"/>
-                        <Label Text="info@friedrich-datentechnik.de" 
+                        <Label Text="info@mf-dach.de" 
                                FontSize="{Binding SizeDefault}"
                                TextColor="{StaticResource TextColor Blue}" >
                             <Label.GestureRecognizers>
@@ -184,7 +187,7 @@
 
             </StackLayout>
         </ScrollView>
-<!--Anzeige Datenschutz-->
+        <!--Anzeige Datenschutz-->
         <ScrollView VerticalOptions="FillAndExpand" x:Name="DatenschutzTab" IsVisible="False" Grid.Row="1">
             <StackLayout Margin="20">
                 <Label Text="Datenschutzerklärung" 
@@ -194,11 +197,12 @@
                 <Label Text="Allgemeines" 
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
                        VerticalOptions="Start" FontSize="{Binding SizeMedium}" FontAttributes="Bold"/>
+                <Label Text=""/>
                 <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
                        VerticalOptions="Start" FontSize="{Binding SizeDefault}">
-                    Diese Datenschutzerklärung klärt Nutzer über die Art, den Umfang und Zwecke der Erhebung und Verwendung personenbezogener Daten durch den verantwortlichen Anbieter unserer Apps auf. Die rechtlichen Grundlagen des Datenschutzes finden sich in der Datenschutzgrundverordnung (DSGVO), im Sozialgesetzbuch (SGB) und im Bundesdatenschutzgesetz (BDSG). Markus Friedrich Datentechnik erhebt und verwendet Ihre personenbezogenen Daten ausschließlich im Rahmen dieser Bestimmungen. Damit sind alle Informationen gemeint, die sich auf eine identifizierbare oder identifizierte natürliche Person beziehen.
-                </Label>
+                    Diese Datenschutzerklärung klärt Nutzer über die Art, den Umfang und Zwecke der Erhebung und Verwendung personenbezogener Daten durch den verantwortlichen Anbieter unserer Apps auf. Die rechtlichen Grundlagen des Datenschutzes finden sich in der Datenschutzgrundverordnung (DSGVO), im Sozialgesetzbuch (SGB) und im Bundesdatenschutzgesetz (BDSG). Markus Friedrich Datentechnik Inh. Lisa Römer erhebt und verwendet Ihre personenbezogenen Daten ausschließlich im Rahmen dieser Bestimmungen. Damit sind alle Informationen gemeint, die sich auf eine identifizierbare oder identifizierte natürliche Person beziehen.</Label>
 
+                <Label Text=""/>
                 <Label Text="1. Verantwortliche Stelle" 
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
                        VerticalOptions="Start" FontSize="{Binding SizeMedium}" FontAttributes="Bold"/>
@@ -209,18 +213,23 @@
                        &#10;Bahnhofstr.74 
                        &#10;15732 Eichwalde 
                        &#10;Tel. 030 / 6670 235 0
-                       &#10;E-Mail: info@friedrich-datentechnik.de"
+                       &#10;E-Mail: info@mf-dach.de"
                     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
                        VerticalOptions="Start" FontSize="{Binding SizeDefault}"/>
+                <Label Text=""/>
                 <Label Text="2. Installation der MF Apps" 
-                       TextColor="Black" VerticalOptions="Start" 
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                       VerticalOptions="Start" 
                        FontSize="{Binding SizeMedium}" FontAttributes="Bold"/>
                 <Label Text=""/>
                 <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
                        VerticalOptions="Start" FontSize="{Binding SizeDefault}">
-                    Die MF mobil Apps sind über von Dritten betriebene Vertriebsplattformen erhältlich, sogenannte App-Stores (Google Play und Apple iTunes). Ihr Download setzt gegebenenfalls eine vorherige Registrierung beim jeweiligen App-Store und die Installation der App-Store-Software voraus. Markus Friedrich Datentechnik hat keinen Einfluss auf die Erhebung, Verarbeitung und Nutzung von personenbezogenen Daten im Zusammenhang mit Ihrer Registrierung und der Bereitstellung von Downloads in dem jeweiligen App-Store und der App-Store-Software. Verantwortliche Stelle ist insoweit allein der Betreiber des jeweiligen App-Stores. Bitte informieren Sie sich bei Bedarf direkt bei dem jeweiligen App-Store-Anbieter.
+                    Die MF mobil Apps sind über von Dritten betriebene Vertriebsplattformen erhältlich, sogenannte App-Stores. Ihr Download setzt gegebenenfalls eine vorherige Registrierung beim jeweiligen App-Store und die Installation der App-Store-Software voraus. Markus Friedrich Datentechnik Inh. Lisa Römer hat keinen Einfluss auf die Erhebung, Verarbeitung und Nutzung von personenbezogenen Daten im Zusammenhang mit Ihrer Registrierung und der Bereitstellung von Downloads in dem jeweiligen App-Store und der App-Store-Software. Verantwortliche Stelle ist insoweit allein der Betreiber des jeweiligen App-Stores. Bitte informieren Sie sich bei Bedarf direkt bei dem jeweiligen App-Store-Anbieter.
                 </Label>
+                <Label Text=""/>
+                <Label Text="Auch eine Direktinstallation über unsere Website ist möglich. Dabei werden keine personenbezogenen Daten erhoben."/>
 
+                <Label Text=""/>
                 <Label Text="3. Geltung der Datenschutzbestimmungen" 
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
                        VerticalOptions="Start" FontSize="{Binding SizeMedium}" FontAttributes="Bold"/>
@@ -229,52 +238,71 @@
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
                        VerticalOptions="Start" FontSize="{Binding SizeDefault}"/>
 
+                <Label Text=""/>
                 <Label Text="4. Erforderliche Berechtigungen" 
-                       TextColor="Black" VerticalOptions="Start" 
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                       VerticalOptions="Start" 
                        FontSize="{Binding SizeMedium}" FontAttributes="Bold"/>
                 <Label Text=""/>
                 <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
                        VerticalOptions="Start" FontSize="{Binding SizeDefault}">
-                    Die Nutzung unserer Apps ist ohne Angabe personenbezogener Daten möglich. Es werden keine personenbezogene Daten erhoben und auch keine Daten an Markus Friedrich Datentechnik oder Dritte weitergegeben.
-                </Label>
+                    Die Nutzung unserer Apps ist ohne Angabe personenbezogener Daten möglich. Es werden keine personenbezogene Daten erhoben und auch keine Daten an Markus Friedrich Datentechnik Inh. Lisa Römer oder Dritte weitergegeben. Sie können jederzeit in den Einstellungen Ihres Mobilgerätes die Berechtigungen der Apps einsehen und bearbeiten.</Label>
+                <Label Text=""/>
                 <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
                        VerticalOptions="Start" FontSize="{Binding SizeDefault}" TextType="Html">
                     <![CDATA[
-                    <strong>MF mobil</strong> greift auf Kamera, Mikrofon, Speicher, Standort und Telefon zu. Die Anruflisten nutzt die App um die Nummern mit Ihren angelegten Kunden abzugleichen um Ihnen anzeigen zu können wer gerade anruft oder angerufen hat. Mit Hilfe der Kamera erstellen Sie Fotodokumentationen auf Baustellen und können mit dem Mikrofon Sprachnotizen hinzufügen. Um Daten auf dem Mobilgerät zu speichern (z.B. geschossene Fotos) oder um bereits existierende Daten (z.B. Ihrer Galerie) hinzuzufügen (z.B. in einer internen Mail), benötigt die App Zugriff auf Ihren Speicher. Bei Standortfreigabe kann der GPS-Standort bei der Zeiterfassung erfasst werden. Dies muss jedoch aktiv geschehen! Daten zu Ihrem Standort werden nur für die Bearbeitung Ihrer Anfrage genutzt. Mit Zugriff auf das Telefon können Sie aus der App heraus telefonieren.
+                    <strong>MF mobil</strong> greift, wenn dies freigegeben wurde, auf Kamera, Mikrofon, Standort und Telefon zu. Die App nutzt den Gerätespeicher um die erstellten Daten dort abzuspeichern. Die Anruflisten nutzt die App um die Nummern mit Ihren angelegten Kunden abzugleichen um Ihnen anzeigen zu können wer gerade anruft oder angerufen hat. Mit Hilfe der Kamera erstellen Sie Fotodokumentationen auf Baustellen und können mit dem Mikrofon Sprachnotizen hinzufügen. Um Daten auf dem Mobilgerät zu speichern (z.B. geschossene Fotos) oder um bereits existierende Daten (z.B. Ihrer Galerie) hinzuzufügen (z.B. in einer internen Mail), benötigt die App Zugriff auf Ihren Speicher. Bei Standortfreigabe kann der GPS-Standort bei der Zeiterfassung erfasst werden. Dies muss jedoch aktiv geschehen! Daten zu Ihrem Standort werden nur für die Bearbeitung Ihrer Anfrage genutzt. Mit Zugriff auf das Telefon können Sie aus der App heraus telefonieren. Alle erhobenen Daten verbleiben bei Ihnen/auf Ihren Geräten und werden nicht an einen externen Speicher ausgelagert.
                     ]]>
                 </Label>
+                <Label Text=""/>
                 <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
-                       VerticalOptions="Start" FontSize="{Binding SizeDefault}" TextType="Html">
+       VerticalOptions="Start" FontSize="{Binding SizeDefault}" TextType="Html">
                     <![CDATA[
-                    <strong>MF Anrufliste </strong> (nur für Androidgeräte verfügbar) greift auf die Anrufliste des Telefons zu, um die Telefonnumern mit den Kundendaten aus MF mobil abzugleichen und ggf. den passenden Kundennamen darzustellen.
-                    ]]>
+    <strong>MF Auftrag mobil</strong> greift, wenn dies freigegeben wurde auf Kamera, Mikrofon, Standort und Telefon zu. Die App nutzt den Gerätespeicher um die erstellten Daten dort abzuspeichern. Mit Hilfe der Kamera erstellen Sie Fotodokumentationen auf Baustellen und können mit dem Mikrofon Sprachnotizen hinzufügen. Um Daten auf dem Mobilgerät zu speichern (z.B. geschossene Fotos) oder um bereits existierende Daten (z.B. Ihrer Galerie) hinzuzufügen, benötigt die App Zugriff auf Ihren Speicher. Bei Standortfreigabe kann der GPS-Standort bei der Zeiterfassung erfasst werden. Dies muss jedoch aktiv geschehen! Daten zu Ihrem Standort werden nur für die Bearbeitung Ihrer Anfrage genutzt. Mit Zugriff auf das Telefon können Sie aus der App heraus telefonieren. Alle erhobenen Daten verbleiben bei Ihnen/auf Ihren Geräten und werden nicht an einen externen Speicher ausgelagert.
+    ]]>
                 </Label>
-
+                <Label Text=""/>
                 <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
                        VerticalOptions="Start" FontSize="{Binding SizeDefault}" TextType="Html">
                     <![CDATA[
-                    <strong>MF Windsog mobil</strong> greift auf Speicher und Standort zu. Der Speicherzugriff ist notwendig um erzeugte Daten (Projekte) der App auf dem Mobilgerät speichern zu können. Mit Hilfe der Standortfreigabe kann die App erkennen wo Sie sich aufhalten und Orte in der Umgebung vorschlagen, sodass Ihre Arbeitsweise beschleunigt wird. Daten zu Ihrem Standort werden nur für die Bearbeitung Ihrer Anfrage genutzt.
-                    ]]>
-                </Label>
-                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
-                       VerticalOptions="Start" FontSize="{Binding SizeDefault}" TextType="Html">
-                    <![CDATA[
-                    <strong>MF DachDesigner mobil</strong> greift auf den Speicher zu. Der Speicherzugriff ist notwendig um erzeugte Daten (Projekte) der App auf dem Mobilgerät speichern zu können. Außerdem ermöglicht die Freigabe der Kamera und des Mikrofons die Anlage von Fotodokumentationen mit Sprachnotizen. Wenn die Apps im Modus "Mobilkonverter" oder "Servermodus" genutzt werden, wir auch der Netzwerkzugriff benötigt um die Daten mit Ihrem PC oder Server abzugleichen.
+                    <strong>MF Anrufliste </strong> (nur für Androidgeräte verfügbar) greift auf die Anrufliste des Telefons zu, um die Telefonnumern mit den Kundendaten aus MF mobil abzugleichen und ggf. den passenden Kundennamen darzustellen. Die App nutzt den Gerätespeicher um die erstellten Daten dort abzuspeichern. Alle erhobenen Daten verbleiben bei Ihnen/auf Ihren Geräten und werden nicht an einen externen Speicher ausgelagert.
                     ]]>
                 </Label>
 
+                <Label Text=""/>
                 <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
                        VerticalOptions="Start" FontSize="{Binding SizeDefault}" TextType="Html">
                     <![CDATA[
-                    <strong>MF Aufmass mobil</strong> greift auf den Speicher zu. Der Speicherzugriff ist notwendig um erzeugte Daten (Projekte) der App auf dem Mobilgerät speichern zu können. Wenn die App im Modus "Mobilkonverter" oder "Servermodus" genutzt wird, wird auch der Netzwerkzugriff benötigt um die Daten mit Ihrem PC oder Server abzugleichen.
+                    <strong>MF Windsog mobil</strong> greift, wenn dies freigegeben wurde, auf den Standort zu und nutzt den Gerätespeicher. Die App nutzt den Gerätespeicher um die erstellten Daten dort abzuspeichern. Mit Hilfe der Standortfreigabe kann die App erkennen wo Sie sich aufhalten und Orte in der Umgebung vorschlagen, sodass Ihre Arbeitsweise beschleunigt wird. Daten zu Ihrem Standort werden nur für die Bearbeitung Ihrer Anfrage genutzt. Alle erhobenen Daten verbleiben bei Ihnen/auf Ihren Geräten und werden nicht an einen externen Speicher ausgelagert.
                     ]]>
+                </Label>
+                <Label Text=""/>
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}" TextType="Html">
+                    <![CDATA[
+                    <strong>MF DachDesigner mobil</strong> nutzt den lokalen Speicher. Die App nutzt den Gerätespeicher um die erstellten Daten dort abzuspeichern. Außerdem ermöglicht die Freigabe der Kamera und des Mikrofons die Anlage von Fotodokumentationen mit Sprachnotizen. Wenn die Apps im Modus "Mobilkonverter" oder "Servermodus" genutzt werden, wir auch der Netzwerkzugriff benötigt um die Daten mit Ihrem PC oder Server abzugleichen. 
+                    ]]>
+                </Label>
+
+                <Label Text=""/>
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}" TextType="Html">
+                    <![CDATA[
+                    <strong>MF Aufmass mobil</strong> nutzt den lokalen Speicher. Die App nutzt den Gerätespeicher um die erstellten Daten dort abzuspeichern. Wenn die App im Modus "Mobilkonverter" oder "Servermodus" genutzt wird, wird auch der Netzwerkzugriff benötigt um die Daten mit Ihrem PC oder Server abzugleichen. 
+                    ]]>
+                </Label>
+                <Label Text=""/>
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+       VerticalOptions="Start" FontSize="{Binding SizeDefault}" TextType="Html">
+                    <![CDATA[
+    <strong>MF Bauphysik mobil</strong> nutzt den lokalen Speicher. Die App nutzt den Gerätespeicher um die erstellten Daten dort abzuspeichern.]]>
                 </Label>
                 <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
                        VerticalOptions="Start" FontSize="{Binding SizeDefault}">
                     Sie können jederzeit in den Einstellungen Ihres Mobilgerätes die Berechtigungen der Apps einsehen und bearbeiten.
                 </Label>
 
-
+                <Label Text=""/>
 
                 <Label Text="Auskunft und Widerruf" 
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
@@ -284,8 +312,8 @@
                        VerticalOptions="Start" FontSize="{Binding SizeDefault}">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Der Nutzer hat grundsätzlich ein Auskunftsrecht über die bei Markus Friedrich Datentechnik gespeicherten personenbezogenen Daten. Bei Auskünften und Fragen über die Widerrufserklärungen gemäß §3 dieser Datenschutzbestimmungen kann sich der Nutzer jederzeit über die E-Mail Adresse "/>
-                            <Span Text="info@friedrich-datentechnik.de" 
+                            <Span Text="Der Nutzer hat grundsätzlich ein Auskunftsrecht über die bei Markus Friedrich Datentechnik Inh. Lisa Römer gespeicherten personenbezogenen Daten. Bei Auskünften und Fragen über die Widerrufserklärungen gemäß §3 dieser Datenschutzbestimmungen kann sich der Nutzer jederzeit über die Email "/>
+                            <Span Text="info@mf-dach.de" 
                                   TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" >
                             </Span>
                             <Span Text=" an uns wenden."/>
@@ -294,13 +322,12 @@
                 </Label>
                 <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
                        VerticalOptions="Start" FontSize="{Binding SizeDefault}">
-                    Diese Datenschutzerklärung ist aktuell gültig und wurde erstellt am 23.11.2018. Die letzte Aktualisierung erfolgte am 13.07.2020 aufgrund der Weiterentwicklung unserer Apps.
-                </Label>
+                    Diese Datenschutzerklärung ist aktuell gültig und wurde erstellt am 23.11.2018. Die letzte Aktualisierung erfolgte am 17.07.2024 aufgrund der neuen MF Bauphysik mobil App.</Label>
 
 
             </StackLayout>
         </ScrollView>
-<!--Anzeige Datenstand-->
+        <!--Anzeige Datenstand-->
         <!--StackLayout  Orientation="Vertical"  x:Name="DatenstandTab" IsVisible="false" Grid.Row="1">
             <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
                 <StackLayout Orientation="Vertical">
@@ -331,7 +358,7 @@
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
             </Frame>
         </StackLayout-->
-<!--Anzeige Rechte-->
+        <!--Anzeige Rechte-->
         <!--StackLayout x:Name="RechteTab" Orientation="Vertical" IsVisible="false"                     
                      Grid.Row="1">
             <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticResource FrameStyleDark}}">
@@ -350,7 +377,6 @@
 
         </StackLayout-->
 
-       
-    </Grid>
 
+    </Grid>
 </ContentPage>

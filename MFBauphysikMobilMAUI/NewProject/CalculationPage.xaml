@@ -17,18 +17,19 @@
                        TextColor="{StaticResource TitleTextColor}" 
                            FontSize="Medium" FontAttributes="Bold"/>
             </StackLayout>
+            <ImageButton Source="menu.png" 
+                         WidthRequest="40" Clicked="ToolbarItem_Clicked"
+                         BackgroundColor="{StaticResource TransparentBackground}"/>
         </StackLayout>
     </NavigationPage.TitleView>
 
-    <ContentPage.ToolbarItems>
-
-        <ToolbarItem 
-            
+    <!--ContentPage.ToolbarItems>
+        <ToolbarItem             
             IconImageSource="menu.png"
             Clicked="ToolbarItem_Clicked"
             Order="Primary"
             Priority="0"/>
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems-->
     <ContentPage.Resources>
         <ResourceDictionary>
             <converter:BoolToColorConverter x:Key="BoolToColor"/>
@@ -153,7 +154,7 @@
                             <!--Meldung wenn kein Tauwasserausfällt -->
                             <Label Grid.Row="5" Grid.ColumnSpan="2" FontAttributes="Bold" FontSize="{Binding SizeDefault}"
                        IsVisible="false" x:Name="MeldungDicke"
-                       Text="Nachweis nicht erforderlich, da kein Tauwasser ausfällt"
+                       Text="Nachweis nicht erforderlich, da kein Tauwasser ausfällt."
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
 
                             <!--Meldung bei mehr als 2 Tauwasserebene-->
@@ -275,11 +276,10 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                 </Grid>
 
                 <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="1" />
-                <Grid Grid.Row="1" Padding="20,0,0,0">
+                <Grid Grid.Row="1" Padding="20,0,0,0" >
                     <ImageButton BackgroundColor="{StaticResource TransparentBackground}" 
                              Source="tools.png" Clicked="Konstruktion_Clicked" WidthRequest="50"
                              HorizontalOptions="Start"/>
-
                 </Grid>
             </Grid>
 
@@ -525,12 +525,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                 <!--Plus - Bauteil einfügen-->
                 <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" x:Name="BoxPlus" />
                 <Grid Grid.Row="2" Padding="20,0,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="4*"/>
-                    </Grid.ColumnDefinitions>
-                    <ImageButton Source="plus.png"  Grid.Column="0"
+                    <ImageButton Source="plus.png"  Grid.Column="0" WidthRequest="50"
                              BackgroundColor="{StaticResource TransparentBackground}" 
                      Clicked="Bauteil_Einfügen_Clicked" x:Name="ButtonPlus"
                      HorizontalOptions="Start"/>
@@ -548,7 +543,11 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                 </Grid.RowDefinitions>
 
                 <!--Basis-->
-                <Grid x:Name="FrameBefestigerBasis" Grid.Row="0">
+                <Label Text="Kein Befestiger vorhanden." 
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
+                       FontAttributes="Bold" Padding="10" FontSize="{Binding SizeDefault}"
+                       x:Name="kein_befestiger_label" IsVisible="True"/>
+                <Grid x:Name="FrameBefestigerBasis" Grid.Row="0" IsVisible="False">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
@@ -613,16 +612,14 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                 </Grid>
 
                 <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="1" />
-                <StackLayout Grid.Row="1" Orientation="Horizontal"  Padding="20,0,0,0">
-                    <ImageButton  Source="material_neu.png"
+                <Grid Grid.Row="1" Padding="20,0,0,0">
+                    <ImageButton  Source="material_neu.png" WidthRequest="50"
                              BackgroundColor="{StaticResource TransparentBackground}" 
                  Clicked="Befestiger_Einfügen_Clicked"
              HorizontalOptions="Start"/>
-                </StackLayout>
+                </Grid>
 
             </Grid>
-
-
         </Grid>
 
         <Grid Grid.Row="0" x:Name="indicator_view" IsVisible="False" HeightRequest="70" >

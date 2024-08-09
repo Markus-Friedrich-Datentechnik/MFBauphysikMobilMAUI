@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<color name="launcher_background">#FFFFFF</color>
-	<color name="colorPrimary">#1e90ff</color>
+	<color name="colorPrimary">#4D9AEF</color>
 	<!--color name="colorPrimaryDark">#303F9F</color-->
 	<color name="colorPrimaryDark">#303F9F</color>
-	<color name="colorAccent">#1e90ff</color>
-	<color name="colorControlNormal">#1e90ff</color>
-	<color name="colorCursors">#1e90ff</color>
-	<color name="ListViewSelected">#1e90ff</color>
+	<color name="colorAccent">#4D9AEF</color>
+	<color name="colorControlNormal">#4D9AEF</color>
+	<color name="colorCursors">#4D9AEF</color>
+	<color name="ListViewSelected">#4D9AEF</color>
 </resources>

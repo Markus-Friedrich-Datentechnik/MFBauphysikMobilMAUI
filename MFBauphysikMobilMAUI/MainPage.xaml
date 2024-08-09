@@ -10,26 +10,33 @@
     <NavigationPage.TitleView>
         <Grid Padding="20,0,0,0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="1.5*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="45"/>
+            </Grid.ColumnDefinitions>
             <Label Text="MF Bauphysik mobil" HorizontalTextAlignment="Center"  Grid.Row="0"
-               TextColor="{StaticResource TitleTextColor}" 
+               TextColor="{StaticResource TitleTextColor}" Grid.Column="0"
                FontSize="24" FontAttributes="Bold"/>
-            <Label Text="Projektliste"                 Grid.Row="1"
+            <Label Text="Projektliste" Grid.Row="1" Grid.Column="0"
                HorizontalTextAlignment="Center" 
-               TextColor="{StaticResource TitleTextColor}" FontSize="16"/>
+               TextColor="{StaticResource TitleTextColor}" FontSize="14"/>
+
+            <ImageButton Grid.Column="1" Grid.RowSpan="2" Source="menu.png"
+                  Clicked="ToolbarItem_Clicked" />
         </Grid>
     </NavigationPage.TitleView>
 
     <!--Menu-->
-    <ContentPage.ToolbarItems>
+    <!--ContentPage.ToolbarItems>
         <ToolbarItem 
         IconImageSource="menu.png"
-        Clicked="ToolbarItem_Clicked"
+        Clicked="ToolbarItem_Clicked"        
         Order="Primary"
         Priority="0"/>
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems-->
 
     <Grid RowSpacing="0" ColumnSpacing="0" 
       BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
@@ -50,7 +57,7 @@
                 <Entry  x:Name="SearchBar" Grid.Column="0"  FontSize="{Binding SizeClass}"
                         Placeholder="Suchen" PlaceholderColor="{StaticResource Gray300}"
                         TextChanged="SearchBar_TextChanged"
-                        ios:Entry.CursorColor="DodgerBlue" 
+                        ios:Entry.CursorColor="#4D9AEF" 
                         TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
                 <Image Source="suchen_2.png" Grid.Column="1"/>
             </Grid>
@@ -65,32 +72,37 @@
               SeparatorColor="{StaticResource TextColor Blue}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <custom:MyViewCell SelectedBackGroundColor="DodgerBlue">
-                        <Grid BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="4*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
+                    <ViewCell>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItem IconImageSource="options.png" Invoked="OnItemClicked"/>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <Grid BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
 
-                            <Label Text="{Binding ProjectName}" Grid.Column="0" Padding="10" 
+                                <Label Text="{Binding ProjectName}" Grid.Column="0" Padding="10" 
                                FontSize="{Binding SizeClass}"
-                               TextColor="{AppThemeBinding Light={StaticResource LightProjectTitle}, Dark={StaticResource DarkProjectTitle}}" 
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
                                FontAttributes="Bold"/>
-                            <Label Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}" Grid.Column="1"
+                                <Label Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}" Grid.Column="1"
                                FontSize="{Binding SizeClass}"
-                               TextColor="{AppThemeBinding Light={StaticResource LightProjectTitle}, Dark={StaticResource DarkProjectTitle}}" 
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
                                FontAttributes="Bold" Padding="10"/>
-                        </Grid>
-                        <custom:MyViewCell.ContextActions>
+                            </Grid>
+                        </SwipeView>
+                        <!--custom:MyViewCell.ContextActions>
                             <MenuItem x:Name="options" Clicked="OnItemClicked" 
                                       IconImageSource="options_weiss.png" Text="Option" />
-                        </custom:MyViewCell.ContextActions>
-                    </custom:MyViewCell>
+                        </custom:MyViewCell.ContextActions-->
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
-
-        
+        </ListView>        
 
         <!--Neues Projekt Button-->
         <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2"/>

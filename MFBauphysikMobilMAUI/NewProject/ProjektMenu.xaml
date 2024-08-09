@@ -5,13 +5,14 @@
              NavigationPage.HasBackButton="False">
 
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
-            <ImageButton Source="back.png" Clicked="Back_Clicked" BackgroundColor="{StaticResource TransparentBackground}" HorizontalOptions="Start"/>
+        <Grid>
+            <ImageButton Source="back.png" Clicked="Back_Clicked" Grid.Column="0"
+                         BackgroundColor="{StaticResource TransparentBackground}" HorizontalOptions="Start"/>
 
             <Label Text="Menü" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                   TextColor="{StaticResource TitleTextColor}" 
+                   TextColor="{StaticResource TitleTextColor}" Grid.Column="1"
                    FontSize="Title" FontAttributes="Bold"/>
-        </StackLayout>
+        </Grid>
     </NavigationPage.TitleView>
 
     <StackLayout Orientation="Vertical" 

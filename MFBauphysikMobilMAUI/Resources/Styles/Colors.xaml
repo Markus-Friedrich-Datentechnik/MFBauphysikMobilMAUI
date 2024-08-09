@@ -7,20 +7,20 @@
     <!-- Note: For Android please see also Platforms\Android\Resources\values\colors.xml -->
 
     <Color x:Key="launcher_background">#FFFFFF</Color>
-    <Color x:Key="colorPrimary">#4A9CFF</Color>
-    <Color x:Key="colorAccent">#4A9CFF</Color>
-    <Color x:Key="colorCursors">#4A9CFF</Color>
+    <Color x:Key="colorPrimary">#4D9AEF</Color>
+    <Color x:Key="colorAccent">#4D9AEF</Color>
+    <Color x:Key="colorCursors">#4D9AEF</Color>
     
-    <Color x:Key="Primary">#4A9CFF</Color>
+    <Color x:Key="Primary">#4D9AEF</Color>
     <!--Titel TextColor-->
     <Color x:Key="TitleTextColor">White</Color>
 
     <!--Titel BackgroundColor-->
-    <Color x:Key="TitleBackgroundColor">#4A9CFF</Color>
+    <Color x:Key="TitleBackgroundColor">#4D9AEF</Color>
     <Color x:Key="TransparentBackground">Transparent</Color>
 
     <!--TextColor blue-->
-    <Color x:Key="TextColor Blue">#4A9CFF</Color>
+    <Color x:Key="TextColor Blue">#4D9AEF</Color>
 
     <!--TextColor Grey-->
     <Color x:Key="TextColor Grey">#A4A4A4</Color>
@@ -43,7 +43,7 @@
     <Color x:Key="DarkProjectTitle">LightSkyBlue</Color>
 
     <!--Label Button Style-->
-    <Color x:Key="LabelButton">#4A9CFF</Color>
+    <Color x:Key="LabelButton">#4D9AEF</Color>
 
     <Color x:Key="PrimaryDark">#ac99ea</Color>
     <Color x:Key="PrimaryDarkText">#242424</Color>
@@ -67,16 +67,16 @@
     <Color x:Key="Gray950">#141414</Color>
 
 
-    <SolidColorBrush x:Key="ListViewSelected" Color="#4A9CFF" />
-    <SolidColorBrush x:Key="ColorFocusedHighlight" Color="#4A9CFF"/>
-    <SolidColorBrush x:Key="ColorActivatedHighlight" Color="#4A9CFF"/>
-    <SolidColorBrush x:Key="ActivatedBackgroundIndicator" Color="#4A9CFF"/>
-    <SolidColorBrush x:Key="ColorAccent" Color="#4A9CFF"/>
-    <SolidColorBrush x:Key="ColorCursors" Color="#4A9CFF"/>
-    <SolidColorBrush x:Key="ListViewItemBackgroundSelectedPressed" Color="#4A9CFF" />
-    <SolidColorBrush x:Key="ListViewItemSelectedBackgroundThemeBrush" Color="#4A9CFF" />
-    <SolidColorBrush x:Key="ListViewItemBackgroundSelected" Color="#4A9CFF" />
-    <SolidColorBrush x:Key="ListViewItemBackgroundSelectedPointerOver" Color="#4A9CFF" />
+    <SolidColorBrush x:Key="ListViewSelected" Color="#4D9AEF" />
+    <SolidColorBrush x:Key="ColorFocusedHighlight" Color="#4D9AEF"/>
+    <SolidColorBrush x:Key="ColorActivatedHighlight" Color="#4D9AEF"/>
+    <SolidColorBrush x:Key="ActivatedBackgroundIndicator" Color="#4D9AEF"/>
+    <SolidColorBrush x:Key="ColorAccent" Color="#4D9AEF"/>
+    <SolidColorBrush x:Key="ColorCursors" Color="#4D9AEF"/>
+    <SolidColorBrush x:Key="ListViewItemBackgroundSelectedPressed" Color="#4D9AEF" />
+    <SolidColorBrush x:Key="ListViewItemSelectedBackgroundThemeBrush" Color="#4D9AEF" />
+    <SolidColorBrush x:Key="ListViewItemBackgroundSelected" Color="#4D9AEF" />
+    <SolidColorBrush x:Key="ListViewItemBackgroundSelectedPointerOver" Color="#4D9AEF" />
 
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>

@@ -12,7 +12,7 @@
 
             <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >               
                 <Label Text="Konfiguration" HorizontalOptions="Center"     VerticalOptions="CenterAndExpand"                   
-                       TextColor="{StaticResource TitleTextColor}" FontSize="Title"/>
+                       TextColor="{StaticResource TitleTextColor}" FontSize="Title" FontAttributes="Bold"/>
             </StackLayout>
             <ImageButton Source ="check.png" Margin="0,0,10,0"
                          BackgroundColor="{StaticResource TransparentBackground}"
@@ -22,6 +22,7 @@
     </NavigationPage.TitleView>
 
     <StackLayout Orientation="Vertical" BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+        <!--Auswahl Schriftgrößen-->
         <Frame Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark= {StaticResource FrameStyleDark}}"
                BorderColor="{StaticResource TitleBackgroundColor}">
             <StackLayout Orientation="Vertical" Spacing="5">
@@ -38,7 +39,7 @@
                             Maximum="200" 
                             MaximumTrackColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
                             Minimum="50"
-                            MinimumTrackColor="DodgerBlue"
+                            MinimumTrackColor="#4D9AEF"
                             ValueChanged="slider_ValueChanged" Grid.Column="0" Grid.Row="0">                       
                     </Slider>
                     <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:N0} %'} "                           
@@ -53,7 +54,7 @@
                 <!--50-->
                 <Frame Style="{AppThemeBinding Light={StaticResource miniFrameLight}, Dark={StaticResource miniFrameDark}}"
                        BorderColor="{StaticResource TitleBackgroundColor}">
-                    <Label Text="50% klein" x:Name ="S50" FontSize="Micro" FontAttributes="Bold"
+                    <Label Text="50% klein" x:Name ="S50" FontSize="Caption" FontAttributes="Bold"
                            HorizontalTextAlignment="Center"
                            TextColor="{StaticResource TextColor Blue}">
                         <Label.GestureRecognizers>
@@ -65,7 +66,7 @@
                 <!--75-->
                 <Frame Style="{AppThemeBinding Light={StaticResource miniFrameLight}, Dark={StaticResource miniFrameDark}}"
                        BorderColor="{StaticResource TitleBackgroundColor}">
-                    <Label Text="75% kleiner" x:Name="S75" FontSize="Caption" FontAttributes="Bold" 
+                    <Label Text="75% kleiner" x:Name="S75" FontSize="Header" FontAttributes="Bold" 
                            HorizontalTextAlignment="Center"
                            TextColor="{StaticResource TextColor Blue}">
                         <Label.GestureRecognizers>
@@ -77,7 +78,7 @@
                 <!--100-->
                 <Frame Style="{AppThemeBinding Light={StaticResource miniFrameLight}, Dark={StaticResource miniFrameDark}}"
                        BorderColor="{StaticResource TitleBackgroundColor}">
-                    <Label Text="100% normal" x:Name="S100" FontSize="Small" FontAttributes="Bold"
+                    <Label Text="100% normal" x:Name="S100" FontSize="Subtitle" FontAttributes="Bold"
                            HorizontalTextAlignment="Center" 
                            TextColor="{StaticResource TextColor Blue}">
                         <Label.GestureRecognizers>
@@ -89,7 +90,7 @@
                 <!--125-->
                 <Frame Style="{AppThemeBinding Light={StaticResource miniFrameLight}, Dark={StaticResource miniFrameDark}}"
                        BorderColor="{StaticResource TitleBackgroundColor}" >
-                    <Label Text="125% größer" x:Name="S125" FontSize="Subtitle" FontAttributes="Bold"
+                    <Label Text="125% größer" x:Name="S125" FontSize="Medium" FontAttributes="Bold"
                            HorizontalTextAlignment="Center"
                            TextColor="{StaticResource TextColor Blue}">
                         <Label.GestureRecognizers>
@@ -101,7 +102,7 @@
                 <!--150-->
                 <Frame Style="{AppThemeBinding Light={StaticResource miniFrameLight}, Dark={StaticResource miniFrameDark}}"
                        BorderColor="{StaticResource TitleBackgroundColor}">
-                    <Label Text="150% groß" x:Name="S150" FontSize="Large" FontAttributes="Bold"
+                    <Label Text="150% groß" x:Name="S150" FontSize="Title" FontAttributes="Bold"
                            HorizontalTextAlignment="Center"
                            TextColor="{StaticResource TextColor Blue}">
                         <Label.GestureRecognizers>
@@ -121,16 +122,13 @@
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
                 <StackLayout x:Name="modus" RadioButtonGroup.GroupName="Modus">
                     <!--Button1-->
-                    <RadioButton Value ="system" CheckedChanged="Modus_CheckedChanged" 
-             x:Name ="gerätModus" Content="wie gerät einstellung" >
-                        <!--RadioButton.Content>
-                            <Grid>
-                                <Label Text="wie gerät einstellung" Padding="30,0,0,0"
-                                       x:Name="gerät_label"
-                   TextColor ="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark = {StaticResource DarkSecondaryColor}}"/>
-                            </Grid>
-                        </RadioButton.Content-->
+                    <Label  x:Name="label_mode" IsVisible="False"/>
+                    <RadioButton Value ="system" CheckedChanged="Modus_CheckedChanged"
+             x:Name ="gerätModus" Content="{Binding Source={x:Reference label_mode},Path=Text,
+                        StringFormat='Wie Geräteinstellung
+                        &#10;Gerät ist auf &quot;{0}&quot; eingestellt'}">
                     </RadioButton>
+
                     <!--Button2-->
                     <RadioButton Value="hell" x:Name="lightmodus"  CheckedChanged="Modus_CheckedChanged" 
                                  Content="immer &quot;Hell&quot;">

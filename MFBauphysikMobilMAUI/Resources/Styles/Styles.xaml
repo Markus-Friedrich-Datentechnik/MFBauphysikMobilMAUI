@@ -28,14 +28,13 @@
     <!--Button Style-->
     <Style x:Key="ButtonStyle" TargetType="Button">
         <Setter Property="BackgroundColor" Value="Transparent"/>
-        <Setter Property="TextColor" Value="#4A9CFF"/>
-        <Setter Property="BorderColor" Value="#4A9CFF"/>
+        <Setter Property="TextColor" Value="#4D9AEF"/>
     </Style>
     
     <!--FrameDarkModus-->
     <Style x:Key="FrameStyleDark" TargetType="Frame">
         <Setter Property="BackgroundColor" Value="Transparent"/>
-        <Setter Property="BorderColor" Value="#4A9CFF"/>
+        <Setter Property="BorderColor" Value="#4D9AEF"/>
         <Setter Property="HasShadow" Value="True"/>
         <Setter Property="CornerRadius" Value="5"/>
         <Setter Property="Margin" Value="10,10,10,2"/>
@@ -44,7 +43,7 @@
     <!--FrameHellModus-->
     <Style x:Key="FrameStylelight" TargetType="Frame">
         <Setter Property="HasShadow" Value="True"/>
-        <Setter Property="BorderColor" Value="#4A9CFF"/>
+        <Setter Property="BorderColor" Value="#4D9AEF"/>
         <Setter Property="CornerRadius" Value="5"/>
         <Setter Property="Margin" Value="10,10,10,5"/>
         <Setter Property="Padding" Value="5"/>
@@ -259,8 +258,9 @@
 
     <Style TargetType="RadioButton">
         <Setter Property="BackgroundColor" Value="Transparent"/>
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
-        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="TextColor" 
+                Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
+        <!--Setter Property="FontFamily" Value="OpenSansRegular"/-->
         <!--Setter Property="FontSize" Value="14"/-->
         <Setter Property="MinimumHeightRequest" Value="44"/>
         <Setter Property="MinimumWidthRequest" Value="44"/>

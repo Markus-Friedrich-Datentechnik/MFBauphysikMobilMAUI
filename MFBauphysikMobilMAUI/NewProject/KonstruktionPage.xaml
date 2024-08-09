@@ -7,15 +7,13 @@
 
 
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
+        <Grid>
             <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}" 
-                         HorizontalOptions="Start" Clicked="Back_Clicked"/>
-            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                         HorizontalOptions="Start" Clicked="Back_Clicked" Grid.Column="0"/>
                 <Label Text="Konstruktion" HorizontalOptions="CenterAndExpand" 
-                       TextColor="{StaticResource TitleTextColor}"
+                       TextColor="{StaticResource TitleTextColor}" Grid.Column="1"
                        FontSize="{Binding SizeTitle}" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
-            </StackLayout>
-        </StackLayout>
+        </Grid>
     </NavigationPage.TitleView>
     
 

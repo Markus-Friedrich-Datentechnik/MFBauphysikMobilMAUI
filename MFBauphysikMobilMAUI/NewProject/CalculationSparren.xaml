@@ -13,17 +13,18 @@
                    TextColor="{StaticResource TitleTextColor}" VerticalOptions="CenterAndExpand"
                        FontSize="Medium" FontAttributes="Bold"/>
             </StackLayout>
+            <ImageButton Source="menu.png" BackgroundColor="{StaticResource TransparentBackground}"
+                         WidthRequest="40" Clicked="ToolbarItem_Clicked"/>
         </StackLayout>
     </NavigationPage.TitleView>
 
-    <ContentPage.ToolbarItems>
-
+    <!--ContentPage.ToolbarItems>
         <ToolbarItem 
         IconImageSource="menu.png"
         Clicked="ToolbarItem_Clicked"
         Order="Primary"
         Priority="0"/>
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems-->
 
     <Grid>
         <Grid RowSpacing="0" Grid.Row="0" IsVisible="True" x:Name="main_view" >
@@ -502,7 +503,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                 <!--MenuItem Footer-->
                 <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" x:Name="BoxPlus" />
                 <Grid Grid.Row="2" Padding="10,0,0,0">
-                    <ImageButton Source="plus.png" 
+                    <ImageButton Source="plus.png" WidthRequest="50"
                              BackgroundColor="{StaticResource TransparentBackground}" 
                              Clicked="Bauteil_Einfügen_Clicked" x:Name="ButtonPlus" 
                              HorizontalOptions="Start"/>
@@ -677,7 +678,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                 <Grid Grid.Row="2" Padding="10,0,0,0">
                     <ImageButton Source="plus.png" 
                              BackgroundColor="{StaticResource TitleBackgroundColor}" 
-                             Clicked="Bauteil_Einfügen_Clicked" 
+                             Clicked="Bauteil_Einfügen_Clicked" WidthRequest="50"
                              HorizontalOptions="Start"/>
                 </Grid>
             </Grid>
@@ -808,6 +809,11 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
 
+                <Label Text="Kein Befestiger vorhanden." FontAttributes="Bold" FontSize="{Binding SizeDefault}"
+                       x:Name="LabelKeinBefestiger"
+                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor},Dark={StaticResource DarkSecondaryColor}}"
+                       Padding="10" Grid.Row="0" IsVisible="True"/>              
+
                 <!--Basis-->
                 <Grid x:Name="FrameBefestigerBasis" Grid.Row="0">
                     <Grid.RowDefinitions>
@@ -922,7 +928,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                 <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2"/>
                 <Grid Grid.Row="2" Padding="10,0,0,0">
                     <ImageButton Source="material_neu.png" BackgroundColor="{StaticResource TransparentBackground}" 
-                             Clicked="Befestiger_Einfügen_Clicked" 
+                             Clicked="Befestiger_Einfügen_Clicked" WidthRequest="50"
                              HorizontalOptions="Start"/>
                 </Grid>
 

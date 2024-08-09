@@ -6,15 +6,18 @@
 x:DataType="models:EinstellungModel"
              NavigationPage.HasBackButton="False">
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
-            <ImageButton Source="back.png" Clicked="Back_Clicked" 
-                         BackgroundColor="{StaticResource TransparentBackground}" 
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+            <ImageButton Source="back.png" Clicked="Back_Clicked" Grid.Column="0"
+                         BackgroundColor="{StaticResource TransparentBackground}"
                          HorizontalOptions="Start"/>
-
-            <Label Text="Menü" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"
-                   TextColor="{StaticResource TitleTextColor}" 
+            <Label Text="Menü" HorizontalOptions="Start"  VerticalOptions="CenterAndExpand" 
+                   TextColor="{StaticResource TitleTextColor}" Grid.Column="1"
                    FontSize="Title" FontAttributes="Bold"/>
-        </StackLayout>
+        </Grid>
     </NavigationPage.TitleView>
     
     <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"

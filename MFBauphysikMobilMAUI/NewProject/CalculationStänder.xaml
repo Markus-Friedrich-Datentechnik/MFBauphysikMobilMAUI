@@ -15,17 +15,18 @@
                        TextColor="{StaticResource TitleTextColor}" VerticalOptions="CenterAndExpand"
                            FontSize="Medium" FontAttributes="Bold"/>
             </StackLayout>
+            <ImageButton Source="menu.png" BackgroundColor="{StaticResource TransparentBackground}"
+                         WidthRequest="40" Clicked="ToolbarItem_Clicked"/>
         </StackLayout>
     </NavigationPage.TitleView>
 
-    <ContentPage.ToolbarItems>
-
+    <!--ContentPage.ToolbarItems>
         <ToolbarItem 
             IconImageSource="menu.png"
             Clicked="ToolbarItem_Clicked"            
             Order="Primary"
             Priority="0"/>
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems-->
 
     <Grid>
         <Grid RowSpacing="0" Grid.Row="0" x:Name="main_view" IsVisible="True"
@@ -493,7 +494,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                 <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" x:Name="BoxPlus"/>
                 <Grid Grid.Row="2" Padding="20,0,0,0">
                     <ImageButton  Source="plus.png" BackgroundColor="{StaticResource TitleBackgroundColor}" 
-           Clicked="Bauteil_Einfügen_Clicked" x:Name="ButtonPlus"
+           Clicked="Bauteil_Einfügen_Clicked" x:Name="ButtonPlus" WidthRequest="50"
            HorizontalOptions="Start"/>
                 </Grid>
             </Grid>
@@ -662,7 +663,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                 <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2"/>
                 <Grid Grid.Row="2" Padding="20,0,0,0">
                     <ImageButton  Source="plus.png" BackgroundColor="{StaticResource TitleBackgroundColor}" 
-           Clicked="Bauteil_Einfügen_Clicked"
+           Clicked="Bauteil_Einfügen_Clicked" WidthRequest="50"
            HorizontalOptions="Start"/>
 
                 </Grid>
@@ -911,7 +912,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
 
                 <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" />
                 <Grid Grid.Row="2" Padding="20,0,0,0">
-                    <ImageButton Source="material_neu.png" 
+                    <ImageButton Source="material_neu.png" WidthRequest="50"
                              BackgroundColor="{StaticResource TransparentBackground}" 
                              Clicked="Befestiger_Einfügen_Clicked"
                              HorizontalOptions="Start"/>

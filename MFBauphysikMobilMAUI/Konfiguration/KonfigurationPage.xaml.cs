@@ -38,6 +38,7 @@ namespace MFBauphysikMobilMAUI.Konfiguration
         public double Micro_OldValue { get; set; }
         public double Title_OldValue { get; set; }
         public string Mode { get; set; }
+        public string Device_Mode { get; set; } 
         public KonfigurationPage(EinstellungModel konfig)
         {
             if (konfig == null) 
@@ -76,6 +77,15 @@ namespace MFBauphysikMobilMAUI.Konfiguration
                     darkmodus.IsChecked= true; break;
             }
             Mode = App.Current.UserAppTheme.ToString();
+            Device_Mode = App.Current.PlatformAppTheme.ToString();
+            if(Device_Mode == "Light")
+            {
+                label_mode.Text = "Hell";
+            }
+            else if(Device_Mode == "Dark")
+            {
+                label_mode.Text= "Dunkel";
+            }
         }
 
 

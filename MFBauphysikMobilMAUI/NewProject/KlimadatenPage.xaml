@@ -7,13 +7,14 @@
 
 
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
-            <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}" HorizontalOptions="Start" Clicked="Back_Clicked"/>
-            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+        <Grid>
+            <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}" 
+                         Grid.Column="0"
+                         HorizontalOptions="Start" Clicked="Back_Clicked"/>
                 <Label Text="Klimadaten" HorizontalOptions="Center" TextColor="{StaticResource TitleTextColor}" 
+                       Grid.Column="1"
                            FontSize="{Binding SizeTitle}" FontAttributes="Bold" VerticalOptions="CenterAndExpand" />
-            </StackLayout>
-        </StackLayout>
+        </Grid>
     </NavigationPage.TitleView>
 
     <ContentPage.Resources>

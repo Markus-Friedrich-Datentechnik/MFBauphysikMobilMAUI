@@ -104,15 +104,17 @@
 	  <None Remove="Resources\AppIcon\appicon.svg" />
 	  <None Remove="Resources\AppIcon\launcher_foreground.png" />
 	  <None Remove="Resources\Images\back.png" />
+	  <None Remove="Resources\Images\back_old.png" />
 	  <None Remove="Resources\Images\check.png" />
 	  <None Remove="Resources\Images\down.png" />
 	  <None Remove="Resources\Images\ic_edit.png" />
 	  <None Remove="Resources\Images\material.png" />
 	  <None Remove="Resources\Images\material_neu.png" />
 	  <None Remove="Resources\Images\menu.png" />
+	  <None Remove="Resources\Images\menu_old.png" />
 	  <None Remove="Resources\Images\next.png" />
+	  <None Remove="Resources\Images\next_old.png" />
 	  <None Remove="Resources\Images\options.png" />
-	  <None Remove="Resources\Images\options_weiss.png" />
 	  <None Remove="Resources\Images\plus.png" />
 	  <None Remove="Resources\Images\suchen_2.png" />
 	  <None Remove="Resources\Images\tools.png" />
@@ -136,7 +138,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	   <MauiIcon Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'" Include="Resources\AppIcon\appiconandroid.svg" Color="#ffffff" ForegroundScale="0.85" />
+	   <MauiIcon Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'" Include="Resources\AppIcon\appiconandroid.svg" Color="#ffffff" ForegroundScale="0.65" />
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" Color="#ffffff" />
 	</ItemGroup>
 
@@ -158,6 +160,9 @@
 	<ItemGroup>
 	  <Compile Update="NewProject\NewPage.xaml.cs">
 	    <DependentUpon>NewPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="NewProject\StänderPage.xaml.cs">
+	    <DependentUpon>StänderPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
@@ -231,7 +236,7 @@
 	  <MauiXaml Update="NewProject\StänderEinfügen.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="NewProject\StänderPafe.xaml">
+	  <MauiXaml Update="NewProject\StänderPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Sortieren\SortierenPage.xaml">

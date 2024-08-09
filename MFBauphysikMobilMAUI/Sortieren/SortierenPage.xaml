@@ -8,16 +8,17 @@
     
     
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.6*"/>
+            </Grid.ColumnDefinitions>
             <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}" 
-                         HorizontalOptions="Start" Clicked="Back_Clicked"/>
-
-            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">               
-                <Label Text="Sortieren" HorizontalOptions="Center" FontSize="Title" 
-                       VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="Start" Clicked="Back_Clicked" Grid.Column="0"/>
+                <Label Text="Sortieren" HorizontalOptions="Start" FontSize="Title" 
+                       VerticalOptions="CenterAndExpand" Grid.Column="1" FontAttributes="Bold"
                        TextColor="{StaticResource TitleTextColor}"/>
-            </StackLayout>           
-        </StackLayout>
+        </Grid>
     </NavigationPage.TitleView>
     
     
