@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Microsoft.Maui.Controls.Xaml;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui;
+using MFBauphysikMobil.NewProject;
 
 namespace MFBauphysikMobilMAUI.NewProject
 {
@@ -140,7 +141,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     ProjectName = name,
                     BV = bv,
                 };
-                await Navigation.PushAsync(new Musteraufbauten(neu));
+                await Navigation.PushAsync(new TestMusteraufbauten(neu));
             }
         }
 

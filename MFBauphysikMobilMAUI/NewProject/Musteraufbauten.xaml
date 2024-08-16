@@ -52,16 +52,30 @@
               ItemSelected="OnItemSelected">
             <ListView.ItemTemplate >
                 <DataTemplate>
-                    <custom:MyViewCell SelectedBackGroundColor="{StaticResource TextColor Blue}"
+                    <custom:MyViewCell SelectedBackGroundColor="Green"
                                        UnselectedBackgroundColor="{StaticResource TransparentBackground}">
                             <Label Text="{Binding MusterName}"  Padding="10"
                                FontSize="{Binding SizeClass}"
                           TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-                    </custom:MyViewCell>
+                    </custom:MyViewCell>                    
                 </DataTemplate>
 
             </ListView.ItemTemplate>
         </ListView>
+        <!--CollectionView x:Name="listView" Grid.Row="1"
+                        BackgroundColor="{StaticResource TransparentBackground}"
+                        SelectionChanged="listView_SelectionChanged"
+                        SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding MusterName}" Padding="10"
+                               FontSize="{Binding SizeClass}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
+                    </ViewCell>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView-->
       
     </Grid>
 

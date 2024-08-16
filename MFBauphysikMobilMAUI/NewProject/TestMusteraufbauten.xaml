@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MFBauphysikMobil.NewProject.TestMusteraufbauten"
+             xmlns:custom ="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer" 
+             NavigationPage.HasBackButton="false">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}" 
+                      HorizontalOptions="Start" Clicked="Back_Clicked"/>
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Label Text="Musteraufbauten" HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="CenterAndExpand"
+                    TextColor="{StaticResource TitleTextColor}" FontSize="Title" FontAttributes="Bold"/>
+            </StackLayout>
+            <ImageButton Source="next.png" BackgroundColor="{StaticResource TransparentBackground}" Margin="0,0,10,0"
+                      HorizontalOptions="End" IsVisible="true" Clicked="Next_Clicked" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" 
+                                    Value="{StaticResource TextColor Blue}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    
+    
+    <StackLayout>
+        <CollectionView ItemsSource="{Binding Aufbau}"
+                    SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Padding="10,10,0,0"
+                           Text="{Binding MusterName}" />
+                        <BoxView HeightRequest="1" BackgroundColor="{StaticResource Gray100}"
+                                 Grid.Row="1" VerticalOptions="End"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

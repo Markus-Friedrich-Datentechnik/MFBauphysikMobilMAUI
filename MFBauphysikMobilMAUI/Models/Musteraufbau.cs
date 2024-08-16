@@ -10,7 +10,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace MFBauphysikMobilMAUI.Models
 {
-    public class Musteraufbau : ObservableObject, INotifyPropertyChanged
+   /* public class Musteraufbau : ObservableObject, INotifyPropertyChanged
     {
         private string _musterName;
         public string MusterName 
@@ -29,8 +29,11 @@ namespace MFBauphysikMobilMAUI.Models
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
+        }      
+    }*/
 
-      
+    public class Musteraufbau
+    {
+        public string MusterName { get; set; }
     }
 }

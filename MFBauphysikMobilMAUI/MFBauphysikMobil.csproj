@@ -239,6 +239,9 @@
 	  <MauiXaml Update="NewProject\StänderPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="NewProject\TestMusteraufbauten.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Sortieren\SortierenPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

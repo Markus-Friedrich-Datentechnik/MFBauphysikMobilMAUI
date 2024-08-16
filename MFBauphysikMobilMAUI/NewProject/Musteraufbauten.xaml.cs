@@ -669,7 +669,6 @@ namespace MFBauphysikMobilMAUI.NewProject
                     ID = project.ID,
                 },
 
-
                 new MainModel
                 {
                     MusterName = "KSD_EPS035_PVC",
@@ -738,5 +737,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             var item = _muster;
             listView.ItemsSource = item.Where(p => p.MusterName.ToLower().Contains(e.NewTextValue)).OrderBy(p => p.MusterName);
         }
+
+
     }
 }
