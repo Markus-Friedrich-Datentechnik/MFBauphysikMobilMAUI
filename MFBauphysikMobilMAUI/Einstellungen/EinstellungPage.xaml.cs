@@ -150,7 +150,7 @@ namespace MFBauphysikMobilMAUI.Einstellungen
                 
         //Zeiteinstellung für die automatische Aktualisierung
         //Nach unten wischen
-        private void Swiped_Down(object sender, SwipedEventArgs e)
+       /* private void Swiped_Down(object sender, SwipedEventArgs e)
         {
             string takt = text1.Text;
             switch (takt)
@@ -196,10 +196,10 @@ namespace MFBauphysikMobilMAUI.Einstellungen
                     text3.Text = "alle 15 min";
                     break;
             }
-        }
+        }*/
 
         //Nach oben wischen
-        private void Swiped_Up(object sender, SwipedEventArgs e)
+       /* private void Swiped_Up(object sender, SwipedEventArgs e)
         {
             string takt = text1.Text;
             switch (takt)
@@ -245,6 +245,6 @@ namespace MFBauphysikMobilMAUI.Einstellungen
                     text3.Text = "alle 15 min";
                     break;
             }
-        }
+        }*/
     }
 }

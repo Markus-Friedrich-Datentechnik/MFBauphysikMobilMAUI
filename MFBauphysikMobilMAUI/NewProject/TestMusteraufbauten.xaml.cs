@@ -1,5 +1,7 @@
 using MFBauphysikMobil.ViewModels;
+using MFBauphysikMobilMAUI;
 using MFBauphysikMobilMAUI.Models;
+using MFBauphysikMobilMAUI.NewProject;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -17,6 +19,7 @@ public partial class TestMusteraufbauten : ContentPage, INotifyPropertyChanged
     int selectionCount = 1;
 
     public ObservableCollection<MainModel> Aufbau { get; private set; }
+    public ObservableCollection<MainModel> Musteraufbau { get; private set; }
     public IList<MainModel> EmptyAufbau { get; private set; }
 
     public MainModel SelectedAufbau
@@ -57,7 +60,6 @@ public partial class TestMusteraufbauten : ContentPage, INotifyPropertyChanged
     public TestMusteraufbauten(MainModel project)
     {
         //BindingContext = new MusterViewModel();
-        
         InitializeComponent();
         main_model = new MainModel
         {
@@ -717,9 +719,11 @@ public partial class TestMusteraufbauten : ContentPage, INotifyPropertyChanged
             BV_Ersatz = project.BV_Ersatz,
             ID = project.ID,
         });
-
-        Aufbau = new ObservableCollection<MainModel>(source);
+        
+        Aufbau = new ObservableCollection<MainModel>(source.OrderBy(p => p.MusterName));
+        BindingContext = this;
     }
+    
     void AufbauSelectionChanged()
     {
         SelectedAufbauMessage = $"Selection {selectionCount}:{SelectedAufbau.MusterName}";
@@ -742,5 +746,44 @@ public partial class TestMusteraufbauten : ContentPage, INotifyPropertyChanged
     }
     private async void Next_Clicked(object sender, EventArgs e)
     {
+        if (main_model == null)
+        {
+            await DisplayAlert("Achtung", "Bitte einen Musteraufbau auswählen", "OK");
+        }
+        else
+        {
+            if(main_model.MusterName == "Sparrendach")
+            {
+                await App.Database.SaveItemAsync(main_model);
+                var page = new CalculationSparren(main_model);
+                await Navigation.PushAsync(page);
+            }
+            else if(main_model.MusterName == "Ständerwand")
+            {
+                await App.Database.SaveItemAsync(main_model);
+                var page = new CalculationStänder(main_model);
+                await Navigation.PushAsync(page);
+            }
+            else
+            {
+                await App.Database.SaveItemAsync(main_model);
+                var page = new CalculationPage(main_model);
+                await Navigation.PushAsync(page);
+            }
+        }
+
+    }
+    private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        var item = source;
+        collection_view.ItemsSource = item.Where(p => p.MusterName.ToLower().Contains(e.NewTextValue)).OrderBy(p => p.MusterName);
+        //listView.ItemsSource = item.Where(p => p.MusterName.ToLower().Contains(e.NewTextValue)).OrderBy(p => p.MusterName);
+    }
+
+    private void collection_view_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {        
+        MainModel selectedAufbau = e.CurrentSelection.FirstOrDefault() as MainModel;       
+        selectedAufbau.Selected = 0;
+        main_model = selectedAufbau;
     }
 }

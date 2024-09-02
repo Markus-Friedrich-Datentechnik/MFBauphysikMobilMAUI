@@ -58,7 +58,7 @@ namespace MFBauphysikMobilMAUI.Konfiguration
             Micro_OldValue = konfig.MicroSize;
             Title_OldValue = konfig.TitleSize;
 
-            slider.Value = (konfig.DefaultSize / 14) * 100;
+            slider.Value = (konfig.DefaultSize / 16) * 100;
 
             design_label.FontSize = Setting.Size_Default;
             gerätModus.FontSize = Setting.Size_Default;
@@ -170,11 +170,11 @@ namespace MFBauphysikMobilMAUI.Konfiguration
         {
             var konfig = BindingContext as EinstellungModel;
             double value = e.NewValue;
-            konfig.DefaultSize = 14 * (value / 100);
-            konfig.MicroSize = 9.8 * (value / 100);
-            konfig.MediumSize = 16.8 * (value / 100);
-            konfig.TitleSize = 23.8 * (value / 100);
-            konfig.LargeSize = 21 * (value / 100);
+            konfig.DefaultSize = 16 * (value / 100);
+            konfig.MicroSize = 11.2 * (value / 100);
+            konfig.MediumSize = 19.2 * (value / 100);
+            konfig.TitleSize = 27.2 * (value / 100);
+            konfig.LargeSize = 24 * (value / 100);
             Textbeispiel.FontSize = konfig.DefaultSize;
             CheckButton.IsVisible = true;
             KonfigUpdated?.Invoke(this, konfig);
@@ -184,11 +184,11 @@ namespace MFBauphysikMobilMAUI.Konfiguration
         {
             slider.Value = 50;             
             var konfig = BindingContext as EinstellungModel;
-            konfig.DefaultSize = 14 * 0.5;
-            konfig.MicroSize = 9.8 * 0.5;
-            konfig.MediumSize = 16.8 * 0.5;
-            konfig.TitleSize = 23.8 * 0.5;
-            konfig.LargeSize = 21 * 0.5;
+            konfig.DefaultSize = 16 * 0.5;
+            konfig.MicroSize = 11.2 * 0.5;
+            konfig.MediumSize = 19.2 * 0.5;
+            konfig.TitleSize = 27.2 * 0.5;
+            konfig.LargeSize = 24 * 0.5;
             Textbeispiel.FontSize = konfig.DefaultSize;
             KonfigUpdated?.Invoke(this, konfig);
         }
@@ -196,11 +196,11 @@ namespace MFBauphysikMobilMAUI.Konfiguration
         {
             slider.Value = 75;
             var konfig = BindingContext as EinstellungModel;
-            konfig.DefaultSize = 14 * 0.75;
-            konfig.MicroSize = 9.8 * 0.75;
-            konfig.MediumSize = 16.8 * 0.75;
-            konfig.TitleSize = 23.8 * 0.75;
-            konfig.LargeSize = 21 * 0.75;
+            konfig.DefaultSize = 16 * 0.75;
+            konfig.MicroSize = 11.2 * 0.75;
+            konfig.MediumSize = 19.2 * 0.75;
+            konfig.TitleSize = 27.2 * 0.75;
+            konfig.LargeSize = 24 * 0.75;
             Textbeispiel.FontSize = konfig.DefaultSize;
             KonfigUpdated?.Invoke(this, konfig);
         }
@@ -208,11 +208,11 @@ namespace MFBauphysikMobilMAUI.Konfiguration
         {
             slider.Value = 100;
             var konfig = BindingContext as EinstellungModel;
-            konfig.DefaultSize = 14 ;
-            konfig.MicroSize = 9.8 ;
-            konfig.MediumSize = 16.8;
-            konfig.TitleSize = 23.8;
-            konfig.LargeSize = 21;
+            konfig.DefaultSize = 16 ;
+            konfig.MicroSize = 11.2 ;
+            konfig.MediumSize = 19.2 ;
+            konfig.TitleSize = 27.2 ;
+            konfig.LargeSize = 24 ;
             Textbeispiel.FontSize = konfig.DefaultSize;
             KonfigUpdated?.Invoke(this, konfig);
         }
@@ -220,11 +220,11 @@ namespace MFBauphysikMobilMAUI.Konfiguration
         {
             slider.Value = 125;
             var konfig = BindingContext as EinstellungModel;
-            konfig.DefaultSize = 14 * 1.25;
-            konfig.MicroSize = 9.8 * 1.25;
-            konfig.MediumSize = 16.8 * 1.25;
-            konfig.TitleSize = 23.8 * 1.25;
-            konfig.LargeSize = 21 * 1.25;
+            konfig.DefaultSize = 16 * 1.25;
+            konfig.MicroSize = 11.2 * 1.25;
+            konfig.MediumSize = 19.2 * 1.25;
+            konfig.TitleSize = 27.2 * 1.25;
+            konfig.LargeSize = 24 * 1.25;
             Textbeispiel.FontSize = konfig.DefaultSize;
             KonfigUpdated?.Invoke(this, konfig);
         }
@@ -232,11 +232,11 @@ namespace MFBauphysikMobilMAUI.Konfiguration
         {
             slider.Value = 150;
             var konfig = BindingContext as EinstellungModel;
-            konfig.DefaultSize = 14 * 1.5;
-            konfig.MicroSize = 9.8 * 1.5;
-            konfig.MediumSize = 16.8 * 1.5;
-            konfig.TitleSize = 23.8 * 1.5;
-            konfig.LargeSize = 21 * 1.5;
+            konfig.DefaultSize = 16 * 1.5;
+            konfig.MicroSize = 11.2 * 1.5;
+            konfig.MediumSize = 19.2 * 1.5;
+            konfig.TitleSize = 27.2 * 1.5;
+            konfig.LargeSize = 24 * 1.5;
             Textbeispiel.FontSize = konfig.DefaultSize;
             KonfigUpdated?.Invoke(this, konfig);
         }

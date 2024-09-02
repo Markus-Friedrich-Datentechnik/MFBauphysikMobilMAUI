@@ -116,6 +116,7 @@ namespace MFBauphysikMobilMAUI
         {
             base.OnAppearing();
             var itemsource = await App.Database.GetItemAsync();
+            Setting.Size_Default = 16;
             foreach (MainModel i in itemsource)
             {
                 i.SizeClass = Setting.Size_Default;                
@@ -138,13 +139,11 @@ namespace MFBauphysikMobilMAUI
             {
                 ListProjekt.ItemsSource = itemsource.OrderBy(d => d.ProjectName);
             }
-
             else
             {
                 ListProjekt.ItemsSource = itemsource.OrderByDescending(d => d.ProjectName);
             }
         }
-
         //Neues Projekt erstellen
         private async void PlusClicked(object sender, EventArgs e)
         {

@@ -7,11 +7,11 @@ namespace MFBauphysikMobilMAUI.Helpers
     public static class Setting
     {
         const int theme = 0;
-        const double size_default = 14;
-        const double size_large = 21;
-        const double size_medium = 16.8;
-        const double size_micro = 9.8;
-        const double size_title = 23.8;
+        const double size_default = 16;
+        const double size_large = 24;
+        const double size_medium = 19.2;
+        const double size_micro = 11.2;
+        const double size_title = 27.2;
         public static int Theme
         {
             get => Preferences.Get(nameof(Theme), theme);
