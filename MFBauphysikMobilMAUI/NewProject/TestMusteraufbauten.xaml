@@ -60,7 +60,7 @@
             <!--CollectionView-->
             <ScrollView>
                 <CollectionView ItemsSource="{Binding Aufbau}"
-                                SelectionChanged="collection_view_SelectionChanged"
+                                SelectionChanged="collection_view_SelectionChanged" BackgroundColor="Transparent"
                     SelectionMode="Single" x:Name="collection_view">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -70,7 +70,7 @@
                                     <RowDefinition Height="1"/>
                                 </Grid.RowDefinitions>
                                 <Label Grid.Row="0" Padding="10,10,0,0"
-                           Text="{Binding MusterName}" />
+                           Text="{Binding MusterName}" FontSize="{Binding SizeClass}" />
                                 <BoxView HeightRequest="1" BackgroundColor="{StaticResource Gray100}"
                                  Grid.Row="1" VerticalOptions="End"/>
                             </Grid>

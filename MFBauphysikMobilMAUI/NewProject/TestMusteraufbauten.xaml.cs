@@ -1,5 +1,6 @@
 using MFBauphysikMobil.ViewModels;
 using MFBauphysikMobilMAUI;
+using MFBauphysikMobilMAUI.Helpers;
 using MFBauphysikMobilMAUI.Models;
 using MFBauphysikMobilMAUI.NewProject;
 using System.Collections.ObjectModel;
@@ -721,6 +722,10 @@ public partial class TestMusteraufbauten : ContentPage, INotifyPropertyChanged
         });
         
         Aufbau = new ObservableCollection<MainModel>(source.OrderBy(p => p.MusterName));
+        foreach(MainModel a in Aufbau)
+        {
+            a.SizeClass = Setting.Size_Default;
+        }
         BindingContext = this;
     }
     

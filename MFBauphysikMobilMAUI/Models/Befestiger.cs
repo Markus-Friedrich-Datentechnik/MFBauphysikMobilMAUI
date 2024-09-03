@@ -101,6 +101,17 @@ namespace MFBauphysikMobilMAUI.Models
             }
         }
 
+        private double? _size;
+        public double? Size_Def
+        {
+            get { return _size; }
+            set
+            {
+                if (_size == value) return;
+                _size = value;
+                OnPropertyChanged(nameof(Size_Def));
+            }
+        }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

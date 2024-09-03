@@ -116,7 +116,6 @@ namespace MFBauphysikMobilMAUI
         {
             base.OnAppearing();
             var itemsource = await App.Database.GetItemAsync();
-            Setting.Size_Default = 16;
             foreach (MainModel i in itemsource)
             {
                 i.SizeClass = Setting.Size_Default;                
@@ -208,10 +207,7 @@ namespace MFBauphysikMobilMAUI
             ListProjekt.ItemsSource = itemsource.Where(p => p.ProjectName.ToLower().Contains(e.NewTextValue)).OrderByDescending(p => p.Date);
 
         }
-        private  async void Edit_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Test());
-        }
+
         private async void OnItemClicked(object sender, EventArgs e)
         {
             string action = await DisplayActionSheet("Option", "Abbrechen", null, "Löschen", "Umbenennen");

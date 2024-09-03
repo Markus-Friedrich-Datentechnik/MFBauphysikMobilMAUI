@@ -812,7 +812,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                 <Label Text="Kein Befestiger vorhanden." FontAttributes="Bold" FontSize="{Binding SizeDefault}"
                        x:Name="LabelKeinBefestiger"
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor},Dark={StaticResource DarkSecondaryColor}}"
-                       Padding="10" Grid.Row="0" IsVisible="True"/>              
+                       Padding="10" Grid.Row="0" IsVisible="False"/>              
 
                 <!--Basis-->
                 <Grid x:Name="FrameBefestigerBasis" Grid.Row="0">

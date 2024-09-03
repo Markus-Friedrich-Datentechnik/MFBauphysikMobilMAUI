@@ -12,7 +12,7 @@
                          HorizontalOptions="Start" Clicked="Back_Clicked" Grid.Column="0"/>
                 <Label Text="Konstruktion" HorizontalOptions="CenterAndExpand" 
                        TextColor="{StaticResource TitleTextColor}" Grid.Column="1"
-                       FontSize="{Binding SizeTitle}" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                       FontSize="Title" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
         </Grid>
     </NavigationPage.TitleView>
     

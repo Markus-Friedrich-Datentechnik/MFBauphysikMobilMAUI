@@ -7489,6 +7489,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             main_model.Date = DateTime.Now;
             await App.Database.UpdateItemAsync(main_model);
             await Navigation.PushAsync(newBasisBefestiger);
+            //await Navigation.PushAsync(new NavigationPage (new Test()));
         }
         //Einfügen von Bauteile
         private async void Bauteil_Einfügen_Clicked(object sender, EventArgs e)

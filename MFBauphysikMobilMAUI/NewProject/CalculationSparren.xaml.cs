@@ -1067,7 +1067,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             listBefestiger.ItemsSource = main_model.Befestiger_Basis;
             if (main_model.Befestiger_Basis.Count != 0)
             {
-                LabelKeinBefestiger.IsVisible = false;
+               // LabelKeinBefestiger.IsVisible = false;
                 FrameBefestigerBasis.IsVisible = true;
             }
             else
@@ -1162,7 +1162,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             listBefestigerSparren.ItemsSource = main_model.Befestiger_Sparren;
             if (main_model.Befestiger_Sparren.Count != 0)
             {
-                LabelKeinBefestiger.IsVisible = false;
+                //LabelKeinBefestiger.IsVisible = false;
                 FrameBefestigerSparren.IsVisible = true;
             }
             else
@@ -2311,11 +2311,11 @@ namespace MFBauphysikMobilMAUI.NewProject
             {
                 FrameBefestigerBasis.IsVisible = false;
                 FrameBefestigerSparren.IsVisible = false;
-                LabelKeinBefestiger.IsVisible = true;
+               // LabelKeinBefestiger.IsVisible = true;
             }
             else
             {
-                LabelKeinBefestiger.IsVisible = false;
+               // LabelKeinBefestiger.IsVisible = false;
                 if (main_model.Befestiger_Basis.Count != 0)
                 {
                     FrameBefestigerBasis.IsVisible = true;

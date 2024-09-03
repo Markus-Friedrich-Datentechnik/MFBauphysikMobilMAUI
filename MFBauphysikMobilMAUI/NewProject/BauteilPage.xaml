@@ -40,19 +40,16 @@
                   SeparatorColor="{StaticResource TextColor Blue}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <custom:MyViewCell SelectedBackGroundColor="{StaticResource TextColor Blue}">
-                        <Grid Padding="10,0,0,0">
+                    <ViewCell>
                             <StackLayout Orientation="Vertical">
                                 <Label Text="{Binding B}" Padding="10" FontSize="{Binding SizeClass}"
                                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-
                             </StackLayout>
-                        </Grid>
-                    </custom:MyViewCell>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-       
+
 
     </StackLayout>
 </ContentPage>

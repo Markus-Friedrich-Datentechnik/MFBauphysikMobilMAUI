@@ -7,116 +7,128 @@ using MFBauphysikMobilMAUI.Helpers;
 using System.Web;
 using System.Xml;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Windows.Input;
+using System.Runtime.CompilerServices;
+using MFBauphysikMobilMAUI.NewProject;
 namespace MFBauphysikMobilMAUI;
 
-public partial class Test : ContentPage
+public partial class Test : ContentPage, INotifyPropertyChanged
 {
-    public EventHandler<Bauteile>? BauteilAdded;
-    ObservableCollection<Basis> _basis = new ObservableCollection<Basis>();
-    public ObservableCollection<Basis> BasisList
+    readonly IList<Befestiger> source;
+    Befestiger selectedAufbau;
+    int selectionCount = 1;
+
+    public ObservableCollection<Befestiger> Aufbau { get; private set; }
+    public IList<Befestiger> EmptyAufbau { get; private set; }
+
+    public Befestiger SelectedAufbau
     {
-        get { return _basis; }
+        get
+        {
+            return selectedAufbau;
+        }
         set
         {
-            _basis = value;
-            OnPropertyChanged(nameof(BasisList));
+            if (selectedAufbau != value)
+            {
+                selectedAufbau = value;
+            }
         }
     }
+
+    ObservableCollection<object> selectedAufbaus;
+    public ObservableCollection<object> SelectedAufbaus
+    {
+        get
+        {
+            return selectedAufbaus;
+        }
+        set
+        {
+            if (selectedAufbaus != value)
+            {
+                selectedAufbaus = value;
+            }
+        }
+    }
+    List<BF>? _befestiger;
+
+
+    public string SelectedAufbauMessage { get; private set; }
+
+    public ICommand AufbauSelectionChangedCommand => new Command(AufbauSelectionChanged);
     public Test()
     {
         InitializeComponent();
 
+        var assembly = (typeof(App)).Assembly;
+        Stream stream = assembly.GetManifestResourceStream("MFBauphysikMobil.BefestigerExport.xml");
+        using (var reader = new StreamReader(stream))
+        {
+            var serializer = new XmlSerializer(typeof(List<BF>));
+            _befestiger = (List<BF>)serializer.Deserialize(reader);
+        }
+        source = new List<Befestiger>();
+        CreateAufbauCollection();
 
-        BasisList.Add(new Basis()
-        {
-            ID_Sort = 1,
-            Bezeichnung = "OSB-Platten",
-            R = 0.169231,
-            Dicke = 0.022,
-            Wärmeleitfähigkeit = 0.13,
-            Rohdichte = 650.00,
-            Kapillar = true,
-            Holzwerkstoff = true,
-            KeineLuft = true,
-            Dampfdiffusionswiderstand_Min = 30.0,
-            Dampfdiffusionswiderstand_Max = 50.0,
-            Sd_Min = 0.66,
-            Sd_Max = 1.10,
-        });
-        BasisList.Add(new Basis()
-        {
-            ID_Sort = 2,
-            Bezeichnung = "KSD",
-            R = 0.008824,
-            Dicke = 0.0015,
-            Wärmeleitfähigkeit = 0.17,
-            Rohdichte = 1000.0,
-            Kapillar = true,
-            sonstiges = true,
-            KeineLuft = true,
-            Sd_Min = 1500.00,
-            Sd_Max = 1500.00,
-            Fester_sd = true,
-            Dampfdiffusionswiderstand_Min = 1000000.00,
-            Dampfdiffusionswiderstand_Max = 1000000.00
-        });
-        BasisList.Add(new Basis()
-        {
-            ID_Sort = 3,
-            Bezeichnung = "EPS 035, mit Stufenfalz",
-            R = 5.142857,
-            Dicke = 0.18,
-            Wärmeleitfähigkeit = 0.03500,
-            Rohdichte = 30.0,
-            Kapillar = true,
-            sonstiges = true,
-            KeineLuft = true,
-            Sd_Min = 3.6,
-            Sd_Max = 18.00,
-            Dampfdiffusionswiderstand_Min = 20.00,
-            Dampfdiffusionswiderstand_Max = 100.00
-        });
-        BasisList.Add(new Basis()
-        {
-            ID_Sort = 4,
-            Bezeichnung = "Rohglasvlies",
-            R = 0.000100,
-            Dicke = 0.001,
-            Wärmeleitfähigkeit = 10.000000,
-            Rohdichte = 400.0,
-            sonstiges = true,
-            KeineLuft = true,
-            Sd_Min = 0.000,
-            Sd_Max = 0.00,
-            Dampfdiffusionswiderstand_Min = 1.0,
-            Dampfdiffusionswiderstand_Max = 1.0
-        });
-        BasisList.Add(new Basis()
-        {
-            ID_Sort = 5,
-            Bezeichnung = "PVC-P (DIN 16730)",
-            R = 0.00000,
-            Dicke = 0.0015,
-            Wärmeleitfähigkeit = 0.000000,
-            Rohdichte = 1200.0,
-            sonstiges = true,
-            Kapillar = true,
-            KeineLuft = true,
-            Fester_R = true,
-            Sd_Min = 15.000,
-            Sd_Max = 45.00,
-            Dampfdiffusionswiderstand_Min = 10000.00,
-            Dampfdiffusionswiderstand_Max = 30000.00
-        });
+        selectedAufbau = Aufbau.Skip(3).FirstOrDefault();
+        AufbauSelectionChanged();
 
-        listBefestiger.ItemsSource = BasisList;
-
+        SelectedAufbaus = new ObservableCollection<object>()
+        {
+            Aufbau[1], Aufbau[2], Aufbau[3]
+        };
+    }
+    void CreateAufbauCollection()
+    {
+        List<Befestiger> testList = new List<Befestiger>();
+        foreach (BF i in _befestiger)
+        {
+            source.Add(new Befestiger
+            {
+                Bezeichnung = i.B,
+                Wärmeleitfähigkeit_f = Convert.ToDouble(i.LR),
+                Durchmesser = Convert.ToDouble(i.DN),
+            });
+        }
+        Aufbau = new ObservableCollection<Befestiger>(source.OrderBy(p => p.Bezeichnung));
+        BindingContext = this;
+    }
+    void AufbauSelectionChanged()
+    {
+        SelectedAufbauMessage = $"Selection {selectionCount}:{SelectedAufbau.Bezeichnung}";
+        OnPropertyChanged("SelectedAufbauMessage");
+        selectionCount++;
     }
 
-    private void listBefestiger_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-    {
-        var selectedItem = (e.SelectedItem as WLG)!;
-        Console.WriteLine(selectedItem.B);
+    #region INotifyPropertyChanged
+    public event PropertyChangedEventHandler PropertyChanged;
 
+    void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+    #endregion
+
+    public void Back_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PopAsync();
+    }
+    private async void Next_Clicked(object sender, EventArgs e)
+    {
+        
+
+    }
+    private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        var item = source;
+        collection_view.ItemsSource = item.Where(p => p.Bezeichnung.ToLower().Contains(e.NewTextValue)).OrderBy(p => p.Bezeichnung);
+        //listView.ItemsSource = item.Where(p => p.MusterName.ToLower().Contains(e.NewTextValue)).OrderBy(p => p.MusterName);
+    }
+
+    private void collection_view_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {      
     }
 }
+
