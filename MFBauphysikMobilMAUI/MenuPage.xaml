@@ -9,12 +9,12 @@ x:DataType="models:EinstellungModel"
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="1.2*"/>
             </Grid.ColumnDefinitions>
             <ImageButton Source="back.png" Clicked="Back_Clicked" Grid.Column="0"
-                         BackgroundColor="{StaticResource TransparentBackground}"
+                         BackgroundColor="{StaticResource LabelButton}"
                          HorizontalOptions="Start"/>
-            <Label Text="Menü" HorizontalOptions="Start"  VerticalOptions="CenterAndExpand" 
+            <Label Text="Menü" HorizontalOptions="StartAndExpand"  VerticalOptions="CenterAndExpand" 
                    TextColor="{StaticResource TitleTextColor}" Grid.Column="1"
                    FontSize="Title" FontAttributes="Bold"/>
         </Grid>
