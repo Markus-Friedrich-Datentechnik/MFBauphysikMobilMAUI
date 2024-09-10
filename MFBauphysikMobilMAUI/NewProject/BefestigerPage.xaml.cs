@@ -94,7 +94,7 @@ namespace MFBauphysikMobilMAUI.NewProject
         public BefestigerPage()
         {
             InitializeComponent();
-            //  this.BindingContext = this;
+            this.BindingContext = this;
             var assembly = (typeof(App)).Assembly;
             Stream stream = assembly.GetManifestResourceStream("MFBauphysikMobil.BefestigerExport.xml");
             using (var reader = new StreamReader(stream))
@@ -102,14 +102,14 @@ namespace MFBauphysikMobilMAUI.NewProject
                 var serializer = new XmlSerializer(typeof(List<BF>));
                 _befestiger = (List<BF>)serializer.Deserialize(reader);
             }
-            //listBefestiger.ItemsSource = _befestiger.OrderBy(p => p.B);
-            /* foreach (BF i in _befestiger)
+            listBefestiger.ItemsSource = _befestiger.OrderBy(p => p.B);
+             foreach (BF i in _befestiger)
              {
                  i.SizeClass = Setting.Size_Default;
-             }*/
+             }
             SizeTitle = Setting.Size_Title;
             
-            source = new List<Befestiger>();
+           // source = new List<Befestiger>();
             /*CreateAufbauCollection();
 
             selectedAufbau = Aufbau.Skip(3).FirstOrDefault();
@@ -191,8 +191,8 @@ namespace MFBauphysikMobilMAUI.NewProject
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var itemsource = source!;
-            listBefestiger.ItemsSource = itemsource.Where(p => p.Bezeichnung.ToLower().Contains(e.NewTextValue)).OrderBy(p => p.Bezeichnung);
+            var itemsource = _befestiger!;
+            listBefestiger.ItemsSource = itemsource.Where(p => p.B.ToLower().Contains(e.NewTextValue)).OrderBy(p => p.B);
         }
 
         private void listBefestiger_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -207,10 +207,10 @@ namespace MFBauphysikMobilMAUI.NewProject
             };
         }
 
-        private void listBefestiger_SelectionChanged(object sender, SelectionChangedEventArgs e)
+      /*  private void listBefestiger_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Befestiger selectedItem = (e.CurrentSelection.FirstOrDefault() as Befestiger)!;
             NewItem = selectedItem;
-        }
+        }*/
     }
 }
