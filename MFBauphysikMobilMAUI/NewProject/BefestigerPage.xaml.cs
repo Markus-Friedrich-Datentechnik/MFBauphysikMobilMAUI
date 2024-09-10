@@ -124,8 +124,6 @@ namespace MFBauphysikMobilMAUI.NewProject
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            indicator_view.IsVisible = true;
-            main_view.IsVisible = false;
             CreateAufbauCollection();
 
             selectedAufbau = Aufbau.Skip(3).FirstOrDefault();
@@ -135,9 +133,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             {
             Aufbau[1], Aufbau[2], Aufbau[3]
             };
-            await Task.Delay(200);
-            indicator_view.IsVisible = false;
-            main_view.IsVisible = true;
+
         }
 
         void CreateAufbauCollection()

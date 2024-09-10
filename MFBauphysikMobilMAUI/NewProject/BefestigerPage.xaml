@@ -98,15 +98,6 @@
                     </CollectionView>
                 </ScrollView>
             </StackLayout>
-            <Grid Grid.Row="0" x:Name="indicator_view" IsVisible="False" HeightRequest="70">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="2*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <ActivityIndicator IsRunning="True" Color="{StaticResource TextColor Blue}" Grid.Row="0"/>
-                <Label Grid.Row="1" Text="Bitte warten..." HorizontalTextAlignment="Center"
-                       TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
-            </Grid>
         </Grid>
     </ScrollView>
 
