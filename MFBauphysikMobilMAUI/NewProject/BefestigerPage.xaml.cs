@@ -23,7 +23,7 @@ using System.Runtime.CompilerServices;
 namespace MFBauphysikMobilMAUI.NewProject
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BefestigerPage : ContentPage, INotifyPropertyChanged
+    public partial class BefestigerPage : ContentPage
     {
         private double _size_title;
         public double SizeTitle
@@ -90,7 +90,7 @@ namespace MFBauphysikMobilMAUI.NewProject
         }
         public string SelectedAufbauMessage { get; private set; }
 
-        public ICommand AufbauSelectionChangedCommand => new Command(AufbauSelectionChanged);
+       // public ICommand AufbauSelectionChangedCommand => new Command(AufbauSelectionChanged);
         public BefestigerPage()
         {
             InitializeComponent();
@@ -121,7 +121,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             };*/
         }
 
-        protected override async void OnAppearing()
+       /* protected override async void OnAppearing()
         {
             base.OnAppearing();
             CreateAufbauCollection();
@@ -134,9 +134,9 @@ namespace MFBauphysikMobilMAUI.NewProject
             Aufbau[1], Aufbau[2], Aufbau[3]
             };
 
-        }
+        }*/
 
-        void CreateAufbauCollection()
+      /*  void CreateAufbauCollection()
         {
             List<Befestiger> testList = new List<Befestiger>();
             foreach (BF i in _befestiger)
@@ -170,7 +170,7 @@ namespace MFBauphysikMobilMAUI.NewProject
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        #endregion
+        #endregion*/
 
         public async void Back_Clicked (object sender, EventArgs e)
         {
