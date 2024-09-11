@@ -104,6 +104,7 @@
 	  <None Remove="Resources\AppIcon\appicon.svg" />
 	  <None Remove="Resources\AppIcon\launcher_foreground.png" />
 	  <None Remove="Resources\Images\back.png" />
+	  <None Remove="Resources\Images\back1.png" />
 	  <None Remove="Resources\Images\back_old.png" />
 	  <None Remove="Resources\Images\check.png" />
 	  <None Remove="Resources\Images\down.png" />
@@ -113,6 +114,7 @@
 	  <None Remove="Resources\Images\menu.png" />
 	  <None Remove="Resources\Images\menu_old.png" />
 	  <None Remove="Resources\Images\next.png" />
+	  <None Remove="Resources\Images\next1.png" />
 	  <None Remove="Resources\Images\next_old.png" />
 	  <None Remove="Resources\Images\options.png" />
 	  <None Remove="Resources\Images\plus.png" />
