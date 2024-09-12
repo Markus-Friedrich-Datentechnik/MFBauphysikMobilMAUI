@@ -76,7 +76,8 @@
                         <SwipeView>
                             <SwipeView.RightItems>
                                 <SwipeItems>
-                                    <SwipeItem IconImageSource="options.png" Invoked="OnItemClicked"/>
+                                    <SwipeItem IconImageSource="swipe_loeschen.png" Invoked="OnItemClicked"/>
+                                    <SwipeItem IconImageSource="swipe_umbenennen.png" Invoked="OnRenameClicked"/>
                                 </SwipeItems>
                             </SwipeView.RightItems>
                             <Grid BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">

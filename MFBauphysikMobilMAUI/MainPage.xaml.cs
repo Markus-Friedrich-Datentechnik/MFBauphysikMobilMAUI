@@ -210,39 +210,40 @@ namespace MFBauphysikMobilMAUI
 
         private async void OnItemClicked(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("Option", "Abbrechen", null, "Löschen", "Umbenennen");
-            if (action == "Löschen")
+            //string action = await DisplayActionSheet("Option", "Abbrechen", null, "Löschen", "Umbenennen");
+            //if (action == "Löschen")
+            //{
+            MenuItem menu_item = (sender as MenuItem)!;
+            var item = (menu_item.BindingContext as MainModel)!;
+            var answer = await DisplayAlert("Achtung!", "Projekt wirklich löschen?", "Ja", "Nein");
+            if (answer == true)
             {
-                MenuItem menu_item = (sender as MenuItem)!;
-                var item = (menu_item.BindingContext as MainModel)!;
-                var answer = await DisplayAlert("Achtung!", "Projekt wirklich löschen?", "Ja", "Nein");
-                if (answer == true)
-                {
-                    await App.Database.DeleteItems(item);
-                    OnAppearing();
-                }
-            }
-            else if (action == "Umbenennen")
-            {
-                var menuItem = (sender as MenuItem)!;
-                var item = (menuItem.BindingContext as MainModel)!;
-                string result = await DisplayPromptAsync("Projektname", null, "OK", "Abbrechen", initialValue: item.ProjectName.ToString()) ;
-                if (item.ProjectName == result)
-                {
-
-                }
-                else
-                {
-                    if (!string.IsNullOrWhiteSpace(result))
-                    {
-                        item.ProjectName = result;
-                        item.Date = DateTime.Now;
-                    }
-                    await App.Database.UpdateItemAsync(item);
-                }
+                await App.Database.DeleteItems(item);
                 OnAppearing();
             }
+            //}
+        }
+        private async void OnRenameClicked(object sender, EventArgs e)
+        {
+            //  else if (action == "Umbenennen")
+            //{
+            var menuItem = (sender as MenuItem)!;
+            var item = (menuItem.BindingContext as MainModel)!;
+            string result = await DisplayPromptAsync("Projektname", null, "OK", "Abbrechen", initialValue: item.ProjectName.ToString());
+            if (item.ProjectName == result)
+            {
 
+            }
+            else
+            {
+                if (!string.IsNullOrWhiteSpace(result))
+                {
+                    item.ProjectName = result;
+                    item.Date = DateTime.Now;
+                }
+                await App.Database.UpdateItemAsync(item);
+            }
+            OnAppearing();
         }
     }
 }

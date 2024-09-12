@@ -3,7 +3,7 @@
 	<color name="launcher_background">#FFFFFF</color>
 	<color name="colorPrimary">#4D9AEF</color>
 	<!--color name="colorPrimaryDark">#303F9F</color-->
-	<color name="colorPrimaryDark">#303F9F</color>
+	<color name="colorPrimaryDark">#4D9AEF</color>
 	<color name="colorAccent">#4D9AEF</color>
 	<color name="colorControlNormal">#4D9AEF</color>
 	<color name="colorCursors">#4D9AEF</color>
