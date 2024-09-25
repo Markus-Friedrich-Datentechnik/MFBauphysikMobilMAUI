@@ -12,6 +12,8 @@
                 <Label Text="Bauphysikalische Berechnung" HorizontalOptions="Center" 
                    TextColor="{StaticResource TitleTextColor}" VerticalOptions="CenterAndExpand"
                        FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="{Binding NameDef}" FontSize="Small" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+       TextColor="{StaticResource TitleTextColor}"/>
             </StackLayout>
             <ImageButton Source="menu.png" BackgroundColor="{StaticResource TransparentBackground}"
                          WidthRequest="40" Clicked="ToolbarItem_Clicked"/>

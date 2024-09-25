@@ -48,6 +48,18 @@ namespace MFBauphysikMobilMAUI.NewProject
                 OnPropertyChanged(nameof(Aufbau));
             }
         }
+
+        private string _name_def;
+        public string NameDef
+        {
+            get { return _name_def; }
+            set
+            {
+                if (_name_def == value) return;
+                _name_def = value;
+                OnPropertyChanged(nameof(NameDef));
+            }
+        }
         public Basis? newItem_Bauteil { get; set; }
         public BefestigerBasis? newItem_Befestiger { get;set; }
         //Definiert ObservableCollection OnPropertyChanged BauteilListe
@@ -569,6 +581,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Bauteil_Basis = muster.Bauteil_Basis,
             };
             Aufbau = main_model.MusterName;
+            NameDef = main_model.ProjectName;
             //Musteraufbauten mit Liste von Bauteilen
 
             if (main_model.MusterName == "Beton_G200_EPS_PYE")

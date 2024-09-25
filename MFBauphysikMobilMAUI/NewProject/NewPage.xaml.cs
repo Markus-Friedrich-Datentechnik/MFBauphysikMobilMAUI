@@ -147,6 +147,7 @@ namespace MFBauphysikMobilMAUI.NewProject
 
         private  void Entry_TextChanged(object sender, TextChangedEventArgs e)
         {
+            bv_entry.Text = projektname_entry.Text;
         }
     }
 }

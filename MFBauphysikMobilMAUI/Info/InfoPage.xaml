@@ -146,7 +146,7 @@
 
                         <Label Text="Internet" FontSize="{Binding SizeMicro}" 
                                TextColor="{StaticResource TextColor Grey}"/>
-                        <Label Text="www.friedrich-datentechnik.de"
+                        <Label Text="www.mf-dach.de"
                                FontSize="{Binding SizeDefault}"
                                TextColor="{StaticResource TextColor Blue}">
                             <Label.GestureRecognizers>

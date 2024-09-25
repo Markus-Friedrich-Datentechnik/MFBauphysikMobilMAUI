@@ -37,7 +37,7 @@
                 </Label.FormattedText>
             </Label>
             <Entry TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
-                   Grid.Row="1" 
+                   Grid.Row="1" TextChanged="Entry_TextChanged"
                    BackgroundColor="{StaticResource TransparentBackground}"
                    x:Name="projektname_entry">
             </Entry>

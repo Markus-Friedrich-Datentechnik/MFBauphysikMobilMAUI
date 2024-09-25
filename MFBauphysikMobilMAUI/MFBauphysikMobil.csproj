@@ -96,10 +96,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Effects\ReturnKeyEffect.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Remove="Bauteile.xml" />
 	  <None Remove="Resources\AppIcon\appicon.svg" />
 	  <None Remove="Resources\AppIcon\launcher_foreground.png" />
@@ -249,10 +245,6 @@
 	  <MauiXaml Update="Test.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Effects\" />
 	</ItemGroup>
 
 	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionMFBauphysikMobilMAUIHideInfoBar="True" XamarinHotReloadUnhandledDeviceExceptionMFBauphysikMobilMAUIHideInfoBar="True" /></VisualStudio></ProjectExtensions>

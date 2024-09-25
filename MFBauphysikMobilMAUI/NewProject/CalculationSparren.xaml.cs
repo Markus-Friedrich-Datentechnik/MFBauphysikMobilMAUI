@@ -33,6 +33,17 @@ namespace MFBauphysikMobilMAUI.NewProject
                 OnPropertyChanged(nameof(Aufbau));
             }
         }
+        private string _name_def;
+        public string NameDef
+        {
+            get { return _name_def; }
+            set
+            {
+                if (_name_def == value) return;
+                _name_def = value;
+                OnPropertyChanged(nameof(NameDef));
+            }
+        }
         public Basis newItem_Basis_Bauteil { get; set; }
         public Sparren newItem_Sparren_Bauteil { get; set; }
         public BefestigerBasis newItem_Basis_Befestiger { get; set; }
@@ -753,6 +764,8 @@ namespace MFBauphysikMobilMAUI.NewProject
                 Befestiger_Sparren = muster.Befestiger_Sparren,
             };
             Aufbau = main_model.MusterName;
+            NameDef = main_model.ProjectName;
+
             if (main_model.Selected == 0)
             {
                 BasisList.Add(new Basis()

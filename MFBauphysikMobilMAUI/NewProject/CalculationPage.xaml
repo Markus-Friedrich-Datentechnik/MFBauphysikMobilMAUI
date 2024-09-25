@@ -16,6 +16,8 @@
                        HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"
                        TextColor="{StaticResource TitleTextColor}" 
                            FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="{Binding NameDef}" FontSize="Small" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                       TextColor="{StaticResource TitleTextColor}"/>
             </StackLayout>
             <ImageButton Source="menu.png" 
                          WidthRequest="40" Clicked="ToolbarItem_Clicked"
