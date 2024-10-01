@@ -60,7 +60,7 @@
                         <Label Text="Programminfo" FontSize="{Binding SizeDefault}"
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
                                FontAttributes="Bold"/>
-                        <Label Text="MFBauphysik mobil 1.1.1 &#x0a;Datum: 17.07.2024&#x0a;(C)opyright: 2017 - 2024"                               
+                        <Label Text="MFBauphysik mobil 1.1.1 &#x0a;Datum: 01.10.2024&#x0a;(C)opyright: 2017 - 2024"                               
                                FontSize="{Binding SizeDefault}"
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
 

@@ -13,6 +13,9 @@
                 <Label Text="Konstruktion" HorizontalOptions="CenterAndExpand" 
                        TextColor="{StaticResource TitleTextColor}" Grid.Column="1"
                        FontSize="Title" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+            <ImageButton Source="check.png" BackgroundColor="{StaticResource TransparentBackground}" 
+              HorizontalOptions="EndAndExpand"   Clicked="Check_Clicked" Margin="0,0,10,0"
+              IsVisible="true" x:Name="checkButton" />
         </Grid>
     </NavigationPage.TitleView>
     

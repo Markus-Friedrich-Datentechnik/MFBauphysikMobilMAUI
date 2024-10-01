@@ -157,6 +157,11 @@ namespace MFBauphysikMobilMAUI.NewProject
 
         public async void Back_Clicked(object sender, EventArgs e)
         {
+            await Navigation.PopAsync();
+        }
+
+        public async void Check_Clicked(object sender, EventArgs e)
+        {
             if (Type == "Kaltdach")
             {
                 Name = "Kaltdach";
@@ -179,10 +184,6 @@ namespace MFBauphysikMobilMAUI.NewProject
             }
             KonstruktionChanged?.Invoke(this, Name);
             await Navigation.PopAsync();
-        }
-
-        public void Next_Clicked(object sender, EventArgs e)
-        {
         }
 
         private void Konstruktion_CheckedChanged(object sender, CheckedChangedEventArgs e)
