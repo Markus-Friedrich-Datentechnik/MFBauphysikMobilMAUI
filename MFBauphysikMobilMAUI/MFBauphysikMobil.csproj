@@ -51,6 +51,7 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
 	  <ApplicationTitle>MFBauphysikMobil</ApplicationTitle>
 	  <MtouchUseLlvm>True</MtouchUseLlvm>
+	  <MtouchLink>SdkOnly</MtouchLink>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-maccatalyst|AnyCPU'">

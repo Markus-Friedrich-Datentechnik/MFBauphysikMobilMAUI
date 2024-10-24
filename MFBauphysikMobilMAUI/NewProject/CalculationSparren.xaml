@@ -323,9 +323,8 @@ Style="{AppThemeBinding Light={StaticResource FrameStylelight}, Dark={StaticReso
                 </Grid>
 
                 <!--MenuItem Footer-->
-                <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="1" />
-                <Grid Grid.Row="1" Padding="10,0,0,0">
-
+                <!--BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="1" /-->
+                <Grid Grid.Row="1" Padding="10,0,0,0" BackgroundColor="{StaticResource TitleBackgroundColor}" >
                     <ImageButton BackgroundColor="{StaticResource TransparentBackground}" 
                  Source="tools.png" Clicked="Konstruktion_Clicked"
                  HorizontalOptions="Start"/>
@@ -503,8 +502,8 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
                 </Grid>
                 <!--MenuItem Footer-->
-                <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" x:Name="BoxPlus" />
-                <Grid Grid.Row="2" Padding="10,0,0,0">
+                <!--BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" x:Name="BoxPlus" /-->
+                <Grid Grid.Row="2" Padding="10,0,0,0" BackgroundColor="{StaticResource TitleBackgroundColor}" x:Name="BoxPlus">
                     <ImageButton Source="plus.png" WidthRequest="50"
                              BackgroundColor="{StaticResource TransparentBackground}" 
                              Clicked="Bauteil_Einfügen_Clicked" x:Name="ButtonPlus" 
@@ -676,8 +675,8 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                 </Grid>
 
                 <!--MenuItem Footer-->
-                <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" />
-                <Grid Grid.Row="2" Padding="10,0,0,0">
+                <!--BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" /-->
+                <Grid Grid.Row="2" Padding="10,0,0,0" BackgroundColor="{StaticResource TitleBackgroundColor}">
                     <ImageButton Source="plus.png" 
                              BackgroundColor="{StaticResource TitleBackgroundColor}" 
                              Clicked="Bauteil_Einfügen_Clicked" WidthRequest="50"
@@ -927,8 +926,8 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                     </Grid>
                 </Grid>
 
-                <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2"/>
-                <Grid Grid.Row="2" Padding="10,0,0,0">
+                <!--BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2"/-->
+                <Grid Grid.Row="2" Padding="10,0,0,0" BackgroundColor="{StaticResource TitleBackgroundColor}">
                     <ImageButton Source="material_neu.png" BackgroundColor="{StaticResource TransparentBackground}" 
                              Clicked="Befestiger_Einfügen_Clicked" WidthRequest="50"
                              HorizontalOptions="Start"/>

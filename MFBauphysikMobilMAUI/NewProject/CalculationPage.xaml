@@ -277,8 +277,8 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                     </Frame>
                 </Grid>
 
-                <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="1" />
-                <Grid Grid.Row="1" Padding="20,0,0,0" >
+                <!--BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="1" /-->
+                <Grid Grid.Row="1" Padding="20,0,0,0" BackgroundColor="{StaticResource TitleBackgroundColor}">
                     <ImageButton BackgroundColor="{StaticResource TransparentBackground}" 
                              Source="tools.png" Clicked="Konstruktion_Clicked" WidthRequest="50"
                              HorizontalOptions="Start"/>
@@ -525,8 +525,8 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                 </Frame>
 
                 <!--Plus - Bauteil einfügen-->
-                <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" x:Name="BoxPlus" />
-                <Grid Grid.Row="2" Padding="20,0,0,0">
+                <!--BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" x:Name="BoxPlus" /-->
+                <Grid Grid.Row="2" Padding="20,0,0,0" BackgroundColor="{StaticResource TitleBackgroundColor}" x:Name="BoxPlus">
                     <ImageButton Source="plus.png"  Grid.Column="0" WidthRequest="50"
                              BackgroundColor="{StaticResource TransparentBackground}" 
                      Clicked="Bauteil_Einfügen_Clicked" x:Name="ButtonPlus"
@@ -613,8 +613,8 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                     </ListView>
                 </Grid>
 
-                <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="1" />
-                <Grid Grid.Row="1" Padding="20,0,0,0">
+                <!--BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="1" /-->
+                <Grid Grid.Row="1" Padding="20,0,0,0" BackgroundColor="{StaticResource TitleBackgroundColor}">
                     <ImageButton  Source="material_neu.png" WidthRequest="50"
                              BackgroundColor="{StaticResource TransparentBackground}" 
                  Clicked="Befestiger_Einfügen_Clicked"
