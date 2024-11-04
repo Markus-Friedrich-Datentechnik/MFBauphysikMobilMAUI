@@ -141,7 +141,7 @@ namespace MFBauphysikMobilMAUI.NewProject
                     ProjectName = name,
                     BV = bv,
                 };
-                await Navigation.PushAsync(new TestMusteraufbauten(neu));
+                await Navigation.PushAsync(new Musteraufbauten(neu));
             }
         }
 

@@ -60,7 +60,7 @@
                         <Label Text="Programminfo" FontSize="{Binding SizeDefault}"
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
                                FontAttributes="Bold"/>
-                        <Label Text="MFBauphysik mobil 1.1.1 &#x0a;Datum: 01.10.2024&#x0a;(C)opyright: 2017 - 2024"                               
+                        <Label Text="MFBauphysik mobil 1.1.1 &#x0a;Datum: 01.11.2024&#x0a;(C)opyright: 2017 - 2024"                               
                                FontSize="{Binding SizeDefault}"
                                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
 
@@ -227,7 +227,10 @@
                     Die MF mobil Apps sind über von Dritten betriebene Vertriebsplattformen erhältlich, sogenannte App-Stores. Ihr Download setzt gegebenenfalls eine vorherige Registrierung beim jeweiligen App-Store und die Installation der App-Store-Software voraus. Markus Friedrich Datentechnik Inh. Lisa Römer hat keinen Einfluss auf die Erhebung, Verarbeitung und Nutzung von personenbezogenen Daten im Zusammenhang mit Ihrer Registrierung und der Bereitstellung von Downloads in dem jeweiligen App-Store und der App-Store-Software. Verantwortliche Stelle ist insoweit allein der Betreiber des jeweiligen App-Stores. Bitte informieren Sie sich bei Bedarf direkt bei dem jeweiligen App-Store-Anbieter.
                 </Label>
                 <Label Text=""/>
-                <Label Text="Auch eine Direktinstallation über unsere Website ist möglich. Dabei werden keine personenbezogenen Daten erhoben."/>
+                <Label TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
+                       VerticalOptions="Start" FontSize="{Binding SizeDefault}">
+                    Auch eine Direktinstallation über unsere Website ist möglich. Dabei werden keine personenbezogenen Daten erhoben.
+                </Label>
 
                 <Label Text=""/>
                 <Label Text="3. Geltung der Datenschutzbestimmungen" 

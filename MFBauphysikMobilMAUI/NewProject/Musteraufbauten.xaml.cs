@@ -700,7 +700,7 @@ namespace MFBauphysikMobilMAUI.NewProject
             var selectedAufbau = (e.SelectedItem as MainModel)!;
             //listView.SelectedItem = null;
             selectedAufbau.Selected = 0;
-            main_model = selectedAufbau;           
+            main_model = selectedAufbau;
         }
 
         private async void  Next_Clicked(object sender, EventArgs e)
