@@ -38,10 +38,22 @@
             </Label>
             <Entry TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" 
                    Grid.Row="1" TextChanged="Entry_TextChanged"
-                   BackgroundColor="{StaticResource TransparentBackground}"
                    x:Name="projektname_entry">
             </Entry>
-            <BoxView Grid.Row="2" Color="{AppThemeBinding Light=White, Dark=White}"/>
+            <!--BackgroundColor="{StaticResource TransparentBackground}"-->
+            <!--BoxView Grid.Row="2" Color="{AppThemeBinding Light=Black, Dark=White}"/-->
+            <BoxView Grid.Row="2">
+                <BoxView.Color>
+                    <OnPlatform>
+                        <On Platform="iOS">
+                            <AppThemeBinding Light="Transparent" Dark="White"/>
+                        </On>
+                        <On Platform="Android">
+                            <AppThemeBinding Light="Black" Dark="White"/>
+                        </On>
+                    </OnPlatform>
+                </BoxView.Color>
+            </BoxView>
         </Grid>
         <!--BV und BV Ersatz-->
         <Grid Padding="10">
@@ -62,7 +74,19 @@
             <Entry Grid.Row="1" x:Name="bv_entry" 
                    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
             </Entry>
-            <BoxView Grid.Row="2" Color="{AppThemeBinding Light=White, Dark=White}"/>
+            <BoxView Grid.Row="2">
+                <BoxView.Color>
+                    <OnPlatform>
+                        <On Platform="iOS">
+                            <AppThemeBinding Light="Transparent" Dark="White"/>
+                        </On>
+                        <On Platform="Android">
+                            <AppThemeBinding Light="Black" Dark="White"/>
+                        </On>
+                    </OnPlatform>
+                </BoxView.Color>
+            </BoxView>
+            <!--Color="{AppThemeBinding Light=Black, Dark=White}"/-->
             <Entry Text="{Binding BV_Ersatz}" x:Name="bv_ersatz" Grid.Row="3"/>
 
         </Grid>

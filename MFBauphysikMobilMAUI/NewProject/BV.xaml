@@ -35,7 +35,7 @@
             <Entry Text="{Binding ProjectName}" x:Name="ProjektName" Grid.Row="1"
        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
             </Entry>            
-            <BoxView Grid.Row="2" Color="{AppThemeBinding Light=White, Dark=White}"/>
+            <BoxView Grid.Row="2" Color="{AppThemeBinding Light=Black, Dark=White}"/>
         </Grid>
 
         <Grid RowSpacing="0" ColumnSpacing="0">
@@ -58,12 +58,12 @@
             <Entry Text="{Binding BV}" x:Name="entry_label" Grid.Row="1" BackgroundColor="{StaticResource TransparentBackground}"
    TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
             </Entry>
-            <BoxView Grid.Row="2" Color="{AppThemeBinding Light=White, Dark=White}"/>
+            <BoxView Grid.Row="2" Color="{AppThemeBinding Light=Black, Dark=White}"/>
 
             <Entry  Text="{Binding BV_Ersatz}"  x:Name="BV_Ersatz" Grid.Row="3" BackgroundColor="{StaticResource TransparentBackground}"
     TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}">
             </Entry>
-            <BoxView Grid.Row="4" Color="{AppThemeBinding Light=White, Dark=White}"/>
+            <BoxView Grid.Row="4" Color="{AppThemeBinding Light=Black, Dark=White}"/>
         </Grid>
     </StackLayout>
 
