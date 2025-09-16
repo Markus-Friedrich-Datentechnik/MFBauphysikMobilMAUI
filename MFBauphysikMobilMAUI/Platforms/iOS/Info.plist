@@ -35,7 +35,7 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
 	<key>CFBundleIdentifier</key>
-	<string></string>
+	<string>com.companyname.mfbauphysikmobilmaui</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.1</string>
 </dict>
