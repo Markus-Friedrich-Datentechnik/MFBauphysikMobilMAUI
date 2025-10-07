@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using MFBauphysikMobilMAUI.CustomRenderer;
+using SQLitePCL;
+
 #if ANDROID
 using MFBauphysikMobilMAUI.Platforms.Android;
 #endif
@@ -13,6 +15,8 @@ namespace MFBauphysikMobilMAUI
     {
         public static MauiApp CreateMauiApp()
         {
+            Batteries_V2.Init(); 
+
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
