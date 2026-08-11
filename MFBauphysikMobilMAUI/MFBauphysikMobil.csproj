@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net9.0-android35.0;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>net9.0-android36.0;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
-		<TargetAndroidVersion>35.0</TargetAndroidVersion>
+		<TargetAndroidVersion>36.0</TargetAndroidVersion>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 
@@ -28,8 +28,8 @@
 		<ApplicationId>com.companyname.mfbauphysikmobilmaui</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.0.3</ApplicationDisplayVersion>
-		<ApplicationVersion>4</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.4</ApplicationDisplayVersion>
+		<ApplicationVersion>5</ApplicationVersion>
 
 		<!--SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion-->
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
@@ -50,8 +50,8 @@
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	  <AndroidCreatePackagePerAbi>True</AndroidCreatePackagePerAbi>
 	  <AndroidPackageFormat>apk</AndroidPackageFormat>
-	  <ApplicationDisplayVersion>1.0.3</ApplicationDisplayVersion>
-	  <ApplicationVersion>4</ApplicationVersion>
+	  <ApplicationDisplayVersion>1.0.4</ApplicationDisplayVersion>
+	  <ApplicationVersion>5</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-ios|AnyCPU'">
@@ -117,6 +117,10 @@
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
 	  <AndroidPackageFormat>aab</AndroidPackageFormat>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android36.0|AnyCPU'">
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
 	</PropertyGroup>
 
 	<ItemGroup>		
