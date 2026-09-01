@@ -4,6 +4,9 @@ using SQLitePCL;
 
 #if ANDROID
 using MFBauphysikMobilMAUI.Platforms.Android;
+using AndroidX.Core.View;
+using Microsoft.Maui.Handlers;
+using AndroidView = Android.Views.View;
 #endif
 #if IOS
 using MFBauphysikMobilMAUI.Platforms.iOS;
@@ -24,10 +27,21 @@ namespace MFBauphysikMobilMAUI
                 {
 #if ANDROID
                     handlers.AddHandler<MyViewCell, CustomViewCellHandler>();
+                    NavigationViewHandler.Mapper.AppendToMapping(
+                    "AndroidWindowInsets",
+                    (handler, view) =>
+                    {
+                        var platformView  = handler.PlatformView;
+                        ViewCompat.SetOnApplyWindowInsetsListener(
+                            platformView,
+                            new NavigationPageInsetsListener());
+                        ViewCompat.RequestApplyInsets(platformView);
+                    });
+
 #endif
-/*#if IOS             
-                    handlers.AddHandler<MyViewCell, CustomViewCellHandler>();
-#endif*/
+                    /*#if IOS             
+                                        handlers.AddHandler<MyViewCell, CustomViewCellHandler>();
+                    #endif*/
                 });
               /*  .ConfigureFonts(fonts =>
                 {
@@ -56,4 +70,29 @@ namespace MFBauphysikMobilMAUI
             return builder.Build();
         }
     }
+#if ANDROID
+
+    public sealed class NavigationPageInsetsListener
+    : Java.Lang.Object, IOnApplyWindowInsetsListener
+{
+    public WindowInsetsCompat OnApplyWindowInsets(
+        AndroidView view,
+        WindowInsetsCompat insets)
+    {
+        var topInsets = insets.GetInsets(
+            WindowInsetsCompat.Type.StatusBars()
+            | WindowInsetsCompat.Type.DisplayCutout());
+
+        view.SetPadding(
+            view.PaddingLeft,
+            topInsets.Top,
+            view.PaddingRight,
+            view.PaddingBottom);
+
+        return insets;
+    }
+}
+
+#endif
+
 }

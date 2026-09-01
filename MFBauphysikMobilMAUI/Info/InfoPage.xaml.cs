@@ -99,6 +99,11 @@ namespace MFBauphysikMobilMAUI.Info
             SizeMicro = Setting.Size_Micro;
             SizeMedium = Setting.Size_Medium;
             SizeTitle = Setting.Size_Title;
+
+            ProgrammInfoLabel.Text = $"MFBauphysik mobil {AppInfo.Current.VersionString}\n" +
+                // $"Datum: {AppVersionInfo.ReleaseDate}\n" +
+                $"(C)opyright: 2017 - 2026";
+
         }
 
         protected override void OnAppearing()
