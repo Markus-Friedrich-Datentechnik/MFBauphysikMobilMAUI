@@ -142,6 +142,7 @@ namespace MFBauphysikMobilMAUI
             {
                 ListProjekt.ItemsSource = itemsource.OrderByDescending(d => d.ProjectName);
             }
+
         }
         //Neues Projekt erstellen
         private async void PlusClicked(object sender, EventArgs e)

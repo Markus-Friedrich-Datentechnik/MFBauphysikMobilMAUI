@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:custom ="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer" 
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
-             x:Class="MFBauphysikMobilMAUI.MainPage"       
+             x:Class="MFBauphysikMobilMAUI.MainPage" 
              NavigationPage.HasBackButton="False">
 
     <NavigationPage.TitleView>
@@ -42,7 +42,7 @@
       BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
-            <RowDefinition Height="15*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
@@ -106,12 +106,26 @@
         </ListView>        
 
         <!--Neues Projekt Button-->
-        <BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2"/>
+        
+        <!--BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2"/>
         <StackLayout Orientation="Horizontal" Grid.Row="2" Padding="10,0,0,0">
             <ImageButton Source="plus.png" BackgroundColor="{StaticResource TitleBackgroundColor}" 
                          WidthRequest="50"
                      Clicked="PlusClicked" HorizontalOptions="Start"/>
-        </StackLayout>
+        </StackLayout-->
+
+        <Grid
+            x:Name="BottomActionBar"
+            Grid.Row="2"
+            BackgroundColor="{StaticResource TitleBackgroundColor}"
+            Padding="10,0,0,0">
+            <ImageButton Source="plus.png" 
+                         BackgroundColor="{StaticResource TitleBackgroundColor}" 
+                         WidthRequest="50"
+                         HeightRequest="50"
+                         Clicked="PlusClicked" HorizontalOptions="Start" />
+
+        </Grid>
 
     </Grid>
 

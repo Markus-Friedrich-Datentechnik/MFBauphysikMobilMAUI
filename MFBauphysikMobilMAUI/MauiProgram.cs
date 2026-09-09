@@ -6,6 +6,7 @@ using SQLitePCL;
 using MFBauphysikMobilMAUI.Platforms.Android;
 using AndroidX.Core.View;
 using Microsoft.Maui.Handlers;
+
 using AndroidView = Android.Views.View;
 #endif
 #if IOS
@@ -18,42 +19,21 @@ namespace MFBauphysikMobilMAUI
     {
         public static MauiApp CreateMauiApp()
         {
-            Batteries_V2.Init(); 
+            Batteries_V2.Init();
 
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
                 .ConfigureMauiHandlers(handlers =>
                 {
+
 #if ANDROID
-                    handlers.AddHandler<MyViewCell, CustomViewCellHandler>();
-                    NavigationViewHandler.Mapper.AppendToMapping(
-                    "AndroidWindowInsets",
-                    (handler, view) =>
-                    {
-                        var platformView  = handler.PlatformView;
-                        ViewCompat.SetOnApplyWindowInsetsListener(
-                            platformView,
-                            new NavigationPageInsetsListener());
-                        ViewCompat.RequestApplyInsets(platformView);
-                    });
-
+                    handlers.AddHandler<MyViewCell, CustomViewCellHandler>();                  
+                    
 #endif
-                    /*#if IOS             
-                                        handlers.AddHandler<MyViewCell, CustomViewCellHandler>();
-                    #endif*/
-                });
-              /*  .ConfigureFonts(fonts =>
-                {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });*/
-            
-            /*builder.ConfigureEffects(effects =>
-            {
-                effects.Add<ReturnKeyEffect, ReturnKeyPlatformEffect>();
-            });*/
 
+
+                });
 
             Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(Entry), (handler, view) =>
             {
@@ -69,30 +49,18 @@ namespace MFBauphysikMobilMAUI
 
             return builder.Build();
         }
-    }
-#if ANDROID
 
-    public sealed class NavigationPageInsetsListener
-    : Java.Lang.Object, IOnApplyWindowInsetsListener
-{
-    public WindowInsetsCompat OnApplyWindowInsets(
-        AndroidView view,
-        WindowInsetsCompat insets)
-    {
-        var topInsets = insets.GetInsets(
+    }
+    /*var topInsets = insets.GetInsets(
             WindowInsetsCompat.Type.StatusBars()
             | WindowInsetsCompat.Type.DisplayCutout());
 
-        view.SetPadding(
-            view.PaddingLeft,
-            topInsets.Top,
-            view.PaddingRight,
-            view.PaddingBottom);
-
-        return insets;
-    }
-}
-
-#endif
-
+        var bottomInsets = insets.GetInsets(
+            WindowInsetsCompat.Type.NavigationBars());
+    
+     view.SetPadding(
+            _paddingLeft,
+            _paddingTop + topInsets.Top,
+            _paddingRight,
+            _paddingBottom + bottomInsets.Bottom);*/
 }
