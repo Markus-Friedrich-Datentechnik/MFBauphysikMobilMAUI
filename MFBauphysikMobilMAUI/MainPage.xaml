@@ -5,6 +5,7 @@
              xmlns:custom ="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer" 
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              x:Class="MFBauphysikMobilMAUI.MainPage" 
+             SafeAreaEdges="None"
              NavigationPage.HasBackButton="False">
 
     <NavigationPage.TitleView>
