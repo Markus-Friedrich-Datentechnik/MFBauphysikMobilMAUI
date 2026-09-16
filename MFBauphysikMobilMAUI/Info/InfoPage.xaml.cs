@@ -1,16 +1,18 @@
-﻿using System;
+﻿using MFBauphysikMobilMAUI.Helpers;
+using MFBauphysikMobilMAUI.Models;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.PlatformConfiguration;
+using Microsoft.Maui.Controls.Xaml;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Microsoft.Maui.Controls.Xaml;
-using System.Runtime.CompilerServices;
-using MFBauphysikMobilMAUI.Models;
-using MFBauphysikMobilMAUI.Helpers;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui;
-using Microsoft.Maui.Controls.PlatformConfiguration;
 
 namespace MFBauphysikMobilMAUI.Info
 
@@ -100,8 +102,10 @@ namespace MFBauphysikMobilMAUI.Info
             SizeMedium = Setting.Size_Medium;
             SizeTitle = Setting.Size_Title;
 
+            var buildDate = GetBuildDate(Assembly.GetExecutingAssembly());
+
             ProgrammInfoLabel.Text = $"MFBauphysik mobil {AppInfo.Current.VersionString}\n" +
-                // $"Datum: {AppVersionInfo.ReleaseDate}\n" +
+                $"Datum: {buildDate:dd.MM.yyyy}\n" +
                 $"(C)opyright: 2017 - 2026";
 
         }
@@ -137,6 +141,27 @@ namespace MFBauphysikMobilMAUI.Info
                            
         }
 
+        private static DateTime GetBuildDate(Assembly assembly)
+        {
+            const string BuildVersionMetadataPrefix = "+build";
+
+            var attribute = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>();
+            if (attribute?.InformationalVersion != null)
+            {
+                var value = attribute.InformationalVersion;
+                var index = value.IndexOf(BuildVersionMetadataPrefix);
+                if (index > 0)
+                {
+                    value = value.Substring(index + BuildVersionMetadataPrefix.Length);
+                    if (DateTime.TryParseExact(value, "yyyyMMddHHmmss", CultureInfo.InvariantCulture, DateTimeStyles.None, out var result))
+                    {
+                        return result;
+                    }
+                }
+            }
+
+            return default;
+        }
         private async void OpenEmail(object sender, EventArgs e)
         {
             string[] recipients = new[] { "info@friedrich-datentechnik.de" };
