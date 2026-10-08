@@ -77,13 +77,13 @@
 	</PropertyGroup>
 	
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android36.0|AnyCPU'">
-	  <ApplicationTitle>MFBauphysikMobil</ApplicationTitle>
-	  <AndroidPackageFormat>apk</AndroidPackageFormat>
-	  <AndroidUseAapt2>True</AndroidUseAapt2>
-	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
-	  <ApplicationVersion>3</ApplicationVersion>
-		<MauiEnableSdkTrimming>false</MauiEnableSdkTrimming>
+		<ApplicationTitle>MFBauphysikMobil</ApplicationTitle>
+		<AndroidPackageFormats>apk</AndroidPackageFormats>
+		<AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
+		<RunAOTCompilation>false</RunAOTCompilation>
+		<AndroidEnableLLVM>false</AndroidEnableLLVM>
 		<PublishTrimmed>false</PublishTrimmed>
+		<MauiEnableSdkTrimming>false</MauiEnableSdkTrimming>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-ios|AnyCPU'">
