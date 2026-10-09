@@ -76,7 +76,7 @@
 		<AndroidEnableLLVM>false</AndroidEnableLLVM>
 	</PropertyGroup>
 	
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-android36.0|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android36.0|AnyCPU'">
 	  <ApplicationTitle>MFBauphysikMobil</ApplicationTitle>
 	  <ApplicationDisplayVersion>1.0.7</ApplicationDisplayVersion>
 	  <ApplicationVersion>107</ApplicationVersion>		
