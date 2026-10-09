@@ -74,14 +74,13 @@
 		<AndroidEnableLLVM>false</AndroidEnableLLVM>
 	</PropertyGroup>
 	
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-android36.0|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android36.0|AnyCPU'">
 	  <ApplicationTitle>MFBauphysikMobil</ApplicationTitle>
 	  <AndroidPackageFormat>apk</AndroidPackageFormat>
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
 	  <ApplicationVersion>3</ApplicationVersion>
 		<MauiEnableSdkTrimming>false</MauiEnableSdkTrimming>
-		<PublishTrimmed>false</PublishTrimmed>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-ios|AnyCPU'">
