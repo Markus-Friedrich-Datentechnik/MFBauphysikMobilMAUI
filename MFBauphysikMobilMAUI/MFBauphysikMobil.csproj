@@ -78,12 +78,9 @@
 	
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-android36.0|AnyCPU'">
 	  <ApplicationTitle>MFBauphysikMobil</ApplicationTitle>
-	  <ApplicationDisplayVersion>1.0.6</ApplicationDisplayVersion>
-	  <ApplicationVersion>106</ApplicationVersion>
-		
+	  <ApplicationDisplayVersion>1.0.7</ApplicationDisplayVersion>
+	  <ApplicationVersion>107</ApplicationVersion>		
 	  <AndroidPackageFormats>aab;apk</AndroidPackageFormats>
-		
-	  <MauiEnableSdkTrimming>false</MauiEnableSdkTrimming>
 	  <PublishTrimmed>false</PublishTrimmed>
 	</PropertyGroup>
 
@@ -106,19 +103,9 @@
 	  <ApplicationVersion>2</ApplicationVersion>
 	</PropertyGroup>	
 
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-android36.0|AnyCPU'">
-	  <AndroidUseAapt2>True</AndroidUseAapt2>
-	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
-	</PropertyGroup>
-
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-android36.0|AnyCPU'">
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
-	  <AndroidPackageFormat>aab</AndroidPackageFormat>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-android36.0|AnyCPU'">
 	  <AndroidPackageFormat>aab</AndroidPackageFormat>
 	</PropertyGroup>
 

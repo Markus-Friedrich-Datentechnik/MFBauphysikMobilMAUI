@@ -5,13 +5,13 @@
              xmlns:customview="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer"
              xmlns:converter="clr-namespace:MFBauphysikMobilMAUI.Converters"
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
-             SafeAreaEdges="N"
+             SafeAreaEdges="None"
              NavigationPage.HasBackButton="False">
 
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal"  Spacing="0">
-            <ImageButton Source="back.png" BackgroundColor="Red" Margin="0,0,0,0"
+            <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}"
               Grid.Column="0" Clicked="Back_Clicked"/>
             <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                 <Label Text="Bauphysikalische Berechnung" 
@@ -23,7 +23,7 @@
             </StackLayout>
             <ImageButton Source="menu.png" 
                          WidthRequest="40" Clicked="ToolbarItem_Clicked"
-                         BackgroundColor="Green"/>
+                         BackgroundColor="{StaticResource TransparentBackground}"/>
         </StackLayout>
     </NavigationPage.TitleView>
 
