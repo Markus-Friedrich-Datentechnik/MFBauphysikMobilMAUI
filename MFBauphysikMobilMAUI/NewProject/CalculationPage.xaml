@@ -4,11 +4,13 @@
              x:Class="MFBauphysikMobilMAUI.NewProject.CalculationPage"
              xmlns:customview="clr-namespace:MFBauphysikMobilMAUI.CustomRenderer"
              xmlns:converter="clr-namespace:MFBauphysikMobilMAUI.Converters"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             SafeAreaEdges="None"
              NavigationPage.HasBackButton="False">
 
 
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
+        <StackLayout Orientation="Horizontal"  Spacing="0">
             <ImageButton Source="back.png" BackgroundColor="{StaticResource TransparentBackground}"
               Grid.Column="0" Clicked="Back_Clicked"/>
             <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
@@ -233,7 +235,8 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                             <ListView x:Name="listBasis" Grid.Row="1" SelectionMode="None" Grid.ColumnSpan="2"
                                   BackgroundColor="Transparent"
        SeparatorVisibility="Default"  HasUnevenRows="True"
-       SeparatorColor="{StaticResource TextColor Blue}">
+       SeparatorColor="{StaticResource TextColor Blue}"
+       ios:ListView.SeparatorStyle="FullWidth">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ViewCell>
@@ -289,8 +292,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
             <Grid Grid.Row="1" x:Name="BasisUwert" IsVisible="False" 
               BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="12*"/>
-                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
 
@@ -301,8 +303,10 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                           Header="{Binding .}" HasUnevenRows="True"
                           ItemSelected="OnSelected_ItemSelected_Basis"
                           Footer="{Binding .}"     SelectionMode="Single"
+                          VerticalScrollBarVisibility="Never"
                           SeparatorVisibility="Default"
-                      SeparatorColor="{StaticResource TextColor Blue}">
+                          SeparatorColor="{StaticResource TextColor Blue}"
+                          ios:ListView.SeparatorStyle="FullWidth">
                         <ListView.HeaderTemplate>
                             <DataTemplate>
                                 <Grid Padding="5">
@@ -525,8 +529,7 @@ TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={St
                 </Frame>
 
                 <!--Plus - Bauteil einfügen-->
-                <!--BoxView BackgroundColor="{StaticResource TitleBackgroundColor}" Grid.Row="2" x:Name="BoxPlus" /-->
-                <Grid Grid.Row="2" Padding="20,0,0,0" BackgroundColor="{StaticResource TitleBackgroundColor}" x:Name="BoxPlus">
+                <Grid Grid.Row="1" Padding="20,0,0,0" BackgroundColor="{StaticResource TitleBackgroundColor}" x:Name="BoxPlus">
                     <ImageButton Source="plus.png"  Grid.Column="0" WidthRequest="50"
                              BackgroundColor="{StaticResource TransparentBackground}" 
                      Clicked="Bauteil_Einfügen_Clicked" x:Name="ButtonPlus"

@@ -26,6 +26,7 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Diagnostics;
 using MFBauphysikMobilMAUI.Helpers;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
 using Microsoft.Maui;
 using TestBauphysikMaui;
 
